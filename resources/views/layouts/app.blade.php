@@ -154,7 +154,7 @@
                                 <ul class="nav nav-collapse">
                                     
                                     <li>
-                                        <a href="">
+                                        <a href="{{route('regimen.show','0312')}}">
                                             <span class="sub-item">Régimen</span>
                                         </a>
                                     </li>

@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+// +++++++++++++++++++++++++++++ Regímenes ++++++++++++++++++++++++++++++++++++
+Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
+Route::get('regimenc/create', 'RegimenController@create')->name('regimen.create');
+Route::post('regimen/store', 'RegimenController@store')->name('regimen.store');
