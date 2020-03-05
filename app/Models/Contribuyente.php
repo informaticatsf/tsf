@@ -16,7 +16,7 @@ class Contribuyente extends Model
                return view('contribuyente.show', compact('contribuyentes', 'query'));}
             else{$query = $_GET['contribuyente'];
             
-            $regimenes =  DB::select('call ListaContri(?)',array($query));
+            $contribuyentes =  DB::select('call ListaContri(?)',array($query));
             return view('contribuyente.show', compact('contribuyentes', 'query'));
             }
   }
@@ -31,9 +31,9 @@ class Contribuyente extends Model
 
    $validator=Validator::make($request->all(), $rules);
    if($validator->fails()){
-       //return response()->json($validator->errors(), 400);
+       return response()->json($validator->errors(), 400);
    }
-   DB::select('call CreaContri(?)',array(
+   DB::select('call CreaContri(?,?,?,?,?,?)',array(
     $request->get("nombre"),
     $request->get("apellido"),
     $request->get("direccion"),
@@ -45,4 +45,9 @@ class Contribuyente extends Model
    return redirect()->route('contribuyente.show', '0312')
    ->with('info','Contribuyente creado existosamente');
 }
+public static function mostrarRegimen(){
+    $regim = DB::table('VerRegi')->get();
+    return view('contribuyentes.create', compact('regim'));
+}
+
 }

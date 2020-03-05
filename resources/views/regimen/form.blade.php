@@ -19,7 +19,7 @@
                                 <input type="text" id="regimen" name="regimen" required="required"  class="form-control">
                               </div>
                             </div>                           
-                       </div>
+                       </div> 
                         <div class="form-group ">
                         <div class="form-group text-center">
                                 {{ Form::submit('Guardar', ['class'=>'btn btn-lg btn-success']) }}

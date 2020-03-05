@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contribuyente;
+use App\Models\Periodo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ContribuyenteController extends Controller
+class PeriodoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ContribuyenteController extends Controller
      */
     public function index()
     {
-        // 
+        //
     }
 
     /**
@@ -25,8 +24,7 @@ class ContribuyenteController extends Controller
      */
     public function create()
     {
-        $regimenes = DB::table('VerRegimenes')->get();
-        return  view('contribuyente.create', compact('regimenes'));
+        return  view('periodo.create');
     }
 
     /**
@@ -37,29 +35,27 @@ class ContribuyenteController extends Controller
      */
     public function store(Request $request)
     {
-        return Contribuyente::guardarContribuyente($request);
-    
+        return Periodo::guardarPeriodo($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Contribuyente  $contribuyente
+     * @param  \App\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function show($contribuyente)
+    public function show($periodo)
     {
-        
-        return Contribuyente::listadoContribuyente($contribuyente);
+        return Periodo::listadoPeriodo($periodo);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Contribuyente  $contribuyente
+     * @param  \App\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contribuyente $contribuyente)
+    public function edit(Periodo $periodo)
     {
         //
     }
@@ -68,10 +64,10 @@ class ContribuyenteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Contribuyente  $contribuyente
+     * @param  \App\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contribuyente $contribuyente)
+    public function update(Request $request, Periodo $periodo)
     {
         //
     }
@@ -79,10 +75,10 @@ class ContribuyenteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Contribuyente  $contribuyente
+     * @param  \App\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contribuyente $contribuyente)
+    public function destroy(Periodo $periodo)
     {
         //
     }

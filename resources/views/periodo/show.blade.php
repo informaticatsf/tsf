@@ -8,8 +8,8 @@
             <div class="card">
                 <div class="card-header">
                 
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('contribuyente.create')}}">Crear Contribuyente</a>
-                <h2 style="text-align: center; color: #1b4b72">Contribuyentes</h2>
+                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('periodo.create')}}">Crear Periodo</a>
+                <h2 style="text-align: center; color: #1b4b72">Periodos</h2>
 </div>
 
 <div class="card-body">
@@ -19,9 +19,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('contribuyente.show','contribuyente')}}">
+                                <form method="get"  action="{{route('periodo.show','periodo')}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="contribuyente" name="contribuyente">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="periodo" name="periodo">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -36,19 +36,16 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
-<th>Contribuyente</th>
-<th>NIT</th>
-<th>Régimen</th>
-<th>Botones</th>
+<th>Inicio</th>
+<th>Fin</th>
 </tr>
 </thead>
 <tbody>
-@foreach ($contribuyentes as $contribuyente)
+@foreach ($periodos as $periodo)
 <tr>
-<td>{{$contribuyente->id}}</td>
-<td>{{$contribuyente->nombre}}</td>
-<td>{{$contribuyente->nit}}</td>
-<td>{{$contribuyente->regimen}}</td>
+<td>{{$periodo->id}}</td>
+<td>{{date('d / m / Y', strtotime($periodo->inicio))}}</td>
+<td>{{date('d / m / Y', strtotime($periodo->fin))}}</td>
 </tr>
 @endforeach
 </tbody>

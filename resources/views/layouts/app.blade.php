@@ -155,21 +155,21 @@
                                     
                                     <li>
                                         <a href="{{route('regimen.show','0312')}}">
-                                            <span class="sub-item">Régimen</span>
+                                            <span class="sub-item">Regímenes</span>
                                         </a>
                                     </li>
                                     
                                     
                                     <li>
-                                        <a href="">
-                                            <span class="sub-item">Variables</span>
+                                        <a href="{{route('contribuyente.show','0312')}}">
+                                            <span class="sub-item">Contribuyentes</span>
                                         </a>
                                     </li>
                                     
                                     
                                     <li>
-                                        <a href="">
-                                            <span class="sub-item">Reportes</span>
+                                        <a href="{{route('periodo.show','0312')}}">
+                                            <span class="sub-item">Periodos</span>
                                         </a>
                                     </li>
                                     
