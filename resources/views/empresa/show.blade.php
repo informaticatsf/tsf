@@ -8,8 +8,8 @@
             <div class="card">
                 <div class="card-header">
                 
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('contribuyente.create')}}">Crear Contribuyente</a>
-                <h2 style="text-align: center; color: #1b4b72">Contribuyentes</h2>
+                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('empresa.create',$contribuyente)}}">Crear empresa</a>
+                <h2 style="text-align: center; color: #1b4b72">Empresas</h2>
 </div>
 
 <div class="card-body">
@@ -19,9 +19,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('contribuyente.show','contribuyente')}}">
+                                <form method="get"  action="{{route('empresa.show',[$contribuyente,'empresa'])}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="contribuyente" name="contribuyente">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="empresa" name="empresa">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -36,23 +36,20 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
-<th>Contribuyente</th>
-<th>NIT</th>
-<th>Régimen</th>
-<th>Acciones</th>
+<th>Empresa</th>
+<th>Ver</th>
+
 </tr>
 </thead>
 <tbody>
-@foreach ($contribuyentes as $contribuyente)
+@foreach ($empresas as $empresa)
 <tr>
-<td>{{$contribuyente->id}}</td>
-<td>{{$contribuyente->nombre}}</td>
-<td>{{$contribuyente->nit}}</td>
-<td>{{$contribuyente->regimen}}</td>
+<td>{{$empresa->id}}</td>
+<td>{{$empresa->empresa}}</td>
 <td width="10px" class="text-center">
-  <a href="{{ route('empresa.show',[$contribuyente->id,'0312'])}}"
+  <a href=""
      class="btn btn-sm btn-outline-dark">
-      Ver empresas
+      Sucursales
   </a>
  </td>
 </tr>

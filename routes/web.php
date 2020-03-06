@@ -32,3 +32,7 @@ Route::get('contribuyentec/create', 'ContribuyenteController@create')->name('con
 Route::post('contribuyente/store', 'ContribuyenteController@store')->name('contribuyente.store');
 Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
 
+// +++++++++++++++++++++++++ Empresa +++++++++++++++++++++++++++++++++++
+Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@show')->name('empresa.show');
+Route::get('empresa/create/{contribuyente}',  'EmpresaController@create')->name('empresa.create');
+Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');

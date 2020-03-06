@@ -50,4 +50,10 @@ public static function mostrarRegimen(){
     return view('contribuyentes.create', compact('regim'));
 }
 
+public static function DatosPersonales ($contribuyente) {
+        
+    return  DB::select('call VerContriDatos(?)',array($contribuyente));
+    
+}
+
 }
