@@ -42,5 +42,10 @@ Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show'
 Route::get('sucursal/create/{empresa}',  'SucursalController@create')->name('sucursal.create');
 Route::post('sucursal/store', 'SucursalController@store')->name('sucursal.store');
 
-// +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
+
+// +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
+Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');
+Route::get('cuentacontable/create/', 'CuentacontableController@create')->name('cuentacontable.create');
+Route::post('cuentacontable/store', 'CuentacontableController@store')->name('cuentacontable.store');

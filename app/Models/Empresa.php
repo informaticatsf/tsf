@@ -48,4 +48,4 @@ class Empresa extends Model
         return  DB::select('call VerContriEmpreDatos(?)',array($empresa));
         
     }
-}
+} 

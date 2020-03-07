@@ -24,13 +24,23 @@
                         <div class="row">
                             <div class="form-group col-lg-8 row">
                               <label class="control-label col-lg-4 col-md-4 col-sm-12"
-                              for="regimen">Régimen</label>
+                              for="impuesto">Impuesto</label>
                               <div class="col-lg-8 col-md-8 col-sm-12">
-                                <select  name="regimen" id="regimen"  required="required"
+                                <input type="text" id="impuesto" name="impuesto" class="form-control">
+                              </div>
+                            </div>                           
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-8 row">
+                              <label class="control-label col-lg-4 col-md-4 col-sm-12"
+                              for="tipo">Tipo Cuenta</label>
+                              <div class="col-lg-8 col-md-8 col-sm-12">
+                                <select  name="tipo" id="tipo"  required="required"
                                 class="form-control">
                                     <option value="">--Seleccione TIPO CUENTA--</option>
-                                    @foreach ($cuentas as $cuenta)
-                                    <option  value="{{$cuenta->id}}">{{$cuenta->nombre}}</option>
+                                    @foreach ($tipos as $tipo)
+                                    <option  value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                                     @endforeach
                                 </select>
                               </div>                              
@@ -39,15 +49,7 @@
 
                        
 
-                        <div class="row">
-                            <div class="form-group col-lg-8 row">
-                              <label class="control-label col-lg-4 col-md-4 col-sm-12"
-                              for="direccion">Dirección</label>
-                              <div class="col-lg-8 col-md-8 col-sm-12">
-                                <input type="text" id="direccion" name="direccion" class="form-control">
-                              </div>
-                            </div>                           
-                        </div>
+                       
                         <div class="form-group ">
 
                         <div class="form-group text-center">

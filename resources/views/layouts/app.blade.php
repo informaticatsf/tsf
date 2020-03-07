@@ -154,8 +154,8 @@
                                 <ul class="nav nav-collapse">
                              
                                 <li>
-                                <a href="{{route('periodo.show','0312')}}">
-                                    <span class="sub-item">Cuentas</span>
+                                <a href="{{route('cuentacontable.show','0312')}}">
+                                    <span class="sub-item">Cuentas Contables</span>
                                 </a>
                                 </li>
 

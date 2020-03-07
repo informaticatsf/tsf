@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa;
-use App\Models\Contribuyente;
+use App\Models\Cuentacontable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class EmpresaController extends Controller
+class CuentacontableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +23,10 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($contribuyente)
+    public function create()
     {
-        $datas=Contribuyente::DatosPersonales($contribuyente); 
-        return  view('empresa.create',['contribuyente'=> $contribuyente, 'datos'=>$datas]);
+        $tipos = DB::table('vTipCuenta')->get();
+        return  view('cuentacontable.create', compact('tipos'));
     }
 
     /**
@@ -35,29 +35,30 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) 
+    public function store(Request $request)
     {
-        return Empresa::guardarEmpresa($request);
+
+        return Cuentacontable::guardarCuentaContable($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Cuentacontable  $cuentacontable
      * @return \Illuminate\Http\Response
      */
-    public function show($contribuyente, $empresa)
+    public function show($cuenta)
     {
-        return Empresa::listadoEmpresa($contribuyente, $empresa);
+        return Cuentacontable::listadoCuentaContable($cuenta);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Cuentacontable  $cuentacontable
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresa $empresa)
+    public function edit(Cuentacontable $cuentacontable)
     {
         //
     }
@@ -66,10 +67,10 @@ class EmpresaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Cuentacontable  $cuentacontable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, Cuentacontable $cuentacontable)
     {
         //
     }
@@ -77,16 +78,11 @@ class EmpresaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Cuentacontable  $cuentacontable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(Cuentacontable $cuentacontable)
     {
         //
     }
-
-    public function contriempr($request){
-        // dd($request);
-         return Empresa::listadoEmpresas2($request);
-     }
 }
