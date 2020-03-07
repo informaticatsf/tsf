@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa;
-use App\Models\Contribuyente;
+use App\Models\Lcontabilidad;
 use Illuminate\Http\Request;
 
-class EmpresaController extends Controller
+class LcontabilidadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +22,9 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($contribuyente)
+    public function create()
     {
-        $datas=Contribuyente::DatosPersonales($contribuyente);
-        return  view('empresa.create',['contribuyente'=> $contribuyente, 'datos'=>$datas]);
+        //
     }
 
     /**
@@ -35,29 +33,29 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) 
+    public function store(Request $request)
     {
-        return Empresa::guardarEmpresa($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Lcontabilidad  $lcontabilidad
      * @return \Illuminate\Http\Response
      */
-    public function show($contribuyente, $empresa)
+    public function show($busca)
     {
-        return Empresa::listadoEmpresa($contribuyente, $empresa);
+        return Lcontabilidad::listadoLContabilidad($busca);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Lcontabilidad  $lcontabilidad
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresa $empresa)
+    public function edit(Lcontabilidad $lcontabilidad)
     {
         //
     }
@@ -66,10 +64,10 @@ class EmpresaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Lcontabilidad  $lcontabilidad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, Lcontabilidad $lcontabilidad)
     {
         //
     }
@@ -77,16 +75,11 @@ class EmpresaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\Lcontabilidad  $lcontabilidad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(Lcontabilidad $lcontabilidad)
     {
         //
     }
-
-    public function contriempr($request){
-        // dd($request);
-         return Empresa::listadoEmpresas2($request);
-     }
 }

@@ -129,7 +129,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="">
+                            <a href="{{route('lconta.show','0312')}}">
                             <i class="fas fa-hand-holding-usd"></i>
                                 <p>Contabilidades</p>
                             </a>
@@ -145,34 +145,40 @@
 
                         
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#creditos">
+                            <a data-toggle="collapse" href="#sistema">
                             <i class="fas fa-cogs"></i>
-                                <p>Configuración</p>
+                                <p>Sistema</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="creditos">
+                            <div class="collapse" id="sistema">
                                 <ul class="nav nav-collapse">
-                                    
-                                    <li>
-                                        <a href="{{route('regimen.show','0312')}}">
-                                            <span class="sub-item">Regímenes</span>
-                                        </a>
-                                    </li>
-                                    
-                                    
-                                    <li>
+                             
+                                <li>
+                                <a href="{{route('periodo.show','0312')}}">
+                                    <span class="sub-item">Cuentas</span>
+                                </a>
+                                </li>
+
+                                <li>
                                         <a href="{{route('contribuyente.show','0312')}}">
                                             <span class="sub-item">Contribuyentes</span>
                                         </a>
-                                    </li>
+                                </li>
+                                
+                                <li>
+                                        <a href="{{route('regimen.show','0312')}}">
+                                            <span class="sub-item">Regímenes</span>
+                                        </a>
+                                </li>
                                     
-                                    
-                                    <li>
+                                <li>
                                         <a href="{{route('periodo.show','0312')}}">
                                             <span class="sub-item">Periodos</span>
                                         </a>
-                                    </li>
-                                    
+                                </li>
+                                 
+                             
+
                                 </ul>
                             </div>
                         </li>

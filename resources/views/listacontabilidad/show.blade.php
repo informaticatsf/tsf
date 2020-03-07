@@ -8,8 +8,8 @@
             <div class="card">
                 <div class="card-header">
                 
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('empresa.create',$contribuyente)}}">Crear empresa</a>
-                <h2 style="text-align: center; color: #1b4b72">Empresas</h2>
+                
+                <h2 style="text-align: center; color: #1b4b72">Contabilidades</h2>
 </div>
 
 <div class="card-body">
@@ -19,9 +19,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('empresa.show',[$contribuyente,'empresa'])}}">
+                                <form method="get"  action="{{route('lconta.show','busca')}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="empresa" name="empresa">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="busca" name="busca">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -36,20 +36,27 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
+<th>Sucursal</th>
 <th>Empresa</th>
-<th>Ver</th>
+<th>Contribuyente</th>
+<th>NIT</th>
+<th>Acciones</th>
 
 </tr>
 </thead>
 <tbody>
-@foreach ($empresas as $empresa)
+@foreach ($lcontabilidades as $lcontabilidad)
 <tr>
-<td>{{$empresa->id}}</td>
-<td>{{$empresa->nombre}}</td>
+<td>{{$lcontabilidad->id}}</td>
+<td>{{$lcontabilidad->sucursal}}</td>
+<td>{{$lcontabilidad->empresa}}</td>
+<td>{{$lcontabilidad->contribuyente}}</td>
+<td>{{$lcontabilidad->nit}}</td>
+
 <td width="10px" class="text-center">
-  <a href="{{route('sucursal.show', [$empresa->id, '0312'])}}"
+  <a href=""
      class="btn btn-sm btn-outline-dark">
-      Sucursales
+      Próximamente
   </a>
  </td>
 </tr>
