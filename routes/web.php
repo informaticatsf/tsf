@@ -12,40 +12,64 @@
 */
 
 Route::get('/', function () {
-    return view('home');
-})->name('home');
+    return view('welcome');
+});
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
+    Route::get('periodoc/create', 'PeriodoController@create')->name('periodo.create');
+    Route::post('periodo/store', 'PeriodoController@store')->name('periodo.store');
+
+    Route::get('regimenc/create', 'RegimenController@create')->name('regimen.create');
+    Route::post('regimen/store', 'RegimenController@store')->name('regimen.store');
+
+    Route::post('contribuyente/store', 'ContribuyenteController@store')->name('contribuyente.store');
+    Route::get('contribuyentec/create', 'ContribuyenteController@create')->name('contribuyente.create');
+
+    Route::get('empresa/create/{contribuyente}',  'EmpresaController@create')->name('empresa.create');
+    Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');    
+
+    Route::get('sucursal/create/{empresa}',  'SucursalController@create')->name('sucursal.create');
+    Route::post('sucursal/store', 'SucursalController@store')->name('sucursal.store');
+
+    Route::get('cuentacontable/create/', 'CuentacontableController@create')->name('cuentacontable.create');
+    Route::post('cuentacontable/store', 'CuentacontableController@store')->name('cuentacontable.store');
+});
+
+
+Route::group(['middleware'=>['permiso:crear-aux-conta']], function(){
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
-Route::get('periodoc/create', 'PeriodoController@create')->name('periodo.create');
-Route::post('periodo/store', 'PeriodoController@store')->name('periodo.store');
 Route::get('periodosget/{periodo}/{incicio}/{fin}','PeriodoController@setThisPeriod')->name('periodos.es');
 
 // +++++++++++++++++++++++ Regímenes ++++++++++++++++++++++++++++++++++++
 Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
-Route::get('regimenc/create', 'RegimenController@create')->name('regimen.create');
-Route::post('regimen/store', 'RegimenController@store')->name('regimen.store');
+
 
 // +++++++++++++++++++++++ Contribuyentes ++++++++++++++++++++++++++++++
 Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
-Route::get('contribuyentec/create', 'ContribuyenteController@create')->name('contribuyente.create');
-Route::post('contribuyente/store', 'ContribuyenteController@store')->name('contribuyente.store');
 Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
+
 
 // +++++++++++++++++++++++ Empresa +++++++++++++++++++++++++++++++++++
 Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@show')->name('empresa.show');
-Route::get('empresa/create/{contribuyente}',  'EmpresaController@create')->name('empresa.create');
-Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');
+
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
-Route::get('sucursal/create/{empresa}',  'SucursalController@create')->name('sucursal.create');
-Route::post('sucursal/store', 'SucursalController@store')->name('sucursal.store');
+
 
 // +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
+Route::get('lcontabilidades/{contabilidad}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
 
 // +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
 Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');
-Route::get('cuentacontable/create/', 'CuentacontableController@create')->name('cuentacontable.create');
-Route::post('cuentacontable/store', 'CuentacontableController@store')->name('cuentacontable.store');
+Route::get('cuentacontablecc/{id}/{cuenta}','CuentacontableController@setThisCountConta')->name('cuentacontable.es');
+});
+
+

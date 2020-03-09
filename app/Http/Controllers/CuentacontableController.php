@@ -85,4 +85,7 @@ class CuentacontableController extends Controller
     {
         //
     }
+    public function setThisCountConta($id, $name){
+        return Cuentacontable::setCuentaConta($id, $name);
+      }
 }

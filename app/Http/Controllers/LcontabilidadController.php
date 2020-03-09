@@ -82,4 +82,8 @@ class LcontabilidadController extends Controller
     {
         //
     }
+
+    public function setThisConta($contabilidad, $sucursal, $empresa, $contribuyente){
+        return Lcontabilidad::setContabilidad($contabilidad, $sucursal, $empresa, $contribuyente);
+      }
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <?php use App\Models\Periodo ?>
@@ -7,6 +8,7 @@
     <title>@yield('title')Textiles San Francisco</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="shortcut icon" href="{{ asset('images/ico.png') }} ">
 
     <!-- CSS Files -->
@@ -54,38 +56,58 @@
             <!-- End Logo Header -->
 
             <!-- Navbar Header -->
-            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
+        <nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
 
-                <div class="container-fluid">
+            <div class="container-fluid">
 
-                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 
-                        <li class="nav-item dropdown hidden-caret">
-                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-                                <div class="avatar-sm">
-                                    <img src="{{ asset('assets/img/user_icon.png') }}" alt="..." class="avatar-img rounded-circle">
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user animated fadeIn">
-                                <div class="dropdown-user-scroll scrollbar-outer">
-                                    <li>
-                                        <div class="user-box">
-                                            <div class="avatar-lg"><img src="{{ asset('assets/img/user_icon.png') }}" alt="image profile" class="avatar-img rounded"></div>
-                                            <div class="u-text">
-                                        
-                                            </div>
+                    <li class="nav-item dropdown hidden-caret">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <div class="avatar-sm">
+                                <img src="{{ asset('assets/img/user_icon.png') }}" alt="..."
+                                     class="avatar-img rounded-circle">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user animated fadeIn">
+                            <div class="dropdown-user-scroll scrollbar-outer">
+                                <li>
+                                    <div class="user-box">
+                                        <div class="avatar-lg"><img src="{{ asset('assets/img/user_icon.png') }}"
+                                                                    alt="image profile" class="avatar-img rounded">
                                         </div>
-                                    </li>
-                                    <li>
-                                        
-                                    </li>
-                                </div>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- End Navbar -->
+                                        @if(!Auth::guest())
+                                        <div class="u-text">
+                                            <h4>{{ Auth::user()->name }}</h4>
+                                            <p class="text-muted">{{ Auth::user()->email }}</p><a href="#"
+                                        class="btn btn-xs btn-primary btn-sm">Perfil</a>
+                                        </div>
+                                     @endif   
+                                    </div>
+                                </li>
+                                <li>
+                                @if(!Auth::guest())
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    @endif
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                               
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Navbar -->
         </div>
 
         <!-- Sidebar -->
@@ -98,33 +120,33 @@
                         </div>
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                                <span>
-                         
-                                </span>
+                            @if(!Auth::guest())
+                            <span>
+                            {{ Auth::user()->name }}
+                            <span class="user-level">{{ Auth::user()->roles[0]->name }}</span>
+                        </span>
+                        @endif
                             </a>
                         </div>
                     </div>
                     <ul class="nav nav-primary">
                     <li class="nav-item">
-                        <a href="">
-                                <i class="fas fa-home"></i>
-                                <p></p>
+                        <a href="{{ route('periodo.show','0312') }}">
+                        <i class="far fa-calendar-minus"></i>
+                                <p>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/') }}">
-                                <i class="fas fa-home"></i>
-                                <p>Inicio</p>
+                            <a href="{{ route('lconta.show','0312') }}">
+                            <i class="fas fa-columns"></i>
+                            
+                                <p>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</p>
                             </a>
                         </li>
-
-                        
-                       
-                        
                         <li class="nav-item">
-                            <a href="">
-                            <i class="fas fa-calendar-check"></i>
-                                <p>Periodo</p>
+                            <a href="{{ route('cuentacontable.show','0312') }}">
+                            <i class="fas fa-file-contract"></i>
+                                <p>{{session()->get('namecuentaconta')[0]}}</p>
                             </a>
                         </li>
 

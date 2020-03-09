@@ -7,8 +7,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                
+                @can('crear-sup-conta')
                 <a class="btn btn-sm btn-outline-primary float-right" href="{{route('periodo.create')}}">Crear Periodo</a>
+                @else
+                <h2 style="text-align: center; color: #1b4b72">Usted no puede crear periodos</h2>
+                @endcan
+
                 <h2 style="text-align: center; color: #1b4b72">Periodos</h2>
 </div>
 
@@ -38,6 +42,7 @@
 <th>ID</th>
 <th>Inicio</th>
 <th>Fin</th>
+<th>Acciones</th>
 </tr>
 </thead>
 <tbody>
@@ -46,6 +51,9 @@
 <td>{{$periodo->id}}</td>
 <td>{{date('d / m / Y', strtotime($periodo->inicio))}}</td>
 <td>{{date('d / m / Y', strtotime($periodo->fin))}}</td>
+<td width="10px" class="text-center">
+<a class="btn btn-sm btn-outline-dark" href="{{route('periodos.es',[$periodo->id,$periodo->inicio, $periodo->fin])}}">Seleccionar</a>
+</td>
 </tr>
 @endforeach
 </tbody>

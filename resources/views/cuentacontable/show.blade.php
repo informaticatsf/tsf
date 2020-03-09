@@ -51,11 +51,8 @@
 <td>{{$cuentacontable->impuesto}}</td>
 <td>{{$cuentacontable->tipocuenta}}</td>
 <td width="10px" class="text-center">
-  <a href=""
-     class="btn btn-sm btn-outline-dark">
-      Próximamente
-  </a>
- </td>
+<a class="btn btn-sm btn-outline-dark" href="{{route('cuentacontable.es',[$cuentacontable->id,$cuentacontable->nombre])}}">Seleccionar</a>
+</td>
 </tr>
 @endforeach
 </tbody>

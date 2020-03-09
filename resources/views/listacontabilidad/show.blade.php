@@ -54,11 +54,8 @@
 <td>{{$lcontabilidad->nit}}</td>
 
 <td width="10px" class="text-center">
-  <a href=""
-     class="btn btn-sm btn-outline-dark">
-      Próximamente
-  </a>
- </td>
+<a class="btn btn-sm btn-outline-dark" href="{{route('lconta.es',[$lcontabilidad->id,$lcontabilidad->sucursal, $lcontabilidad->empresa, $lcontabilidad->contribuyente])}}">Seleccionar</a>
+</td>
 </tr>
 @endforeach
 </tbody>

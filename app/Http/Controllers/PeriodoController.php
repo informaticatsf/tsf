@@ -82,4 +82,16 @@ class PeriodoController extends Controller
     {
         //
     }
+
+    public function getThisPeriod(){
+        $value = session('periodo');
+        $value1 = session('inicio');
+        $value2 = session('fin'); 
+         return  [$value, $value1, $value2];
+     }
+ 
+     public function setThisPeriod($periodo, $inicio, $fin){
+        return Periodo::setPeriodo($periodo, $inicio, $fin);
+      }
+
 }

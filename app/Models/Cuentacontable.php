@@ -40,4 +40,10 @@ class Cuentacontable extends Model
     return redirect()->route('cuentacontable.show', '0312')
     ->with('info','Cuenta contable creado existosamente');
  }
+ public static function setCuentaConta($id, $name){
+    session()->forget(['cuentaconta', 'namecuentaconta']);
+    session()->push('cuentaconta', $id);
+    session()->push('namecuentaconta', $name);
+    return redirect()->route('cuentacontable.show','0312');
+    }
 }
