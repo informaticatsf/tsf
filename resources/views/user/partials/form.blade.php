@@ -42,21 +42,66 @@
 
 </div>
 <hr>
- <h3>Lista de roles</h3>
+ <h3>Lista de roles asignados</h3>
  <div class="form-group">
      <ul class="list-unstyled">
          @foreach($roles as $role)
             <li>
                 <label>
-                    {{ Form::checkbox('roles[]', $role->id, null) }}
-                    {{ $role->name }}
-                    <em>({{ $role->description ?: 'N/A' }})</em>
+               
+                    {{ Form::checkbox('roles[]', $role->id, false) }}
+                    {{ $role->nombre }}                    
                 </label>
             </li>
          @endforeach
      </ul>
+     <h5>Al seleccionar y guardar quitará el rol de este usuario</h5>
+ </div>
+ <hr>
+ <h3>Lista de roles no asignados</h3>
+ <div class="form-group">
+     <ul class="list-unstyled">
+         @foreach($allroles as $allrole)
+            <li>
+                <label>
+                    {{ Form::checkbox('allroles[]', $allrole->id, null) }}
+                    {{ $allrole->nombre }}                    
+                </label>
+            </li>
+         @endforeach
+     </ul>
+     <h5>Al seleccionar y guardar otorgará el rol a este usuario</h5>
+ </div>
+ <hr>
+ <h3>Lista de permisos asignados</h3>
+ <div class="form-group">
+     <ul class="list-unstyled">
+         @foreach($permisos as $permiso)
+            <li>
+                <label>
+                    {{ Form::checkbox('permisos[]', $permiso->id, null) }}
+                    {{ $permiso->nombre }}                    
+                </label>
+            </li>
+         @endforeach
+     </ul>
+     <h5>Al seleccionar y guardar quitará el permiso de este usuario</h5>
+ </div>
+ <h3>Lista de permisos no asignados</h3>
+ <div class="form-group">
+     <ul class="list-unstyled">
+         @foreach($allpermisos as $allpermiso)
+            <li>
+                <label>
+                    {{ Form::checkbox('allpermisos[]', $allpermiso->id, null) }}
+                    {{ $allpermiso->nombre }}                    
+                </label>
+            </li>
+         @endforeach
+     </ul>
+     <h5>Al seleccionar y guardar otorgará el permiso a este usuario</h5>
  </div>
 <div class="form-group">
     {{ Form::submit('Guardar', ['class'=>'btn btn-lg btn-primary']) }}
-    <a class="btn btn-lg btn-danger float-right" href="{{ route('users.index') }}">Cancelar</a>
+    <a class="btn btn-lg btn-danger float-right" href="{{ route('users.index','0312') }}">Cancelar</a>
 </div>

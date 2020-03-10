@@ -20,9 +20,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="">
+                                <form method="get"  action="{{route('users.index','men')}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="" id="regimen" name="regimen">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="" id="men" name="men">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -42,6 +42,7 @@
                                             <th width="10px">ID</th>
                                             <th >Nombre</th>
                                             <th colspan="3" style="text-align: center">&nbsp;Correo</th>
+                                            <th colspan="3" style="text-align: center">&nbsp;Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,7 +51,7 @@
                                                  <td>{{ $men->id }}</td>
                                                  <td>{{ $men->name }}</td>
                                                  <td>{{ $men->email }}</td>
-                                                 @can('users.show')
+                                                 @canany (['permiso-progra','administracion'])
                                                  <td width="6px">
                                                       <a href="{{ route('users.show', $men->id) }}"
                                                          class="btn btn-sm btn-outline-success">
@@ -58,19 +59,19 @@
                                                       </a>
                                                  </td>
                                                  @endcan
-                                                 @can('users.edit')
+                                                 @canany (['permiso-progra','administracion'])
                                                  <td width="6px">
-                                                         <a href="{{ route('users.edit', $user->id) }}"
+                                                         <a href="{{ route('users.edit', $men->id) }}"
                                                             class="btn btn-sm btn-outline-info">
                                                              Editar
                                                          </a>
                                                  </td>
                                                  @endcan
-                                                 @can('users.destroy')
+                                                 @canany (['permiso-progra','administracion'])
                                                  <td width="6px">
-                                                     {!! Form::open([ 'route' => ['users.destroy', $user->id],
+                                                     {!! Form::open([ 'route' => ['users.destroy', $men->id],
                                                       'method'=>'DELETE']) !!}
-                                                         <button onclick="return confirm('Quieres borrar este Usuario?')" class="btn btn-outline-danger btn-sm" >
+                                                         <button onclick="return confirm('¿Quiere borrar este Usuario?')" class="btn btn-outline-danger btn-sm" >
                                                              Eliminar
                                                          </button>
                                                      {!! Form::close() !!}
