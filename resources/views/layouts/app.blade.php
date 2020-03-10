@@ -123,7 +123,7 @@
                             @if(!Auth::guest())
                             <span>
                             {{ Auth::user()->name }}
-                            <span class="user-level">{{ Auth::user()->roles[0]->name }}</span>
+                            
                         </span>
                         @endif
                             </a>
@@ -133,7 +133,11 @@
                     <li class="nav-item">
                         <a href="{{ route('periodo.show','0312') }}">
                         <i class="far fa-calendar-minus"></i>
-                                <p>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</p>
+                        
+                        
+                        <p>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</p>
+                        
+                                
                             </a>
                         </li>
                         <li class="nav-item">
@@ -209,7 +213,7 @@
 
 
 
-                        @canany (['users.index' ,'roles.index'])
+                        @canany (['permiso-progra','roles.index'])
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#usuarios">
                                 <i class="fas fa-users"></i>
@@ -218,9 +222,9 @@
                             </a>
                             <div class="collapse" id="usuarios">
                                 <ul class="nav nav-collapse">
-                                    @can('users.index')
+                                    @can('permiso-progra')
                                     <li>
-                                        <a href="{{ route('users.index') }}">
+                                        <a href="{{ route('users.index', '0312') }}">
                                             <span class="sub-item">Usuarios</span>
                                         </a>
                                     </li>

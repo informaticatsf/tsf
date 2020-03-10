@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -37,7 +40,15 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
+        $this->middleware('rolx:desarrollador');
+    }
+
+    public function register(Request $request){
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        return redirect()->route('users.index')
+        ->with('info', 'Usuario guardado con exito');
     }
 
     /**
@@ -52,9 +63,25 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'dpi' => ['required', 'string', 'min:15', 'unique:persona'],
+            //'nombre' =>['required', 'string', 'max:100'],
+            'apellido' => ['required', 'string', 'max:100'],
+            'sexo' => ['required', 'string', 'max:10'],
+            'fechanac' => ['required', 'date'],
+            'direccion' =>['required', 'string', 'max:255'],
         ]);
     }
-
+    public function personacrear(array $datos){
+        $datos=DB::select('call crearpersona(?,?,?,?,?,?,?)', 
+       [$datos['iduser'],
+        $datos['name'],
+        $datos['apellido'],
+        $datos['dpi'],
+        $datos['sexo'],
+        $datos['fechanac'],
+        $datos['direccion']]);
+        return $datos[0]->id;
+    }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,10 +90,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $idpersona = $this->personacrear($data);
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'persona'  => $idpersona,
+            'email'    => $data['email'],
             'password' => Hash::make($data['password']),
+            'estado' => 1,
         ]);
     }
 }

@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
     Route::get('periodoc/create', 'PeriodoController@create')->name('periodo.create');
     Route::post('periodo/store', 'PeriodoController@store')->name('periodo.store');
@@ -73,3 +74,12 @@ Route::get('cuentacontablecc/{id}/{cuenta}','CuentacontableController@setThisCou
 });
 
 
+Route::group(['middleware'=>['rolx:desarrollador']], function(){
+//users **************************************************************************
+Route::get('userss/{id}', 'UserController@index')->name('users.index');
+Route::put('users/{user}', 'UserController@update')->name('users.update');
+Route::get('users/{user}', 'UserController@show')->name('users.show');
+Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); 
+});
