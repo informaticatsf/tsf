@@ -41,6 +41,14 @@ class CuentacontableController extends Controller
         return Cuentacontable::guardarCuentaContable($request);
     }
 
+
+    public function storei(Request $request)
+    {
+        
+
+        return Cuentacontable::guardarCuentaContablei($request);
+    }
+
     /**
      * Display the specified resource.
      *

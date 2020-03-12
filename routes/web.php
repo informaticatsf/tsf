@@ -39,6 +39,7 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
 
     Route::get('cuentacontable/create/', 'CuentacontableController@create')->name('cuentacontable.create');
     Route::post('cuentacontable/store', 'CuentacontableController@store')->name('cuentacontable.store');
+    Route::post('cuentacontabler/storer', 'CuentacontableController@storei')->name('rowcreacuenta.storer');
 });
 
 
@@ -74,7 +75,7 @@ Route::get('cuentacontablecc/{id}/{cuenta}','CuentacontableController@setThisCou
 });
 
 
-//Route::group(['middleware'=>['rolx:desarrollador']], function(){
+Route::group(['middleware'=>['rolx:desarrollador']], function(){
 //users **************************************************************************
 Route::get('userss/{id}', 'UserController@index')->name('users.index');
 Route::post('usersu/{user}', 'UserController@update')->name('users.update');
@@ -82,4 +83,4 @@ Route::get('usersw/{user}', 'UserController@show')->name('users.show');
 Route::delete('usersd/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); 
-//});
+});

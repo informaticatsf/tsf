@@ -8,6 +8,16 @@
     <title>@yield('title')Textiles San Francisco</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    
+    
+    
+    
+
+
+
+
+
 
     <link rel="shortcut icon" href="{{ asset('images/ico.png') }} ">
 
@@ -269,6 +279,13 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+                <div class="container-fluid">
+                    <div class="copyright ml-auto">
+                    Textiles San Francisco <i class="far fa-copyright"></i> {{date('Y')}}
+                    </div>
+                </div>
+            </footer>
         <!-- End Sidebar -->
 
         <div class="main-panel">
@@ -288,13 +305,7 @@
                 @yield('contenido')
 
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="copyright ml-auto">
-                    Textiles San Francisco <i class="far fa-copyright"></i> {{date('Y')}}
-                    </div>
-                </div>
-            </footer>
+            
         </div>
 
     </div>

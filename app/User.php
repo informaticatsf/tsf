@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -51,4 +52,9 @@ class User extends Authenticatable
             return view('user.index', compact('menes', 'query'));
             }
   }
+
+  public function sendPasswordResetNotification($token)
+{
+    $this->notify(new ResetPasswordNotification($token));
+}
 }
