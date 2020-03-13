@@ -28,6 +28,9 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
     Route::get('regimenc/create', 'RegimenController@create')->name('regimen.create');
     Route::post('regimen/store', 'RegimenController@store')->name('regimen.store');
 
+    Route::get('tipocuentacc/create', 'TipocuentacontableController@create')->name('tipocuentacontable.create');
+    Route::post('tipocuentacg/store', 'TipocuentacontableController@store')->name('tipocuentacontable.store');
+
     Route::post('contribuyente/store', 'ContribuyenteController@store')->name('contribuyente.store');
     Route::get('contribuyentec/create', 'ContribuyenteController@create')->name('contribuyente.create');
 
@@ -51,8 +54,11 @@ Route::get('periodosget/{periodo}/{incicio}/{fin}','PeriodoController@setThisPer
 // +++++++++++++++++++++++ Regímenes ++++++++++++++++++++++++++++++++++++
 Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
 
+// +++++++++++++++++++++++ Tipo Cuenta contable +++++++++++++++++++++++++
+Route::get('tipcuentacs/{busca}','TipocuentacontableController@show')->name('tipocuentacontable.show');
 
-// +++++++++++++++++++++++ Contribuyentes ++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
 Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
 Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
 

@@ -67,9 +67,8 @@
 <td width="10px">{{$cuentacontable->id}}</td>
 <td width="350px" class="text-center">
 <a class="btn btn-sm btn-outline-primary" href="{{route('cuentacontable.es',[$cuentacontable->id,$cuentacontable->nombre])}}">Elegir</a>
-<a class="btn btn-sm btn-outline-success" id="masfilas" onclick="agregaFila({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}')">Agregar</a>
-<a class="btn btn-sm btn-outline-warning" id="masfilas" onclick="agregaFilaii({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}','{{$cuentacontable->numero}}')">Modificar</a>
-<a class="btn btn-sm btn-outline-danger" id="masfilas" onclick="agregaFila({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}')">Borrar</a>
+<a class="btn btn-sm btn-outline-success" id="masfilas" onclick="agregaFila({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}','1')">Insertar</a>
+<a class="btn btn-sm btn-outline-warning" id="masfilas" onclick="agregaFilaii({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}','{{$cuentacontable->numero}}','{{$cuentacontable->id}}','2','{{$cuentacontable->nombre}}')">Modificar</a>
 </td>
 </tr>
 <input type="text" readonly hidden="hidden" value="{{$i++}}">
@@ -99,26 +98,27 @@ $(document).ready(function(){
     });
 });
 
-function agregaFila(pos, txt1, txt2, txt3, txt4)    {
+function agregaFila(pos, txt1, txt2, txt3, txt4, txt5)    {
     var miTabla = document.getElementById("mytbody");
     var fila = document.createElement("tr");
     var celda1 = document.createElement("td",{name:"tipo"});
     var celda2 = document.createElement("td",{name:"cuenta"});
-    var celda3 = document.createElement("td");
+    var celda3 = document.createElement("td",{width:"50"});
     var celda4 = document.createElement("td",{name:"nombre"});
     var celda5 = document.createElement("td",{name:"impuesto"});
     var celda6 = document.createElement("td");
-    var celda7 = document.createElement("td");
+    var celda7 = document.createElement("td",{name:"opcion"});
     var celda8 = document.createElement("td");
-    const boton = "<button type='submit' class='btn btn-success'>Guardar</button>";
+    const boton = "<button type='submit' class='btn btn-success'>Guardar</button>"+"<a href='{{route('cuentacontable.show','0312')}}' class='btn btn-danger'>Cancelar</a>";
     
    
 
-    celda1.innerHTML ="<input id='tipo' name='tipo' readonly value='"+txt1+"'>";
-    celda2.innerHTML = "<input style='background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
+    celda1.innerHTML ="<input style='width : 30px; heigth : 1px' id='tipo' name='tipo' readonly value='"+txt1+"'>";
+    celda2.innerHTML = "<input style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
     celda4.innerHTML = "<input style='background-color:#FCBD85' id='nombre' name='nombre' placeholder='Nombre de la cuenta' contenteditable></input>";
-    celda5.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
-    celda6.innerHTML = "<div>"+txt4+"</div>";
+    celda5.innerHTML = "<div>"+txt4+"</div>";
+    celda6.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
+    celda7.innerHTML = "<input id='id' name='id' readonly hidden='hidden'>"+"<input id='opcion' name='opcion' readonly value='"+txt5+"' hidden='hidden'>";
     celda8.innerHTML = boton;
     
     
@@ -141,7 +141,7 @@ function agregaFila(pos, txt1, txt2, txt3, txt4)    {
     }
 }
 
-function agregaFilaii(pos, txt1, txt2, txt3, txt4, txt5)    {
+function agregaFilaii(pos, txt1, txt2, txt3, txt4, txt5, txt6, txt7,txt8)    {
     var miTabla = document.getElementById("mytbody");
     var fila = document.createElement("tr");
     var celda1 = document.createElement("td",{name:"tipo"});
@@ -150,19 +150,19 @@ function agregaFilaii(pos, txt1, txt2, txt3, txt4, txt5)    {
     var celda4 = document.createElement("td",{name:"nombre"});
     var celda5 = document.createElement("td",{name:"impuesto"});
     var celda6 = document.createElement("td");
-    var celda7 = document.createElement("td");
+    var celda7 = document.createElement("td",{name:"opcion"});
     var celda8 = document.createElement("td");
-    const boton = "<button type='submit' class='btn btn-success'>Guardar</button>"+"<a href='{{route('cuentacontable.show','0312
-    ')}}' class='btn btn-danger'>Cancelar</a>";
+    const boton = "<button type='submit' class='btn btn-success'>Guardar</button>"+"<a href='{{route('cuentacontable.show','0312')}}' class='btn btn-danger'>Cancelar</a>";
     
    
 
-    celda1.innerHTML ="<input id='tipo' name='tipo' readonly value='"+txt1+"'>";
-    celda2.innerHTML = "<input style='background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
+    celda1.innerHTML ="<input style='width : 30px; heigth : 1px' id='tipo' name='tipo' readonly value='"+txt1+"'>";
+    celda2.innerHTML = "<input style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
     celda3.innerHTML = "<input readonly  value='"+txt5+"'>";
-    celda4.innerHTML = "<input style='background-color:#FCBD85' id='nombre' name='nombre' placeholder='Nombre de la cuenta' contenteditable></input>";
-    celda5.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
-    celda6.innerHTML = "<div>"+txt4+"</div>";
+    celda4.innerHTML = "<input style='background-color:#FCBD85' id='nombre' name='nombre' contenteditable value='"+txt8+"'></input>";
+    celda6.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
+    celda5.innerHTML = "<div>"+txt4+"</div>";
+    celda7.innerHTML = "<input id='id' name='id' readonly value='"+txt6+"' hidden='hidden'>"+"<input id='opcion' name='opcion' readonly value='"+txt7+"' hidden='hidden'>";
     celda8.innerHTML = boton;
     
     
@@ -184,5 +184,4 @@ function agregaFilaii(pos, txt1, txt2, txt3, txt4, txt5)    {
         miTabla.appendChild(fila);
     }
 }
-
 </script>

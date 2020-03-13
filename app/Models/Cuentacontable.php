@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Response;
 use Validator;
+use Auth;
+
 
 class Cuentacontable extends Model
 {
@@ -39,26 +41,30 @@ class Cuentacontable extends Model
      $request->get("impuesto"),
      ));
  
-    return redirect()->route('cuentacontable.show', '0312')
-    ->with('info','Cuenta contable creado existosamente');
+    return redirect()->route('cuentacontable.create')
+    ->with('info','Cuenta contable creada existosamente');
  }
 
  public static function guardarCuentaContablei($request){
     
-    
+    $respuesta = null;
     $rules = [
         
         'tipo' => 'required',
         'numero'=> 'required',
         'nombre' => 'required',
         'impuesto' => 'required',
+        'opcion' => 'required',
     ];
  
     $validator=Validator::make($request->all(), $rules);
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaRowCuenta(?,?,?,?)',array(
+    if($request->get('opcion')==1) 
+    {
+     DB::select('call CreaRowCuenta(?,?,?,?,?)',array(
+     Auth::user()->id,
      $request->get("tipo"),
      $request->get("numero"),
      $request->get("nombre"),
@@ -67,6 +73,36 @@ class Cuentacontable extends Model
  
     return redirect()->route('cuentacontable.show','0312')
     ->with('info','Cuenta contable creada existosamente');
+}
+
+    if($request->get('opcion')==2) 
+    {$respuesta=DB::select('call UpRowCuenta(?,?,?,?,?,?)',array(
+     Auth::user()->id,   
+     $request->get("tipo"),
+     $request->get("numero"),
+     $request->get("nombre"),
+     $request->get("impuesto"),
+     $request->get("id"),
+     ));
+     
+    if($respuesta[0]->pRespuesta==1){
+    return redirect()->route('cuentacontable.show','0312')
+    ->with('info','Por favor utilice el boton crear cuenta');
+        }
+        if($respuesta[0]->pRespuesta==0){
+            return redirect()->route('cuentacontable.show','0312')
+            ->with('info','Cuenta modificada exitosamente');
+                }
+    }
+
+    if($request->get('opcion')==3) 
+    {DB::select('call DelRowCuenta(?)',array(
+          $request->get("id"),
+     ));
+ 
+    return redirect()->route('cuentacontable.show','0312')
+    ->with('info','Cuenta contable borrada existosamente');}
+
  }
 
 
@@ -80,7 +116,7 @@ class Cuentacontable extends Model
      ));
  
     return redirect()->route('cuentacontable.show', '0312')
-    ->with('info','Cuenta contable creado existosamente');
+    ->with('info','Cuenta contable creada existosamente');
  }
 
  public static function setCuentaConta($id, $name){

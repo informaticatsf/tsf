@@ -202,16 +202,26 @@
                                 </li>
                                 
                                 <li>
+                                <a href="{{route('periodo.show','0312')}}">
+                                    <span class="sub-item">Periodos</span>
+                                </a>
+                                </li>
+
+                                <li>
                                         <a href="{{route('regimen.show','0312')}}">
                                             <span class="sub-item">Regímenes</span>
                                         </a>
                                 </li>
-                                    
+
                                 <li>
-                                        <a href="{{route('periodo.show','0312')}}">
-                                            <span class="sub-item">Periodos</span>
+                                        <a href="{{route('tipocuentacontable.show','0312')}}">
+                                            <span class="sub-item">Tipos de Cuentas</span>
                                         </a>
                                 </li>
+
+                                
+                                    
+                                
                                  
                              
 
