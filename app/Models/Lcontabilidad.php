@@ -24,4 +24,15 @@ class Lcontabilidad extends Model
           session()->push('nombreconta', [$serie,$sucursal,$empresa,$contribuyente]);
           return redirect()->route('lconta.show','0312');
           }
+
+          public static function setFechaContabilidad($fecha){
+              dd($fecha);
+            session()->forget(['fecha']);
+            session()->forget(['fechabd']);
+            session()->push('fecha', date('d-m-Y', strtotime($fecha)));
+            session()->push('fechabd', date('Y-m-d', strtotime($fecha)));
+            return redirect()->back()->with('info','Cambio de fecha');
+            }
+
+            
 }

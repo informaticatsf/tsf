@@ -10,12 +10,15 @@
                 @canany (['permiso-progra','crear-sup-conta'])
                 <a class="btn btn-sm btn-outline-primary float-right" href="">Crear serie de documento</a>
                 @endcanany
+        
          <div class="form-group row">
             <label class="control-label col-lg-3 col-md-4 col-sm-12"
             for="fecha">Fecha</label>
+            <label class="control-label col-lg-3 col-md-4 col-sm-12"
+            for="fecha">{{session()->get('fecha')[0]}}</label>
             <div class="col-lg-9 col-md-8 col-sm-12">
-              <input type="text" id="fecha" name="fecha" 
-              class="form-control" value="{{ date("d/m/Y") }}">
+              <input type="date" id="fecha" name="fecha" 
+              class="form-control" value="{{session()->get('fecha')[0]}}">
             </div>
           </div>                           
                               
@@ -29,9 +32,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('seriedoc.show',[$sucursal,'seriedoc'])}}">
+                                <form method="get"  action="">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="seriedoc" name="seriedoc">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="" id="seriedoc" name="seriedoc">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -53,15 +56,15 @@
 </tr>
 </thead>
 <tbody>
-@foreach ($documentos as $documento)
+
 <tr>
-<td>{{$documento->id}}</td>
-<td>{{$documento->tipodoc}}</td>
-<td>{{$documento->nombre}}</td>
-<td>{{date('d / m / Y', strtotime($documento->finicio))}}</td>
-<td>{{date('d / m / Y', strtotime($documento->ffin))}}</td>
+<td>c1</td>
+<td>c2</td>
+<td>c3</td>
+<td>c4</td>
+<td>c5</td>
 </tr>
-@endforeach
+
 </tbody>
 
 </table>
@@ -74,4 +77,19 @@
 </div>
 </div>
 </div>
+<script>
+$(document).ready(function(){
+    
+  //  document.getElementById("fecha").value = "{{}}";
+
+	$("#fecha").change(function(){
+        var Ffecha = document.getElementById("fecha").value;
+        alert(Ffecha);
+        document.location.href="{!! route('thefecha.es',"Ffecha") !!}";
+        
+
+        
+});
+});
+</script>
 @stop

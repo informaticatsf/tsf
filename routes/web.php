@@ -95,6 +95,10 @@ Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show'
 // +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
 Route::get('lcontabilidades/{contabilidad}/{serie}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
+Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
+
+// +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++
+Route::get('venta/create', 'VentaController@create')->name('venta.create');
 
 // +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
 Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');
