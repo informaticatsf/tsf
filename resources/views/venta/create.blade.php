@@ -8,10 +8,18 @@
             <div class="card">
                 <div class="card-header">
                 @canany (['permiso-progra','crear-sup-conta'])
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('periodo.create')}}">Crear Periodo</a>
+                <a class="btn btn-sm btn-outline-primary float-right" href="">Crear serie de documento</a>
                 @endcanany
-
-                <h2 style="text-align: center; color: #1b4b72">Periodos</h2>
+         <div class="form-group row">
+            <label class="control-label col-lg-3 col-md-4 col-sm-12"
+            for="fecha">Fecha</label>
+            <div class="col-lg-9 col-md-8 col-sm-12">
+              <input type="text" id="fecha" name="fecha" 
+              class="form-control" value="{{ date("d/m/Y") }}">
+            </div>
+          </div>                           
+                              
+                <h2 style="text-align: center; color: #1b4b72">Ventas</h2>
 </div>
 
 <div class="card-body">
@@ -21,9 +29,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('periodo.show','periodo')}}">
+                                <form method="get"  action="{{route('seriedoc.show',[$sucursal,'seriedoc'])}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="periodo" name="periodo">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="seriedoc" name="seriedoc">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -38,20 +46,20 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
+<th>Tipo documento</th>
+<th>Serie documento</th>
 <th>Inicio</th>
-<th>Fin</th>
-<th>Acciones</th>
+<th>Vencimiento</th>
 </tr>
 </thead>
 <tbody>
-@foreach ($periodos as $periodo)
+@foreach ($documentos as $documento)
 <tr>
-<td>{{$periodo->id}}</td>
-<td>{{date('d / m / Y', strtotime($periodo->inicio))}}</td>
-<td>{{date('d / m / Y', strtotime($periodo->fin))}}</td>
-<td width="10px" class="text-center">
-<a class="btn btn-sm btn-outline-dark" href="{{route('periodos.es',[$periodo->id,$periodo->inicio, $periodo->fin])}}">Seleccionar</a>
-</td>
+<td>{{$documento->id}}</td>
+<td>{{$documento->tipodoc}}</td>
+<td>{{$documento->nombre}}</td>
+<td>{{date('d / m / Y', strtotime($documento->finicio))}}</td>
+<td>{{date('d / m / Y', strtotime($documento->ffin))}}</td>
 </tr>
 @endforeach
 </tbody>

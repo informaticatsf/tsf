@@ -5,11 +5,11 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header" style="background-color: rgb(70, 126, 187);">
-                      <a class="btn btn-sm btn-warning float-right" href="{{ route('tipocuentacontable.show', '0312') }}">Regresar</a>
-                      <h2 style="text-align: center; color: #fff; font-size: 20px"; >Tipo Cuenta Contable</h2>
+                      <a class="btn btn-sm btn-warning float-right" href="{{ route('tipodoc.show', '0312') }}">Regresar</a>
+                      <h2 style="text-align: center; color: #fff; font-size: 20px"; >Crear nuevo tipo de venta</h2>
                     </div>
                     <div class="card-body" style="background-color: #d1f4ff;">
-                        {!! Form::open(['route' => ['tipocuentacontable.store']]) !!}
+                        {!! Form::open(['route' => ['tipoentrada.store']]) !!}
 
                         <div class="row">
                             <div class="form-group col-lg-8 row">
@@ -23,7 +23,7 @@
                         <div class="form-group ">
                         <div class="form-group text-center">
                                 {{ Form::submit('Guardar', ['class'=>'btn btn-lg btn-success']) }}
-                                <a class="btn btn-md btn-danger float-right" href="{{ route('tipocuentacontable.show','0312') }}">Cancelar</a>
+                                <a class="btn btn-md btn-danger float-right" href="{{ route('tipodoc.show','0312') }}">Cancelar</a>
                             </div>
                         {!! Form::close() !!}
                     </div>

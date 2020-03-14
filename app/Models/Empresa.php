@@ -6,6 +6,7 @@ use App\Models\Contribuyente;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Auth;
 
 class Empresa extends Model
 {
@@ -33,7 +34,8 @@ class Empresa extends Model
            
             return response()->json($validator->errors(), 400);
         }
-        DB::select('call creaEmpresa(?,?,?)',array(
+        DB::select('call creaEmpresa(?,?,?,?)',array(
+            Auth::user()->id,
             $request->get("pcontri"),
             $request->get("nombre"),
             date('Y-m-d', strtotime($request->get("fechacrea"))),

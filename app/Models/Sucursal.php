@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Auth;
+
 class Sucursal extends Model
 {
     public static function listadoSucursal($empresa, $sucursal) {
@@ -32,7 +34,8 @@ class Sucursal extends Model
            
             return response()->json($validator->errors(), 400);
         }
-        DB::select('call creaSucursal(?,?,?,?)',array(
+        DB::select('call creaSucursal(?,?,?,?,?)',array(
+            Auth::user()->id,
             $request->get("pempre"),
             $request->get("nombre"),
             $request->get("direccion"),

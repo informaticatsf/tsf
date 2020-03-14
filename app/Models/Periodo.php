@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Auth;
+
 class Periodo extends Model
 {
     public static function listadoPeriodo($periodo) {
@@ -30,7 +32,8 @@ class Periodo extends Model
    if($validator->fails()){
        //return response()->json($validator->errors(), 400);
    }
-   DB::select('call CreaPeriodo(?,?)',array(
+   DB::select('call CreaPeriodo(?,?,?)',array(
+    Auth::user()->id,   
     date('Y-m-d', strtotime($request->get("inicio"))),
     date('Y-m-d', strtotime($request->get("fin"))),
    ));

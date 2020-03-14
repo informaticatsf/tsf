@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator; 
-
+use Auth;
 class Regimen extends Model
 {
     public static function listadoRegimen($regimen) {
@@ -30,7 +30,8 @@ class Regimen extends Model
     if($validator->fails()){
         //return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaRegimen(?)',array(
+    DB::select('call CreaRegimen(?,?)',array(
+        Auth::user()->id,
         $request->get("regimen"), 
     ));
 

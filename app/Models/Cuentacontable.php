@@ -35,7 +35,8 @@ class Cuentacontable extends Model
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaCuentaContable(?,?,?)',array(
+    DB::select('call CreaCuentaContable(?,?,?,?)',array(
+     Auth::user()->id,
      $request->get("nombre"),
      $request->get("tipo"),
      $request->get("impuesto"),

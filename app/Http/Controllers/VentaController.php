@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regimen;
+use App\Venta;
 use Illuminate\Http\Request;
 
-class RegimenController extends Controller
+class VentaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index()
     {
         //
     }
@@ -24,7 +24,7 @@ class RegimenController extends Controller
      */
     public function create()
     {
-        return  view('regimen.create'); 
+        //
     }
 
     /**
@@ -35,28 +35,27 @@ class RegimenController extends Controller
      */
     public function store(Request $request)
     {
-        return Regimen::guardarRegimen($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function show($regimen)
+    public function show(Venta $venta)
     {
-        
-        return Regimen::listadoRegimen($regimen);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regimen $regimen)
+    public function edit(Venta $venta)
     {
         //
     }
@@ -65,10 +64,10 @@ class RegimenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Regimen $regimen)
+    public function update(Request $request, Venta $venta)
     {
         //
     }
@@ -76,10 +75,10 @@ class RegimenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Venta  $venta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Regimen $regimen)
+    public function destroy(Venta $venta)
     {
         //
     }

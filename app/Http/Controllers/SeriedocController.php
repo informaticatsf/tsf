@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regimen;
+use App\Models\Seriedoc;
+use App\Models\Contribuyente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class RegimenController extends Controller
+class SeriedocController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index()
     {
         //
     }
@@ -22,9 +24,11 @@ class RegimenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($sucursal)
     {
-        return  view('regimen.create'); 
+        $tipodocs = DB::table('VerTipoDoc')->get();
+        $datas=Contribuyente::DatosPerEmpreSucSer($sucursal); 
+        return  view('seriedoc.create',['sucursarl'=> $sucursal, 'datos'=>$datas, 'tipodocs'=>$tipodocs]);
     }
 
     /**
@@ -35,28 +39,27 @@ class RegimenController extends Controller
      */
     public function store(Request $request)
     {
-        return Regimen::guardarRegimen($request);
+        return Seriedoc::guardarSerieDoc($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Seriedoc  $seriedoc
      * @return \Illuminate\Http\Response
      */
-    public function show($regimen)
+    public function show($sucursal, $seriedoc)
     {
-        
-        return Regimen::listadoRegimen($regimen);
+        return Seriedoc::listadoSerieDoc($sucursal, $seriedoc);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Seriedoc  $seriedoc
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regimen $regimen)
+    public function edit(Seriedoc $seriedoc)
     {
         //
     }
@@ -65,10 +68,10 @@ class RegimenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Seriedoc  $seriedoc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Regimen $regimen)
+    public function update(Request $request, Seriedoc $seriedoc)
     {
         //
     }
@@ -76,10 +79,10 @@ class RegimenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Seriedoc  $seriedoc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Regimen $regimen)
+    public function destroy(Seriedoc $seriedoc)
     {
         //
     }

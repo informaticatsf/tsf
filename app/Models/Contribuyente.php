@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Auth;
 
 class Contribuyente extends Model
 {
@@ -26,14 +27,15 @@ class Contribuyente extends Model
        'nombre' => 'required',
        'apellido' => 'required',
        'regimen' => 'required',
-       'nit' => 'required',
+       'nit' => 'required', 
    ];
 
    $validator=Validator::make($request->all(), $rules);
    if($validator->fails()){
        return response()->json($validator->errors(), 400);
    }
-   DB::select('call CreaContri(?,?,?,?,?,?)',array(
+   DB::select('call CreaContri(?,?,?,?,?,?,?)',array(
+    Auth::user()->id,
     $request->get("nombre"),
     $request->get("apellido"),
     $request->get("direccion"),
@@ -53,6 +55,12 @@ public static function mostrarRegimen(){
 public static function DatosPersonales ($contribuyente) {
         
     return  DB::select('call VerContriDatos(?)',array($contribuyente));
+    
+}
+
+public static function DatosPerEmpreSucSer ($sucursal) {
+        
+    return  DB::select('call VerEmpreSucSer(?)',array($sucursal));
     
 }
 

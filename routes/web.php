@@ -31,11 +31,23 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
     Route::get('tipocuentacc/create', 'TipocuentacontableController@create')->name('tipocuentacontable.create');
     Route::post('tipocuentacg/store', 'TipocuentacontableController@store')->name('tipocuentacontable.store');
 
+    Route::get('tipoentradac/create', 'TipoentradaController@create')->name('tipoentrada.create');
+    Route::post('tipoentradacg/store', 'TipoentradaController@store')->name('tipoentrada.store');
+
+    Route::get('tipodocc/create', 'TipodocumentoController@create')->name('tipodoc.create');
+    Route::post('tipodocs/store', 'TipodocumentoController@store')->name('tipodoc.store');
+
     Route::post('contribuyente/store', 'ContribuyenteController@store')->name('contribuyente.store');
     Route::get('contribuyentec/create', 'ContribuyenteController@create')->name('contribuyente.create');
 
+    Route::post('seriedocs/store', 'SeriedocController@store')->name('seriedoc.store');
+    Route::get('seriedocc/create/{contribuyente}', 'SeriedocController@create')->name('seriedoc.create');
+
     Route::get('empresa/create/{contribuyente}',  'EmpresaController@create')->name('empresa.create');
     Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');    
+
+    Route::get('seriedoc/create/{contribuyente}',  'SeriedocController@create')->name('seriedoc.create');
+    Route::post('seriedoc/store', 'SeriedocController@store')->name('seriedoc.store'); 
 
     Route::get('sucursal/create/{empresa}',  'SucursalController@create')->name('sucursal.create');
     Route::post('sucursal/store', 'SucursalController@store')->name('sucursal.store');
@@ -57,15 +69,24 @@ Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
 // +++++++++++++++++++++++ Tipo Cuenta contable +++++++++++++++++++++++++
 Route::get('tipcuentacs/{busca}','TipocuentacontableController@show')->name('tipocuentacontable.show');
 
+// +++++++++++++++++++++++ Tipo Documento +++++++++++++++++++++++++
+Route::get('tipodocw/{busca}','TipodocumentoController@show')->name('tipodoc.show');
+
+// +++++++++++++++++++++++ Tipo Entrada +++++++++++++++++++++++++
+Route::get('tipoentradaw/{busca}','TipoentradaController@show')->name('tipoentrada.show');
 
 // +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
 Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
 Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
 
+// +++++++++++++++++++++++ Serie de documentos +++++++++++++++++++++++++++++++
+Route::get('seriedocb/{contribuyente}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 
 // +++++++++++++++++++++++ Empresa +++++++++++++++++++++++++++++++++++
 Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@show')->name('empresa.show');
 
+// +++++++++++++++++++++++ Serie documento +++++++++++++++++++++++++++++++++++
+Route::get('seriedocw/{contribuyente}/serie/{serie?}', 'SeriedocController@show')->name('seriedoc.show');
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
@@ -73,7 +94,7 @@ Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show'
 
 // +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
-Route::get('lcontabilidades/{contabilidad}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
+Route::get('lcontabilidades/{contabilidad}/{serie}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
 
 // +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
 Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');

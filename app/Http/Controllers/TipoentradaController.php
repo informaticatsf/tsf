@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regimen;
+use App\Models\Tipoentrada;
 use Illuminate\Http\Request;
 
-class RegimenController extends Controller
+class TipoentradaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -24,7 +24,7 @@ class RegimenController extends Controller
      */
     public function create()
     {
-        return  view('regimen.create'); 
+        return  view('tipoentrada.create');
     }
 
     /**
@@ -35,28 +35,27 @@ class RegimenController extends Controller
      */
     public function store(Request $request)
     {
-        return Regimen::guardarRegimen($request);
+        return Tipoentrada::guardarTipoEntrada($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Tipoentrada  $tipoentrada
      * @return \Illuminate\Http\Response
      */
-    public function show($regimen)
+    public function show($tipoentrada)
     {
-        
-        return Regimen::listadoRegimen($regimen);
+        return Tipoentrada::listadoTipoEntrada($tipoentrada);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Tipoentrada  $tipoentrada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Regimen $regimen)
+    public function edit(Tipoentrada $tipoentrada)
     {
         //
     }
@@ -65,10 +64,10 @@ class RegimenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Tipoentrada  $tipoentrada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Regimen $regimen)
+    public function update(Request $request, Tipoentrada $tipoentrada)
     {
         //
     }
@@ -76,10 +75,10 @@ class RegimenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Regimen  $regimen
+     * @param  \App\Tipoentrada  $tipoentrada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Regimen $regimen)
+    public function destroy(Tipoentrada $tipoentrada)
     {
         //
     }

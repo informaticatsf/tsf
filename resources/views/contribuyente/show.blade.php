@@ -7,8 +7,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                
+                @canany (['permiso-progra','crear-sup-conta'])
                 <a class="btn btn-sm btn-outline-primary float-right" href="{{route('contribuyente.create')}}">Crear Contribuyente</a>
+                @endcanany
                 <h2 style="text-align: center; color: #1b4b72">Contribuyentes</h2>
 </div>
 
@@ -35,9 +36,9 @@
 <table class="table table-bordered table-head-bg-info">
 <thead>
 <tr style="text-align: center">
-<th>ID</th>
+<th width="10px">ID</th>
 <th>Contribuyente</th>
-<th>NIT</th>
+<th width="10px">NIT</th>
 <th>Régimen</th>
 <th>Acciones</th>
 </tr>
@@ -45,15 +46,15 @@
 <tbody>
 @foreach ($contribuyentes as $contribuyente)
 <tr>
-<td>{{$contribuyente->id}}</td>
+<td width="10px">{{$contribuyente->id}}</td>
 <td>{{$contribuyente->nombre}}</td>
-<td>{{$contribuyente->nit}}</td>
+<td width="10px">{{$contribuyente->nit}}</td>
 <td>{{$contribuyente->regimen}}</td>
-<td width="10px" class="text-center">
+<td width="200px" class="text-center">
   <a href="{{ route('empresa.show',[$contribuyente->id,'0312'])}}"
      class="btn btn-sm btn-outline-dark">
-      Ver empresas
-  </a>
+      Empresas
+  </a>  
  </td>
 </tr>
 @endforeach

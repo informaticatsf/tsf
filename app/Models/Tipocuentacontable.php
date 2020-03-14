@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Auth;
 
 class Tipocuentacontable extends Model
 {
@@ -24,16 +25,15 @@ class Tipocuentacontable extends Model
   public static function guardarTipoCuenta($request){
     $rules = [
         'nombre' => 'required',
-        'numero' => 'required',
-    ];
+        ];
 
     $validator=Validator::make($request->all(), $rules);
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaTipoCuenta(?)',array(
-        $request->get("nombre"), 
-        $request->get("numero"), 
+    DB::select('call CreaTipoCuenta(?,?)',array(
+        Auth::user()->id,
+        $request->get("nombre"),
     ));
 
     return redirect()->route('tipocuenta.show', '0312')

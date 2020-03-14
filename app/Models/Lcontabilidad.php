@@ -18,10 +18,10 @@ class Lcontabilidad extends Model
              return view('listacontabilidad.show', compact('lcontabilidades', 'query'));
      }
 
-     public static function setContabilidad($contabilidad, $sucursal, $empresa, $contribuyente){
+     public static function setContabilidad($contabilidad, $serie, $sucursal, $empresa, $contribuyente){
           session()->forget(['contabilidad', 'nombreconta']);
           session()->push('contabilidad', $contabilidad);
-          session()->push('nombreconta', [$sucursal,$empresa,$contribuyente]);
+          session()->push('nombreconta', [$serie,$sucursal,$empresa,$contribuyente]);
           return redirect()->route('lconta.show','0312');
           }
 }

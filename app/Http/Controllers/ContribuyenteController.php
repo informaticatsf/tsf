@@ -47,7 +47,7 @@ class ContribuyenteController extends Controller
      * @param  \App\Contribuyente  $contribuyente
      * @return \Illuminate\Http\Response
      */
-    public function show($contribuyente)
+    public function show($contribuyente) 
     {
         
         return Contribuyente::listadoContribuyente($contribuyente);

@@ -7,9 +7,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                
+                @canany (['permiso-progra','crear-sup-conta'])
                 <a class="btn btn-sm btn-outline-primary float-right" href="{{route('cuentacontable.create')}}">Crear Cuenta</a>
-                
+                @endcanany
                 <h2 style="text-align: center; color: #1b4b72">Cuentas Contables</h2>
 </div>
 <div class="card-body">
@@ -67,8 +67,10 @@
 <td width="10px">{{$cuentacontable->id}}</td>
 <td width="350px" class="text-center">
 <a class="btn btn-sm btn-outline-primary" href="{{route('cuentacontable.es',[$cuentacontable->id,$cuentacontable->nombre])}}">Elegir</a>
+@canany (['permiso-progra','crear-sup-conta'])
 <a class="btn btn-sm btn-outline-success" id="masfilas" onclick="agregaFila({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}','1')">Insertar</a>
 <a class="btn btn-sm btn-outline-warning" id="masfilas" onclick="agregaFilaii({{$i}}, '{{$cuentacontable->tipo}}', '{{$cuentacontable->ncuenta}}','{{$cuentacontable->impuesto}}','{{$cuentacontable->tipocuenta}}','{{$cuentacontable->numero}}','{{$cuentacontable->id}}','2','{{$cuentacontable->nombre}}')">Modificar</a>
+@endcanany
 </td>
 </tr>
 <input type="text" readonly hidden="hidden" value="{{$i++}}">
@@ -114,10 +116,10 @@ function agregaFila(pos, txt1, txt2, txt3, txt4, txt5)    {
    
 
     celda1.innerHTML ="<input style='width : 30px; heigth : 1px' id='tipo' name='tipo' readonly value='"+txt1+"'>";
-    celda2.innerHTML = "<input style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
+    celda2.innerHTML = "<input type='number' style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
     celda4.innerHTML = "<input style='background-color:#FCBD85' id='nombre' name='nombre' placeholder='Nombre de la cuenta' contenteditable></input>";
     celda5.innerHTML = "<div>"+txt4+"</div>";
-    celda6.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
+    celda6.innerHTML = "<input type='number' style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
     celda7.innerHTML = "<input id='id' name='id' readonly hidden='hidden'>"+"<input id='opcion' name='opcion' readonly value='"+txt5+"' hidden='hidden'>";
     celda8.innerHTML = boton;
     
@@ -157,10 +159,10 @@ function agregaFilaii(pos, txt1, txt2, txt3, txt4, txt5, txt6, txt7,txt8)    {
    
 
     celda1.innerHTML ="<input style='width : 30px; heigth : 1px' id='tipo' name='tipo' readonly value='"+txt1+"'>";
-    celda2.innerHTML = "<input style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
+    celda2.innerHTML = "<input type='number' style='width : 50px; heigth : 1px; background-color:#FCBD85' id='numero' name='numero' contenteditable  value='"+txt2+"'>";
     celda3.innerHTML = "<input readonly  value='"+txt5+"'>";
     celda4.innerHTML = "<input style='background-color:#FCBD85' id='nombre' name='nombre' contenteditable value='"+txt8+"'></input>";
-    celda6.innerHTML = "<input style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
+    celda6.innerHTML = "<input type='number' style='background-color:#FCBD85' id='impuesto' name='impuesto' contenteditable value='"+txt3+"'>";
     celda5.innerHTML = "<div>"+txt4+"</div>";
     celda7.innerHTML = "<input id='id' name='id' readonly value='"+txt6+"' hidden='hidden'>"+"<input id='opcion' name='opcion' readonly value='"+txt7+"' hidden='hidden'>";
     celda8.innerHTML = boton;

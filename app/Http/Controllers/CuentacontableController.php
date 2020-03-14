@@ -6,6 +6,7 @@ use App\Models\Cuentacontable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class CuentacontableController extends Controller
 {
     /**

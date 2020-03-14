@@ -165,21 +165,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('lconta.show','0312')}}">
+                            <a href="">
                             <i class="fas fa-hand-holding-usd"></i>
-                                <p>Contabilidades</p>
+                                <p>Ventas</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="">
                                 <i class="fas fa-user-circle"></i>
-                                <p>Contribuyente</p>
+                                <p></p>
                             </a>
                         </li>
 
 
-                        
+                        @canany (['permiso-progra','crear-sup-conta'])
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#sistema">
                             <i class="fas fa-cogs"></i>
@@ -212,12 +212,27 @@
                                             <span class="sub-item">Regímenes</span>
                                         </a>
                                 </li>
+                                    
+                                
+
+                                <li>
+                                        <a href="{{route('tipodoc.show','0312')}}">
+                                            <span class="sub-item">Tipos de Documentos</span>
+                                        </a>
+                                </li>
 
                                 <li>
                                         <a href="{{route('tipocuentacontable.show','0312')}}">
                                             <span class="sub-item">Tipos de Cuentas</span>
                                         </a>
                                 </li>
+
+                                <li>
+                                        <a href="{{route('tipoentrada.show','0312')}}">
+                                            <span class="sub-item">Tipos de Ventas</span>
+                                        </a>
+                                </li>
+                                
 
                                 
                                     
@@ -228,7 +243,7 @@
                                 </ul>
                             </div>
                         </li>
-                        
+                        @endcanany
                         
 
 
