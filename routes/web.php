@@ -44,7 +44,10 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
     Route::get('seriedocc/create/{contribuyente}', 'SeriedocController@create')->name('seriedoc.create');
 
     Route::get('empresa/create/{contribuyente}',  'EmpresaController@create')->name('empresa.create');
-    Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');    
+    Route::post('empresa/store', 'EmpresaController@store')->name('empresa.store');  
+    
+    Route::get('reglaregimen/create/{regimen}',  'ReglaregimenController@create')->name('reglaregimen.create');
+    Route::post('reglaregimeng/store', 'ReglaregimenController@store')->name('reglaregimen.store');  
 
     Route::get('seriedoc/create/{contribuyente}',  'SeriedocController@create')->name('seriedoc.create');
     Route::post('seriedoc/store', 'SeriedocController@store')->name('seriedoc.store'); 
@@ -59,9 +62,33 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
 
 
 Route::group(['middleware'=>['permiso:crear-aux-conta']], function(){
+// +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
+Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
+Route::get('lcontabilidades/{contabilidad}/{serie}/{idsuc}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
+
+Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
+
+// +++++++++++++++++++++++ Cliente +++++++++++++++++++++++++++++++
+Route::get('clienteset/{cliente}','ClienteController@setThisCliente')->name('thecliente.es');
+
+
+// +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
+Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
+Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
+
+// +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
+Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');
+Route::get('cuentacontablecc/{id}/{cuenta}','CuentacontableController@setThisCountConta')->name('cuentacontable.es');
+
+// +++++++++++++++++++++++ Empresa +++++++++++++++++++++++++++++++++++
+Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@show')->name('empresa.show');
+
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
 Route::get('periodosget/{periodo}/{incicio}/{fin}','PeriodoController@setThisPeriod')->name('periodos.es');
+
+// +++++++++++++++++++++++ regla Regimen +++++++++++++++++++++++++++++++++++
+Route::get('reglaregimenw/{regimen}/regla/{regla?}', 'ReglaregimenController@show')->name('reglaregimen.show');
 
 // +++++++++++++++++++++++ Regímenes ++++++++++++++++++++++++++++++++++++
 Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
@@ -74,16 +101,10 @@ Route::get('tipodocw/{busca}','TipodocumentoController@show')->name('tipodoc.sho
 
 // +++++++++++++++++++++++ Tipo Entrada +++++++++++++++++++++++++
 Route::get('tipoentradaw/{busca}','TipoentradaController@show')->name('tipoentrada.show');
-
-// +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
-Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
-Route::get('contribuyente/ver/{contribuyente}', 'ContribuyenteController@contriver')->name('contribuyente.contriver');
+Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('thetipoentrada.es');
 
 // +++++++++++++++++++++++ Serie de documentos +++++++++++++++++++++++++++++++
 Route::get('seriedocb/{contribuyente}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
-
-// +++++++++++++++++++++++ Empresa +++++++++++++++++++++++++++++++++++
-Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@show')->name('empresa.show');
 
 // +++++++++++++++++++++++ Serie documento +++++++++++++++++++++++++++++++++++
 Route::get('seriedocw/{contribuyente}/serie/{serie?}', 'SeriedocController@show')->name('seriedoc.show');
@@ -91,18 +112,9 @@ Route::get('seriedocw/{contribuyente}/serie/{serie?}', 'SeriedocController@show'
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
 
-
-// +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
-Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
-Route::get('lcontabilidades/{contabilidad}/{serie}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
-Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
-
 // +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++
 Route::get('venta/create', 'VentaController@create')->name('venta.create');
 
-// +++++++++++++++++++++++ Cuentas Contables +++++++++++++++++++++++++++
-Route::get('cuentacontables/{busca}', 'CuentacontableController@show')->name('cuentacontable.show');
-Route::get('cuentacontablecc/{id}/{cuenta}','CuentacontableController@setThisCountConta')->name('cuentacontable.es');
 });
 
 

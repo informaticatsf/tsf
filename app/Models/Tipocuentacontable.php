@@ -23,20 +23,23 @@ class Tipocuentacontable extends Model
   }
 
   public static function guardarTipoCuenta($request){
+     
     $rules = [
         'nombre' => 'required',
+        'seleccion' => 'required',
         ];
 
     $validator=Validator::make($request->all(), $rules);
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaTipoCuenta(?,?)',array(
+    DB::select('call CreaTipoCuenta(?,?,?)',array(
         Auth::user()->id,
         $request->get("nombre"),
+        $request->get("seleccion"),        
     ));
 
-    return redirect()->route('tipocuenta.show', '0312')
+    return redirect()->route('tipocuentacontable.show', '0312')
     ->with('info','Tipo de Cuenta creada existosamente');
 }
 }

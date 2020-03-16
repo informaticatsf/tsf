@@ -13,7 +13,7 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         //
     }
@@ -37,7 +37,7 @@ class EmpresaController extends Controller
      */
     public function store(Request $request) 
     {
-        return Empresa::guardarEmpresa($request);
+        return Empresa::guardarEmpresa($request); 
     }
 
     /**

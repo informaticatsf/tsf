@@ -82,4 +82,8 @@ class TipoentradaController extends Controller
     {
         //
     }
+    public function setThisTipo($tipo){
+        
+        return Tipoentrada::setTipo($tipo);
+      }
 }

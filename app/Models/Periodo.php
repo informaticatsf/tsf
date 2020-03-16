@@ -17,7 +17,7 @@ class Periodo extends Model
                return view('periodo.show', compact('periodos', 'query'));}
             else{$query = $_GET['periodo'];
             
-            $regimenes =  DB::select('call ListaPeriodo(?)',array($query));
+            $periodos =  DB::select('call ListaPeriodo(?)',array($query));
             return view('periodo.show', compact('periodos', 'query'));
             }
   }

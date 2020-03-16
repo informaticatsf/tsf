@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lcontabilidad;
+use App\Models\Reglaregimen;
 use Illuminate\Http\Request;
 
-class LcontabilidadController extends Controller
+class ReglaregimenController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         //
     }
@@ -22,9 +22,10 @@ class LcontabilidadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($regimen)
     {
-        //
+        $datas=Reglaregimen::DatosRegimen($regimen); 
+        return  view('reglaregimen.create',['regimen'=> $regimen, 'datos'=>$datas]);
     }
 
     /**
@@ -35,27 +36,27 @@ class LcontabilidadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Reglaregimen::guardarRegla($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lcontabilidad  $lcontabilidad
+     * @param  \App\Reglaregimen  $reglaregimen
      * @return \Illuminate\Http\Response
      */
-    public function show($busca)
+    public function show($regimen, $regla)
     {
-        return Lcontabilidad::listadoLContabilidad($busca);
+        return Reglaregimen::listadoReglas($regimen, $regla);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lcontabilidad  $lcontabilidad
+     * @param  \App\Reglaregimen  $reglaregimen
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lcontabilidad $lcontabilidad)
+    public function edit(Reglaregimen $reglaregimen)
     {
         //
     }
@@ -64,10 +65,10 @@ class LcontabilidadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lcontabilidad  $lcontabilidad
+     * @param  \App\Reglaregimen  $reglaregimen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lcontabilidad $lcontabilidad)
+    public function update(Request $request, Reglaregimen $reglaregimen)
     {
         //
     }
@@ -75,27 +76,11 @@ class LcontabilidadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lcontabilidad  $lcontabilidad
+     * @param  \App\Reglaregimen  $reglaregimen
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lcontabilidad $lcontabilidad)
+    public function destroy(Reglaregimen $reglaregimen)
     {
         //
     }
-
-    public function setThisConta($contabilidad, $serie, $idsuc, $sucursal, $empresa, $contribuyente){
-        return Lcontabilidad::setContabilidad($contabilidad, $serie, $idsuc, $sucursal, $empresa, $contribuyente);
-      }
-
-      public function setThisFechaConta($fecha){
-        return Lcontabilidad::setFechaContabilidad($fecha);
-      }
-
-      
-        public function getThisFechaConta(){
-            $value = session('fecha');
-             return  [$value];
-      
-      }
-      
 }

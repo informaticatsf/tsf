@@ -37,4 +37,19 @@ class Tipoentrada extends Model
     return redirect()->route('tipoentrada.show', '0312')
     ->with('info','Tipo de Venta creada existosamente');
 }
+
+
+
+  public static function setTipo($tipo){
+    $ttipo=$_GET['tipo'];
+
+    session()->forget(['idtentrada', 'nombretentrada']);
+    session()->push('idtentrada', $ttipo);
+    $datatipo =  DB::select('call DataTipoEntr(?)',array($ttipo));
+    
+    session()->push('nombretentrada', [$datatipo[0]->nombre]);
+    
+    return redirect()->back()->with('info','Tipo venta seleccionada correctamente');
+    }
+
 }

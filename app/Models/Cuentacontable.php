@@ -28,18 +28,18 @@ class Cuentacontable extends Model
     $rules = [
         'nombre' => 'required',
         'tipo' => 'required',
-        'impuesto' => 'required',
+        
     ];
  
     $validator=Validator::make($request->all(), $rules);
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaCuentaContable(?,?,?,?)',array(
+    DB::select('call CreaCuentaContable(?,?,?)',array(
      Auth::user()->id,
      $request->get("nombre"),
      $request->get("tipo"),
-     $request->get("impuesto"),
+     
      ));
  
     return redirect()->route('cuentacontable.create')
@@ -54,7 +54,7 @@ class Cuentacontable extends Model
         'tipo' => 'required',
         'numero'=> 'required',
         'nombre' => 'required',
-        'impuesto' => 'required',
+        
         'opcion' => 'required',
     ];
  
@@ -64,12 +64,12 @@ class Cuentacontable extends Model
     }
     if($request->get('opcion')==1) 
     {
-     DB::select('call CreaRowCuenta(?,?,?,?,?)',array(
+     DB::select('call CreaRowCuenta(?,?,?,?)',array(
      Auth::user()->id,
      $request->get("tipo"),
      $request->get("numero"),
      $request->get("nombre"),
-     $request->get("impuesto"),
+     
      ));
  
     return redirect()->route('cuentacontable.show','0312')
@@ -77,12 +77,12 @@ class Cuentacontable extends Model
 }
 
     if($request->get('opcion')==2) 
-    {$respuesta=DB::select('call UpRowCuenta(?,?,?,?,?,?)',array(
+    {$respuesta=DB::select('call UpRowCuenta(?,?,?,?,?)',array(
      Auth::user()->id,   
      $request->get("tipo"),
      $request->get("numero"),
      $request->get("nombre"),
-     $request->get("impuesto"),
+     
      $request->get("id"),
      ));
      

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -14,7 +14,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -82,4 +82,9 @@ class ClienteController extends Controller
     {
         //
     }
+
+    public function setThisCliente($cliente){
+        
+        return Cliente::setCliente($cliente);
+      }
 }

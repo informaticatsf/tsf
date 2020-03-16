@@ -37,6 +37,8 @@
 <tr style="text-align: center">
 <th>Numero</th>
 <th>Nombre</th>
+<th>Tipo</th>
+
 <th>ID</th>
 
 </tr>
@@ -46,6 +48,12 @@
 <tr>
 <td>{{$tipocuentacontable->numero}}</td>
 <td>{{$tipocuentacontable->nombre}}</td>
+@if ($tipocuentacontable->debe===1)
+<td>Debe</td>
+@else
+<td>Haber</td>
+@endif
+
 <td>{{$tipocuentacontable->id}}</td>
 </tr>
 @endforeach

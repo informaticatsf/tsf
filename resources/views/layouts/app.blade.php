@@ -214,8 +214,6 @@
                                             <span class="sub-item">Regímenes</span>
                                         </a>
                                 </li>
-                                    
-                                
 
                                 <li>
                                         <a href="{{route('tipodoc.show','0312')}}">

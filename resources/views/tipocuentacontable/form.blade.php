@@ -13,13 +13,22 @@
 
                         <div class="row">
                             <div class="form-group col-lg-8 row">
-                              <label class="control-label col-lg-4 col-md-4 col-sm-12"
+                              <label class="control-label col-lg-2 col-md-2 col-sm-12"
                               for="nombre">Nombre</label>
-                              <div class="col-lg-8 col-md-8 col-sm-12">
+                              <div class="col-lg-10 col-md-8 col-sm-12">
                                 <input type="text" id="nombre" name="nombre" required="required"  class="form-control">
-                              </div>
-                            </div>                           
-                       </div> 
+                                <select  name="seleccion" id="seleccion"  required="required" class="form-control col-lg-8 col-md-4 col-sm-12">
+                                    <option value="">--Seleccione--</option>                                    
+                                    <option  value="1">DEBE</option>
+                                    <option  value="2">HABER</option>
+                                    </select>
+                               </div>
+                            </div>
+                       </div>
+                                    <div class="input-group col-lg-12 row">
+                                    
+                                    </div>
+
                         <div class="form-group ">
                         <div class="form-group text-center">
                                 {{ Form::submit('Guardar', ['class'=>'btn btn-lg btn-success']) }}
@@ -32,3 +41,17 @@
         </div>
 
 </div>
+<script>
+var ddebe = document.getElementById('cbdebe');
+var hhaber = document.getElementById('cbhaber');
+
+if (document.getElementById('cbdebe').checked)
+  {
+    ddebe.cheked = false;
+  }
+
+  if (document.getElementById('cbhaber').checked)
+  {
+    hhaber.cheked = false;
+  }
+</script>

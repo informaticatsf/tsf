@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Venta;
+use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VentaController extends Controller
 {
@@ -24,7 +25,9 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('venta.create');
+        $clientes = DB::table('VerClientesVenta')->get();
+        $tiposentradas = DB::table('VerTipoEntrada')->get();
+        return view('venta.create', compact('clientes','tiposentradas'));
     }
 
     /**

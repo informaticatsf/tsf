@@ -21,15 +21,7 @@
                             </div>                           
                         </div>
 
-                        <div class="row">
-                            <div class="form-group col-lg-8 row">
-                              <label class="control-label col-lg-4 col-md-4 col-sm-12"
-                              for="impuesto">Impuesto</label>
-                              <div class="col-lg-8 col-md-8 col-sm-12">
-                                <input type="text" id="impuesto" name="impuesto" class="form-control">
-                              </div>
-                            </div>                           
-                        </div>
+                        
 
                         <div class="row">
                             <div class="form-group col-lg-8 row">

@@ -18,7 +18,7 @@ class Empresa extends Model
                  $empresa = $_GET['empresa'];}
              $empresas =  DB::select('call ListaEmpresa(?,?)',array($contribuyente, $empresa));
              return view('empresa.show', compact('empresas','contribuyente', 'query'));
-     }
+     } 
  
      public static function guardarEmpresa($request){ 
         
@@ -46,8 +46,6 @@ class Empresa extends Model
     }
 
     public static function DatosPersoEmpre ($empresa) {
-        
         return  DB::select('call VerContriEmpreDatos(?)',array($empresa));
-        
     }
 } 
