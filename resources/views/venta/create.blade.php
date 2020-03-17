@@ -228,3 +228,143 @@ function inputCharacters2(event) {
 
 </script>
 @stop
+
+
+@extends('main')
+
+@section('title', 'Cliente')
+
+@section('css-page')
+<link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+<link href="{{ asset('vendor/datatables-responsive/css/responsive.dataTables.min.css') }}" rel="stylesheet">
+@endsection
+
+@section('content')
+
+<div class="title-bar align-items-center justify-content-between mb-4">
+  <h1 class="title header mb-0">Clientes</h1>
+  <a href="{{ route('cliente.create') }}" class="d-sm-inline-block btn btn-success shadow-sm btn-icon-split button">
+    <span class="icon text-white-100">
+      <i class="fas fa-plus fa-sm"></i>
+    </span>
+    <span class="text">Nuevo Cliente</span>
+  </a>
+</div>
+
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+  <p>{{ $message }}</p>
+</div>
+@endif
+
+<div class="card shadow mb-4">            
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="dataTable" class="table table-bordered display responsive nowrap" width="100%" cellspacing="0">
+       <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Solvente</th>
+            <th>DPI</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach ($cliente as $cli)
+        <tr>          
+          <td>{{ $cli->nombres.' '.$cli->apellidos }}</td>
+          <td>{{ $cli->direccion }}</td>
+          <td>{{ $cli->telefono }}</td>
+          <td>{!! $cli->solvente ? '<span class="label label-success pull-right">Si</span>':'<span class="label label-danger pull-right">No</span>' !!}</td>
+          <td>{{ $cli->dpi }}</td> 
+          <td>{!! $cli->estado ? '<span class="label label-success pull-right">Activo</span>':'<span class="label label-danger pull-right">Inactivo</span>' !!}</td>
+          <td class="text-center">
+          	<a href="{{ route('cliente.edit',$cli->codigo) }}" class="btn btn-sm btn-success">Editar</a> 
+            <a href="#" class="btn btn-sm btn-warning btn-show" data-id="{{$cli->codigo}}">Ver</a>            
+            <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="{{$cli->codigo}}">Estado</a>   
+          </td>                   
+        </tr>
+        @endforeach
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+@include('cliente.ver')
+
+@endsection
+
+@section('js-page')
+
+  <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('vendor/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ asset('vendor/sweet-alert-2/sweetalert2.all.min.js') }}"></script>
+  <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+  <script type="text/javascript">
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    }); 
+
+    $(document).on('click', '.btn-delete', function(e){ 
+      var url = "{{ route('cliente.destroy', ':id') }}";
+      url = url.replace(':id', $(this).attr('data-id'));
+      Swal.fire({
+        title: 'Cambiar Estado',
+        text: "Esta seguro de cambiar el estado de esta plantilla?",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.value) {
+          jQuery.ajax({
+            url: url,
+            type: 'DELETE',
+            data: []    
+          })
+          .done(function(respuesta){
+            Swal.fire(
+              'Éxito',
+              'Se ha cambiado de estado.',
+              'success'
+            )
+            location.reload();
+          })
+        }
+      })      
+    });
+ 
+    $(document).on('click', '.btn-show', function(e){ 
+      var url = "{{ route('cliente.show', ':id') }}";
+      url = url.replace(':id', $(this).attr('data-id'));
+        jQuery.ajax({
+          url: url,
+          type: 'GET',
+          data: []    
+        })
+        .done(function(respuesta){
+          $('#ver_nombre').html(respuesta.nombre);
+          $('#ver_apellido').html(respuesta.apellido);
+          $('#ver_direccion').html(respuesta.direccion);
+          $('#ver_telefono').html(respuesta.telefono);
+          $('#ver_nit').html(respuesta.nit);
+          $('#ver_dpi').html(respuesta.dpi);
+          $('#ver_edad').html(respuesta.edad);
+          $('#ver_email').html(respuesta.email);
+          $('#ver_fec_nacimiento').html(respuesta.fec_nacimiento);
+          $('#ver_solvente').html(respuesta.solvente);
+          $('#ver_estado').html(respuesta.estado);
+          $('#info_cliente').modal('show');          
+        })      
+      });
+
+  </script>  
+
+@endsection
