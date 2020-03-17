@@ -44,8 +44,8 @@ class Seriedoc extends Model
      $request->get("tipodoc"),   
      ));
  
-    return redirect()->route('seriedoc.show', [$request->seriedoc,'0312'])
-    ->with('info','Serie de documento creada existosamente');
+    return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
+    ->with('info','Serie de documento creada existosamente'); 
  }
 
  public static function mostrarTipoDoc($contribuyente){

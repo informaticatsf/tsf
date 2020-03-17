@@ -13,7 +13,7 @@
                 <h2 style="text-align: center; color: #1b4b72">Series de documentos</h2>
 </div>
 
-<div class="card-body">
+<div class="card-body"> 
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         </div>

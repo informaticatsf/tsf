@@ -50,3 +50,4 @@ class Sucursal extends Model
         return  DB::select('call VerEmpreSucDatos(?)',array($empresa));
     }
 }
+ 

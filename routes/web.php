@@ -104,10 +104,9 @@ Route::get('tipoentradaw/{busca}','TipoentradaController@show')->name('tipoentra
 Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('thetipoentrada.es');
 
 // +++++++++++++++++++++++ Serie de documentos +++++++++++++++++++++++++++++++
-Route::get('seriedocb/{contribuyente}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
+Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 
-// +++++++++++++++++++++++ Serie documento +++++++++++++++++++++++++++++++++++
-Route::get('seriedocw/{contribuyente}/serie/{serie?}', 'SeriedocController@show')->name('seriedoc.show');
+
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');

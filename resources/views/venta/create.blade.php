@@ -8,8 +8,8 @@
             <div class="card">
                
                 <div class="card-header">
-                <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">{{session()->get('nombre')[0]}}</label>
-                <p>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</p>
+                
+                <p><b>Serie y sucursal:</b>  <span style="color:#FB150E";><b>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</b></span></p>
                 @canany (['permiso-progra','crear-sup-conta'])
                 <a class="btn btn-sm btn-outline-primary float-right" href="">Boton reservado</a>
                 @endcanany
@@ -20,7 +20,7 @@
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">Fecha</label>
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">{{session()->get('fecha')[0]}}</label>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fecha')[0]}}</b></span></label>
                                 <form method="get"  action="{{route('thefecha.es','fecha')}}">
                                     <div class="input-group">
                                         <input type="date" class="form-control" value="{{session()->get('fecha')[0]}}" id="fecha" name="fecha">
@@ -34,13 +34,13 @@
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Cliente</label>
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess">{{session()->get('nombrecliente')[0][0]}} {{session()->get('nitcliente')[0][0]}}</label>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombrecliente')[0][0]}} {{session()->get('nitcliente')[0][0]}}</b></span></label>
                                 <form method="get"  action="{{route('thecliente.es','cliente')}}">
                                     <div class="input-group">
                                     <select  name="cliente" id="cliente"  required="required" class="form-control">
                                     <option value="">--Seleccione cliente--</option>
                                     @foreach ($clientes as $cliente)
-                                    <option  value="{{$cliente->id}}">Cliente: {{$cliente->nombre}} NIT: {{$cliente->nit}}</option>
+                                    <option  value="{{$cliente->id}}"><span style="color:#FB150E";><b> {{$cliente->nombre}}  {{$cliente->nit}}</b></span></option>
                                     @endforeach
                                     </select>
                                             <span class="input-group-btn">
@@ -53,7 +53,7 @@
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Tipo venta</label>
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess">{{session()->get('nombretentrada')[0][0]}}</label>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombretentrada')[0][0]}}</b></span></label>
                                 <form method="get"  action="{{route('thetipoentrada.es','tipo')}}">
                                     <div class="input-group">
                                     <select  name="tipo" id="tipo"  required="required" class="form-control">

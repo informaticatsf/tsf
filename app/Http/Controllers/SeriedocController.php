@@ -28,7 +28,7 @@ class SeriedocController extends Controller
     {
         $tipodocs = DB::table('VerTipoDoc')->get();
         $datas=Contribuyente::DatosPerEmpreSucSer($sucursal); 
-        return  view('seriedoc.create',['sucursarl'=> $sucursal, 'datos'=>$datas, 'tipodocs'=>$tipodocs]);
+        return  view('seriedoc.create',['sucursal'=> $sucursal, 'datos'=>$datas, 'tipodocs'=>$tipodocs]);
     }
 
     /**
