@@ -28,15 +28,17 @@ class Lcontabilidad extends Model
 
           public static function setFechaContabilidad($fecha){
               //dd($_GET['fecha']);
-              $ffecha=$_GET['fecha'];
+             // $ffecha=$_GET['fecha'];
             //  {$query = $_GET['periodo'];
             //  dd(date('d-m-Y', strtotime($fecha)));
             session()->forget(['fecha']);
             session()->forget(['fechabd']);
-            session()->push('fecha', date('d-m-Y', strtotime($ffecha)));
-            session()->push('fechabd', date('Y-m-d', strtotime($ffecha)));
+            session()->push('fecha', date('d-m-Y', strtotime($fecha)));
+            session()->push('fechabd', date('Y-m-d', strtotime($fecha)));
             return redirect()->back()->with('info','Cambio de fecha');
             }
+
+            
 
             
 }

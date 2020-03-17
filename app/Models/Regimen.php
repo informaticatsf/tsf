@@ -38,4 +38,10 @@ class Regimen extends Model
     return redirect()->route('regimen.show', '0312')
     ->with('info','Régimen creado existosamente');
 }
+
+public static function ReglasRegimen($sucursal){
+    
+    return  DB::select('call VerRegimenReglas(?)',array($sucursal));
+
+}
 }

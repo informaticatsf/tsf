@@ -44,7 +44,21 @@ class Reglaregimen extends Model
         return redirect()->route('reglaregimen.show', [$request->regimen,'0312'])
         ->with('info','Regla creada existosamente');
     }
+    
     public static function DatosRegimen ($regimen) {
         return  DB::select('call VerRegimenDatos(?)',array($regimen));
     }
+
+    public static function setTipo($tipo){
+        //$ttipo=$_GET['tipo'];
+    
+        session()->forget(['idimpuesto', 'nombreimpuesto', 'valorimpuesto']);
+        session()->push('idimpuesto', $tipo);
+        $datatipo =  DB::select('call DataTipoImpuesto(?)',array($tipo));
+        
+        session()->push('nombreimpuesto', [$datatipo[0]->nombre]);
+        session()->push('valorimpuesto', [$datatipo[0]->valor]);
+        
+        return redirect()->back()->with('info','Tipo venta seleccionada correctamente');
+        }
 }

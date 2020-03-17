@@ -165,13 +165,16 @@
                                 <p>{{session()->get('namecuentaconta')[0]}}</p>
                             </a>
                         </li>
-
+ 
+                        @if(session()->get('sucursal')[0] != null)
                         <li class="nav-item">
-                            <a href="{{route('venta.create')}}">
+                        <p hidden="hidden">{{$d= session()->get('sucursal')[0]}}</p>
+                            <a href="{{route('venta.create',$d)}}">
                             <i class="fas fa-hand-holding-usd"></i>
                                 <p>Ventas</p>
                             </a>
                         </li>
+                        @endif
 
                         <li class="nav-item">
                             <a href="">

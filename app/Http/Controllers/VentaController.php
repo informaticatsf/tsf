@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Venta;
+use App\Models\Regimen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,11 +24,14 @@ class VentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($sucursal)
     {
         $clientes = DB::table('VerClientesVenta')->get();
         $tiposentradas = DB::table('VerTipoEntrada')->get();
-        return view('venta.create', compact('clientes','tiposentradas'));
+        
+        $reglas=Regimen::ReglasRegimen($sucursal);
+        
+        return view('venta.create', compact('clientes', 'tiposentradas', 'reglas'));
     }
 
     /**
@@ -84,5 +88,11 @@ class VentaController extends Controller
     public function destroy(Venta $venta)
     {
         //
+    }
+
+    
+    public function setMoreVenta(Request $request)
+    {
+        return Venta::AgregaFilaTabla($request);
     }
 }

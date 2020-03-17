@@ -68,6 +68,7 @@ Route::get('lcontabilidades/{contabilidad}/{serie}/{idsuc}/{sucursal}/{empresa}/
 
 Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
 
+
 // +++++++++++++++++++++++ Cliente +++++++++++++++++++++++++++++++
 Route::get('clienteset/{cliente}','ClienteController@setThisCliente')->name('thecliente.es');
 
@@ -89,6 +90,7 @@ Route::get('periodosget/{periodo}/{incicio}/{fin}','PeriodoController@setThisPer
 
 // +++++++++++++++++++++++ regla Regimen +++++++++++++++++++++++++++++++++++
 Route::get('reglaregimenw/{regimen}/regla/{regla?}', 'ReglaregimenController@show')->name('reglaregimen.show');
+Route::get('reglaregimenset/{tipo}','ReglaregimenController@setThisTipo')->name('thetipoimpuesto.es');
 
 // +++++++++++++++++++++++ Regímenes ++++++++++++++++++++++++++++++++++++
 Route::get('regimen/{busca}','RegimenController@show')->name('regimen.show');
@@ -112,10 +114,10 @@ Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
 
 // +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++
-Route::get('venta/create', 'VentaController@create')->name('venta.create');
+Route::get('venta/create/{sucursal}', 'VentaController@create')->name('venta.create');
+Route::get('venta/tablaagregar','VentaController@setMoreVenta')->name('tablaventa.agregar');
 
 });
-
 
 Route::group(['middleware'=>['rolx:desarrollador']], function(){
 //users **************************************************************************
@@ -125,4 +127,5 @@ Route::get('usersw/{user}', 'UserController@show')->name('users.show');
 Route::delete('usersd/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); 
+
 });

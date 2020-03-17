@@ -92,6 +92,8 @@ class LcontabilidadController extends Controller
       }
 
       
+
+      
         public function getThisFechaConta(){
             $value = session('fecha');
              return  [$value];

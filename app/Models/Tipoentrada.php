@@ -41,11 +41,11 @@ class Tipoentrada extends Model
 
 
   public static function setTipo($tipo){
-    $ttipo=$_GET['tipo'];
+    //$ttipo=$_GET['tipo'];
 
     session()->forget(['idtentrada', 'nombretentrada']);
-    session()->push('idtentrada', $ttipo);
-    $datatipo =  DB::select('call DataTipoEntr(?)',array($ttipo));
+    session()->push('idtentrada', $tipo);
+    $datatipo =  DB::select('call DataTipoEntr(?)',array($tipo));
     
     session()->push('nombretentrada', [$datatipo[0]->nombre]);
     

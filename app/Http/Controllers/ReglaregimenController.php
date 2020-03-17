@@ -83,4 +83,9 @@ class ReglaregimenController extends Controller
     {
         //
     }
+    
+    public function setThisTipo($tipo){
+        
+        return ReglaRegimen::setTipo($tipo);
+      }
 }
