@@ -130,10 +130,10 @@
                                         <input type="number" class="form-control" id="periodoipt" name="periodoipt" value="{{session()->get('periodo')[0]}}" hidden="hidden">
                                         <input type="text" class="form-control" id="tentradaipt" name="tentradaipt" value="{{session()->get('idtentrada')[0]}}" hidden="hidden">
                                         <input type="text" class="form-control" placeholder="No. Documento" id="numdocipt" name="numdocipt">
-                                        <input type="number" class="form-control" placeholder="Total" id="totdocipt" name="totdocipt">
-                                            <input type="number" class="form-control" id="impuestoipt" value="{{session()->get('valorimpuesto')[0][0]}}" name="impuestoipt" readonly>
-                                        <input type="number" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfipt" name="ivadfipt" readonly>
-                                        <input type="number" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
+                                        <input type="number" step=".01" class="form-control" placeholder="Total" id="totdocipt" name="totdocipt">
+                                            <input type="number" step=".01" class="form-control" id="impuestoipt" value="{{session()->get('valorimpuesto')[0][0]}}" name="impuestoipt" readonly>
+                                        <input type="number" step=".01" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfipt" name="ivadfipt" readonly>
+                                        <input type="number" step=".01" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
                                             <span class="input-group-btn">
                                                 <button id="btnadd" type="submit" name="btnadd" class="btn btn-primary">Agregar</button>
                                             </span>
@@ -148,34 +148,36 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
-<th>Tipo documento</th>
-<th>Serie documento</th>
-<th>Inicio</th>
-<th>Vencimiento</th>
+<th>Tipo Doc</th>
+<th>Serie Doc</th>
+<th>No. Doc</th>
+<th>Fecha</th>
+<th>Total</th>
+<th>Precio Neto</th>
+<th>Debito Fiscal</th>
+<th>Cuenta</th>
+<th>Tipo Venta</th>
+<th>Cliente</th>
 </tr>
 </thead>
 <tbody>
-@if(session()->get('tablaventa')[0][0]!=null)
-@foreach(session()->get('tablaventa')[0][0] as $fila)
+
+@foreach($tablaventas as $tablaventa)
 <tr>
-<td>$fila['cuenta']</td>
-<td>$fila['sucursal']</td>
-<td>$fila['seriedoc']</td>
-<td>$fila['nodoc']</td>
-<td>$fila['cliente']</td>
-<td>$fila['fecha']</td>
-<td>$fila['total']</td>
-<td>$fila['pneto']</td>
-<td>$fila['debitofiscal']</td>
-<td>$fila['inventario']</td>
-<td>$fila['periodo']</td>
-<td>$fila['tipoentrada']</td>
-<td>c3</td>
-<td>c4</td>
-<td>c5</td>
+<td>{{$tablaventa->id}}</td>
+<td>{{$tablaventa->tipodoc}}</td>
+<td>{{$tablaventa->seriedoc}}</td>
+<td>{{$tablaventa->nodoc}}</td>
+<td>{{$tablaventa->fecha}}</td>
+<td>{{$tablaventa->total}}</td>
+<td>{{$tablaventa->pneto}}</td>
+<td>{{$tablaventa->debitofiscal}}</td>
+<td>{{$tablaventa->cuenta}}</td>
+<td>{{$tablaventa->tentrada}}</td>
+<td>{{$tablaventa->cliente}}</td>
+
 </tr>
 @endforeach
-@endif
 </tbody>
 
 </table>
@@ -315,11 +317,18 @@ function inputCharacters2(event) {
 }
    // fin detector de cambios
 });
+document.getElementById("numdocipt").focus();
 document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+          
         if(e.keyCode == 13) {
           e.preventDefault();
         }
+        if(e.keyCode == 118) {
+            alert('el f7');
+            document.getElementById("fecha").focus();
+        }
+        
       }))
     });
    

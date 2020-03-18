@@ -34,7 +34,7 @@ class Lcontabilidad extends Model
             session()->forget(['fechabd']);
             session()->push('fecha', date('d-m-Y', strtotime($fecha)));
             session()->push('fechabd', date('Y-m-d', strtotime($fecha)));
-            dd(session()->get('fechabd'));
+          
             return redirect()->back()->with('info','Cambio de fecha');
             }
 

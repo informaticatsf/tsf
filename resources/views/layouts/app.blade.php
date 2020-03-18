@@ -147,7 +147,7 @@
                         <i class="far fa-calendar-minus"></i>
                         
                         
-                        <p>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</p>
+                        <p><FONT SIZE=2>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</FONT></p>
                         
                                 
                             </a>
@@ -156,13 +156,13 @@
                             <a href="{{ route('lconta.show','0312') }}">
                             <i class="fas fa-columns"></i>
                             
-                                <p>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</p>
+                                <p><FONT SIZE=2>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</FONT></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('cuentacontable.show','0312') }}">
                             <i class="fas fa-file-contract"></i>
-                                <p>{{session()->get('namecuentaconta')[0]}}</p>
+                                <p><FONT SIZE=2>{{session()->get('namecuentaconta')[0]}}</FONT></p>
                             </a>
                         </li>
  

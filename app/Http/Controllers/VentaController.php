@@ -31,8 +31,8 @@ class VentaController extends Controller
         $tiposentradas = DB::table('VerTipoEntrada')->get();        
         $reglas=Regimen::ReglasRegimen($sucursal);
         $seriesdocs=Seriedoc::listadoSerieDocCombo($sucursal);
-        
-        return view('venta.create', compact('clientes', 'tiposentradas', 'reglas', 'seriesdocs'));
+        $tablaventas = Venta::listaTablaVenta($sucursal, session()->get('fechabd')[0], session()->get('serie')[0], session()->get('idtentrada')[0]);
+        return view('venta.create', compact('clientes', 'tiposentradas', 'reglas', 'seriesdocs', 'tablaventas'));
     }
 
     /**
