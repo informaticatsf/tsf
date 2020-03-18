@@ -104,7 +104,7 @@
                               <label class="control-label col-lg-4 col-md-4 col-sm-12"
                               for="fechainicio">Fecha inicio</label>
                               <div class="col-lg-4 col-md-4 col-sm-12">
-                              <input type="date" name="fechainicio" id="fechainicio" required="required"  class="form-control"> 
+                              <input type="date" name="fechainicio" id="fechainicio"  class="form-control"> 
                               </div>
                             </div>                           
                         </div>
@@ -114,7 +114,7 @@
                               <label class="control-label col-lg-4 col-md-4 col-sm-12"
                               for="fechafin">Fecha vencimiento</label>
                               <div class="col-lg-4 col-md-4 col-sm-12">
-                              <input type="date" name="fechafin" id="fechafin" required="required"  class="form-control"> 
+                              <input type="date" name="fechafin" id="fechafin"   class="form-control"> 
                               </div>
                             </div>                           
                         </div>

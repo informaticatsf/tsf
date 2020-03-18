@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
 
 Auth::routes();
@@ -64,7 +64,7 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
 Route::group(['middleware'=>['permiso:crear-aux-conta']], function(){
 // +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
-Route::get('lcontabilidades/{contabilidad}/{serie}/{idsuc}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
+Route::get('lcontabilidades/{contabilidad}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
 
 Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
 
@@ -107,6 +107,7 @@ Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('th
 
 // +++++++++++++++++++++++ Serie de documentos +++++++++++++++++++++++++++++++
 Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
+Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
 
 
 

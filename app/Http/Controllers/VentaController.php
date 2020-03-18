@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venta;
 use App\Models\Regimen;
+use App\Models\Seriedoc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,11 +28,11 @@ class VentaController extends Controller
     public function create($sucursal)
     {
         $clientes = DB::table('VerClientesVenta')->get();
-        $tiposentradas = DB::table('VerTipoEntrada')->get();
-        
+        $tiposentradas = DB::table('VerTipoEntrada')->get();        
         $reglas=Regimen::ReglasRegimen($sucursal);
+        $seriesdocs=Seriedoc::listadoSerieDocCombo($sucursal);
         
-        return view('venta.create', compact('clientes', 'tiposentradas', 'reglas'));
+        return view('venta.create', compact('clientes', 'tiposentradas', 'reglas', 'seriesdocs'));
     }
 
     /**
@@ -94,5 +95,5 @@ class VentaController extends Controller
     public function setMoreVenta(Request $request)
     {
         return Venta::AgregaFilaTabla($request);
-    }
+    } 
 }

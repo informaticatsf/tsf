@@ -18,11 +18,10 @@ class Lcontabilidad extends Model
              return view('listacontabilidad.show', compact('lcontabilidades', 'query'));
      }
 
-     public static function setContabilidad($contabilidad, $serie, $idsuc, $sucursal, $empresa, $contribuyente){
-          session()->forget(['contabilidad', 'nombreconta', 'sucursal']);
+     public static function setContabilidad($contabilidad, $sucursal, $empresa, $contribuyente){
+          session()->forget(['contabilidad', 'nombreconta']);
           session()->push('contabilidad', $contabilidad);
-          session()->push('sucursal', $idsuc);
-          session()->push('nombreconta', [$serie,$sucursal,$empresa,$contribuyente]);
+          session()->push('nombreconta', [$sucursal,$empresa,$contribuyente]);
           return redirect()->route('lconta.show','0312');
           }
 
@@ -35,6 +34,7 @@ class Lcontabilidad extends Model
             session()->forget(['fechabd']);
             session()->push('fecha', date('d-m-Y', strtotime($fecha)));
             session()->push('fechabd', date('Y-m-d', strtotime($fecha)));
+            dd(session()->get('fechabd'));
             return redirect()->back()->with('info','Cambio de fecha');
             }
 

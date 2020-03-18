@@ -36,7 +36,6 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
-<th>Serie</th>
 <th>Sucursal</th>
 <th>Empresa</th>
 <th>Contribuyente</th>
@@ -49,14 +48,13 @@
 @foreach ($lcontabilidades as $lcontabilidad)
 <tr>
 <td>{{$lcontabilidad->id}}</td>
-<td>{{$lcontabilidad->serie}}</td>
 <td>{{$lcontabilidad->sucursal}}</td>
 <td>{{$lcontabilidad->empresa}}</td>
 <td>{{$lcontabilidad->contribuyente}}</td>
 <td>{{$lcontabilidad->nit}}</td>
 
 <td width="10px" class="text-center">
-<a class="btn btn-sm btn-outline-dark" href="{{route('lconta.es',[$lcontabilidad->id,$lcontabilidad->serie,$lcontabilidad->idsuc,$lcontabilidad->sucursal, $lcontabilidad->empresa, $lcontabilidad->contribuyente])}}">Seleccionar</a>
+<a class="btn btn-sm btn-outline-dark" href="{{route('lconta.es',[$lcontabilidad->id,$lcontabilidad->sucursal, $lcontabilidad->empresa, $lcontabilidad->contribuyente])}}">Seleccionar</a>
 </td>
 </tr>
 @endforeach

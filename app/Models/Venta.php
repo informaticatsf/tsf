@@ -10,7 +10,7 @@ use Auth;
 class Venta extends Model
 {
     public static function AgregaFilaTabla($request){ 
-        //dd($request->all());
+        dd($request->all());
         $rules = [ 
                 'cuentaipt'   => 'required',
                 'sucursalipt'    => 'required',
@@ -20,7 +20,7 @@ class Venta extends Model
                 'fechaiptbd' => 'required',
                 'totdocipt' => 'required',
                 'pnetoipt' => 'required',
-                'ivadfpt' => 'required',
+                'ivadfipt' => 'required',
                 'periodoipt' => 'required',
                 'tentradaipt' => 'required'
         ];

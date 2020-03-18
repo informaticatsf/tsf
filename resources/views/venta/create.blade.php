@@ -19,7 +19,25 @@
                 <tr>
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">Fecha</label>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Serie</label><br>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombreserie')[0][0]}} {{session()->get('tiposeriedoc')[0][0]}}</b></span></label>
+                              
+                                    <div class="input-group">
+                                    <select  name="serie" id="serie"  required="required" class="form-control">
+                                    <option value="">-- Series --</option>
+                                    @foreach ($seriesdocs as $seriedoc)
+                                    <option  value="{{$seriedoc->id}}"><span style="color:#FB150E";><b> {{$seriedoc->nombre}}  {{$seriedoc->tipodoc}}</b></span></option>
+                                    @endforeach
+                                    </select>
+                                 
+                                        </div>
+                                 
+                                    </div>
+                </td>
+
+                <td>                   
+                <div class="form-group col-lg-0 col-md-0 col-sm-12">
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">Fecha</label><br>
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fecha')[0]}}</b></span></label>
                              
                                     <div class="input-group">
@@ -31,7 +49,7 @@
                 </td>
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Cliente</label>
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Cliente</label><br>
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombrecliente')[0][0]}} {{session()->get('nitcliente')[0][0]}}</b></span></label>
                               
                                     <div class="input-group">
@@ -48,7 +66,7 @@
                 </td>
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-4 col-md-4 col-sm-12" for="clientes">Tipo venta</label>
+                            <label class="control-label col-lg-4 col-md-4 col-sm-12" for="clientes">Tipo venta</label><br>
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombretentrada')[0][0]}}</b></span></label>
                                
                                     <div class="input-group">
@@ -66,7 +84,7 @@
                 </td>
                 <td>
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-5 col-md-4 col-sm-12" for="clientes">Tipo Impuesto</label>
+                            <label class="control-label col-lg-5 col-md-4 col-sm-12" for="clientes">Tipo Impuesto</label><br>
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombreimpuesto')[0][0]}} {{session()->get('valorimpuesto')[0][0]}}%</b></span></label>
                             
                                     <div class="input-group">
@@ -100,21 +118,21 @@
                     <div class="col-md-12">
                         </div>
                             </div>
-                            <form method="get" action="">
+                            <form method="get" action="{{route('tablaventa.agregar')}}">
                                     <div class="form-group">
                                         <div class="input-group">
                                         <input type="number" class="form-control" id="cuentaipt" name="cuentaipt" value="{{session()->get('cuentaconta')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="sucursalipt" name="sucursalipt" value="{{session()->get('sucursal')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="seriedocipt" name="seriedocipt" value="{{session()->get('contabilidad')[0]}}" hidden="hidden">
+                                        <input type="number" class="form-control" id="sucursalipt" name="sucursalipt" value="{{session()->get('contabilidad')[0]}}" hidden="hidden">
+                                        <input type="number" class="form-control" id="seriedocipt" name="seriedocipt" value="{{session()->get('serie')[0]}}" hidden="hidden">
                                         <input type="number" class="form-control" id="clienteipt" name="clienteipt" value="{{session()->get('cliente')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="fechaiptbd" name="fechaiptbd" value="{{session()->get('fechabd')[0]}}" hidden="hidden">
+                                        <input type="text" class="form-control" id="fechaiptbd" name="fechaiptbd" value="{{session()->get('fechabd')[0]}}" hidden="hidden">
                                             <input type="number" class="form-control" id="inventarioipt" name="inventarioipt" value="" hidden="hidden">
                                         <input type="number" class="form-control" id="periodoipt" name="periodoipt" value="{{session()->get('periodo')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="tentradaipt" name="tentradaipt" value="{{session()->get('identrada')[0]}}" hidden="hidden">
-                                        <input type="text" class="form-control" placeholder="No. Documento" id="numdocipt" name="numdocipt" next="totdoc">
+                                        <input type="text" class="form-control" id="tentradaipt" name="tentradaipt" value="{{session()->get('idtentrada')[0]}}" hidden="hidden">
+                                        <input type="text" class="form-control" placeholder="No. Documento" id="numdocipt" name="numdocipt">
                                         <input type="number" class="form-control" placeholder="Total" id="totdocipt" name="totdocipt">
                                             <input type="number" class="form-control" id="impuestoipt" value="{{session()->get('valorimpuesto')[0][0]}}" name="impuestoipt" readonly>
-                                        <input type="number" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfpt" name="ivadf" readonly>
+                                        <input type="number" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfipt" name="ivadfipt" readonly>
                                         <input type="number" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
                                             <span class="input-group-btn">
                                                 <button id="btnadd" type="submit" name="btnadd" class="btn btn-primary">Agregar</button>
@@ -170,10 +188,18 @@
 </div>
 </div>
 </div>
+
 <script>
 $(document).ready(function(){
     
-    document.getElementById("fecha").value;
+    $("#serie").change(function(){
+        var series = document.getElementsByName("serie")[0].value;
+        var url = "{{ route('theserie.es', ':id') }}";        
+        url = url.replace(':id', series);
+       //var fecha = document.getElementsByName("fecha")[0].value;
+       // alert(fecha);        
+        document.location.href=url;
+});
 
 	$("#fecha").change(function(){
         var fechas = document.getElementsByName("fecha")[0].value;
@@ -211,8 +237,7 @@ $("#tipoi").change(function(){
         document.location.href=url;
 });
 
-// fin detector de cambios
-});
+
 
     function agregaFila(pos, txFecha, txNoDoc, txTotDoc, txCliente )    {
     var miTabla = document.getElementById("mytbody");
@@ -257,30 +282,30 @@ $("#tipoi").change(function(){
     }
 }
 
-document.getElementById('numdoc').addEventListener('keyup', inputCharacters);
-document.getElementById('totdoc').addEventListener('keyup', inputCharacters2);
+document.getElementById('numdocipt').addEventListener('keyup', inputCharacters);
+document.getElementById('totdocipt').addEventListener('keyup', inputCharacters2);
 
 function inputCharacters(event) {
   if (event.keyCode == 13) {
-    document.getElementById('totdoc').focus();
+    document.getElementById('totdocipt').focus();
   }
 }
 
 
 
 function inputCharacters2(event) {
-    var inputTotal = $('#totdoc').val();
-    var Impuesto = $('#impuesto').val();
+  
+    var inputTotal = $('#totdocipt').val();
+    var Impuesto = $('#impuestoipt').val();
     var ImpuestoC = Impuesto/100;
-    var IvaDF = $('#ivadf').val();
-    
-    
+    var IvaDF = $('#ivadfipt').val();
+       
     if(inputTotal!=null||inputTotal>0){
-        $('#ivadf').val(inputTotal*ImpuestoC);        
-        $('#pneto').val(inputTotal-(inputTotal*ImpuestoC));
+        $('#ivadfipt').val(inputTotal*ImpuestoC);        
+        $('#pnetoipt').val(inputTotal-(inputTotal*ImpuestoC));
     }
     if(inputTotal==null||inputTotal<=0){
-        $('#pneto').val('Precio Neto');
+        $('#pnetoipt').val('Precio Neto');
     }
 
  if (event.keyCode == 13) {
@@ -288,7 +313,8 @@ function inputCharacters2(event) {
  }
 
 }
-
+   // fin detector de cambios
+});
 document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
         if(e.keyCode == 13) {
@@ -297,5 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }))
     });
    
+
 </script>
 @stop

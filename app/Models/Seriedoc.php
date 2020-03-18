@@ -22,11 +22,15 @@ class Seriedoc extends Model
             }
   }
 
+  public static function listadoSerieDocCombo($sucursal) {
+    // dd($contribuyente);
+            return $seriesdocs =  DB::select('call ListaSerieDoc(?,?)',array($sucursal,'0312'));
+    }
+
   public static function guardarSerieDoc($request){
     $rules = [
         'serie' => 'required',
-        'fechainicio' => 'required',
-        'fechafin' => 'required',
+       
         'sucursal' => 'required', 
         'tipodoc' => 'required', 
     ];
@@ -35,7 +39,7 @@ class Seriedoc extends Model
     if($validator->fails()){
         return response()->json($validator->errors(), 400);
     }
-    DB::select('call CreaSerieDoc(?,?,?,?,?,?)',array(
+    $salida=DB::select('call CreaSerieDoc(?,?,?,?,?,?)',array(
      Auth::user()->id,
      $request->get("serie"),
      date('Y-m-d', strtotime($request->get("fechainicio"))),
@@ -43,9 +47,14 @@ class Seriedoc extends Model
      $request->get("sucursal"),
      $request->get("tipodoc"),   
      ));
- 
-    return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
-    ->with('info','Serie de documento creada existosamente'); 
+    if($salida[0]->xSalida==0){
+        return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
+        ->with('info','Serie de documento creada existosamente'); 
+    }else{
+        return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
+        ->with('info','La serie de documento ya estaba asignada a esta sucursal'); 
+    }
+    
  }
 
  public static function mostrarTipoDoc($contribuyente){
@@ -55,5 +64,17 @@ class Seriedoc extends Model
 public static function DatosPersonales ($contribuyente) {
     return  DB::select('call VerContriDatos(?)',array($contribuyente));
 }
+
+public static function setSerie($serie){
+    //$ccliente=$_GET['cliente'];
+
+    session()->forget(['serie', 'nombreserie', 'tiposeriedoc']);
+    session()->push('serie', $serie);
+    $dataserie =  DB::select('call DataSerie(?)',array($serie));
+    
+    session()->push('nombreserie', [$dataserie[0]->nombre]);
+    session()->push('tiposeriedoc', [$dataserie[0]->tipodoc]);
+    return redirect()->back()->with('info','Serie seleccionada');
+    }
 
 }

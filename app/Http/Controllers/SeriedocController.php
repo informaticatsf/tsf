@@ -86,4 +86,8 @@ class SeriedocController extends Controller
     {
         //
     }
+
+    public function SetSerieDoc($serie){
+        return Seriedoc::setSerie($serie);
+    }
 }
