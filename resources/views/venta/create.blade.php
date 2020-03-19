@@ -320,18 +320,12 @@ function inputCharacters2(event) {
 document.getElementById("numdocipt").focus();
 document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
-          
-        if(e.keyCode == 13) {
+    if(e.keyCode == 13) {
           e.preventDefault();
-        }
-        if(e.keyCode == 118) {
-            alert('el f7');
-            document.getElementById("fecha").focus();
-        }
-        
+        }                
       }))
     });
-   
+
 
 </script>
 @stop

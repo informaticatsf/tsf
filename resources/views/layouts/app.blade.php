@@ -142,31 +142,66 @@
                         </div>
                     </div>
                     <ul class="nav nav-primary">
+                    
+
                     <li class="nav-item">
-                        <a href="{{ route('periodo.show','0312') }}">
-                        <i class="far fa-calendar-minus"></i>
-                        
-                        
-                        <p><FONT SIZE=2>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</FONT></p>
-                        
-                                
+                            <a data-toggle="collapse" href="#listaventas">
+                            <i class="fas fa-coins"></i>
+                                <p>Ventas</p>
+                                <span class="caret"></span>
                             </a>
+                            <div class="collapse" id="listaventas">
+                                <ul class="nav nav-collapse">
+
+                        @if(session()->get('inicio')[0]==null)
+                        <li class="nav-item">
+                        <a href="{{ route('periodo.show','0312') }}">
+                        <i class="far fa-calendar-minus"></i>                        
+                        <p><FONT SIZE=2>Seleccione periodo</FONT></p>
+                        </a>
                         </li>
+                        @else
+                        <li class="nav-item">
+                        <a href="{{ route('periodo.show','0312') }}">
+                        <i class="far fa-calendar-minus"></i>                        
+                        <p><FONT SIZE=1>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</FONT></p>
+                        </a>
+                        </li>
+                        @endif
+
+                        @if(session()->get('nombreconta')[0][0]==null)
                         <li class="nav-item">
                             <a href="{{ route('lconta.show','0312') }}">
                             <i class="fas fa-columns"></i>
-                            
-                                <p><FONT SIZE=2>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</FONT></p>
+                            <p><FONT SIZE=2>Seleccione sucursal</FONT></p>
                             </a>
                         </li>
+                        @else
                         <li class="nav-item">
-                            <a href="{{ route('cuentacontable.show','0312') }}">
-                            <i class="fas fa-file-contract"></i>
-                                <p><FONT SIZE=2>{{session()->get('namecuentaconta')[0]}}</FONT></p>
+                            <a href="{{ route('lconta.show','0312') }}">
+                            <i class="fas fa-columns"></i>
+                            <p><FONT SIZE=2>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</FONT></p>
                             </a>
                         </li>
- 
-                        @if(session()->get('contabilidad')[0] != null)
+                        @endif
+                        
+                        @if(session()->get('namecuentaconta')[0]!=null)
+                        <li class="nav-item">
+                        <a href="{{ route('cuentacontable.show','0312') }}">
+                        <i class="fas fa-file-contract"></i>
+                        <p><FONT SIZE=2>{{session()->get('namecuentaconta')[0]}}</FONT></p>
+                        </a>
+                        </li>                        
+                        @else
+                        <li class="nav-item">
+                        <a href="{{ route('cuentacontable.show','0312') }}">
+                        <i class="fas fa-file-contract"></i>
+                            <p><FONT SIZE=2>Selecciona cuenta contable</FONT></p>
+                        </a>
+                        </li>
+                        @endif
+
+                        @if(session()->get('namecuentaconta')[0] != null && session()->get('nombreconta')[0][0]!=null && session()->get('inicio')[0]!=null)
                         <li class="nav-item">
                         <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
                             <a href="{{route('venta.create',$d)}}">
@@ -175,6 +210,34 @@
                             </a>
                         </li>
                         @endif
+                        </ul>
+                        </div>
+                        </li>
+
+
+                        
+
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#listainventarios">
+                            <i class="fas fa-warehouse"></i>
+                                <p>Inventarios</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="listainventarios">
+                                <ul class="nav nav-collapse">
+                        <li class="nav-item">
+                        <a href="">
+                        <i class="far fa-calendar-minus"></i>                        
+                        <p><FONT SIZE=2>Item</FONT></p>
+                        </a>
+                        </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        
+ 
+                        
 
                         <li class="nav-item">
                             <a href="">
