@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empresa;
+use App\Models\InventarioFiscal;
 use App\Models\Contribuyente;
 use Illuminate\Http\Request;
 
-class EmpresaController extends Controller
+class InventarioFiscalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()  
+    public function index() 
     {
         //
     }
@@ -23,10 +23,10 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($contribuyente)
+    public function create($sucursal)
     {
-        $datas=Contribuyente::DatosPersonales($contribuyente); 
-        return  view('empresa.create',['contribuyente'=> $contribuyente, 'datos'=>$datas]);
+        $datas=Contribuyente::DatosPerEmpreSucInvFis($sucursal); 
+        return  view('inventariofiscal.create',['sucursal'=> $sucursal, 'datos'=>$datas]);
     }
 
     /**
@@ -35,29 +35,29 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) 
+    public function store(Request $request)
     {
-        return Empresa::guardarEmpresa($request); 
+        return InventarioFiscal::guardarInventarioFiscal($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\InventarioFiscal  $inventarioFiscal
      * @return \Illuminate\Http\Response
      */
-    public function show($contribuyente, $empresa)
+    public function show($sucursal, $inventario)
     {
-        return Empresa::listadoEmpresa($contribuyente, $empresa);
+        return InventarioFiscal::listadoInventarioFiscal($sucursal, $inventario);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\InventarioFiscal  $inventarioFiscal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empresa $empresa)
+    public function edit(InventarioFiscal $inventarioFiscal)
     {
         //
     }
@@ -66,10 +66,10 @@ class EmpresaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Empresa  $empresa
+     * @param  \App\InventarioFiscal  $inventarioFiscal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, InventarioFiscal $inventarioFiscal)
     {
         //
     }
@@ -77,16 +77,11 @@ class EmpresaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Empresa  $empresa
+     * @param  \App\InventarioFiscal  $inventarioFiscal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(InventarioFiscal $inventarioFiscal)
     {
         //
     }
-
-    public function contriempr($request){
-        // dd($request);
-         return Empresa::listadoEmpresas2($request);
-     }
 }

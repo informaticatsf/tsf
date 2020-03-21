@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use Auth;
 
-class Empresa extends Model
+class Empresa extends Model 
 {
     public static function listadoEmpresa($contribuyente, $empresa) {
         // dd($empresa);

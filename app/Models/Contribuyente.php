@@ -64,4 +64,10 @@ public static function DatosPerEmpreSucSer ($sucursal) {
     
 }
 
+public static function DatosPerEmpreSucInvFis ($sucursal) {
+        
+    return  DB::select('call VerEmpreSucInvFis(?)',array($sucursal));
+    
+}
+
 }
