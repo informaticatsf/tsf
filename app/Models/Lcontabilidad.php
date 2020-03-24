@@ -19,7 +19,10 @@ class Lcontabilidad extends Model
      }
 
      public static function setContabilidad($contabilidad, $sucursal, $empresa, $contribuyente){
-          session()->forget(['contabilidad', 'nombreconta']);
+        session()->forget(['inventario']);  
+        session()->forget(['cuentaconta', 'namecuentaconta']);
+        session()->forget(['contabilidad', 'nombreconta']);
+          
           session()->push('contabilidad', $contabilidad);
           session()->push('nombreconta', [$sucursal,$empresa,$contribuyente]);
           return redirect()->route('lconta.show','0312');
@@ -30,8 +33,11 @@ class Lcontabilidad extends Model
              // $ffecha=$_GET['fecha'];
             //  {$query = $_GET['periodo'];
             //  dd(date('d-m-Y', strtotime($fecha)));
+            
+            
             session()->forget(['fecha']);
             session()->forget(['fechabd']);
+            
             session()->push('fecha', date('d-m-Y', strtotime($fecha)));
             session()->push('fechabd', date('Y-m-d', strtotime($fecha)));
           

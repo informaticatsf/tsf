@@ -56,4 +56,11 @@ class InventarioFiscal extends Model
         return redirect()->route('inventariofiscal.show', [$request->sucursal,'0312'])
         ->with('info','Inventario Fiscal creado existosamente');
     }
+
+    public static function setIventarioF($id){
+        session()->forget(['inventario']);
+        $datainventario =  DB::select('call DatosInventarioFiscal(?)',array($id));
+        session()->push('inventario', [$datainventario[0]->id, $datainventario[0]->inventario, $datainventario[0]->sucursal, $datainventario[0]->empresa, $datainventario[0]->contribuyente, $datainventario[0]->nit]);
+        return redirect()->back()->with('info','inventario seleccionado');
+     }
 }

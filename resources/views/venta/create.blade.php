@@ -19,15 +19,21 @@
                 <tr>
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes">Serie</label><br>
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombreserie')[0][0]}} {{session()->get('tiposeriedoc')[0][0]}}</b></span></label>
+                            <label class="control-label col-lg-0 col-md-0 col-sm-10" for="clientes">Serie</label><br><p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
+                            @if(session()->get('nombreserie')[0]!=null)
+                            <label class="control-label col-lg-0 col-md-0 col-sm-10" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombreserie')[0][0]}} {{session()->get('tiposeriedoc')[0][0]}}</b></span></label>
+                            @else
+                            <label class="control-label col-lg-0 col-md-0 col-sm-10" for="clientess"><span style="color:#FB150E";><b>Todas las series</b></span></label>
+                            @endif
                               
                                     <div class="input-group">
                                     <select  name="serie" id="serie"  required="required" class="form-control">
                                     <option value="">-- Series --</option>
+                                    <option value="1000001">Todas las series</option>
                                     @foreach ($seriesdocs as $seriedoc)
                                     <option  value="{{$seriedoc->id}}"><span style="color:#FB150E";><b> {{$seriedoc->nombre}}  {{$seriedoc->tipodoc}}</b></span></option>
-                                    @endforeach
+                                    @endforeach                                    
+                                    <option value="{{route('seriedoc.create',$d)}}" href="{{route('seriedoc.create',$d)}}">Nueva Serie</option>
                                     </select>
                                  
                                         </div>
@@ -37,8 +43,8 @@
 
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas">Fecha</label><br>
-                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fecha')[0]}}</b></span></label>
+                            <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas">Fecha</label><br>
+                            <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fecha')[0]}}</b></span></label>
                              
                                     <div class="input-group">
                                         <input type="date" class="form-control" value="{{session()->get('fecha')[0]}}" data-id="2020-04-27" id="fecha" name="fecha">
@@ -58,6 +64,7 @@
                                     @foreach ($clientes as $cliente)
                                     <option  value="{{$cliente->id}}"><span style="color:#FB150E";><b> {{$cliente->nombre}}  {{$cliente->nit}}</b></span></option>
                                     @endforeach
+                                    <option value="{{route('cliente.create')}}" href="{{route('cliente.create')}}">Nuevo Cliente</option>
                                     </select>
                                  
                                         </div>
@@ -67,11 +74,15 @@
                 <td>                   
                 <div class="form-group col-lg-0 col-md-0 col-sm-12">
                             <label class="control-label col-lg-4 col-md-4 col-sm-12" for="clientes">Tipo venta</label><br>
+                            @if(session()->get('nombretentrada')[0][0]!=null)
                             <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>{{session()->get('nombretentrada')[0][0]}}</b></span></label>
-                               
+                            @else
+                            <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess"><span style="color:#FB150E";><b>Todos los tipos</b></span></label>
+                            @endif   
                                     <div class="input-group">
                                     <select  name="tipo" id="tipo"  required="required" class="form-control">
                                     <option value="">-- Tipos ventas --</option>
+                                    <option value="1000001">Todos los tipos</option>
                                     @foreach ($tiposentradas as $tipoentrada)
                                     <option  value="{{$tipoentrada->id}}">{{$tipoentrada->nombre}}</option>
                                     @endforeach
@@ -118,28 +129,37 @@
                     <div class="col-md-12">
                         </div>
                             </div>
+                            
+                            @if(session()->get('nombreserie')[0]!=null AND session()->get('nombretentrada')[0][0]!=null)
                             <form method="get" action="{{route('tablaventa.agregar')}}">
                                     <div class="form-group">
                                         <div class="input-group">
-                                        <input type="number" class="form-control" id="cuentaipt" name="cuentaipt" value="{{session()->get('cuentaconta')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="sucursalipt" name="sucursalipt" value="{{session()->get('contabilidad')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="seriedocipt" name="seriedocipt" value="{{session()->get('serie')[0]}}" hidden="hidden">
-                                        <input type="number" class="form-control" id="clienteipt" name="clienteipt" value="{{session()->get('cliente')[0]}}" hidden="hidden">
-                                        <input type="text" class="form-control" id="fechaiptbd" name="fechaiptbd" value="{{session()->get('fechabd')[0]}}" hidden="hidden">
-                                            <input type="number" class="form-control" id="inventarioipt" name="inventarioipt" value="" hidden="hidden">
-                                        <input type="number" class="form-control" id="periodoipt" name="periodoipt" value="{{session()->get('periodo')[0]}}" hidden="hidden">
-                                        <input type="text" class="form-control" id="tentradaipt" name="tentradaipt" value="{{session()->get('idtentrada')[0]}}" hidden="hidden">
-                                        <input type="text" class="form-control" placeholder="No. Documento" id="numdocipt" name="numdocipt">
-                                        <input type="number" step=".01" class="form-control" placeholder="Total" id="totdocipt" name="totdocipt">
-                                            <input type="number" step=".01" class="form-control" id="impuestoipt" value="{{session()->get('valorimpuesto')[0][0]}}" name="impuestoipt" readonly>
-                                        <input type="number" step=".01" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfipt" name="ivadfipt" readonly>
-                                        <input type="number" step=".01" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
+                                        <input require="required" type="number" class="form-control" id="cuentaipt" name="cuentaipt" value="{{session()->get('cuentaconta')[0]}}" hidden="hidden">
+                                        <input require="required" type="number" class="form-control" id="sucursalipt" name="sucursalipt" value="{{session()->get('contabilidad')[0]}}" hidden="hidden">
+                                        <input require="required" type="number" class="form-control" id="seriedocipt" name="seriedocipt" value="{{session()->get('serie')[0]}}" hidden="hidden">
+                                        <input require="required" type="number" class="form-control" id="clienteipt" name="clienteipt" value="{{session()->get('cliente')[0]}}" hidden="hidden">
+                                        <input require="required" type="text" class="form-control" id="fechaiptbd" name="fechaiptbd" value="{{session()->get('fechabd')[0]}}" hidden="hidden">
+                                        <input type="number" class="form-control" id="inventarioipt" name="inventarioipt" value="" hidden="hidden">
+                                        <input require="required" type="number" class="form-control" id="periodoipt" name="periodoipt" value="{{session()->get('periodo')[0]}}" hidden="hidden">
+                                        <input require="required" type="text" class="form-control" id="tentradaipt" name="tentradaipt" value="{{session()->get('idtentrada')[0]}}" hidden="hidden">
+                                        <input require="required" type="text" class="form-control" placeholder="No. Documento" id="numdocipt" name="numdocipt">
+                                        <input require="required" type="number" step=".01" class="form-control" placeholder="Total" id="totdocipt" name="totdocipt">
+                                            <input require="required" type="number" step=".01" class="form-control" id="impuestoipt" value="{{session()->get('valorimpuesto')[0][0]}}" name="impuestoipt" readonly>
+                                        <input require="required" type="number" step=".01" class="form-control" placeholder="IVA Debito Fiscal" id="ivadfipt" name="ivadfipt" readonly>
+                                        <input require="required" type="number" step=".01" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
                                             <span class="input-group-btn">
                                                 <button id="btnadd" type="submit" name="btnadd" class="btn btn-primary">Agregar</button>
                                             </span>
                                         </div>
                                     </div>
-                               </form>    
+                               </form>
+                               @else
+                               <div class="form-group">
+                               
+                               Seleccione una serie y tipo de venta para poder registrar ventas
+                               
+                               </div>
+                               @endif
                             <!-- cerramos el formulario -->
                         
 
@@ -196,11 +216,16 @@ $(document).ready(function(){
     
     $("#serie").change(function(){
         var series = document.getElementsByName("serie")[0].value;
-        var url = "{{ route('theserie.es', ':id') }}";        
+        if(isNaN(series)){        
+        var el = "{{route('seriedoc.create',$d)}}";
+        document.location.href=el;
+        }else{
+        var url = "{{ route('theserie.es', ':id') }}";
         url = url.replace(':id', series);
        //var fecha = document.getElementsByName("fecha")[0].value;
        // alert(fecha);        
         document.location.href=url;
+        }  
 });
 
 	$("#fecha").change(function(){
@@ -214,20 +239,27 @@ $(document).ready(function(){
 
 $("#cliente").change(function(){
         var clientes = document.getElementsByName("cliente")[0].value;
+        if (isNaN(clientes)){
+        var el = "{{route('cliente.create')}}";
+        document.location.href=el;
+        }else{
         var url = "{{ route('thecliente.es', ':id') }}";        
         url = url.replace(':id', clientes);
        //var fecha = document.getElementsByName("fecha")[0].value;
        // alert(fecha);        
         document.location.href=url;
+        }
 });
 
 $("#tipo").change(function(){
         var tipos = document.getElementsByName("tipo")[0].value;
+        
         var url = "{{ route('thetipoentrada.es', ':id') }}";        
         url = url.replace(':id', tipos);
        //var fecha = document.getElementsByName("fecha")[0].value;
        // alert(fecha);        
         document.location.href=url;
+        
 });
 
 $("#tipoi").change(function(){

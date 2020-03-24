@@ -44,9 +44,13 @@ class Periodo extends Model
 
 public static function setPeriodo($periodo, $inicio, $fin){
     //  dd(session()->get( 'periodo'), session()->get('inicio'), session()->get('fin'));
-      session()->forget(['periodo', 'inicio', 'fin']);
+        session()->forget(['periodo', 'inicio', 'fin']);
+        session()->forget(['inventario']);  
+        session()->forget(['cuentaconta', 'namecuentaconta']);
+        session()->forget(['contabilidad', 'nombreconta']);
      // session()->forget('inicio');
      // session()->forget('fin');
+
       session()->push('periodo', $periodo);
       session()->push('inicio', date('d-m-Y', strtotime($inicio)));
       session()->push('fin', date('d-m-Y', strtotime($fin)));

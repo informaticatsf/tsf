@@ -7,9 +7,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('inventariofiscal.create',$sucursal)}}">Crear Inventario Fiscal</a>
-                <h2 style="text-align: center; color: #1b4b72">Inventarios</h2>
+                @canany (['permiso-progra','crear-sup-conta','contador-auxiliar'])
+                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('cliente.create')}}">Crear Cliente</a>
+                @endcanany
+                <h2 style="text-align: center; color: #1b4b72">Clientes</h2>
 </div>
 
 <div class="card-body">
@@ -19,9 +20,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('inventariofiscal.show',[$sucursal,'inventario'])}}">
+                                <form method="get"  action="{{route('cliente.show','cliente')}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="inventario" name="inventario">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="cliente" name="cliente">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -35,26 +36,27 @@
 <table class="table table-bordered table-head-bg-info">
 <thead>
 <tr style="text-align: center">
-<th>ID</th>
-<th>Inventario</th>
-<th>Inicio</th>
-<th>Fin</th>
+<th width="10px">ID</th>
+<th>Nombre</th>
+<th width="10px">NIT</th>
+<th>Dirección</th>
+<th>Teléfono</th>
 <th>Acciones</th>
-
 </tr>
 </thead>
 <tbody>
-@foreach ($inventarios as $inventario)
+@foreach ($clientes as $cliente)
 <tr>
-<td>{{$inventario->id}}</td>
-<td>{{$inventario->nombre}}</td>
-<td>{{$inventario->fechaini}}</td>
-<td>{{$inventario->fechafin}}</td>
-<td width="10px" class="text-center">
-  <a href="{{route('theinventariof.es',$inventario->id)}}"
+<td width="10px">{{$cliente->id}}</td>
+<td>{{$cliente->nombre}}</td>
+<td width="10px">{{$cliente->nit}}</td>
+<td>{{$cliente->direccion}}</td>
+<td>{{$cliente->telefono}}</td>
+<td width="200px" class="text-center">
+  <a href="{{ route('thecliente.es',$cliente->id)}}"
      class="btn btn-sm btn-outline-dark">
       Seleccionar
-  </a>
+  </a>  
  </td>
 </tr>
 @endforeach

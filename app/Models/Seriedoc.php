@@ -48,7 +48,7 @@ class Seriedoc extends Model
      $request->get("tipodoc"),   
      ));
     if($salida[0]->xSalida==0){
-        return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
+        return redirect()->back() //route('seriedoc.show', [$request->sucursal,'0312'])
         ->with('info','Serie de documento creada existosamente'); 
     }else{
         return redirect()->route('seriedoc.show', [$request->sucursal,'0312'])
@@ -67,7 +67,10 @@ public static function DatosPersonales ($contribuyente) {
 
 public static function setSerie($serie){
     //$ccliente=$_GET['cliente'];
-
+    if ($serie=='1000001'){
+        session()->forget(['serie', 'nombreserie', 'tiposeriedoc']);
+        return redirect()->back()->with('info','Todas las series seleccionadas');
+    }else{
     session()->forget(['serie', 'nombreserie', 'tiposeriedoc']);
     session()->push('serie', $serie);
     $dataserie =  DB::select('call DataSerie(?)',array($serie));
@@ -75,6 +78,7 @@ public static function setSerie($serie){
     session()->push('nombreserie', [$dataserie[0]->nombre]);
     session()->push('tiposeriedoc', [$dataserie[0]->tipodoc]);
     return redirect()->back()->with('info','Serie seleccionada');
+    }
     }
 
 }

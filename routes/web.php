@@ -17,11 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 
 Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('periodoc/create', 'PeriodoController@create')->name('periodo.create');
     Route::post('periodo/store', 'PeriodoController@store')->name('periodo.store');
 
@@ -74,6 +75,9 @@ Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta'
 
 // +++++++++++++++++++++++ Cliente +++++++++++++++++++++++++++++++
 Route::get('clienteset/{cliente}','ClienteController@setThisCliente')->name('thecliente.es');
+Route::get('clientew/{cliente}','ClienteController@show')->name('cliente.show');
+Route::post('clientes/store', 'ClienteController@store')->name('cliente.store');
+Route::get('clientec/create', 'ClienteController@create')->name('cliente.create');
 
 
 // +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
@@ -89,6 +93,7 @@ Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@sh
 
 // +++++++++++++++++++++++ Inventario Fiscal +++++++++++++++++++++++++++++++++++
 Route::get('inventariofiscalw/{sucursal}/inventario/{inventario?}', 'InventarioFiscalController@show')->name('inventariofiscal.show');
+Route::get('inventariofiscalst/{sucursal}','InventarioFiscalController@SetThisInventarioF')->name('theinventariof.es');
 
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');

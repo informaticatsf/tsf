@@ -84,4 +84,8 @@ class InventarioFiscalController extends Controller
     {
         //
     }
+
+    public function SetThisInventarioF($id){
+        return InventarioFiscal::setIventarioF($id);
+    }
 }

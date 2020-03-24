@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -23,8 +24,8 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        return  view('cliente.create');
     }
 
     /**
@@ -35,7 +36,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Cliente::guardarCliente($request);
     }
 
     /**
@@ -44,9 +45,9 @@ class ClienteController extends Controller
      * @param  \App\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente $cliente)
+    public function show($cliente)
     {
-        //
+        return Cliente::listadoCliente($cliente);
     }
 
     /**
