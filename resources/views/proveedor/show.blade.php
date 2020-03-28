@@ -8,8 +8,8 @@
             <div class="card">
                 <div class="card-header">
                 
-                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('inventariofiscal.create',$sucursal)}}">Crear Inventario Fiscal</a>
-                <h2 style="text-align: center; color: #1b4b72">Inventarios</h2>
+                <a class="btn btn-sm btn-outline-primary float-right" href="{{route('proveedor.create')}}">Crear proveedor</a>
+                <h2 style="text-align: center; color: #1b4b72">Proveedores</h2>
 </div>
 
 <div class="card-body">
@@ -19,9 +19,9 @@
                             </div>
                             
                             <div class="form-group">
-                                <form method="get"  action="{{route('inventariofiscal.show',[$sucursal,'inventario'])}}">
+                                <form method="get"  action="{{route('proveedor.show','proveedor')}}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="inventario" name="inventario">
+                                        <input type="text" class="form-control" placeholder="Buscar" value="{{$query}}" id="proveedor" name="proveedor">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary">Buscar</button>
                                             </span>
@@ -36,24 +36,26 @@
 <thead>
 <tr style="text-align: center">
 <th>ID</th>
-<th>Inventario</th>
-<th>Inicio</th>
-<th>Fin</th>
+<th>Proveedor</th>
+<th>NIT</th>
+<th>Dirección</th>
+<th>Teléfono</th>
 <th>Acciones</th>
 
 </tr>
 </thead>
 <tbody>
-@foreach ($inventarios as $inventario)
+@foreach ($proveedores as $proveedor)
 <tr>
-<td>{{$inventario->id}}</td>
-<td>{{$inventario->nombre}}</td>
-<td>{{$inventario->fechaini}}</td>
-<td>{{$inventario->fechafin}}</td>
+<td>{{$proveedor->id}}</td>
+<td>{{$proveedor->nombre}}</td>
+<td>{{$proveedor->nit}}</td>
+<td>{{$proveedor->direccion}}</td>
+<td>{{$proveedor->telefono}}</td>
 <td width="10px" class="text-center">
-  <a href="{{route('theinventariof.es',$inventario->id)}}"
+  <a href="{{route('theproveedor.es', $proveedor->id)}}"
      class="btn btn-sm btn-outline-dark">
-      Compras
+      Seleccionar
   </a>
  </td>
 </tr>

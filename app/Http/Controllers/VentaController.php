@@ -25,7 +25,7 @@ class VentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($sucursal)
+    public function create($sucursal) 
     {
         $clientes = DB::table('VerClientesVenta')->get();
         $tiposentradas = DB::table('VerTipoEntrada')->get();        

@@ -37,4 +37,18 @@ class Tipodocumento extends Model
     return redirect()->route('tipodoc.show', '0312')
     ->with('info','Tipo de Documento creado existosamente');
 }
+
+public static function setTipoDocM($id){
+    session()->forget(['tipodoc']);
+    $proveedores = DB::table('VerProveedoresCompra')->get();
+    $datatipodoc =  DB::select('call DatoTipoDoc(?)',array($id));
+    session()->push('tipodoc', [$datatipodoc[0]->id, $datatipodoc[0]->nombre]);
+    $tiposdoc = DB::table('VerTipoDocCompra')->get();
+    return view('cinventariof.compra', compact('proveedores', 'tiposdoc'))->with('info','Tipo documento seleccionado');
+    }
+
+ public static function listaTablaCompraIF($inventariof, $fecha){
+     return DB::select('call VercompraIF(?,?)',array($inventariof, $fecha));
+}
+
 }

@@ -17,12 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
-
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+    
     Route::get('periodoc/create', 'PeriodoController@create')->name('periodo.create');
     Route::post('periodo/store', 'PeriodoController@store')->name('periodo.store');
 
@@ -64,21 +62,19 @@ Route::group(['middleware'=>['rolx:supervisor-contable']], function(){
     Route::post('cuentacontabler/storer', 'CuentacontableController@storei')->name('rowcreacuenta.storer');
 });
 
-
 Route::group(['middleware'=>['permiso:crear-aux-conta']], function(){
+    
 // +++++++++++++++++++++++ Contabilidades ++++++++++++++++++++++++++++++
 Route::get('lcontabilidad/{busca}', 'LcontabilidadController@show')->name('lconta.show');
 Route::get('lcontabilidades/{contabilidad}/{sucursal}/{empresa}/{contribuyente}','LcontabilidadController@setThisConta')->name('lconta.es');
-
 Route::get('lcontabilidadef/{fecha}','LcontabilidadController@setThisFechaConta')->name('thefecha.es');
-
 
 // +++++++++++++++++++++++ Cliente +++++++++++++++++++++++++++++++
 Route::get('clienteset/{cliente}','ClienteController@setThisCliente')->name('thecliente.es');
 Route::get('clientew/{cliente}','ClienteController@show')->name('cliente.show');
 Route::post('clientes/store', 'ClienteController@store')->name('cliente.store');
 Route::get('clientec/create', 'ClienteController@create')->name('cliente.create');
-
+Route::get('search', 'ClienteController@index')->name('search');
 
 // +++++++++++++++++++++++ Contribuyentes +++++++++++++++++++++++++++++++
 Route::get('contribuyente/{busca}',  'ContribuyenteController@show')->name('contribuyente.show');
@@ -94,10 +90,18 @@ Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@sh
 // +++++++++++++++++++++++ Inventario Fiscal +++++++++++++++++++++++++++++++++++
 Route::get('inventariofiscalw/{sucursal}/inventario/{inventario?}', 'InventarioFiscalController@show')->name('inventariofiscal.show');
 Route::get('inventariofiscalst/{sucursal}','InventarioFiscalController@SetThisInventarioF')->name('theinventariof.es');
+Route::get('inventariofiscalfe/{fecha}','InventarioFiscalController@setThisFechaComprInvFis')->name('thefechacif.es');
 
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
 Route::get('periodosget/{periodo}/{incicio}/{fin}','PeriodoController@setThisPeriod')->name('periodos.es');
+
+// +++++++++++++++++++++++ Proveedor +++++++++++++++++++++++++++++++++++++
+Route::get('proveedorw/{busca}','ProveedorController@show')->name('proveedor.show');
+Route::get('proveedorst/{proveedor}','ProveedorController@setThisProveedor')->name('theproveedor.es');
+Route::get('proveedorstm/{proveedor}','ProveedorController@setThisProveedorModal')->name('theproveedormodal.es');
+Route::get('proveedor/create', 'ProveedorController@create')->name('proveedor.create');
+Route::post('proveedor/store', 'ProveedorController@store')->name('proveedor.store');
 
 // +++++++++++++++++++++++ regla Regimen +++++++++++++++++++++++++++++++++++
 Route::get('reglaregimenw/{regimen}/regla/{regla?}', 'ReglaregimenController@show')->name('reglaregimen.show');
@@ -111,6 +115,8 @@ Route::get('tipcuentacs/{busca}','TipocuentacontableController@show')->name('tip
 
 // +++++++++++++++++++++++ Tipo Documento +++++++++++++++++++++++++
 Route::get('tipodocw/{busca}','TipodocumentoController@show')->name('tipodoc.show');
+Route::get('tipodost/{tipo}','TipodocumentoController@SetThisTipodocM')->name('thetipodocm.es');
+
 
 // +++++++++++++++++++++++ Tipo Entrada +++++++++++++++++++++++++
 Route::get('tipoentradaw/{busca}','TipoentradaController@show')->name('tipoentrada.show');
@@ -120,24 +126,21 @@ Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('th
 Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
 
-
-
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
 
 // +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++
 Route::get('venta/create/{sucursal}', 'VentaController@create')->name('venta.create');
 Route::get('venta/tablaagregar','VentaController@setMoreVenta')->name('tablaventa.agregar');
-
 });
 
 Route::group(['middleware'=>['rolx:desarrollador', 'rolx:supervisor-contable']], function(){
-//users **************************************************************************
+
+// *********************** users *******************************
 Route::get('userss/{id}', 'UserController@index')->name('users.index');
 Route::post('usersu/{user}', 'UserController@update')->name('users.update');
 Route::get('usersw/{user}', 'UserController@show')->name('users.show');
 Route::delete('usersd/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); 
-
 });

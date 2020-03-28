@@ -20,7 +20,7 @@ class Venta extends Model
                 'fechaiptbd' => 'required',
                 'totdocipt' => 'required',
                 'pnetoipt' => 'required',
-                'ivadfipt' => 'required',
+                'ivadfipt' => 'required', 
                 'periodoipt' => 'required',
                 'tentradaipt' => 'required'
         ];

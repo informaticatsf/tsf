@@ -38,7 +38,6 @@ class InventarioFiscal extends Model
                 $request->get("sucursal"),
                 $request->get("nombre"),
                 date('Y-m-d', strtotime($request->get("fechainicio"))),
-                
                 null,
                 ));
         }else{
@@ -47,7 +46,6 @@ class InventarioFiscal extends Model
                 $request->get("sucursal"),
                 $request->get("nombre"),
                 date('Y-m-d', strtotime($request->get("fechainicio"))),
-                
                 date('Y-m-d', strtotime($request->get("fechafin"))),
                 ));
         }
@@ -61,6 +59,23 @@ class InventarioFiscal extends Model
         session()->forget(['inventario']);
         $datainventario =  DB::select('call DatosInventarioFiscal(?)',array($id));
         session()->push('inventario', [$datainventario[0]->id, $datainventario[0]->inventario, $datainventario[0]->sucursal, $datainventario[0]->empresa, $datainventario[0]->contribuyente, $datainventario[0]->nit]);
-        return redirect()->back()->with('info','inventario seleccionado');
-     }
+        $proveedores = DB::table('VerProveedoresCompra')->get();
+        $tiposdoc = DB::table('VerTipoDocCompra')->get();
+                
+        return view('cinventariof.compra', compact('proveedores', 'tiposdoc'))->with('info','inventario seleccionado');
+        }
+
+     public static function listaTablaCompraIF($inventariof, $fecha){
+         return DB::select('call VercompraIF(?,?)',array($inventariof, $fecha));
+    }
+
+    public static function setFechaCompInvFisc($fecha){
+      //dd($_GET['fecha']);
+      // $ffecha=$_GET['fecha'];
+      //  {$query = $_GET['periodo'];
+      //  dd(date('d-m-Y', strtotime($fecha)));
+      session()->forget(['fechacif']);      
+      session()->push('fechacif', [date('d-m-Y', strtotime($fecha)), date('Y-m-d', strtotime($fecha))]);
+      return redirect()->back()->with('info','Fecha para compra de inventario cambiada');
+      }
 }

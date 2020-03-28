@@ -9,6 +9,8 @@ use Validator;
 class Cliente extends Model
 
 {
+
+
     public static function listadoCliente($cliente) {
         // dd($contribuyente);
         if ($cliente=='0312')

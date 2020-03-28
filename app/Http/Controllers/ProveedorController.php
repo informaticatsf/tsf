@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cliente;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ClienteController extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        // 
+        //
     }
 
     /**
@@ -24,8 +23,8 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
-        return  view('cliente.create');
+    {
+        return  view('proveedor.create');
     }
 
     /**
@@ -36,27 +35,27 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        return Cliente::guardarCliente($request);
+        return Proveedor::guardarProveedor($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function show($cliente)
+    public function show($proveedor)
     {
-        return Cliente::listadoCliente($cliente);
+        return Proveedor::listadoProveedor($proveedor);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit(Proveedor $proveedor)
     {
         //
     }
@@ -65,10 +64,10 @@ class ClienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, Proveedor $proveedor)
     {
         //
     }
@@ -76,17 +75,19 @@ class ClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cliente  $cliente
+     * @param  \App\Proveedor  $proveedor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Proveedor $proveedor)
     {
         //
     }
 
-    public function setThisCliente($cliente){
-        
-        return Cliente::setCliente($cliente);
+    public function setThisProveedor($proveedor){
+        return Proveedor::setProveedor($proveedor);
       }
-     
+
+      public function setThisProveedorModal($proveedor){
+        return Proveedor::setProveedorModal($proveedor);
+      }
 }

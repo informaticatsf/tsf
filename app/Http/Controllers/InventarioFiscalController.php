@@ -88,4 +88,17 @@ class InventarioFiscalController extends Controller
     public function SetThisInventarioF($id){
         return InventarioFiscal::setIventarioF($id);
     }
+
+    public function comprainv($inventariof){
+        $proveedores = DB::table('VerProveedoresCompra')->get();
+        $tablacompras = InventarioFiscal::listaTablaCompraIF($inventariof, session()->get('fechabd')[0]);
+        dd($proveedores);
+        return view('cinventariof.compra', compact('proveedores', 'tablacompras'));
+    }
+
+    public function setThisFechaComprInvFis($fecha){
+        return InventarioFiscal::setFechaCompInvFisc($fecha);
+      }
+    
+    
 }

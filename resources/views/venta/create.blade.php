@@ -47,7 +47,7 @@
                             <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fecha')[0]}}</b></span></label>
                              
                                     <div class="input-group">
-                                        <input type="date" class="form-control" value="{{session()->get('fecha')[0]}}" data-id="2020-04-27" id="fecha" name="fecha">
+                                        <input type="date" class="form-control" value="{{session()->get('fecha')[0]}}" id="fecha" name="fecha">
                              
                                         </div>
                              
@@ -116,8 +116,8 @@
                 </table>
 </div>
 
-        
-                        
+
+                   
 
                          
                               

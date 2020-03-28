@@ -8,8 +8,9 @@
     <title>@yield('title')Textiles San Francisco</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    
     
     
     
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/atlantis.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}" >
     <link href="{{ asset('vendor/bootstrap-daterangepicker/bootstrap-datepicker.css') }}" rel="stylesheet">
+    
 
 
     <!-- Fonts and icons -->
@@ -291,6 +293,12 @@
                                 <li>
                                 <a href="{{route('periodo.show','0312')}}">
                                     <span class="sub-item">Periodos</span>
+                                </a>
+                                </li>
+
+                                <li>
+                                <a href="{{route('proveedor.show','0312')}}">
+                                    <span class="sub-item">Proveedores</span>
                                 </a>
                                 </li>
 

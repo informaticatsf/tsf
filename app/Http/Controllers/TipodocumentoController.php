@@ -82,4 +82,10 @@ class TipodocumentoController extends Controller
     {
         //
     }
+
+    
+    public function SetThisTipodocM($tipodocin){
+        return Tipodocumento::setTipoDocM($tipodocin); 
+    }
+    
 }
