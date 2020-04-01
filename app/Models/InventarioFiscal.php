@@ -86,6 +86,8 @@ class InventarioFiscal extends Model
         $respuesta = new stdClass();
         $respuesta->xSalida = null;
         $respuesta->xExisThisDoc = null;
+        $respuesta->xtipodoc = null;
+        $respuesta->xproveedor = null;
                
         return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta'));      }
 

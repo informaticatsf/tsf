@@ -22,13 +22,16 @@
                                                 <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">
                                                 {{$f=session()->get('fechacif')[0][1]}}
                                                 </label>
-                                                <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13" value="{{date('d/m/Y', strtotime(session()->get('fechacif')[0][1]))}}" id="fecha" name="fecha">
+                                                <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13"  id="fecha" name="fecha">
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-group col-lg-0 col-md-0 col-sm-11">
                                                 <div class="input-group">
                                                     <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Proveedor</label><br>
+                                                    <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="pros">
+                                                    {{$provee=session()->get('proveedor')[0][0]}}
+                                                    </label>
                                                     <select  name="proveedore" id="proveedore"  required="required" class="form-control">
                                                         <option value="" disabled selected>-- Proveedores --</option>
                                                         @foreach ($proveedores as $proveedor)
@@ -43,6 +46,9 @@
                                             <div class="form-group col-lg-0 col-md-0 col-sm-11">
                                                 <div class="input-group">
                                                     <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Tipo Documento</label><br>
+                                                    <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="pros">
+                                                    {{$tipod=session()->get('tipodoc')[0][0]}}
+                                                    </label>
                                                     <select  name="tipodocm" id="tipodocm"  required="required" class="form-control">
                                                         <option value="" disabled selected>-- Tipos Documentos --</option>
                                                         @foreach ($tiposdoc as $tipodoc)
@@ -78,6 +84,9 @@
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
                                                     <input placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required"
                                                     class="form-control">
+                                                        <div id="countryList">
+                                                        </div>
+                                                        {{ csrf_field() }}
                                                 </div>
                                             </div>
                                         </td>
@@ -131,6 +140,7 @@
                                 </tbody>
                             </table>
                         </div>
+
                         @else
                        
                         <div class="table-responsive">
@@ -249,6 +259,7 @@
                         </div>
                         @endif
                     </div>
+                    @if($respuesta->xSalida != null )
                     <div class="card-body">
                         <form method="get" action="{{route('tablaventa.agregar')}}">
                             <div class="form-group">
@@ -313,6 +324,7 @@
                             </table>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -332,6 +344,9 @@ $(document).ready(function(){
 });
    // fin detector de cambios
 });
+
+
+
 document.getElementById("numdocipt").focus();
 document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
@@ -358,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.location.href=url;
         }
         });
+        
 
         $(document).on('change','#tipodocm',function(){
         //var proveedore = document.getElementsByName("proveedore")[0].value;
@@ -374,8 +390,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $(document).ready( function() {
 
+    var RespuestaSalida = '{{$respuesta->xSalida}}';
+    if (RespuestaSalida==''){
       $("#tipodocm option[value="+ {{session()->get('tipodoc')[0][0]}} +"]").attr("selected",true);
       $("#proveedore option[value="+ {{session()->get('proveedor')[0][0]}} +"]").attr("selected",true);
+    }else{
+        $("#tipodocm option[value="+ {{$respuesta->xtipodoc}} +"]").attr("selected",true);
+        $("#proveedore option[value="+ {{$respuesta->xproveedor}} +"]").attr("selected",true);
+    }
     
     $("#tipodocm").change(function(){
       if (isNaN(tipodocmm)){
@@ -387,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.location.href=url;
         }
     });
+
 
 document.getElementById('nodocipt').addEventListener('keyup', inputCharacters);
 document.getElementById('serdocipt').addEventListener('keyup', inputCharacters2);
@@ -428,20 +451,56 @@ function inputCharacters3(event) {
              }
         }
 
-    
-
  if (event.keyCode == 13) {
 //   document.getElementById('btnadd').click();
  }
+   }
+    });
+</script>
 
-}
-    
+<script>
+$(document).ready(function(){
 
+ $('#serdocipt').keyup(function(){
+     
+        var proveed = '{{$provee}}';
+        var tipodo = '{{$tipod}}';
+        var query = $(this).val();
+        var urle = "{{ route('autocomplete.fetch',[':id', ':ij', ':ik']) }}";
+        urle = urle.replace(':id', proveed);
+        urle = urle.replace(':ij', query);
+        urle = urle.replace(':ik', tipodo);
+        
+
+        if(query != '')
+        {
+            
+         var _token = $('input[name="_token"]').val();
+         
+         $.ajax({
+          url:urle,
+          type:"GET",
+          data:{query:query, _token:_token},
+          success:function(data){
+           $('#serdocipt').fadeIn();  
+                    $('#countryList').html(data);
+          },
+          error:function(data){
+              alert(data);
+          }
+         });
+        }
     });
 
+    $(document).on('click', 'li', function(){  
+        $('#serdocipt').val($(this).text());  
+        $('#countryList').fadeOut();  
+    });
+    
     
 
-    
+});
 </script>
+
 
 @endsection
