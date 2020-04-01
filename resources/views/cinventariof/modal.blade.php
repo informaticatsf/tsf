@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content content-pago">
       <div class="modal-header header-pago">
-        <h5 class="modal-title" id="exampleModalLabel">Compra inventario</h5>
+        <h4 class="modal-title" id="exampleModalLabel">Compra inventario {{$d= session()->get('fechacif')[0][0]}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,23 +12,15 @@
         <form method="POST" id="insert_pago_deuda" action="{{ url('registrarpago') }}" class="form-group row" autocomplete="off">
         {{ csrf_field() }}        
 
-        <div class="col-lg-4"> <p>{{$d= session()->get('fechacif')[0][0]}}</p>
+        <div class="col-lg-4"> 
 
         <div class="form-group row">
-              <label class="control-label col-lg-3 col-md-4 col-sm-12" for="forma_pago">Proveedor</label>
-              <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientess">
-                <span style="color:#FB150E";>
-                <b>{{session()->get('proveedor')[0][1]}} {{session()->get('proveedor')[0][2]}}</b>
-                </span>
-              </label>
-              <label class="control-label col-lg-3 col-md-4 col-sm-12" for="clientes"></label><br>
             <div class="form-group col-lg-0 col-md-0 col-sm-12">
-          
               <div class="input-group">
                 <select  name="proveedore" id="proveedore"  required="required" class="form-control">
                 <option value="" disabled selected>-- Proveedores --</option>
                 @foreach ($proveedores as $proveedor)
-                <option  value="{{$proveedor->id}}"><span style="color:#FB150E";><b> {{$proveedor->nombre}}  {{$proveedor->nit}}</b></span></option>
+                <option  value="{{$proveedor->id}}"><span style="color:#FB150E";><b>{{$proveedor->nit}} {{$proveedor->nombre}}</b></span></option>
                 @endforeach
                 <option value="a">Nuevo Proveedor</option>
                 </select>
@@ -37,15 +29,7 @@
           </div>
 
         <div class="form-group row">
-              <label class="control-label col-lg-3 col-md-2 col-sm-12" for="forma_pago">Tipo Doc</label>
-              <label class="control-label col-lg-3 col-md-2 col-sm-12" for="tipodocm">
-                <span style="color:#FB150E";>
-                <b>{{session()->get('tipodoc')[0][1]}}</b>
-                </span>
-              </label>
-              <label class="control-label col-lg-3 col-md-4 col-sm-12" for="tipodocm"></label><br>
             <div class="form-group col-lg-0 col-md-0 col-sm-12">
-          
               <div class="input-group">
                 <select  name="tipodocm" id="tipodocm"  required="required" class="form-control">
                 <option value="" disabled selected>-- Tipos Documentos --</option>
@@ -59,11 +43,15 @@
 
         
            
-          <div class="form-group row">
-            <label class="control-label col-lg-3 col-md-4 col-sm-12"
-            for="solicitud">No. Documento</label>
-            <div class="col-lg-9 col-md-8 col-sm-12">
-              <input type="text" id="nodociptm" name="nodociptm" required="required"
+          
+                     
+        </div>
+        
+        <div class="col-lg-4">
+          
+        <div class="form-group row">
+            <div class="col-lg-9 col-md-0 col-sm-12">
+              <input placeholder="No. Documento" type="text" id="nodociptm" name="nodociptm" required="required"
               class="form-control">
             </div>
           </div>
@@ -71,25 +59,11 @@
           
 
           <div class="form-group row">
-            <label class="control-label col-lg-3 col-md-4 col-sm-12"
-            for="num_pago">Serie Doc.</label>
-            <div class="col-lg-9 col-md-8 col-sm-12">
-              <input type="text" id="serdociptm" name="serdociptm" required="required"
+            <div class="col-lg-9 col-md-0 col-sm-12">
+              <input placeholder="Serie Doc." type="text" id="serdociptm" name="serdociptm" required="required"
               class="form-control">
             </div>
           </div>
-                     
-        </div>
-        
-        <div class="col-lg-7">
-          <div class="form-group row">
-            <label class="control-label col-lg-3 col-md-4 col-sm-12"
-            for="abono">Abono</label>
-            <div class="col-lg-9 col-md-8 col-sm-12">
-              <input type="number" id="abono" lang="en" name="abono" min="1" step="any" required="required" pattern="^\d*(\.\d{0,2})?$" class="form-control style_monto">
-            </div>
-          </div>
-
           
 
           <div class="form-group row show_recibo">

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Validator;
 use Auth;
+use stdClass;
 class InventarioFiscal extends Model
 { 
     public static function listadoInventarioFiscal($sucursal, $inventario) {
@@ -78,4 +79,63 @@ class InventarioFiscal extends Model
       session()->push('fechacif', [date('d-m-Y', strtotime($fecha)), date('Y-m-d', strtotime($fecha))]);
       return redirect()->back()->with('info','Fecha para compra de inventario cambiada');
       }
+
+      public static function creaFactura(){
+        $proveedores = DB::table('VerProveedoresCompra')->get();
+        $tiposdoc = DB::table('VerTipoDocCompra')->get();
+        $respuesta = new stdClass();
+        $respuesta->xSalida = null;
+        $respuesta->xExisThisDoc = null;
+               
+        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta'));      }
+
+    public static function CreaHeadFac($request){ 
+        
+        //dd($request->all());
+        $rules = [ 
+            'serdocipt'     => 'required',
+            'tipodocm'      => 'required',
+            'proveedoreipt' => 'required',
+            'inventarioipt' => 'required',
+            'fechaipt'      => 'required',
+            'totdocipt'     => 'required',
+            'nodocipt'      => 'required',
+        ];
+
+        $validator=Validator::make($request->all(), $rules);
+        if($validator->fails()){
+           
+            return response()->json($validator->errors(), 400);
+        }
+        $neto = $request->get("pnetoipt");
+        $credito = $request->get("crefisipt");
+        if($neto=="Precio Neto"){
+            $neto = null;
+        }
+
+        if($credito=="Crédito Fiscal"){
+            $credito = null;
+        }
+            $respuesta = DB::select('call CreaCompraInv(?,?,?,?,?,?,?,?,?,?,?,?)',array(
+                Auth::user()->id,
+                null,
+                $request->get("serdocipt"),
+                $request->get("tipodocm"),
+                $request->get("proveedoreipt"),
+                $request->get("inventarioipt"),
+                date('Y-m-d', strtotime($request->get("fechaipt"))),
+                $request->get("totdocipt"),
+                Auth::user()->id,
+                $request->get("nodocipt"),
+                $neto,
+                $credito,
+                ));
+                
+                $proveedores = DB::table('VerProveedoresCompra')->get();
+        $tiposdoc = DB::table('VerTipoDocCompra')->get();
+        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc'));
+
+        return redirect()->route('inventariofiscal.show', [$request->sucursal,'0312'])
+        ->with('info','Inventario Fiscal creado existosamente');
+    }
 }

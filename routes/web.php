@@ -91,6 +91,7 @@ Route::get('empresaco/{contribuyente}/empresa/{empresa?}', 'EmpresaController@sh
 Route::get('inventariofiscalw/{sucursal}/inventario/{inventario?}', 'InventarioFiscalController@show')->name('inventariofiscal.show');
 Route::get('inventariofiscalst/{sucursal}','InventarioFiscalController@SetThisInventarioF')->name('theinventariof.es');
 Route::get('inventariofiscalfe/{fecha}','InventarioFiscalController@setThisFechaComprInvFis')->name('thefechacif.es');
+Route::get('inventariofiscal/creafactura','InventarioFiscalController@CrearFactura')->name('nuevafactura.create');
 
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
@@ -115,7 +116,7 @@ Route::get('tipcuentacs/{busca}','TipocuentacontableController@show')->name('tip
 
 // +++++++++++++++++++++++ Tipo Documento +++++++++++++++++++++++++
 Route::get('tipodocw/{busca}','TipodocumentoController@show')->name('tipodoc.show');
-Route::get('tipodost/{tipo}','TipodocumentoController@SetThisTipodocM')->name('thetipodocm.es');
+Route::get('tipodost/{tipo}','TipodocumentoController@SetThisTipodoc')->name('thetipodoc.es');
 
 
 // +++++++++++++++++++++++ Tipo Entrada +++++++++++++++++++++++++

@@ -18,7 +18,7 @@
                               <div class="col-lg-10 col-md-8 col-sm-12">
                                 <input type="text" id="nombre" name="nombre" required="required"  class="form-control">
                                 <select  name="seleccion" id="seleccion"  required="required" class="form-control col-lg-8 col-md-4 col-sm-12">
-                                    <option value="">--Seleccione--</option>                                    
+                                    <option disabled selected value="">--Seleccione--</option>                                    
                                     <option  value="1">DEBE</option>
                                     <option  value="2">HABER</option>
                                     </select>

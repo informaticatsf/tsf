@@ -61,16 +61,15 @@ tfoot {
                 <tbody>
                 <tr>
                 <td>                   
-                <div class="form-group col-lg-4 col-md-4 col-sm-10">
-                            <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas">Fecha</label><br>
-                            <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas"><span style="color:#FB150E";><b>{{session()->get('fechacif')[0][0]}}</b></span></label>
-                             
-                                    <div class="input-group">
-                                        <input type="date" class="form-control" value="{{session()->get('fecha')[0]}}" id="fecha" name="fecha">
-                             
-                                        </div>
-                              
-                                </div>
+                  <div class="form-group col-lg-4 col-md-4 col-sm-10">
+                    <label class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas">Fecha</label><br>
+                    <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-12" for="fechas">
+                      {{$f=session()->get('fechacif')[0][1]}}
+                    </label>
+                    <div class="input-group">
+                      <input type="date" class="form-control" value="{{date('d/m/Y', strtotime(session()->get('fechacif')[0][1]))}}" id="fecha" name="fecha">
+                    </div>
+                  </div>
                 </td>
               
                 </tr>
@@ -83,7 +82,7 @@ tfoot {
 
                          
                               
-                <h2 style="text-align: center; color: #1b4b72">Compra Inventario</h2>
+                <h2 style="text-align: center; color: #1b4b72">Compras Inventario</h2>
             </div>
 
 <div class="card-body">
@@ -111,6 +110,7 @@ tfoot {
                                         <input require="required" type="number" step=".01" class="form-control" placeholder="Precio Neto" id="pnetoipt" name="pnetoipt" readonly>
                                             <span class="input-group-btn">
                                                 <button id="btnadd" type="button" name="btnadd" class="btn btn-primary showmodal" data-toggle="modal" data-target="#ModalRealizarPago">Agregar</button>
+                                                <a href="{{route('nuevafactura.create')}}" class="btn btn-primary">Crear Factura</a>
                                                 <button type="button"  class="btn btn-sm btn-success showmodal" data-toggle="modal" data-target="#ModalRealizarPago">
                                                     <span class="icon text-white-100">
                                                       <i class="fas fa-money-bill fa-sm"></i>
@@ -177,6 +177,8 @@ tfoot {
 
 <script>
 $(document).ready(function(){
+  var variable1 = '{{$f}}';
+  document.getElementById("fecha").value = variable1;
     
 	$("#fecha").change(function(){
         var fechas = document.getElementsByName("fecha")[0].value;
@@ -276,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('aqui');
         }else{
           alert('aqui2');
-        var url = "{{ route('thetipodocm.es', ':id') }}";        
+        var url = "{{ route('thetipodoc.es', ':id') }}";        
         url = url.replace(':id', tipodocmm);
        //var fecha = document.getElementsByName("fecha")[0].value;
        // alert(fecha);        
@@ -305,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('aqui');
         }else{
           alert('aqui2');
-        var url = "{{ route('thetipodocm.es', ':id') }}";        
+        var url = "{{ route('thetipodoc.es', ':id') }}";        
         url = url.replace(':id', tipodocmm);
        //var fecha = document.getElementsByName("fecha")[0].value;
        // alert(fecha);        

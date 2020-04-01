@@ -100,5 +100,7 @@ class InventarioFiscalController extends Controller
         return InventarioFiscal::setFechaCompInvFisc($fecha);
       }
     
-    
+    public function CrearFactura(){
+        return InventarioFiscal::creaFactura();
+    }
 }
