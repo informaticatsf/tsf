@@ -10,10 +10,10 @@
                     <h2 style="text-align: center; color: #1b4b72">Nueva Compra</h2>
                     <b>Inventario y sucursal:</b>  <span style="color:#FB150E";><b>{{session()->get('inventario')[0][1]}} - {{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</b></span>
                     
-                    @if($respuesta->xSalida == null )
+                    @if($newcabeza=='si')
                         <div class="table-responsive">
                           <table class="table table-bordered">
-                            <form method="get" action="{{route('tablaventa.agregar')}}">
+                            <form method="get" action="{{route('nuevafactura.store')}}">
                                 <tbody>
                                     <tr>
                                         <td>                   
@@ -63,18 +63,14 @@
                                             <label for="afecta">Compras no afectas</label><br>
                                         </td>
                                     </tr>
-                                </tbody>
-                            </form>    
-                          </table>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <tbody>
+                        
                                     <tr>
                                         <td>                   
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
                                                     <input placeholder="No. Documento" type="text" id="nodocipt" name="nodocipt" required="required"
+                                                    class="form-control">
+                                                    <input type="text" id="inventarioipt" name="inventarioipt" required="required" hidden="hidden" value="{{session()->get('inventario')[0][0]}}"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -82,7 +78,7 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required"
+                                                    <input placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required" autocomplete="on"
                                                     class="form-control">
                                                         <div id="countryList">
                                                         </div>
@@ -138,6 +134,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                            </form>
                             </table>
                         </div>
 
@@ -152,7 +149,7 @@
                                             <div class="form-group col-lg-0 col-md-0 col-sm-11">
                                                 <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Fecha</label><br>
                                                 <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">
-                                                {{$f=$respuesta->xfecha}}
+                                                {{$f=$respuesta[0]->xfecha}}
                                                 </label>
                                                 <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13" readonly id="fecha" name="fecha">
                                             </div>
@@ -185,7 +182,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                        @if($respuesta->xafecta == 1)
+                                        @if($respuesta[0]->xafecta == 1)
                                             <input readonly type="checkbox" id="afecta" name="afecta" checked="checked">
                                             @else
                                             <input readonly type="checkbox" id="afecta" name="afecta">
@@ -204,7 +201,7 @@
                                         <td>                   
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xnumeroDoc}}" placeholder="No. Documento" type="text" id="nodocipt" name="nodocipt" required="required"
+                                                    <input readonly value="{{$respuesta[0]->xnumeroDoc}}" placeholder="No. Documento" type="text" id="nodocipt" name="nodocipt" required="required"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -212,7 +209,7 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xserieDoc}}" placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required"
+                                                    <input readonly value="{{$respuesta[0]->xserieDoc}}" placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -220,7 +217,7 @@
                                         <td>
                                         <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xMovBanco}}" placeholder="Mov Banco" type="text" id="movbanipt" name="movbanipt" readonly
+                                                    <input readonly value="{{$respuesta[0]->xMovBanco}}" placeholder="Mov Banco" type="text" id="movbanipt" name="movbanipt" readonly
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -231,7 +228,7 @@
                                         <td>                   
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xtotal}}" placeholder="Total" type="number" id="totdocipt" name="totdocipt" required="required"
+                                                    <input readonly value="{{$respuesta[0]->xtotal}}" placeholder="Total" type="number" id="totdocipt" name="totdocipt" required="required"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -239,7 +236,7 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xPNeto}}" placeholder="Precio Neto" type="number" id="pnetoipt" name="pnetoipt" required="required" readonly
+                                                    <input readonly value="{{$respuesta[0]->xPNeto}}" placeholder="Precio Neto" type="number" id="pnetoipt" name="pnetoipt" required="required" readonly
                                                     class="form-control">
                                                 </div>
                                             </div> 
@@ -247,7 +244,7 @@
                                         <td>
                                         <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input readonly value="{{$respuesta->xCreditoFiscal}}" placeholder="Crédito Fiscal" type="number" id="crefisipt" name="crefisipt" required="required" readonly
+                                                    <input readonly value="{{$respuesta[0]->xCreditoFiscal}}" placeholder="Crédito Fiscal" type="number" id="crefisipt" name="crefisipt" required="required" readonly
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -259,7 +256,7 @@
                         </div>
                         @endif
                     </div>
-                    @if($respuesta->xSalida != null )
+                    @if($newcabeza=='no')
                     <div class="card-body">
                         <form method="get" action="{{route('tablaventa.agregar')}}">
                             <div class="form-group">
@@ -347,7 +344,7 @@ $(document).ready(function(){
 
 
 
-document.getElementById("numdocipt").focus();
+document.getElementById("nodocipt").focus();
 document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
     if(e.keyCode == 13) {
@@ -390,13 +387,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $(document).ready( function() {
 
-    var RespuestaSalida = '{{$respuesta->xSalida}}';
-    if (RespuestaSalida==''){
+    var RespuestaSalida = '{{$newcabeza}}';
+    if (RespuestaSalida=='si'){
       $("#tipodocm option[value="+ {{session()->get('tipodoc')[0][0]}} +"]").attr("selected",true);
       $("#proveedore option[value="+ {{session()->get('proveedor')[0][0]}} +"]").attr("selected",true);
     }else{
-        $("#tipodocm option[value="+ {{$respuesta->xtipodoc}} +"]").attr("selected",true);
-        $("#proveedore option[value="+ {{$respuesta->xproveedor}} +"]").attr("selected",true);
+        $("#tipodocm option[value="+ {{$respuesta[0]->xtipodoc}} +"[]).attr("selected",true);
+        $("#proveedore option[value="+ {{$respuesta[0]->xproveedor}} +").attr("selected",true);
     }
     
     $("#tipodocm").change(function(){
@@ -482,11 +479,12 @@ $(document).ready(function(){
           type:"GET",
           data:{query:query, _token:_token},
           success:function(data){
+
            $('#serdocipt').fadeIn();  
-                    $('#countryList').html(data);
+           $('#countryList').html(data);
           },
           error:function(data){
-              alert(data);
+              alert('Debe seleccionar Proveedor y Tipo Documento');
           }
          });
         }
@@ -498,8 +496,8 @@ $(document).ready(function(){
     });
     
     
-
 });
+    
 </script>
 
 

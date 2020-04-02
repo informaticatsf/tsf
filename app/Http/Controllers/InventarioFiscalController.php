@@ -103,4 +103,8 @@ class InventarioFiscalController extends Controller
     public function CrearFactura(){
         return InventarioFiscal::creaFactura();
     }
+
+    public function CrearHeadFactura(Request $request){
+        return InventarioFiscal::creaHeadFac($request);
+    }
 }

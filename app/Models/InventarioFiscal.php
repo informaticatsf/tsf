@@ -83,13 +83,13 @@ class InventarioFiscal extends Model
       public static function creaFactura(){
         $proveedores = DB::table('VerProveedoresCompra')->get();
         $tiposdoc = DB::table('VerTipoDocCompra')->get();
+        $newcabeza = 'si';
         $respuesta = new stdClass();
-        $respuesta->xSalida = null;
-        $respuesta->xExisThisDoc = null;
-        $respuesta->xtipodoc = null;
-        $respuesta->xproveedor = null;
+        $respuesta = array("xSalida" => 0, "xExisThisDoc" => null, "xtipodoc" => null, "xproveedor" => null);
+        
                
-        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta'));      }
+        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'));     
+     }
 
     public static function CreaHeadFac($request){ 
         
@@ -97,12 +97,15 @@ class InventarioFiscal extends Model
         $rules = [ 
             'serdocipt'     => 'required',
             'tipodocm'      => 'required',
-            'proveedoreipt' => 'required',
+            'proveedore' => 'required',
             'inventarioipt' => 'required',
-            'fechaipt'      => 'required',
+            'fecha'      => 'required',
             'totdocipt'     => 'required',
             'nodocipt'      => 'required',
+            
         ];
+
+       
 
         $validator=Validator::make($request->all(), $rules);
         if($validator->fails()){
@@ -111,33 +114,49 @@ class InventarioFiscal extends Model
         }
         $neto = $request->get("pnetoipt");
         $credito = $request->get("crefisipt");
-        if($neto=="Precio Neto"){
+        $afectas = $request->get("afecta");
+        $afecta = null;
+        if($neto=="Precio Neto"){ // Esto para saber cuando precio neto es vacio
             $neto = null;
         }
 
-        if($credito=="Crédito Fiscal"){
+        if($credito=="Crédito Fiscal"){ // esto para cuando no hay credito fiscal
             $credito = null;
         }
-            $respuesta = DB::select('call CreaCompraInv(?,?,?,?,?,?,?,?,?,?,?,?)',array(
-                Auth::user()->id,
-                null,
-                $request->get("serdocipt"),
-                $request->get("tipodocm"),
-                $request->get("proveedoreipt"),
-                $request->get("inventarioipt"),
-                date('Y-m-d', strtotime($request->get("fechaipt"))),
-                $request->get("totdocipt"),
-                Auth::user()->id,
-                $request->get("nodocipt"),
-                $neto,
-                $credito,
+        if($afectas==null){ // esto para cuando no hay credito fiscal
+            $afecta = 0;
+        }else{
+            $afecta = 1;
+        }
+
+            $respuesta = DB::select('call CreaCompraInv(?,?,?,?,?,?,?,?,?,?,?,?,?)',array(
+                Auth::user()->id,                                  // pUser
+                null,                                              // pMovBanco
+                $request->get("tipodocm"),                         // pTipoDoc
+                $request->get("serdocipt"),                        // pSerieDoc
+                $request->get("proveedore"),                       // pProveedor
+                $request->get("inventarioipt"),                    // pInventario
+                date('Y-m-d', strtotime($request->get("fecha"))),  // pFecha
+                $request->get("totdocipt"),                        // pTotal
+                Auth::user()->id,                                  // pOperador
+                $request->get("nodocipt"),                         // pNoDoc
+                $neto,                                             // pNeto
+                $credito,                                          // pCreditoFiscal
+                $afecta,                           // pNoAfectas
                 ));
                 
-                $proveedores = DB::table('VerProveedoresCompra')->get();
-        $tiposdoc = DB::table('VerTipoDocCompra')->get();
-        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc'));
-
-        return redirect()->route('inventariofiscal.show', [$request->sucursal,'0312'])
-        ->with('info','Inventario Fiscal creado existosamente');
+                if($respuesta[0]->xExisThisDoc==0){
+                    $newcabeza = 'no';
+                    $proveedores = DB::table('VerProveedoresCompra')->get();
+                    $tiposdoc = DB::table('VerTipoDocCompra')->get();
+                    return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'))
+               ->with('info','Factura no creada por dupicidad de documento');
+                }else{
+                    $newcabeza = 'si';
+                    $proveedores = DB::table('VerProveedoresCompra')->get();
+                    $tiposdoc = DB::table('VerTipoDocCompra')->get();
+                    return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'))
+                           ->with('info','Factura no creada por dupicidad de documento');
+                }
     }
 }
