@@ -7,22 +7,21 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2 style="text-align: center; color: #1b4b72">Nuevo Documento</h2>
+                    <h2 style="text-align: center; color: #1b4b72">Detalle Documento</h2>
                     <b>Inventario y sucursal:</b>  <span style="color:#FB150E";><b>{{session()->get('inventario')[0][1]}} - {{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</b></span>
                 
-                    
                         <div class="table-responsive">
                           <table class="table table-bordered">
-                            <form method="get" action="{{route('nuevafactura.store')}}">
+                            <form method="get" action="{{route('tablaventa.agregar')}}">
                                 <tbody>
                                     <tr>
                                         <td>                   
                                             <div class="form-group col-lg-0 col-md-0 col-sm-11">
                                                 <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Fecha</label><br>
                                                 <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">
-                                                {{$f=session()->get('fechacif')[0][1]}}
+                                                {{$f=$respuesta[0]->xfecha}}
                                                 </label>
-                                                <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13"  id="fecha" name="fecha">
+                                                <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13" readonly id="fecha" name="fecha">
                                             </div>
                                         </td>
                                         <td>
@@ -30,9 +29,9 @@
                                                 <div class="input-group">
                                                     <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Proveedor</label><br>
                                                     <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="pros">
-                                                    {{$provee=session()->get('proveedor')[0][0]}}
+                                                    {{$provee=$respuesta[0]->xproveedor}}
                                                     </label>
-                                                    <select  name="proveedore" id="proveedore"  required="required" class="form-control">
+                                                    <select readonly  name="proveedore" id="proveedore"  required="required" class="form-control">
                                                         <option value="" disabled selected>-- Proveedores --</option>
                                                         @foreach ($proveedores as $proveedor)
                                                         <option  value="{{$proveedor->id}}"><span style="color:#FB150E";><b>{{$proveedor->nit}} {{$proveedor->nombre}}</b></span></option>
@@ -47,9 +46,9 @@
                                                 <div class="input-group">
                                                     <label class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">Tipo Documento</label><br>
                                                     <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="pros">
-                                                    {{$tipod=session()->get('tipodoc')[0][0]}}
+                                                    {{$tipod=$respuesta[0]->xtipodoc}}
                                                     </label>
-                                                    <select  name="tipodocm" id="tipodocm"  required="required" class="form-control">
+                                                    <select readonly  name="tipodocm" id="tipodocm"  required="required" class="form-control">
                                                         <option value="" disabled selected>-- Tipos Documentos --</option>
                                                         @foreach ($tiposdoc as $tipodoc)
                                                         <option  value="{{$tipodoc->id}}"><span style="color:#FB150E";><b> {{$tipodoc->nombre}}</b></span></option>
@@ -59,37 +58,45 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <input type="checkbox" id="afecta" name="afecta">
+                                        @if($respuesta[0]->xnoafectas == 1)
+                                            <input readonly type="checkbox" id="afecta" name="afecta" checked="checked">
+                                            @else
+                                            <input readonly type="checkbox" id="afecta" name="afecta">
+                                            @endif
                                             <label for="afecta">Compras no afectas</label><br>
                                         </td>
                                     </tr>
-                        
+                                </tbody>
+                            </form>    
+                          </table>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody>
                                     <tr>
                                         <td>                   
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input placeholder="No. Documento" type="text" id="nodocipt" name="nodocipt" required="required"
-                                                    class="form-control">
-                                                    <input type="text" id="inventarioipt" name="inventarioipt" required="required" hidden="hidden" value="{{session()->get('inventario')[0][0]}}"
-                                                    class="form-control">
+                                                    <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">No. Doc</label>
+                                                    <input readonly value="{{$respuesta[0]->xnumeroDoc}}" placeholder="No. Documento" type="text" id="nodocipt" name="nodocipt" required="required"
+                                                    value="1000" class="form-control">
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required" autocomplete="on"
+                                                <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">Serie</label>
+                                                    <input readonly value="{{$respuesta[0]->xserieDoc}}" placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required"
                                                     class="form-control">
-                                                        <div id="countryList">
-                                                        </div>
-                                                        {{ csrf_field() }}
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
                                         <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input placeholder="Mov Banco" type="text" id="movbanipt" name="movbanipt" readonly
+                                                <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">Id. Movimiento Banco</label>
+                                                    <input readonly value="{{$respuesta[0]->xMovBanco}}" placeholder="Mov Banco" type="text" id="movbanipt" name="movbanipt" readonly
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -100,7 +107,8 @@
                                         <td>                   
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input step=".01" placeholder="Total" type="number" id="totdocipt" name="totdocipt" required="required"
+                                                <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">Total</label>
+                                                    <input step=".01" readonly value="{{$respuesta[0]->xtotal}}" placeholder="Total" type="number" id="totdocipt" name="totdocipt" required="required"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -108,7 +116,8 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input step=".01" placeholder="Precio Neto" type="number" id="pnetoipt" name="pnetoipt" required="required" readonly
+                                                <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">Precio Neto</label>
+                                                    <input step=".01" readonly value="{{$respuesta[0]->xPNeto}}" placeholder="Precio Neto" type="number" id="pnetoipt" name="pnetoipt" required="required" readonly
                                                     class="form-control">
                                                 </div>
                                             </div> 
@@ -116,32 +125,76 @@
                                         <td>
                                         <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input step=".01" placeholder="Crédito Fiscal" type="number" id="crefisipt" name="crefisipt" required="required" readonly
+                                                <label class="control-label col-lg-0 col-md-0 col-sm-2" for="nodoc">Crédito Fiscal</label>
+                                                    <input step=".01" readonly value="{{$respuesta[0]->xCreditoFiscal}}" placeholder="Crédito Fiscal" type="number" id="crefisipt" name="crefisipt" required="required" readonly
                                                     class="form-control">
                                                 </div>
                                             </div>
                                         </td>
                                         
                                     </tr>
-                                    <tr>
-                                        <td>
-                                        <button type="submit"  class="btn btn-sm btn-success showmodal" id="btndetalle" name="btndetalle">
-                                                <span class="icon text-white-100">
-                                                    <i class="fas fa-money-bill fa-sm"></i>
-                                                </span>
-                                                <span class="text">Registrar detalle</span>
-                                            </button>
-                                        </td>
-                                    </tr>
                                 </tbody>
-                            </form>
                             </table>
                         </div>
+
+                    </div>
+
+                    <div class="card-body">
+                        <form method="get" action="{{route('tablaventa.agregar')}}">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input require="required" type="number" class="form-control" id="compraipt" name="compraipt" value="{{$respuesta[0]->xSalida}}" hidden="hidden">
+                                    <input require="required" type="number" step=".01" class="form-control" placeholder="Cantidad" id="cantipt" name="cantipt">
+                                    <input require="required" type="text" class="form-control" placeholder="Producto" id="productoipt" name="productoipt">
+                                    <input require="required" type="number" step=".01" class="form-control" placeholder="Subtotal" id="subtotipt" name="subtotipt">
+                                    <input require="required" type="number" step=".01" class="form-control" placeholder="P/U" id="punitipt" value="" name="punitipt" readonly>                                        
+                                        <span class="input-group-btn">
+                                            <button id="btnadd" type="button" name="btnadd" class="btn btn-primary showmodal" data-toggle="modal" data-target="#ModalRealizarPago">Agregar</button>
+                                        </span>
+                                </div>
+                            </div>
+                        </form>
+                            <!-- cerramos el formulario -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-head-bg-info">
+                                <thead>
+                                    <tr style="text-align: center">
+                                        <th>ID</th>
+                                        <th>Cant</th>
+                                        <th>Producto</th>
+                                        <th>p/u</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($detalles as $detalle)
+                                    <tr>
+                                        <td>$detalle->id</td>
+                                        <td>$detalle->cant</td>
+                                        <td>$detalle->producto</td>
+                                        <td>$detalle->pu</td>
+                                        <td>$detalle->subtotal</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+document.getElementById("nodocipt").focus();
+document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+    if(e.keyCode == 13) {
+          e.preventDefault();
+        }                
+      }))
+    });
+</script>
 <script>
 $(document).ready(function(){
   var variable1 = '{{$f}}';
@@ -156,54 +209,12 @@ $(document).ready(function(){
 });
    // fin detector de cambios
 });
-
-
-
-document.getElementById("nodocipt").focus();
-document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
-    if(e.keyCode == 13) {
-          e.preventDefault();
-        }                
-      }))
-    });
 </script>
-
 <script type="text/javascript" language="javascript" class="init">
 
-    $(document).on('change','#proveedore',function(){
-        //var proveedore = document.getElementsByName("proveedore")[0].value;
-          var proveedore = $(this).val();
-        if (isNaN(proveedore)){
-        var el = "{{route('proveedor.create')}}";
-        document.location.href=el;
-        }else{
-        var url = "{{ route('theproveedor.es', ':id') }}";        
-        url = url.replace(':id', proveedore);
-       //var fecha = document.getElementsByName("fecha")[0].value;
-       // alert(fecha);        
-        document.location.href=url;
-        }
-        });
-        
-
-        $(document).on('change','#tipodocm',function(){
-        //var proveedore = document.getElementsByName("proveedore")[0].value;
-          var tipodocmm = $(this).val();
-        if (isNaN(tipodocmm)){
-        }else{
-        var url = "{{ route('thetipodoc.es', ':id') }}";        
-        url = url.replace(':id', tipodocmm);
-       //var fecha = document.getElementsByName("fecha")[0].value;
-       // alert(fecha);        
-        document.location.href=url;
-        }
-        });
-
     $(document).ready( function() {
-      $("#tipodocm option[value="+ {{session()->get('tipodoc')[0][0]}} +"]").attr("selected",true);
-      $("#proveedore option[value="+ {{session()->get('proveedor')[0][0]}} +"]").attr("selected",true);
-    
+      $("#tipodocm option[value="+ {{$respuesta[0]->xtipodoc}} +"]").attr("selected",true);
+      $("#proveedore option[value="+ {{$respuesta[0]->xproveedor}} +"]").attr("selected",true);
     $("#tipodocm").change(function(){
       if (isNaN(tipodocmm)){
         }else{
@@ -213,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
        // alert(fecha);        
         document.location.href=url;
         }
-    });
+        } );
 
 
 document.getElementById('nodocipt').addEventListener('keyup', inputCharacters);

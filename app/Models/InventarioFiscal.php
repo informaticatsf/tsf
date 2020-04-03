@@ -83,12 +83,7 @@ class InventarioFiscal extends Model
       public static function creaFactura(){
         $proveedores = DB::table('VerProveedoresCompra')->get();
         $tiposdoc = DB::table('VerTipoDocCompra')->get();
-        $newcabeza = 'si';
-        $respuesta = new stdClass();
-        $respuesta = array("xSalida" => 0, "xExisThisDoc" => null, "xtipodoc" => null, "xproveedor" => null);
-        
-               
-        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'));     
+        return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc'));     
      }
 
     public static function CreaHeadFac($request){ 
@@ -146,17 +141,47 @@ class InventarioFiscal extends Model
                 ));
                 
                 if($respuesta[0]->xExisThisDoc==0){
-                    $newcabeza = 'no';
-                    $proveedores = DB::table('VerProveedoresCompra')->get();
-                    $tiposdoc = DB::table('VerTipoDocCompra')->get();
-                    return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'))
-               ->with('info','Factura no creada por dupicidad de documento');
+                    if($respuesta[0]->xMovBanco==null){
+                        $respuesta[0]->xMovBanco='Sin registro';
+                    }
+                    return redirect()->route('nuevadetfactura.store', [
+                    $respuesta[0]->xSalida,
+                    $respuesta[0]->xMovBanco,
+                    $respuesta[0]->xserieDoc,
+                    $respuesta[0]->xproveedor,
+                    $respuesta[0]->xfecha,
+                    $respuesta[0]->xtotal,
+                    $respuesta[0]->xnumeroDoc,
+                    $respuesta[0]->xPNeto,
+                    $respuesta[0]->xCreditoFiscal,
+                    $respuesta[0]->xtipodoc,
+                    $respuesta[0]->xnoafectas])
+               ->with('info','Factura creada exitosamente');
                 }else{
-                    $newcabeza = 'si';
                     $proveedores = DB::table('VerProveedoresCompra')->get();
                     $tiposdoc = DB::table('VerTipoDocCompra')->get();
-                    return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc', 'respuesta', 'newcabeza'))
+                    return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc'))
                            ->with('info','Factura no creada por dupicidad de documento');
                 }
     }
+
+    public static function creaDetFac($iddoc, $movbanco, $seriedoc, $proveedor, $fecha, $totdoc, $numdoc, $pneto, $crefis, $tipodoc,  $afecta){
+        
+        $respuesta[] = new stdClass();
+        $respuesta[0]->xSalida = $iddoc;
+        $respuesta[0]->xMovBanco = $movbanco;
+        $respuesta[0]->xserieDoc = $seriedoc;
+        $respuesta[0]->xproveedor = $proveedor;
+        $respuesta[0]->xfecha = $fecha;
+        $respuesta[0]->xtotal = $totdoc;
+        $respuesta[0]->xnumeroDoc = $numdoc;
+        $respuesta[0]->xPNeto = $pneto;
+        $respuesta[0]->xCreditoFiscal = $crefis;
+        $respuesta[0]->xtipodoc = $tipodoc;   
+        $respuesta[0]->xnoafectas = $afecta; 
+        $detalles =  DB::select('call DetalleFacturaCompraInv(?)',array($respuesta[0]->xSalida));
+        $proveedores = DB::table('VerProveedoresCompra')->get();
+        $tiposdoc = DB::table('VerTipoDocCompra')->get();
+        return view('cinventariof.creadetfactura', compact('proveedores', 'tiposdoc', 'respuesta', 'detalles'));
+     }
 }

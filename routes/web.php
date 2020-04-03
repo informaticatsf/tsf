@@ -93,6 +93,7 @@ Route::get('inventariofiscalst/{sucursal}','InventarioFiscalController@SetThisIn
 Route::get('inventariofiscalfe/{fecha}','InventarioFiscalController@setThisFechaComprInvFis')->name('thefechacif.es');
 Route::get('inventariofiscal/creafactura','InventarioFiscalController@CrearFactura')->name('nuevafactura.create');
 Route::get('inventariofiscalchf/creafactura','InventarioFiscalController@CrearHeadFactura')->name('nuevafactura.store');
+Route::get('inventariofiscalcdf/creadetfactura/{iddoc}/{movbanco}/{seriedoc}/{proveedor}/{fecha}/{totdoc}/{numdoc}/{pneto}/{crefis}/{tipodoc}/{afecta}','InventarioFiscalController@CrearDetFactura')->name('nuevadetfactura.store');
 
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
