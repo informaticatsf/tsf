@@ -129,6 +129,7 @@ Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('th
 Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
 Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetch')->name('autocomplete.fetch');
+Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetchi')->name('autocomplete.fetchi');
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');

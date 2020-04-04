@@ -307,6 +307,34 @@ $(document).ready(function(){
 });
     
 </script>
+<script>
+$(document).ready(function(){
+    var proveed = '{{$provee}}';
+        var tipodo = '{{$tipod}}';
+        var query = $(this).val();
+        var urle = "{{ route('autocomplete.fetchi',[':id', ':ij', ':ik']) }}";
+        urle = urle.replace(':id', proveed);
+        urle = urle.replace(':ij', query);
+        urle = urle.replace(':ik', tipodo);
+
+$("#tablajson tbody").html("");
+$.getJSON(url,function(clientes){
+$.each(clientes, function(i,cliente){
+var newRow =
+"<tr>"
++"<td>"+cliente.id+"</td>"
++"<td>"+cliente.nombre+"</td>"
++"<td>"+cliente.edad+"</td>"
++"<td>"+cliente.genero+"</td>"
++"<td>"+cliente.email+"</td>"
++"<td>"+cliente.localidad+"</td>"
++"<td>"+cliente.telefono+"</td>"
++"</tr>";
+$(newRow).appendTo("#tablajson tbody");
+});
+});
+});
+</script>
 
 
 @endsection

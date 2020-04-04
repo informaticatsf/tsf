@@ -93,9 +93,9 @@ class AutoCompleteSerieProveedor extends Controller
       $datajson = array();
       $sizedata = sizeof($data);
       for ($i = 0; $i < $sizedata; $i++) {
-        $datajson[]=$data[$i];
-        
+        $datajson['Series documentos']=$data[$i];
     }
+    $json_string = json_encode($datajson);
     
       $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
       foreach($data as $row)
@@ -106,4 +106,22 @@ class AutoCompleteSerieProveedor extends Controller
       echo $output;
      }
     }
+
+    function fetchi($proveedor, $serie, $tipo){
+     
+        if($serie!=null){
+            
+         $query = $serie;
+         $data =  DB::select('call ListSerDocProvee(?,?,?)',
+         array($proveedor, $query, $tipo));
+         $datajson = array();
+         $sizedata = sizeof($data);
+         for ($i = 0; $i < $sizedata; $i++) {
+           $datajson['Series documentos']=$data[$i];
+       }
+       $json_string = json_encode($datajson);
+                
+         echo $json_string;
+        }
+       }
 }

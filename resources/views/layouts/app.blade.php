@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+
 <html lang="es">
 <?php use App\Models\Periodo ?>
 
@@ -10,29 +10,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 
     <link rel="shortcut icon" href="{{ asset('images/ico.png') }} ">
 
+    
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/atlantis.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}" >
     <link href="{{ asset('vendor/bootstrap-daterangepicker/bootstrap-datepicker.css') }}" rel="stylesheet">
-    
-
-
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
 
