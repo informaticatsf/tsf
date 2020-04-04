@@ -90,8 +90,14 @@ class AutoCompleteSerieProveedor extends Controller
       $query = $serie;
       $data =  DB::select('call ListSerDocProvee(?,?,?)',
       array($proveedor, $query, $tipo));
-      
-      $output = '<nav id="menu_gral"><ul class="dropdown-menu" style="display:block; position:relative">';
+      $datajson = array();
+      $sizedata = sizeof($data);
+      for ($i = 0; $i < $sizedata; $i++) {
+        $datajson[]=$data[$i];
+        
+    }
+    
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
       foreach($data as $row)
       {
        $output .= '<li value="'.$row->id.'">'.$row->nombre.'</li>';
