@@ -130,6 +130,7 @@ Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show
 Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
 Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetch')->name('autocomplete.fetch');
 Route::get('/autocompletei/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetchi')->name('autocomplete.fetchi');
+Route::get('/autocompleteii/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@search')->name('autocomplete.search');
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');

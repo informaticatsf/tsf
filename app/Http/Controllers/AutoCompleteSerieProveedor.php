@@ -124,4 +124,13 @@ class AutoCompleteSerieProveedor extends Controller
          echo $json_string;
         }
        }
+
+       public function search($proveedor, $query, $tipo){
+           dd($proveedor);
+       $posts = DB::select('call ListSerDocProvee(?,?,?)',
+       array($proveedor, $query, $tipo));
+    // $posts = Post::where('title', 'LIKE', '%'.$request->search.'%')->get();
+    return \response()->json($posts);
+}
+
 }

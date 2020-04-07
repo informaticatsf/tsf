@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+	
+require('easy-autocomplete/dist/jquery.easy-autocomplete');
 
 window.Vue = require('vue');
 
