@@ -83,6 +83,8 @@
                                                         <div id="countryList">
                                                         </div>
                                                         {{ csrf_field() }}
+                                                        <input placeholder="Serie Doc2." type="text" id="serdocipt2" name="serdocipt2" required="required" autocomplete="on"
+                                                    class="form-control">
                                                 </div>
                                             </div>
                                         </td>
@@ -309,6 +311,7 @@ $(document).ready(function(){
 </script>
 <script>
 $(document).ready(function(){
+    
     var proveed = '{{$provee}}';
         var tipodo = '{{$tipod}}';
         var query = $(this).val();
@@ -317,24 +320,16 @@ $(document).ready(function(){
         urle = urle.replace(':ij', query);
         urle = urle.replace(':ik', tipodo);
 
-$("#tablajson tbody").html("");
-$.getJSON(url,function(clientes){
-$.each(clientes, function(i,cliente){
-var newRow =
-"<tr>"
-+"<td>"+cliente.id+"</td>"
-+"<td>"+cliente.nombre+"</td>"
-+"<td>"+cliente.edad+"</td>"
-+"<td>"+cliente.genero+"</td>"
-+"<td>"+cliente.email+"</td>"
-+"<td>"+cliente.localidad+"</td>"
-+"<td>"+cliente.telefono+"</td>"
-+"</tr>";
-$(newRow).appendTo("#tablajson tbody");
-});
+
+
+$("#serdocipt2").easyAutocomplete({
+url: function(search) {
+
+return urle;
+},
+
+getValue: "nombre"
 });
 });
 </script>
-
-
 @endsection

@@ -129,12 +129,13 @@ Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('th
 Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
 Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetch')->name('autocomplete.fetch');
-Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetchi')->name('autocomplete.fetchi');
+Route::get('/autocompletei/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetchi')->name('autocomplete.fetchi');
+Route::get('/autocompleteii/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@search')->name('autocomplete.search');
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
 
-// +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++++++++++
 Route::get('venta/create/{sucursal}', 'VentaController@create')->name('venta.create');
 Route::get('venta/tablaagregar','VentaController@setMoreVenta')->name('tablaventa.agregar');
 });
