@@ -4,9 +4,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
+import 'jquery-ui/ui/widgets/autocomplete';
+import 'jquery-ui/themes/base/core.css';
+import 'jquery-ui/themes/base/autocomplete.css';
+import 'jquery-ui/themes/base/theme.css';
 	
-require('easy-autocomplete/dist/jquery.easy-autocomplete');
+
 
 window.Vue = require('vue');
 

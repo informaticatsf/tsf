@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('contenido')
+    <!-- jQuery CDN -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <div class="page-inner">
     <div class="row">
@@ -83,7 +87,7 @@
                                                         <div id="countryList">
                                                         </div>
                                                         {{ csrf_field() }}
-                                                        <input placeholder="Serie Doc2." type="text" id="serdocipt2" name="serdocipt2" required="required" autocomplete="on"
+                                                        <input placeholder="Serie Doc2." type="text" id="name" name="name" required="required"
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -304,32 +308,116 @@ $(document).ready(function(){
         $('#serdocipt').val($(this).text());  
         $('#countryList').fadeOut();  
     });
-    
-    
 });
     
 </script>
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
+    $('#name22').keyup(function(){
     
-    var proveed = '{{$provee}}';
+        var proveed = '{{$provee}}';
         var tipodo = '{{$tipod}}';
-        var query = $(this).val();
-        var urle = "{{ route('autocomplete.fetchi',[':id', ':ij', ':ik']) }}";
+        var query = $('#name').val();
+        var urle = "{{ route('autocomplete.searche',[':id', ':ij', ':ik']) }}";
         urle = urle.replace(':id', proveed);
         urle = urle.replace(':ij', query);
         urle = urle.replace(':ik', tipodo);
+        
+ var options = {
+   url: urle,
+   getValue: "nombre",
+ 
+   template: {
+        type: "description",
+        fields: {
+            description: "email"
+        }
+    },
 
+    list: {
+        match: {
+            enabled: true 
+        }
+    },
 
+    theme: "plate-dark"
 
-$("#serdocipt2").easyAutocomplete({
-url: function(search) {
+};
 
-return urle;
-},
+$(this).easyAutocomplete(
+    {
+source: options
+    });
 
-getValue: "nombre"
-});
-});
+    });
+    });
+
 </script>
 @endsection
+@section('js')
+<script type="text/javascript">
+$(document).ready(function(){
+$('#name').keyup(function(){
+
+data = [
+    'Primero',
+    'Segundo',
+    'Tercero',
+    'Cuarto',
+    'Quinto',
+    'Sexto'
+];
+var docNameTB = $('#name');
+
+docNameTB.autocomplete({
+    source: [
+    "Primero",
+    "Segundo",
+    "Tercero",
+    "Cuarto",
+    "Quinto",
+    "Sexto"
+],
+    minLength:2
+})
+
+var options = {
+  data: [{
+      "name": "Afghanistan",
+      "code": "AF"
+    },
+    {
+      "name": "Aland Islands",
+      "code": "AX"
+    },
+    {
+      "name": "Albania",
+      "code": "AL"
+    },
+    {
+      "name": "Algeria",
+      "code": "DZ"
+    },
+    {
+      "name": "American Samoa",
+      "code": "AS"
+    },
+  ],
+  getValue: function(element) {
+return element.name + " " + element.code;
+},
+
+  list: {
+    match: {
+      enabled: true
+    }
+  }
+};
+
+$(this).autocomplete(options);
+
+});
+    });
+</script>
+@endsection
+

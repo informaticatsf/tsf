@@ -82,4 +82,4 @@ document.write(d.getDate());
 </script>
 
                           
-@stop
+@endsection

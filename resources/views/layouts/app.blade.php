@@ -9,12 +9,8 @@
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-
 
     <link rel="shortcut icon" href="{{ asset('images/ico.png') }} ">
-
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -22,7 +18,6 @@
     <link href="{{ asset('vendor/bootstrap-daterangepicker/bootstrap-datepicker.css') }}" rel="stylesheet">
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
-
     <script>
         WebFont.load({
             google: {"families":["Lato:300,400,700,900"]},
@@ -32,7 +27,6 @@
             }
         });
     </script>
-
 </head>
 <body>
     <div class="wrapper">
@@ -59,11 +53,8 @@
 
             <!-- Navbar Header -->
         <nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
-
             <div class="container-fluid">
-
                 <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-
                     <li class="nav-item dropdown hidden-caret">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                             <div class="avatar-sm">
@@ -84,7 +75,7 @@
                                             <p class="text-muted">{{ Auth::user()->email }}</p><a href="#"
                                         class="btn btn-xs btn-primary btn-sm">Perfil</a>
                                         </div>
-                                     @endif   
+                                         @endif   
                                     </div>
                                 </li>
                                 <li>
@@ -96,13 +87,11 @@
                                         {{ __('Logout') }}
                                     </a>
                                     @endif
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                           style="display: none;">
                                         @csrf
                                     </form>
                                 </li>
-                               
                             </div>
                         </ul>
                     </li>
@@ -122,131 +111,125 @@
                         </div>
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                            @if(!Auth::guest())
-                            <span>
-                            {{ Auth::user()->name }}
-                            
-                        </span>
-                        @endif
+                                @if(!Auth::guest())
+                                    <span>
+                                    {{ Auth::user()->name }}
+                                    </span>
+                                @endif
                             </a>
                         </div>
                     </div>
                     <ul class="nav nav-primary">
                     @if(session()->get('inicio')[0]==null)
                         <li class="nav-item">
-                        <a href="{{ route('periodo.show','0312') }}">
-                        <i class="far fa-calendar-minus"></i>                        
-                        <p><FONT SIZE=2>Seleccione periodo</FONT></p>
-                        </a>
+                            <a href="{{ route('periodo.show','0312') }}">
+                                <i class="far fa-calendar-minus"></i>                        
+                                <p><FONT SIZE=2>Seleccione periodo</FONT></p>
+                            </a>
                         </li>
-                        @else
+                    @else
                         <li class="nav-item">
-                        <a href="{{ route('periodo.show','0312') }}">
-                        <i class="far fa-calendar-minus"></i>                        
-                        <p><FONT SIZE=1>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</FONT></p>
-                        </a>
+                            <a href="{{ route('periodo.show','0312') }}">
+                                <i class="far fa-calendar-minus"></i>                        
+                                <p><FONT SIZE=1>Del {{session()->get('inicio')[0]}} Al {{session()->get('fin')[0]}}</FONT></p>
+                            </a>
                         </li>
-                        @endif
+                    @endif
 
-                        @if(session()->get('nombreconta')[0][0]==null)
+                    @if(session()->get('nombreconta')[0][0]==null)
                         <li class="nav-item">
                             <a href="{{ route('lconta.show','0312') }}">
-                            <i class="fas fa-columns"></i>
-                            <p><FONT SIZE=2>Seleccione sucursal</FONT></p>
+                                <i class="fas fa-columns"></i>
+                                <p><FONT SIZE=2>Seleccione sucursal</FONT></p>
                             </a>
                         </li>
-                        @else
+                    @else
                         <li class="nav-item">
                             <a href="{{ route('lconta.show','0312') }}">
-                            <i class="fas fa-columns"></i>
-                            <p><FONT SIZE=2>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</FONT></p>
+                                <i class="fas fa-columns"></i>
+                                <p><FONT SIZE=2>{{session()->get('nombreconta')[0][0]}}/{{session()->get('nombreconta')[0][1]}}/{{session()->get('nombreconta')[0][2]}}</FONT></p>
                             </a>
                         </li>
-                        @endif
-                        @if(session()->get('nombreconta')[0][0]!=null)
-                    <li class="nav-item">
+                    @endif
+                    @if(session()->get('nombreconta')[0][0]!=null)
+                        <li class="nav-item">
                             <a data-toggle="collapse" href="#listaventas">
-                            <i class="fas fa-coins"></i>
+                                <i class="fas fa-coins"></i>
                                 <p>Ventas</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="listaventas">
                                 <ul class="nav nav-collapse">
                         
-                        @if(session()->get('namecuentaconta')[0]!=null)
-                        <li class="nav-item">
-                        <a href="{{ route('cuentacontable.show','0312') }}">
-                        <i class="fas fa-file-contract"></i>
-                        <p><FONT SIZE=2>{{session()->get('namecuentaconta')[0]}}</FONT></p>
-                        </a>
-                        </li>                        
-                        @else
-                        <li class="nav-item">
-                        <a href="{{ route('cuentacontable.show','0312') }}">
-                        <i class="fas fa-file-contract"></i>
-                            <p><FONT SIZE=2>Selecciona cuenta contable</FONT></p>
-                        </a>
-                        </li>
-                        @endif
+                                    @if(session()->get('namecuentaconta')[0]!=null)
+                                        <li class="nav-item">
+                                            <a href="{{ route('cuentacontable.show','0312') }}">
+                                                <i class="fas fa-file-contract"></i>
+                                                <p><FONT SIZE=2>{{session()->get('namecuentaconta')[0]}}</FONT></p>
+                                            </a>
+                                        </li>                        
+                                    @else
+                                        <li class="nav-item">
+                                            <a href="{{ route('cuentacontable.show','0312') }}">
+                                                <i class="fas fa-file-contract"></i>
+                                                <p><FONT SIZE=2>Selecciona cuenta contable</FONT></p>
+                                            </a>
+                                        </li>
+                                    @endif
 
-                        @if(session()->get('namecuentaconta')[0] != null && session()->get('nombreconta')[0][0]!=null && session()->get('inicio')[0]!=null)
-                        <li class="nav-item">
-                        <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
-                            <a href="{{route('venta.create',$d)}}">
-                            <i class="fas fa-hand-holding-usd"></i>
-                                <p>Ventas</p>
-                            </a>
+                                    @if(session()->get('namecuentaconta')[0] != null && session()->get('nombreconta')[0][0]!=null && session()->get('inicio')[0]!=null)
+                                        <li class="nav-item">
+                                            <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
+                                                <a href="{{route('venta.create',$d)}}">
+                                                    <i class="fas fa-hand-holding-usd"></i>
+                                                    <p>Ventas</p>
+                                                </a>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
                         </li>
-                        @endif
-                        </ul>
-                        </div>
-                        </li>
-                       @endif
-
+                    @endif
                         
-                       @if(session()->get('nombreconta')[0][0]!=null)
+                    @if(session()->get('nombreconta')[0][0]!=null)
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#listainventarios">
-                            <i class="fas fa-warehouse"></i>
+                                <i class="fas fa-warehouse"></i>
                                 <p>Inventarios</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="listainventarios">
                                 <ul class="nav nav-collapse">
-                        @if(session()->get('nombreconta')[0][0]!=null)
-                        @if(session()->get('inventario')[0][0]!=null)
-                        <li class="nav-item">
-                        <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
-                        <a href="{{ route('inventariofiscal.show',[$d,'0312'])}}">
-                        <i class="fas fa-boxes"></i>                     
-                        <p><FONT SIZE=2>{{session()->get('inventario')[0][0]}} - {{session()->get('inventario')[0][1]}} - {{session()->get('inventario')[0][2]}}</FONT></p>
-                        </a>
-                        </li>
-                        @else
-                        <li class="nav-item">
-                        <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
-                        <a href="{{ route('inventariofiscal.show',[$d,'0312'])}}">
-                        <i class="fas fa-boxes"></i>                     
-                        <p><FONT SIZE=2>Seleccione inventario</FONT></p>
-                        </a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item">
-                            <a href="{{ route('lconta.show','0312') }}">
-                            <i class="fas fa-columns"></i>
-                            <p><FONT SIZE=2>Seleccione sucursal</FONT></p>
-                            </a>
-                        </li>
-                        @endif
-
+                                    @if(session()->get('nombreconta')[0][0]!=null)
+                                        @if(session()->get('inventario')[0][0]!=null)
+                                            <li class="nav-item">
+                                                <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
+                                                    <a href="{{ route('inventariofiscal.show',[$d,'0312'])}}">
+                                                        <i class="fas fa-boxes"></i>                     
+                                                        <p><FONT SIZE=2>{{session()->get('inventario')[0][0]}} - {{session()->get('inventario')[0][1]}} - {{session()->get('inventario')[0][2]}}</FONT></p>
+                                                    </a>
+                                            </li>
+                                        @else
+                                            <li class="nav-item">
+                                                <p hidden="hidden">{{$d= session()->get('contabilidad')[0]}}</p>
+                                                    <a href="{{ route('inventariofiscal.show',[$d,'0312'])}}">
+                                                        <i class="fas fa-boxes"></i>                     
+                                                        <p><FONT SIZE=2>Seleccione inventario</FONT></p>
+                                                    </a>
+                                            </li>
+                                        @endif
+                                    @else
+                                        <li class="nav-item">
+                                            <a href="{{ route('lconta.show','0312') }}">
+                                                <i class="fas fa-columns"></i>
+                                                <p><FONT SIZE=2>Seleccione sucursal</FONT></p>
+                                            </a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                         </li>
-                        @endif
-                        
- 
-                        
+                    @endif
 
                         <li class="nav-item">
                             <a href="">
@@ -255,167 +238,130 @@
                             </a>
                         </li>
 
-
                         @canany (['permiso-progra','crear-sup-conta'])
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#sistema">
-                            <i class="fas fa-cogs"></i>
-                                <p>Sistema</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="sistema">
-                                <ul class="nav nav-collapse">
-                             
-                                <li>
-                                <a href="{{route('cuentacontable.show','0312')}}">
-                                    <span class="sub-item">Cuentas Contables</span>
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#sistema">
+                                    <i class="fas fa-cogs"></i>
+                                    <p>Sistema</p>
+                                    <span class="caret"></span>
                                 </a>
-                                </li>
+                                    <div class="collapse" id="sistema">
+                                        <ul class="nav nav-collapse">
+                                           <li>
+                                               <a href="{{route('cuentacontable.show','0312')}}">
+                                                    <span class="sub-item">Cuentas Contables</span>
+                                               </a>
+                                            </li>
 
-                                <li>
-                                        <a href="{{route('contribuyente.show','0312')}}">
-                                            <span class="sub-item">Contribuyentes</span>
-                                        </a>
-                                </li>
+                                            <li>
+                                                <a href="{{route('contribuyente.show','0312')}}">
+                                                    <span class="sub-item">Contribuyentes</span>
+                                                </a>
+                                            </li>
                                 
-                                <li>
-                                <a href="{{route('periodo.show','0312')}}">
-                                    <span class="sub-item">Periodos</span>
-                                </a>
-                                </li>
+                                            <li>
+                                                <a href="{{route('periodo.show','0312')}}">
+                                                    <span class="sub-item">Periodos</span>
+                                                </a>
+                                            </li>
 
-                                <li>
-                                <a href="{{route('proveedor.show','0312')}}">
-                                    <span class="sub-item">Proveedores</span>
-                                </a>
-                                </li>
+                                            <li>
+                                                <a href="{{route('proveedor.show','0312')}}">
+                                                    <span class="sub-item">Proveedores</span>
+                                                </a>
+                                            </li>
 
-                                <li>
-                                        <a href="{{route('regimen.show','0312')}}">
-                                            <span class="sub-item">Regímenes</span>
-                                        </a>
-                                </li>
+                                            <li>
+                                                <a href="{{route('regimen.show','0312')}}">
+                                                    <span class="sub-item">Regímenes</span>
+                                                </a>
+                                            </li>
 
-                                <li>
-                                        <a href="{{route('tipodoc.show','0312')}}">
-                                            <span class="sub-item">Tipos de Documentos</span>
-                                        </a>
-                                </li>
+                                            <li>    
+                                                <a href="{{route('tipodoc.show','0312')}}">
+                                                    <span class="sub-item">Tipos de Documentos</span>
+                                                </a>
+                                            </li>
 
-                                <li>
-                                        <a href="{{route('tipocuentacontable.show','0312')}}">
-                                            <span class="sub-item">Tipos de Cuentas</span>
-                                        </a>
-                                </li>
+                                            <li>
+                                                <a href="{{route('tipocuentacontable.show','0312')}}">
+                                                    <span class="sub-item">Tipos de Cuentas</span>
+                                                </a>
+                                            </li>
 
-                                <li>
-                                        <a href="{{route('tipoentrada.show','0312')}}">
-                                            <span class="sub-item">Tipos de Ventas</span>
-                                        </a>
-                                </li>
-                                
-
-                                
-                                    
-                                
-                                 
-                             
-
-                                </ul>
-                            </div>
-                        </li>
+                                            <li>
+                                                <a href="{{route('tipoentrada.show','0312')}}">
+                                                    <span class="sub-item">Tipos de Ventas</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </li>
                         @endcanany
-                        
-
-
 
                         @canany (['permiso-progra','roles.index'])
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#usuarios">
-                                <i class="fas fa-users"></i>
-                                <p>Usuarios</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="usuarios">
-                                <ul class="nav nav-collapse">
-                                    @can('permiso-progra')
-                                    <li>
-                                        <a href="{{ route('users.index', '0312') }}">
-                                            <span class="sub-item">Usuarios</span>
-                                        </a>
-                                    </li>
-                                    @endcan
-                                    @can ('roles.index')
-                                    <li>
-                                        <a href="{{ route('roles.index') }}">
-                                            <span class="sub-item">Roles</span>
-                                        </a>
-                                    </li>
-                                    @endcan
-                                </ul>
-                            </div>
-                        </li>
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#usuarios">
+                                    <i class="fas fa-users"></i>
+                                    <p>Usuarios</p>
+                                    <span class="caret"></span>
+                                </a>
+                                    <div class="collapse" id="usuarios">
+                                        <ul class="nav nav-collapse">
+                                            @can('permiso-progra')
+                                                <li>
+                                                    <a href="{{ route('users.index', '0312') }}">
+                                                        <span class="sub-item">Usuarios</span>
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can ('roles.index')
+                                                <li>
+                                                    <a href="{{ route('roles.index') }}">
+                                                        <span class="sub-item">Roles</span>
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                        </ul>
+                                    </div>
+                            </li>
                         @endcanany
-                        @can('cartera.index')
-                        <li class="nav-item">
-                            <a href="{{ route('cartera.index') }}">
-                                <i class="fas fa-wallet"></i>
-                                <p>Crear cartera</p>
-                            </a>
-                        </li>
-                        @endcan
-                        
-                        @can('cartera.vistaasesor')
-                        <li class="nav-item">
-                            <a href="{{ route('cartera.vistaasesor', auth()->id())}}">
-                                <i class="fas fa-user-tag"></i>
-                                <p>Vista Asesor</p>
-                            </a>
-                        </li>
-                        @endcan
-                        @can('plantillas.index')
-                        <li class="nav-item">
-                            <a href="{{ route('plantillas.index') }}">
-                                <i class="fa fa-folder-open"></i>
-                                <p>Plantillas de creditos</p>
-                            </a>
-                        </li>
-                        @endcan
                     </ul>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-                <div class="container-fluid">
-                    <div class="copyright ml-auto">
-                    Textiles San Francisco <i class="far fa-copyright"></i> {{date('Y')}}
-                    </div>
-                </div>
-            </footer>
+        
         <!-- End Sidebar -->
 
         <div class="main-panel">
             <div class="content">
                 @if(session('info'))
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="alert alert-success">
-                                {{ session('info') }}
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="alert alert-success">
+                                    {{ session('info') }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endif
-
                 @yield('contenido')
-
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="copyright ml-auto">
+                            Textiles San Francisco <i class="far fa-copyright"></i> {{date('Y')}}
+                        </div>
+                    </div>
+                </footer>
+                
             </div>
-            
         </div>
-
     </div>
+    
+
     <!--   Core JS Files   -->
+
     <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
@@ -452,9 +398,8 @@
     <!-- Atlantis JS -->
     <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
 
-    <script src="{{ asset('vendor/bootstrap-daterangepicker/moment.min.js') }}"></script>
+    
     <script src="{{ asset('vendor/bootstrap-daterangepicker/bootstrap-datepicker.js') }}"></script>
-
     @yield('js')
 </body>
 </html>

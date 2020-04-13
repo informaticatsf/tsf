@@ -125,10 +125,12 @@ class AutoCompleteSerieProveedor extends Controller
         }
        }
 
-       public function search($proveedor, $query, $tipo){
-           dd($proveedor);
-       $posts = DB::select('call ListSerDocProvee(?,?,?)',
-       array($proveedor, $query, $tipo));
+       public function searche($proveedor, $query, $tipo){
+       
+        $posts = DB::select('call ListSerDocProvee(?,?,?)',
+        array($proveedor, $query, $tipo));
+       
+        // echo json_encode($posts);
     // $posts = Post::where('title', 'LIKE', '%'.$request->search.'%')->get();
     return \response()->json($posts);
 }
