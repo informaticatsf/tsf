@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('contenido')
-    <!-- jQuery CDN -->
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 
 <div class="page-inner">
     <div class="row">
@@ -313,7 +310,10 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
-    $('#name22').keyup(function(){
+    $('#name').keyup(function(){
+
+
+
     
         var proveed = '{{$provee}}';
         var tipodo = '{{$tipod}}';
@@ -322,102 +322,21 @@ $(document).ready(function(){
         urle = urle.replace(':id', proveed);
         urle = urle.replace(':ij', query);
         urle = urle.replace(':ik', tipodo);
+
+        var options = {
+	data: ["blue", "green", "pink", "red", "yellow"]
+};
+
+$("#name").easyAutocomplete(options);
         
- var options = {
-   url: urle,
-   getValue: "nombre",
  
-   template: {
-        type: "description",
-        fields: {
-            description: "email"
-        }
-    },
 
-    list: {
-        match: {
-            enabled: true 
-        }
-    },
-
-    theme: "plate-dark"
-
-};
-
-$(this).easyAutocomplete(
-    {
-source: options
-    });
-
+ 
+    
     });
     });
 
 </script>
 @endsection
-@section('js')
-<script type="text/javascript">
-$(document).ready(function(){
-$('#name').keyup(function(){
 
-data = [
-    'Primero',
-    'Segundo',
-    'Tercero',
-    'Cuarto',
-    'Quinto',
-    'Sexto'
-];
-var docNameTB = $('#name');
-
-docNameTB.autocomplete({
-    source: [
-    "Primero",
-    "Segundo",
-    "Tercero",
-    "Cuarto",
-    "Quinto",
-    "Sexto"
-],
-    minLength:2
-})
-
-var options = {
-  data: [{
-      "name": "Afghanistan",
-      "code": "AF"
-    },
-    {
-      "name": "Aland Islands",
-      "code": "AX"
-    },
-    {
-      "name": "Albania",
-      "code": "AL"
-    },
-    {
-      "name": "Algeria",
-      "code": "DZ"
-    },
-    {
-      "name": "American Samoa",
-      "code": "AS"
-    },
-  ],
-  getValue: function(element) {
-return element.name + " " + element.code;
-},
-
-  list: {
-    match: {
-      enabled: true
-    }
-  }
-};
-
-$(this).autocomplete(options);
-
-});
-    });
-</script>
-@endsection
 

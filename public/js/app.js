@@ -6463,58 +6463,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/autocomplete.css":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/jquery-ui/themes/base/autocomplete.css ***!
-  \*********************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/easy-autocomplete/dist/easy-autocomplete.css":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/easy-autocomplete/dist/easy-autocomplete.css ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "/*!\n * jQuery UI Autocomplete 1.12.1\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n *\n * http://api.jqueryui.com/autocomplete/#theming\n */\n.ui-autocomplete {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tcursor: default;\n}\n", ""]);
+exports.push([module.i, "/*\r\n * easy-autocomplete\r\n * jQuery plugin for autocompletion\r\n * \r\n * @author Łukasz Pawełczak (http://github.com/pawelczak)\r\n * @version 1.3.5\r\n * Copyright  License: \r\n */\r\n\r\n.easy-autocomplete {\r\n  position: relative;\r\n}\r\n.easy-autocomplete input {\r\n  border-color: #ccc;\r\n  border-radius: 4px;\r\n  border-style: solid;\r\n  border-width: 1px;\r\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;\r\n  color: #555;\r\n  float: none;\r\n  padding: 6px 12px;\r\n}\r\n.easy-autocomplete input:hover, .easy-autocomplete input:focus {\r\n  box-shadow: none;\r\n}\r\n.easy-autocomplete a {\r\n  display: block;\r\n}\r\n.easy-autocomplete.eac-blue-light input:hover, .easy-autocomplete.eac-blue-light input:focus {\r\n  border-color: #66afe9;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);\r\n}\r\n.easy-autocomplete.eac-blue-light ul {\r\n  border-color: #66afe9;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);\r\n}\r\n.easy-autocomplete.eac-blue-light ul li, .easy-autocomplete.eac-blue-light ul .eac-category {\r\n  border-color: #66afe9;\r\n}\r\n.easy-autocomplete.eac-blue-light ul li.selected, .easy-autocomplete.eac-blue-light ul .eac-category.selected {\r\n  background-color: #ecf5fc;\r\n}\r\n.easy-autocomplete.eac-green-light input:hover, .easy-autocomplete.eac-green-light input:focus {\r\n  border-color: #41DB00;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(146, 237, 107, 0.6);\r\n}\r\n.easy-autocomplete.eac-green-light ul {\r\n  border-color: #41DB00;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(146, 237, 107, 0.6);\r\n}\r\n.easy-autocomplete.eac-green-light ul li, .easy-autocomplete.eac-green-light ul .eac-category {\r\n  border-color: #41DB00;\r\n}\r\n.easy-autocomplete.eac-green-light ul li.selected, .easy-autocomplete.eac-green-light ul .eac-category.selected {\r\n  background-color: #9eff75;\r\n}\r\n.easy-autocomplete.eac-red-light input:hover, .easy-autocomplete.eac-red-light input:focus {\r\n  border-color: #ff5b5b;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 90, 90, 0.6);\r\n}\r\n.easy-autocomplete.eac-red-light ul {\r\n  border-color: #ff5b5b;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 90, 90, 0.6);\r\n}\r\n.easy-autocomplete.eac-red-light ul li, .easy-autocomplete.eac-red-light ul .eac-category {\r\n  border-color: #ff5b5b;\r\n}\r\n.easy-autocomplete.eac-red-light ul li.selected, .easy-autocomplete.eac-red-light ul .eac-category.selected {\r\n  background-color: #ff8e8e;\r\n}\r\n.easy-autocomplete.eac-yellow-light input:hover, .easy-autocomplete.eac-yellow-light input:focus {\r\n  border-color: #ffdb00;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 231, 84, 0.6);\r\n}\r\n.easy-autocomplete.eac-yellow-light ul {\r\n  border-color: #ffdb00;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 231, 84, 0.6);\r\n}\r\n.easy-autocomplete.eac-yellow-light ul li, .easy-autocomplete.eac-yellow-light ul .eac-category {\r\n  border-color: #ffdb00;\r\n}\r\n.easy-autocomplete.eac-yellow-light ul li.selected, .easy-autocomplete.eac-yellow-light ul .eac-category.selected {\r\n  background-color: #ffe233;\r\n}\r\n.easy-autocomplete.eac-dark-light input:hover, .easy-autocomplete.eac-dark-light input:focus {\r\n  border-color: #333;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(55, 55, 55, 0.6);\r\n}\r\n.easy-autocomplete.eac-dark-light ul {\r\n  border-color: #333;\r\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(55, 55, 55, 0.6);\r\n}\r\n.easy-autocomplete.eac-dark-light ul li, .easy-autocomplete.eac-dark-light ul .eac-category {\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-dark-light ul li.selected, .easy-autocomplete.eac-dark-light ul .eac-category.selected {\r\n  background-color: #4d4d4d;\r\n  color: #fff;\r\n}\r\n.easy-autocomplete.eac-dark {\r\n  color: #fff;\r\n}\r\n.easy-autocomplete.eac-dark input {\r\n  background-color: #404040;\r\n  border-radius: 4px;\r\n  box-shadow: 0;\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-dark input:hover, .easy-autocomplete.eac-dark input:focus {\r\n  border-color: #333;\r\n  box-shadow: 0;\r\n}\r\n.easy-autocomplete.eac-dark ul {\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-dark ul li, .easy-autocomplete.eac-dark ul .eac-category {\r\n  background-color: #404040;\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-dark ul li.selected, .easy-autocomplete.eac-dark ul .eac-category.selected {\r\n  background-color: #737373;\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-dark-glass {\r\n  color: #fff;\r\n}\r\n.easy-autocomplete.eac-dark-glass input {\r\n  background-color: rgba(0, 0, 0, 0.8);\r\n  border-radius: 4px;\r\n  box-shadow: 0;\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-dark-glass input:hover, .easy-autocomplete.eac-dark-glass input:focus {\r\n  border-color: rgba(0, 0, 0, 0.8);\r\n  box-shadow: 0;\r\n}\r\n.easy-autocomplete.eac-dark-glass ul {\r\n  border-color: rgba(0, 0, 0, 0.8);\r\n}\r\n.easy-autocomplete.eac-dark-glass ul li, .easy-autocomplete.eac-dark-glass ul .eac-category {\r\n  background-color: rgba(0, 0, 0, 0.8);\r\n  border-color: rgba(0, 0, 0, 0.8);\r\n}\r\n.easy-autocomplete.eac-dark-glass ul li.selected, .easy-autocomplete.eac-dark-glass ul .eac-category.selected {\r\n  background-color: rgba(64, 64, 64, 0.8);\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-dark-glass ul li:last-child, .easy-autocomplete.eac-dark-glass ul .eac-category:last-child {\r\n  border-radius: 0 0 4px 4px;\r\n}\r\n.easy-autocomplete.eac-blue {\r\n  color: #fff;\r\n}\r\n.easy-autocomplete.eac-blue input {\r\n  background-color: #6d9ed1;\r\n  border-radius: 4px;\r\n  box-shadow: 0;\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-blue input::-webkit-input-placeholder {\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-blue input:-moz-placeholder {\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-blue input::-moz-placeholder {\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-blue input:-ms-input-placeholder {\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-blue input:hover, .easy-autocomplete.eac-blue input:focus {\r\n  border-color: #5A91CB;\r\n  box-shadow: 0;\r\n}\r\n.easy-autocomplete.eac-blue ul {\r\n  border-color: #5A91CB;\r\n}\r\n.easy-autocomplete.eac-blue ul li, .easy-autocomplete.eac-blue ul .eac-category {\r\n  background-color: #6d9ed1;\r\n  border-color: #5A91CB;\r\n}\r\n.easy-autocomplete.eac-blue ul li.selected, .easy-autocomplete.eac-blue ul .eac-category.selected {\r\n  background-color: #94b8dd;\r\n  color: #f6f6f6;\r\n}\r\n.easy-autocomplete.eac-yellow {\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-yellow input {\r\n  background-color: #ffdb7e;\r\n  border-color: #333;\r\n  border-radius: 4px;\r\n  box-shadow: 0;\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-yellow input:hover, .easy-autocomplete.eac-yellow input:focus {\r\n  border-color: #333;\r\n  box-shadow: 0;\r\n}\r\n.easy-autocomplete.eac-yellow ul {\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-yellow ul li, .easy-autocomplete.eac-yellow ul .eac-category {\r\n  background-color: #ffdb7e;\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-yellow ul li.selected, .easy-autocomplete.eac-yellow ul .eac-category.selected {\r\n  background-color: #ffe9b1;\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-purple {\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-purple input {\r\n  background-color: #d6d1e7;\r\n  border-color: #b8afd5;\r\n  box-shadow: 0;\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-purple input:hover, .easy-autocomplete.eac-purple input:focus {\r\n  border-color: #333;\r\n  box-shadow: 0;\r\n}\r\n.easy-autocomplete.eac-purple ul {\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-purple ul li, .easy-autocomplete.eac-purple ul .eac-category {\r\n  background-color: #d6d1e7;\r\n  border-color: #333;\r\n}\r\n.easy-autocomplete.eac-purple ul li.selected, .easy-autocomplete.eac-purple ul .eac-category.selected {\r\n  background-color: #ebe8f3;\r\n  color: #333;\r\n}\r\n.easy-autocomplete.eac-bootstrap input {\r\n  border-color: #ccc;\r\n  border-radius: 4px;\r\n  border-style: solid;\r\n  border-width: 1px;\r\n  color: #555;\r\n  padding: 6px 12px;\r\n}\r\n\r\n.easy-autocomplete-container {\r\n  left: 0;\r\n  position: absolute;\r\n  width: 100%;\r\n  z-index: 2;\r\n}\r\n.easy-autocomplete-container ul {\r\n  background: none repeat scroll 0 0 #ffffff;\r\n  border-top: 1px dotted #ccc;\r\n  display: none;\r\n  margin-top: 0;\r\n  padding-bottom: 0;\r\n  padding-left: 0;\r\n  position: relative;\r\n  top: -1px;\r\n}\r\n.easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {\r\n  background: inherit;\r\n  border-color: #ccc;\r\n  -o-border-image: none;\r\n     border-image: none;\r\n  border-style: solid;\r\n  border-width: 0 1px;\r\n  display: block;\r\n  font-size: 14px;\r\n  font-weight: normal;\r\n  padding: 4px 12px;\r\n}\r\n.easy-autocomplete-container ul li:last-child {\r\n  border-radius: 0 0 2px 2px;\r\n  border-width: 0 1px 1px;\r\n}\r\n.easy-autocomplete-container ul li.selected {\r\n  background: none repeat scroll 0 0 #ebebeb;\r\n  cursor: pointer;\r\n}\r\n.easy-autocomplete-container ul li.selected div {\r\n  font-weight: normal;\r\n}\r\n.easy-autocomplete-container ul li div {\r\n  display: block;\r\n  font-weight: normal;\r\n  word-break: break-all;\r\n}\r\n.easy-autocomplete-container ul li b {\r\n  font-weight: bold;\r\n}\r\n.easy-autocomplete-container ul .eac-category {\r\n  font-color: #aaa;\r\n  font-style: italic;\r\n}\r\n\r\n.eac-description .eac-item span {\r\n  color: #aaa;\r\n  font-style: italic;\r\n  font-size: 0.9em;\r\n}\r\n\r\n.eac-icon-left .eac-item img {\r\n  margin-right: 4px;\r\n  max-height: 30px;\r\n}\r\n\r\n.eac-icon-right .eac-item {\r\n  margin-top: 8px;\r\n  min-height: 24px;\r\n  position: relative;\r\n}\r\n.eac-icon-right .eac-item img {\r\n  margin-left: 4px;\r\n  max-height: 30px;\r\n  position: absolute;\r\n  right: -4px;\r\n  top: -8px;\r\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/core.css":
-/*!*************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/jquery-ui/themes/base/core.css ***!
-  \*************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css ***!
+  \**********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "/*!\n * jQuery UI CSS Framework 1.12.1\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n *\n * http://api.jqueryui.com/category/theming/\n */\n\n/* Layout helpers\n----------------------------------*/\n.ui-helper-hidden {\n\tdisplay: none;\n}\n.ui-helper-hidden-accessible {\n\tborder: 0;\n\tclip: rect(0 0 0 0);\n\theight: 1px;\n\tmargin: -1px;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: absolute;\n\twidth: 1px;\n}\n.ui-helper-reset {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\toutline: 0;\n\tline-height: 1.3;\n\ttext-decoration: none;\n\tfont-size: 100%;\n\tlist-style: none;\n}\n.ui-helper-clearfix:before,\n.ui-helper-clearfix:after {\n\tcontent: \"\";\n\tdisplay: table;\n\tborder-collapse: collapse;\n}\n.ui-helper-clearfix:after {\n\tclear: both;\n}\n.ui-helper-zfix {\n\twidth: 100%;\n\theight: 100%;\n\ttop: 0;\n\tleft: 0;\n\tposition: absolute;\n\topacity: 0;\n\tfilter:Alpha(Opacity=0); /* support: IE8 */\n}\n\n.ui-front {\n\tz-index: 100;\n}\n\n\n/* Interaction Cues\n----------------------------------*/\n.ui-state-disabled {\n\tcursor: default !important;\n\tpointer-events: none;\n}\n\n\n/* Icons\n----------------------------------*/\n.ui-icon {\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\tmargin-top: -.25em;\n\tposition: relative;\n\ttext-indent: -99999px;\n\toverflow: hidden;\n\tbackground-repeat: no-repeat;\n}\n\n.ui-widget-icon-block {\n\tleft: 50%;\n\tmargin-left: -8px;\n\tdisplay: block;\n}\n\n/* Misc visuals\n----------------------------------*/\n\n/* Overlays */\n.ui-widget-overlay {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/theme.css":
-/*!**************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/jquery-ui/themes/base/theme.css ***!
-  \**************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var escape = __webpack_require__(/*! ../../../css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
-exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "/*!\n * jQuery UI CSS Framework 1.12.1\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n *\n * http://api.jqueryui.com/category/theming/\n *\n * To view and modify this theme, visit http://jqueryui.com/themeroller/\n */\n\n\n/* Component containers\n----------------------------------*/\n.ui-widget {\n\tfont-family: Arial,Helvetica,sans-serif/*{ffDefault}*/;\n\tfont-size: 1em/*{fsDefault}*/;\n}\n.ui-widget .ui-widget {\n\tfont-size: 1em;\n}\n.ui-widget input,\n.ui-widget select,\n.ui-widget textarea,\n.ui-widget button {\n\tfont-family: Arial,Helvetica,sans-serif/*{ffDefault}*/;\n\tfont-size: 1em;\n}\n.ui-widget.ui-widget-content {\n\tborder: 1px solid #c5c5c5/*{borderColorDefault}*/;\n}\n.ui-widget-content {\n\tborder: 1px solid #dddddd/*{borderColorContent}*/;\n\tbackground: #ffffff/*{bgColorContent}*/ /*{bgImgUrlContent}*/ /*{bgContentXPos}*/ /*{bgContentYPos}*/ /*{bgContentRepeat}*/;\n\tcolor: #333333/*{fcContent}*/;\n}\n.ui-widget-content a {\n\tcolor: #333333/*{fcContent}*/;\n}\n.ui-widget-header {\n\tborder: 1px solid #dddddd/*{borderColorHeader}*/;\n\tbackground: #e9e9e9/*{bgColorHeader}*/ /*{bgImgUrlHeader}*/ /*{bgHeaderXPos}*/ /*{bgHeaderYPos}*/ /*{bgHeaderRepeat}*/;\n\tcolor: #333333/*{fcHeader}*/;\n\tfont-weight: bold;\n}\n.ui-widget-header a {\n\tcolor: #333333/*{fcHeader}*/;\n}\n\n/* Interaction states\n----------------------------------*/\n.ui-state-default,\n.ui-widget-content .ui-state-default,\n.ui-widget-header .ui-state-default,\n.ui-button,\n\n/* We use html here because we need a greater specificity to make sure disabled\nworks properly when clicked or hovered */\nhtml .ui-button.ui-state-disabled:hover,\nhtml .ui-button.ui-state-disabled:active {\n\tborder: 1px solid #c5c5c5/*{borderColorDefault}*/;\n\tbackground: #f6f6f6/*{bgColorDefault}*/ /*{bgImgUrlDefault}*/ /*{bgDefaultXPos}*/ /*{bgDefaultYPos}*/ /*{bgDefaultRepeat}*/;\n\tfont-weight: normal/*{fwDefault}*/;\n\tcolor: #454545/*{fcDefault}*/;\n}\n.ui-state-default a,\n.ui-state-default a:link,\n.ui-state-default a:visited,\na.ui-button,\na:link.ui-button,\na:visited.ui-button,\n.ui-button {\n\tcolor: #454545/*{fcDefault}*/;\n\ttext-decoration: none;\n}\n.ui-state-hover,\n.ui-widget-content .ui-state-hover,\n.ui-widget-header .ui-state-hover,\n.ui-state-focus,\n.ui-widget-content .ui-state-focus,\n.ui-widget-header .ui-state-focus,\n.ui-button:hover,\n.ui-button:focus {\n\tborder: 1px solid #cccccc/*{borderColorHover}*/;\n\tbackground: #ededed/*{bgColorHover}*/ /*{bgImgUrlHover}*/ /*{bgHoverXPos}*/ /*{bgHoverYPos}*/ /*{bgHoverRepeat}*/;\n\tfont-weight: normal/*{fwDefault}*/;\n\tcolor: #2b2b2b/*{fcHover}*/;\n}\n.ui-state-hover a,\n.ui-state-hover a:hover,\n.ui-state-hover a:link,\n.ui-state-hover a:visited,\n.ui-state-focus a,\n.ui-state-focus a:hover,\n.ui-state-focus a:link,\n.ui-state-focus a:visited,\na.ui-button:hover,\na.ui-button:focus {\n\tcolor: #2b2b2b/*{fcHover}*/;\n\ttext-decoration: none;\n}\n\n.ui-visual-focus {\n\tbox-shadow: 0 0 3px 1px rgb(94, 158, 214);\n}\n.ui-state-active,\n.ui-widget-content .ui-state-active,\n.ui-widget-header .ui-state-active,\na.ui-button:active,\n.ui-button:active,\n.ui-button.ui-state-active:hover {\n\tborder: 1px solid #003eff/*{borderColorActive}*/;\n\tbackground: #007fff/*{bgColorActive}*/ /*{bgImgUrlActive}*/ /*{bgActiveXPos}*/ /*{bgActiveYPos}*/ /*{bgActiveRepeat}*/;\n\tfont-weight: normal/*{fwDefault}*/;\n\tcolor: #ffffff/*{fcActive}*/;\n}\n.ui-icon-background,\n.ui-state-active .ui-icon-background {\n\tborder: #003eff/*{borderColorActive}*/;\n\tbackground-color: #ffffff/*{fcActive}*/;\n}\n.ui-state-active a,\n.ui-state-active a:link,\n.ui-state-active a:visited {\n\tcolor: #ffffff/*{fcActive}*/;\n\ttext-decoration: none;\n}\n\n/* Interaction Cues\n----------------------------------*/\n.ui-state-highlight,\n.ui-widget-content .ui-state-highlight,\n.ui-widget-header .ui-state-highlight {\n\tborder: 1px solid #dad55e/*{borderColorHighlight}*/;\n\tbackground: #fffa90/*{bgColorHighlight}*/ /*{bgImgUrlHighlight}*/ /*{bgHighlightXPos}*/ /*{bgHighlightYPos}*/ /*{bgHighlightRepeat}*/;\n\tcolor: #777620/*{fcHighlight}*/;\n}\n.ui-state-checked {\n\tborder: 1px solid #dad55e/*{borderColorHighlight}*/;\n\tbackground: #fffa90/*{bgColorHighlight}*/;\n}\n.ui-state-highlight a,\n.ui-widget-content .ui-state-highlight a,\n.ui-widget-header .ui-state-highlight a {\n\tcolor: #777620/*{fcHighlight}*/;\n}\n.ui-state-error,\n.ui-widget-content .ui-state-error,\n.ui-widget-header .ui-state-error {\n\tborder: 1px solid #f1a899/*{borderColorError}*/;\n\tbackground: #fddfdf/*{bgColorError}*/ /*{bgImgUrlError}*/ /*{bgErrorXPos}*/ /*{bgErrorYPos}*/ /*{bgErrorRepeat}*/;\n\tcolor: #5f3f3f/*{fcError}*/;\n}\n.ui-state-error a,\n.ui-widget-content .ui-state-error a,\n.ui-widget-header .ui-state-error a {\n\tcolor: #5f3f3f/*{fcError}*/;\n}\n.ui-state-error-text,\n.ui-widget-content .ui-state-error-text,\n.ui-widget-header .ui-state-error-text {\n\tcolor: #5f3f3f/*{fcError}*/;\n}\n.ui-priority-primary,\n.ui-widget-content .ui-priority-primary,\n.ui-widget-header .ui-priority-primary {\n\tfont-weight: bold;\n}\n.ui-priority-secondary,\n.ui-widget-content .ui-priority-secondary,\n.ui-widget-header .ui-priority-secondary {\n\topacity: .7;\n\tfilter:Alpha(Opacity=70); /* support: IE8 */\n\tfont-weight: normal;\n}\n.ui-state-disabled,\n.ui-widget-content .ui-state-disabled,\n.ui-widget-header .ui-state-disabled {\n\topacity: .35;\n\tfilter:Alpha(Opacity=35); /* support: IE8 */\n\tbackground-image: none;\n}\n.ui-state-disabled .ui-icon {\n\tfilter:Alpha(Opacity=35); /* support: IE8 - See #6059 */\n}\n\n/* Icons\n----------------------------------*/\n\n/* states and images */\n.ui-icon {\n\twidth: 16px;\n\theight: 16px;\n}\n.ui-icon,\n.ui-widget-content .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_444444_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_444444_256x240.png")) + ");\n}\n.ui-widget-header .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_444444_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_444444_256x240.png")) + ");\n}\n.ui-state-hover .ui-icon,\n.ui-state-focus .ui-icon,\n.ui-button:hover .ui-icon,\n.ui-button:focus .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_555555_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_555555_256x240.png")) + ");\n}\n.ui-state-active .ui-icon,\n.ui-button:active .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_ffffff_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_ffffff_256x240.png")) + ");\n}\n.ui-state-highlight .ui-icon,\n.ui-button .ui-state-highlight.ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_777620_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_777620_256x240.png")) + ");\n}\n.ui-state-error .ui-icon,\n.ui-state-error-text .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_cc0000_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_cc0000_256x240.png")) + ");\n}\n.ui-button .ui-icon {\n\tbackground-image: url(" + escape(__webpack_require__(/*! ./images/ui-icons_777777_256x240.png */ "./node_modules/jquery-ui/themes/base/images/ui-icons_777777_256x240.png")) + ");\n}\n\n/* positioning */\n.ui-icon-blank { background-position: 16px 16px; }\n.ui-icon-caret-1-n { background-position: 0 0; }\n.ui-icon-caret-1-ne { background-position: -16px 0; }\n.ui-icon-caret-1-e { background-position: -32px 0; }\n.ui-icon-caret-1-se { background-position: -48px 0; }\n.ui-icon-caret-1-s { background-position: -65px 0; }\n.ui-icon-caret-1-sw { background-position: -80px 0; }\n.ui-icon-caret-1-w { background-position: -96px 0; }\n.ui-icon-caret-1-nw { background-position: -112px 0; }\n.ui-icon-caret-2-n-s { background-position: -128px 0; }\n.ui-icon-caret-2-e-w { background-position: -144px 0; }\n.ui-icon-triangle-1-n { background-position: 0 -16px; }\n.ui-icon-triangle-1-ne { background-position: -16px -16px; }\n.ui-icon-triangle-1-e { background-position: -32px -16px; }\n.ui-icon-triangle-1-se { background-position: -48px -16px; }\n.ui-icon-triangle-1-s { background-position: -65px -16px; }\n.ui-icon-triangle-1-sw { background-position: -80px -16px; }\n.ui-icon-triangle-1-w { background-position: -96px -16px; }\n.ui-icon-triangle-1-nw { background-position: -112px -16px; }\n.ui-icon-triangle-2-n-s { background-position: -128px -16px; }\n.ui-icon-triangle-2-e-w { background-position: -144px -16px; }\n.ui-icon-arrow-1-n { background-position: 0 -32px; }\n.ui-icon-arrow-1-ne { background-position: -16px -32px; }\n.ui-icon-arrow-1-e { background-position: -32px -32px; }\n.ui-icon-arrow-1-se { background-position: -48px -32px; }\n.ui-icon-arrow-1-s { background-position: -65px -32px; }\n.ui-icon-arrow-1-sw { background-position: -80px -32px; }\n.ui-icon-arrow-1-w { background-position: -96px -32px; }\n.ui-icon-arrow-1-nw { background-position: -112px -32px; }\n.ui-icon-arrow-2-n-s { background-position: -128px -32px; }\n.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }\n.ui-icon-arrow-2-e-w { background-position: -160px -32px; }\n.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }\n.ui-icon-arrowstop-1-n { background-position: -192px -32px; }\n.ui-icon-arrowstop-1-e { background-position: -208px -32px; }\n.ui-icon-arrowstop-1-s { background-position: -224px -32px; }\n.ui-icon-arrowstop-1-w { background-position: -240px -32px; }\n.ui-icon-arrowthick-1-n { background-position: 1px -48px; }\n.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }\n.ui-icon-arrowthick-1-e { background-position: -32px -48px; }\n.ui-icon-arrowthick-1-se { background-position: -48px -48px; }\n.ui-icon-arrowthick-1-s { background-position: -64px -48px; }\n.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }\n.ui-icon-arrowthick-1-w { background-position: -96px -48px; }\n.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }\n.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }\n.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }\n.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }\n.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }\n.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }\n.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }\n.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }\n.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }\n.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }\n.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }\n.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }\n.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }\n.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }\n.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }\n.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }\n.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }\n.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }\n.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }\n.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }\n.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }\n.ui-icon-arrow-4 { background-position: 0 -80px; }\n.ui-icon-arrow-4-diag { background-position: -16px -80px; }\n.ui-icon-extlink { background-position: -32px -80px; }\n.ui-icon-newwin { background-position: -48px -80px; }\n.ui-icon-refresh { background-position: -64px -80px; }\n.ui-icon-shuffle { background-position: -80px -80px; }\n.ui-icon-transfer-e-w { background-position: -96px -80px; }\n.ui-icon-transferthick-e-w { background-position: -112px -80px; }\n.ui-icon-folder-collapsed { background-position: 0 -96px; }\n.ui-icon-folder-open { background-position: -16px -96px; }\n.ui-icon-document { background-position: -32px -96px; }\n.ui-icon-document-b { background-position: -48px -96px; }\n.ui-icon-note { background-position: -64px -96px; }\n.ui-icon-mail-closed { background-position: -80px -96px; }\n.ui-icon-mail-open { background-position: -96px -96px; }\n.ui-icon-suitcase { background-position: -112px -96px; }\n.ui-icon-comment { background-position: -128px -96px; }\n.ui-icon-person { background-position: -144px -96px; }\n.ui-icon-print { background-position: -160px -96px; }\n.ui-icon-trash { background-position: -176px -96px; }\n.ui-icon-locked { background-position: -192px -96px; }\n.ui-icon-unlocked { background-position: -208px -96px; }\n.ui-icon-bookmark { background-position: -224px -96px; }\n.ui-icon-tag { background-position: -240px -96px; }\n.ui-icon-home { background-position: 0 -112px; }\n.ui-icon-flag { background-position: -16px -112px; }\n.ui-icon-calendar { background-position: -32px -112px; }\n.ui-icon-cart { background-position: -48px -112px; }\n.ui-icon-pencil { background-position: -64px -112px; }\n.ui-icon-clock { background-position: -80px -112px; }\n.ui-icon-disk { background-position: -96px -112px; }\n.ui-icon-calculator { background-position: -112px -112px; }\n.ui-icon-zoomin { background-position: -128px -112px; }\n.ui-icon-zoomout { background-position: -144px -112px; }\n.ui-icon-search { background-position: -160px -112px; }\n.ui-icon-wrench { background-position: -176px -112px; }\n.ui-icon-gear { background-position: -192px -112px; }\n.ui-icon-heart { background-position: -208px -112px; }\n.ui-icon-star { background-position: -224px -112px; }\n.ui-icon-link { background-position: -240px -112px; }\n.ui-icon-cancel { background-position: 0 -128px; }\n.ui-icon-plus { background-position: -16px -128px; }\n.ui-icon-plusthick { background-position: -32px -128px; }\n.ui-icon-minus { background-position: -48px -128px; }\n.ui-icon-minusthick { background-position: -64px -128px; }\n.ui-icon-close { background-position: -80px -128px; }\n.ui-icon-closethick { background-position: -96px -128px; }\n.ui-icon-key { background-position: -112px -128px; }\n.ui-icon-lightbulb { background-position: -128px -128px; }\n.ui-icon-scissors { background-position: -144px -128px; }\n.ui-icon-clipboard { background-position: -160px -128px; }\n.ui-icon-copy { background-position: -176px -128px; }\n.ui-icon-contact { background-position: -192px -128px; }\n.ui-icon-image { background-position: -208px -128px; }\n.ui-icon-video { background-position: -224px -128px; }\n.ui-icon-script { background-position: -240px -128px; }\n.ui-icon-alert { background-position: 0 -144px; }\n.ui-icon-info { background-position: -16px -144px; }\n.ui-icon-notice { background-position: -32px -144px; }\n.ui-icon-help { background-position: -48px -144px; }\n.ui-icon-check { background-position: -64px -144px; }\n.ui-icon-bullet { background-position: -80px -144px; }\n.ui-icon-radio-on { background-position: -96px -144px; }\n.ui-icon-radio-off { background-position: -112px -144px; }\n.ui-icon-pin-w { background-position: -128px -144px; }\n.ui-icon-pin-s { background-position: -144px -144px; }\n.ui-icon-play { background-position: 0 -160px; }\n.ui-icon-pause { background-position: -16px -160px; }\n.ui-icon-seek-next { background-position: -32px -160px; }\n.ui-icon-seek-prev { background-position: -48px -160px; }\n.ui-icon-seek-end { background-position: -64px -160px; }\n.ui-icon-seek-start { background-position: -80px -160px; }\n/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */\n.ui-icon-seek-first { background-position: -80px -160px; }\n.ui-icon-stop { background-position: -96px -160px; }\n.ui-icon-eject { background-position: -112px -160px; }\n.ui-icon-volume-off { background-position: -128px -160px; }\n.ui-icon-volume-on { background-position: -144px -160px; }\n.ui-icon-power { background-position: 0 -176px; }\n.ui-icon-signal-diag { background-position: -16px -176px; }\n.ui-icon-signal { background-position: -32px -176px; }\n.ui-icon-battery-0 { background-position: -48px -176px; }\n.ui-icon-battery-1 { background-position: -64px -176px; }\n.ui-icon-battery-2 { background-position: -80px -176px; }\n.ui-icon-battery-3 { background-position: -96px -176px; }\n.ui-icon-circle-plus { background-position: 0 -192px; }\n.ui-icon-circle-minus { background-position: -16px -192px; }\n.ui-icon-circle-close { background-position: -32px -192px; }\n.ui-icon-circle-triangle-e { background-position: -48px -192px; }\n.ui-icon-circle-triangle-s { background-position: -64px -192px; }\n.ui-icon-circle-triangle-w { background-position: -80px -192px; }\n.ui-icon-circle-triangle-n { background-position: -96px -192px; }\n.ui-icon-circle-arrow-e { background-position: -112px -192px; }\n.ui-icon-circle-arrow-s { background-position: -128px -192px; }\n.ui-icon-circle-arrow-w { background-position: -144px -192px; }\n.ui-icon-circle-arrow-n { background-position: -160px -192px; }\n.ui-icon-circle-zoomin { background-position: -176px -192px; }\n.ui-icon-circle-zoomout { background-position: -192px -192px; }\n.ui-icon-circle-check { background-position: -208px -192px; }\n.ui-icon-circlesmall-plus { background-position: 0 -208px; }\n.ui-icon-circlesmall-minus { background-position: -16px -208px; }\n.ui-icon-circlesmall-close { background-position: -32px -208px; }\n.ui-icon-squaresmall-plus { background-position: -48px -208px; }\n.ui-icon-squaresmall-minus { background-position: -64px -208px; }\n.ui-icon-squaresmall-close { background-position: -80px -208px; }\n.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }\n.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }\n.ui-icon-grip-solid-vertical { background-position: -32px -224px; }\n.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }\n.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }\n.ui-icon-grip-diagonal-se { background-position: -80px -224px; }\n\n\n/* Misc visuals\n----------------------------------*/\n\n/* Corner radius */\n.ui-corner-all,\n.ui-corner-top,\n.ui-corner-left,\n.ui-corner-tl {\n\tborder-top-left-radius: 3px/*{cornerRadius}*/;\n}\n.ui-corner-all,\n.ui-corner-top,\n.ui-corner-right,\n.ui-corner-tr {\n\tborder-top-right-radius: 3px/*{cornerRadius}*/;\n}\n.ui-corner-all,\n.ui-corner-bottom,\n.ui-corner-left,\n.ui-corner-bl {\n\tborder-bottom-left-radius: 3px/*{cornerRadius}*/;\n}\n.ui-corner-all,\n.ui-corner-bottom,\n.ui-corner-right,\n.ui-corner-br {\n\tborder-bottom-right-radius: 3px/*{cornerRadius}*/;\n}\n\n/* Overlays */\n.ui-widget-overlay {\n\tbackground: #aaaaaa/*{bgColorOverlay}*/ /*{bgImgUrlOverlay}*/ /*{bgOverlayXPos}*/ /*{bgOverlayYPos}*/ /*{bgOverlayRepeat}*/;\n\topacity: .3/*{opacityOverlay}*/;\n\tfilter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/; /* support: IE8 */\n}\n.ui-widget-shadow {\n\tbox-shadow: 0/*{offsetLeftShadow}*/ 0/*{offsetTopShadow}*/ 5px/*{thicknessShadow}*/ #666666/*{bgColorShadow}*/;\n}\n", ""]);
+exports.push([module.i, "/*\r\n * easy-autocomplete\r\n * jQuery plugin for autocompletion\r\n * \r\n * @author Łukasz Pawełczak (http://github.com/pawelczak)\r\n * @version 1.3.5\r\n * Copyright  License: \r\n */\r\n\r\n.easy-autocomplete {\r\n  /* Theme Square */\r\n  /* Round */\r\n  /* Funky */\r\n  /* Solid */\r\n  /* Plate */\r\n}\r\n.easy-autocomplete.eac-square {\r\n  font-family: \"Roboto\", \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n}\r\n.easy-autocomplete.eac-square input {\r\n  border: 1px solid #7f8c8d;\r\n  border-radius: 0;\r\n  color: #7f8c8d;\r\n  font-family: inherit;\r\n  font-size: 18px;\r\n  font-style: italic;\r\n  font-weight: 300;\r\n  margin: 0;\r\n  min-width: 350px;\r\n  padding: 12px 43px 12px 15px;\r\n}\r\n.easy-autocomplete.eac-square ul {\r\n  border-color: #7f8c8d;\r\n  border-top: 0;\r\n  box-shadow: none;\r\n  top: 0;\r\n}\r\n.easy-autocomplete.eac-square ul li, .easy-autocomplete.eac-square ul .eac-category {\r\n  border-color: #7f8c8d;\r\n  font-family: inherit;\r\n  font-size: 16px;\r\n  font-weight: 300;\r\n  padding: 6px 12px;\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-square ul li *, .easy-autocomplete.eac-square ul .eac-category * {\r\n  font-weight: 300;\r\n}\r\n.easy-autocomplete.eac-square ul li.selected, .easy-autocomplete.eac-square ul .eac-category.selected {\r\n  background-color: #f1f1f1;\r\n  font-weight: 300;\r\n}\r\n.easy-autocomplete.eac-square ul li b, .easy-autocomplete.eac-square ul .eac-category b {\r\n  font-weight: 600;\r\n}\r\n.easy-autocomplete.eac-round {\r\n  font-family: \"Open Sans\", \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n}\r\n.easy-autocomplete.eac-round input {\r\n  border: 2px solid #888;\r\n  border-radius: 10px;\r\n  color: #888;\r\n  font-family: inherit;\r\n  font-size: 16px;\r\n  font-weight: 400;\r\n  margin: 0;\r\n  min-width: 300px;\r\n  padding: 10px;\r\n}\r\n.easy-autocomplete.eac-round input:hover, .easy-autocomplete.eac-round input:focus {\r\n  border-color: #3079ed;\r\n}\r\n.easy-autocomplete.eac-round ul {\r\n  background: none;\r\n  border-color: #888;\r\n  border-width: 0;\r\n  box-shadow: none;\r\n  min-width: 300px;\r\n  top: 20px;\r\n}\r\n.easy-autocomplete.eac-round ul li, .easy-autocomplete.eac-round ul .eac-category {\r\n  background: #fff;\r\n  border-color: #3079ed;\r\n  border-width: 0 2px;\r\n  font-size: 14px;\r\n  padding: 8px 12px;\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-round ul li.selected, .easy-autocomplete.eac-round ul .eac-category.selected {\r\n  background-color: #d4e3fb;\r\n}\r\n.easy-autocomplete.eac-round ul li:first-child, .easy-autocomplete.eac-round ul .eac-category:first-child {\r\n  border-radius: 10px 10px 0 0;\r\n  border-width: 2px 2px 0;\r\n}\r\n.easy-autocomplete.eac-round ul li:last-child, .easy-autocomplete.eac-round ul .eac-category:last-child {\r\n  border-radius: 0 0 10px 10px;\r\n  border-width: 0 2px 2px;\r\n}\r\n.easy-autocomplete.eac-round ul li b, .easy-autocomplete.eac-round ul .eac-category b {\r\n  font-weight: 700;\r\n}\r\n.easy-autocomplete.eac-funky {\r\n  font-family: \"Inconsolata\", \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n}\r\n.easy-autocomplete.eac-funky input {\r\n  background: #07ED89;\r\n  border: 0;\r\n  border-radius: 0;\r\n  color: #ED076B;\r\n  font-family: inherit;\r\n  font-size: 18px;\r\n  min-width: 240px;\r\n  padding: 12px;\r\n}\r\n.easy-autocomplete.eac-funky ul {\r\n  background: transparent;\r\n  border: 0;\r\n}\r\n.easy-autocomplete.eac-funky ul li, .easy-autocomplete.eac-funky ul .eac-category {\r\n  background: transparent;\r\n  border: 0;\r\n  color: #ED076B;\r\n  font-size: 18px;\r\n  padding: 4px 12px;\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-funky ul li.selected, .easy-autocomplete.eac-funky ul .eac-category.selected {\r\n  color: #8907ED;\r\n}\r\n.easy-autocomplete.eac-solid input {\r\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) inset;\r\n  border-color: #ddd;\r\n  color: #666;\r\n  font-size: 13px;\r\n  min-height: 0;\r\n  padding: 6px 12px;\r\n}\r\n.easy-autocomplete.eac-solid ul li, .easy-autocomplete.eac-solid ul .eac-category {\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-solid ul li.selected, .easy-autocomplete.eac-solid ul .eac-category.selected {\r\n  background-color: #f2f2f2;\r\n}\r\n.easy-autocomplete.eac-plate {\r\n  font-family: \"Open Sans\", \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n}\r\n.easy-autocomplete.eac-plate input {\r\n  font-size: 13px;\r\n  padding: 6px 12px;\r\n}\r\n.easy-autocomplete.eac-plate ul {\r\n  background: #b5b5b5;\r\n  border-radius: 6px;\r\n  border-width: 0;\r\n  top: 10px;\r\n}\r\n.easy-autocomplete.eac-plate ul li, .easy-autocomplete.eac-plate ul .eac-category {\r\n  background: #b5b5b5;\r\n  color: #FAFAFA;\r\n  font-size: 12px;\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-plate ul li b, .easy-autocomplete.eac-plate ul .eac-category b {\r\n  color: #ffd464;\r\n}\r\n.easy-autocomplete.eac-plate ul li.selected, .easy-autocomplete.eac-plate ul .eac-category.selected {\r\n  background: #656565;\r\n}\r\n.easy-autocomplete.eac-plate ul li:first-child, .easy-autocomplete.eac-plate ul .eac-category:first-child {\r\n  border-radius: 6px 6px 0 0;\r\n}\r\n.easy-autocomplete.eac-plate ul li:last-child, .easy-autocomplete.eac-plate ul .eac-category:last-child {\r\n  border-radius: 0 0 6px 6px;\r\n}\r\n.easy-autocomplete.eac-plate-dark {\r\n  font-family: \"Open Sans\", \"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n}\r\n.easy-autocomplete.eac-plate-dark input {\r\n  font-size: 13px;\r\n  padding: 6px 12px;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul {\r\n  background: #212121;\r\n  border-radius: 6px;\r\n  border-width: 0;\r\n  top: 10px;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul li, .easy-autocomplete.eac-plate-dark ul .eac-category {\r\n  background: #212121;\r\n  color: #FAFAFA;\r\n  font-size: 12px;\r\n  transition: all 0.4s ease 0s;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul li b, .easy-autocomplete.eac-plate-dark ul .eac-category b {\r\n  color: #ffd464;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul li.selected, .easy-autocomplete.eac-plate-dark ul .eac-category.selected {\r\n  background: #656565;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul li:first-child, .easy-autocomplete.eac-plate-dark ul .eac-category:first-child {\r\n  border-radius: 6px 6px 0 0;\r\n}\r\n.easy-autocomplete.eac-plate-dark ul li:last-child, .easy-autocomplete.eac-plate-dark ul .eac-category:last-child {\r\n  border-radius: 0 0 6px 6px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -6608,42 +6588,15 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/lib/url/escape.js":
-/*!***************************************************!*\
-  !*** ./node_modules/css-loader/lib/url/escape.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function escape(url) {
-    if (typeof url !== 'string') {
-        return url
-    }
-    // If url is already wrapped in quotes, remove them
-    if (/^['"].*['"]$/.test(url)) {
-        url = url.slice(1, -1);
-    }
-    // Should url be wrapped?
-    // See https://drafts.csswg.org/css-values-3/#urls
-    if (/["'() \t\n]/.test(url)) {
-        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
-    }
-
-    return url
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/autocomplete.css":
-/*!*************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/autocomplete.css ***!
-  \*************************************************************/
+/***/ "./node_modules/easy-autocomplete/dist/easy-autocomplete.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/easy-autocomplete/dist/easy-autocomplete.css ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./autocomplete.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/autocomplete.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./easy-autocomplete.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/easy-autocomplete/dist/easy-autocomplete.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -6657,7 +6610,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -6665,15 +6618,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/jquery-ui/themes/base/core.css":
-/*!*****************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/core.css ***!
-  \*****************************************************/
+/***/ "./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css":
+/*!**************************************************************************!*\
+  !*** ./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./core.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/core.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./easy-autocomplete.themes.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -6687,7 +6640,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -6695,2915 +6648,1636 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_444444_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_444444_256x240.png ***!
-  \*******************************************************************************/
+/***/ "./node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_444444_256x240.png?a4c733ec4baef9ad3896d4e34a8a5448";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_555555_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_555555_256x240.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_555555_256x240.png?971364734f3b603e5d363a2634898b42";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_777620_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_777620_256x240.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_777620_256x240.png?208a290102a4ada58a04de354a1354d7";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_777777_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_777777_256x240.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_777777_256x240.png?73a1fd052c9d84c0ee0bea3ee85892ed";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_cc0000_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_cc0000_256x240.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_cc0000_256x240.png?0de3b51742ed3ac61435875bccd8973b";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/images/ui-icons_ffffff_256x240.png":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/images/ui-icons_ffffff_256x240.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/jquery-ui/themes/base/ui-icons_ffffff_256x240.png?bf27228a7d3957983584fa7698121ea1";
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/themes/base/theme.css":
-/*!******************************************************!*\
-  !*** ./node_modules/jquery-ui/themes/base/theme.css ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./theme.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/jquery-ui/themes/base/theme.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/keycode.js":
-/*!**********************************************!*\
-  !*** ./node_modules/jquery-ui/ui/keycode.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Keycode 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
+/*
+ * easy-autocomplete
+ * jQuery plugin for autocompletion
+ * 
+ * @author Łukasz Pawełczak (http://github.com/pawelczak)
+ * @version 1.3.5
+ * Copyright  License: 
  */
 
-//>>label: Keycode
-//>>group: Core
-//>>description: Provide keycodes as keynames
-//>>docs: http://api.jqueryui.com/jQuery.ui.keyCode/
-
-( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! ./version */ "./node_modules/jquery-ui/ui/version.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-} ( function( $ ) {
-return $.ui.keyCode = {
-	BACKSPACE: 8,
-	COMMA: 188,
-	DELETE: 46,
-	DOWN: 40,
-	END: 35,
-	ENTER: 13,
-	ESCAPE: 27,
-	HOME: 36,
-	LEFT: 37,
-	PAGE_DOWN: 34,
-	PAGE_UP: 33,
-	PERIOD: 190,
-	RIGHT: 39,
-	SPACE: 32,
-	TAB: 9,
-	UP: 38
-};
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/position.js":
-/*!***********************************************!*\
-  !*** ./node_modules/jquery-ui/ui/position.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Position 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/position/
+/*
+ * EasyAutocomplete - Configuration 
  */
-
-//>>label: Position
-//>>group: Core
-//>>description: Positions elements relative to other elements.
-//>>docs: http://api.jqueryui.com/position/
-//>>demos: http://jqueryui.com/position/
-
-( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! ./version */ "./node_modules/jquery-ui/ui/version.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}( function( $ ) {
-( function() {
-var cachedScrollbarWidth,
-	max = Math.max,
-	abs = Math.abs,
-	rhorizontal = /left|center|right/,
-	rvertical = /top|center|bottom/,
-	roffset = /[\+\-]\d+(\.[\d]+)?%?/,
-	rposition = /^\w+/,
-	rpercent = /%$/,
-	_position = $.fn.position;
-
-function getOffsets( offsets, width, height ) {
-	return [
-		parseFloat( offsets[ 0 ] ) * ( rpercent.test( offsets[ 0 ] ) ? width / 100 : 1 ),
-		parseFloat( offsets[ 1 ] ) * ( rpercent.test( offsets[ 1 ] ) ? height / 100 : 1 )
-	];
-}
-
-function parseCss( element, property ) {
-	return parseInt( $.css( element, property ), 10 ) || 0;
-}
-
-function getDimensions( elem ) {
-	var raw = elem[ 0 ];
-	if ( raw.nodeType === 9 ) {
-		return {
-			width: elem.width(),
-			height: elem.height(),
-			offset: { top: 0, left: 0 }
-		};
-	}
-	if ( $.isWindow( raw ) ) {
-		return {
-			width: elem.width(),
-			height: elem.height(),
-			offset: { top: elem.scrollTop(), left: elem.scrollLeft() }
-		};
-	}
-	if ( raw.preventDefault ) {
-		return {
-			width: 0,
-			height: 0,
-			offset: { top: raw.pageY, left: raw.pageX }
-		};
-	}
-	return {
-		width: elem.outerWidth(),
-		height: elem.outerHeight(),
-		offset: elem.offset()
-	};
-}
-
-$.position = {
-	scrollbarWidth: function() {
-		if ( cachedScrollbarWidth !== undefined ) {
-			return cachedScrollbarWidth;
-		}
-		var w1, w2,
-			div = $( "<div " +
-				"style='display:block;position:absolute;width:50px;height:50px;overflow:hidden;'>" +
-				"<div style='height:100px;width:auto;'></div></div>" ),
-			innerDiv = div.children()[ 0 ];
-
-		$( "body" ).append( div );
-		w1 = innerDiv.offsetWidth;
-		div.css( "overflow", "scroll" );
-
-		w2 = innerDiv.offsetWidth;
-
-		if ( w1 === w2 ) {
-			w2 = div[ 0 ].clientWidth;
-		}
-
-		div.remove();
-
-		return ( cachedScrollbarWidth = w1 - w2 );
-	},
-	getScrollInfo: function( within ) {
-		var overflowX = within.isWindow || within.isDocument ? "" :
-				within.element.css( "overflow-x" ),
-			overflowY = within.isWindow || within.isDocument ? "" :
-				within.element.css( "overflow-y" ),
-			hasOverflowX = overflowX === "scroll" ||
-				( overflowX === "auto" && within.width < within.element[ 0 ].scrollWidth ),
-			hasOverflowY = overflowY === "scroll" ||
-				( overflowY === "auto" && within.height < within.element[ 0 ].scrollHeight );
-		return {
-			width: hasOverflowY ? $.position.scrollbarWidth() : 0,
-			height: hasOverflowX ? $.position.scrollbarWidth() : 0
-		};
-	},
-	getWithinInfo: function( element ) {
-		var withinElement = $( element || window ),
-			isWindow = $.isWindow( withinElement[ 0 ] ),
-			isDocument = !!withinElement[ 0 ] && withinElement[ 0 ].nodeType === 9,
-			hasOffset = !isWindow && !isDocument;
-		return {
-			element: withinElement,
-			isWindow: isWindow,
-			isDocument: isDocument,
-			offset: hasOffset ? $( element ).offset() : { left: 0, top: 0 },
-			scrollLeft: withinElement.scrollLeft(),
-			scrollTop: withinElement.scrollTop(),
-			width: withinElement.outerWidth(),
-			height: withinElement.outerHeight()
-		};
-	}
-};
-
-$.fn.position = function( options ) {
-	if ( !options || !options.of ) {
-		return _position.apply( this, arguments );
-	}
-
-	// Make a copy, we don't want to modify arguments
-	options = $.extend( {}, options );
-
-	var atOffset, targetWidth, targetHeight, targetOffset, basePosition, dimensions,
-		target = $( options.of ),
-		within = $.position.getWithinInfo( options.within ),
-		scrollInfo = $.position.getScrollInfo( within ),
-		collision = ( options.collision || "flip" ).split( " " ),
-		offsets = {};
-
-	dimensions = getDimensions( target );
-	if ( target[ 0 ].preventDefault ) {
-
-		// Force left top to allow flipping
-		options.at = "left top";
-	}
-	targetWidth = dimensions.width;
-	targetHeight = dimensions.height;
-	targetOffset = dimensions.offset;
-
-	// Clone to reuse original targetOffset later
-	basePosition = $.extend( {}, targetOffset );
-
-	// Force my and at to have valid horizontal and vertical positions
-	// if a value is missing or invalid, it will be converted to center
-	$.each( [ "my", "at" ], function() {
-		var pos = ( options[ this ] || "" ).split( " " ),
-			horizontalOffset,
-			verticalOffset;
-
-		if ( pos.length === 1 ) {
-			pos = rhorizontal.test( pos[ 0 ] ) ?
-				pos.concat( [ "center" ] ) :
-				rvertical.test( pos[ 0 ] ) ?
-					[ "center" ].concat( pos ) :
-					[ "center", "center" ];
-		}
-		pos[ 0 ] = rhorizontal.test( pos[ 0 ] ) ? pos[ 0 ] : "center";
-		pos[ 1 ] = rvertical.test( pos[ 1 ] ) ? pos[ 1 ] : "center";
-
-		// Calculate offsets
-		horizontalOffset = roffset.exec( pos[ 0 ] );
-		verticalOffset = roffset.exec( pos[ 1 ] );
-		offsets[ this ] = [
-			horizontalOffset ? horizontalOffset[ 0 ] : 0,
-			verticalOffset ? verticalOffset[ 0 ] : 0
-		];
-
-		// Reduce to just the positions without the offsets
-		options[ this ] = [
-			rposition.exec( pos[ 0 ] )[ 0 ],
-			rposition.exec( pos[ 1 ] )[ 0 ]
-		];
-	} );
-
-	// Normalize collision option
-	if ( collision.length === 1 ) {
-		collision[ 1 ] = collision[ 0 ];
-	}
-
-	if ( options.at[ 0 ] === "right" ) {
-		basePosition.left += targetWidth;
-	} else if ( options.at[ 0 ] === "center" ) {
-		basePosition.left += targetWidth / 2;
-	}
-
-	if ( options.at[ 1 ] === "bottom" ) {
-		basePosition.top += targetHeight;
-	} else if ( options.at[ 1 ] === "center" ) {
-		basePosition.top += targetHeight / 2;
-	}
-
-	atOffset = getOffsets( offsets.at, targetWidth, targetHeight );
-	basePosition.left += atOffset[ 0 ];
-	basePosition.top += atOffset[ 1 ];
-
-	return this.each( function() {
-		var collisionPosition, using,
-			elem = $( this ),
-			elemWidth = elem.outerWidth(),
-			elemHeight = elem.outerHeight(),
-			marginLeft = parseCss( this, "marginLeft" ),
-			marginTop = parseCss( this, "marginTop" ),
-			collisionWidth = elemWidth + marginLeft + parseCss( this, "marginRight" ) +
-				scrollInfo.width,
-			collisionHeight = elemHeight + marginTop + parseCss( this, "marginBottom" ) +
-				scrollInfo.height,
-			position = $.extend( {}, basePosition ),
-			myOffset = getOffsets( offsets.my, elem.outerWidth(), elem.outerHeight() );
-
-		if ( options.my[ 0 ] === "right" ) {
-			position.left -= elemWidth;
-		} else if ( options.my[ 0 ] === "center" ) {
-			position.left -= elemWidth / 2;
-		}
-
-		if ( options.my[ 1 ] === "bottom" ) {
-			position.top -= elemHeight;
-		} else if ( options.my[ 1 ] === "center" ) {
-			position.top -= elemHeight / 2;
-		}
-
-		position.left += myOffset[ 0 ];
-		position.top += myOffset[ 1 ];
-
-		collisionPosition = {
-			marginLeft: marginLeft,
-			marginTop: marginTop
-		};
-
-		$.each( [ "left", "top" ], function( i, dir ) {
-			if ( $.ui.position[ collision[ i ] ] ) {
-				$.ui.position[ collision[ i ] ][ dir ]( position, {
-					targetWidth: targetWidth,
-					targetHeight: targetHeight,
-					elemWidth: elemWidth,
-					elemHeight: elemHeight,
-					collisionPosition: collisionPosition,
-					collisionWidth: collisionWidth,
-					collisionHeight: collisionHeight,
-					offset: [ atOffset[ 0 ] + myOffset[ 0 ], atOffset [ 1 ] + myOffset[ 1 ] ],
-					my: options.my,
-					at: options.at,
-					within: within,
-					elem: elem
-				} );
-			}
-		} );
-
-		if ( options.using ) {
-
-			// Adds feedback as second argument to using callback, if present
-			using = function( props ) {
-				var left = targetOffset.left - position.left,
-					right = left + targetWidth - elemWidth,
-					top = targetOffset.top - position.top,
-					bottom = top + targetHeight - elemHeight,
-					feedback = {
-						target: {
-							element: target,
-							left: targetOffset.left,
-							top: targetOffset.top,
-							width: targetWidth,
-							height: targetHeight
-						},
-						element: {
-							element: elem,
-							left: position.left,
-							top: position.top,
-							width: elemWidth,
-							height: elemHeight
-						},
-						horizontal: right < 0 ? "left" : left > 0 ? "right" : "center",
-						vertical: bottom < 0 ? "top" : top > 0 ? "bottom" : "middle"
-					};
-				if ( targetWidth < elemWidth && abs( left + right ) < targetWidth ) {
-					feedback.horizontal = "center";
-				}
-				if ( targetHeight < elemHeight && abs( top + bottom ) < targetHeight ) {
-					feedback.vertical = "middle";
-				}
-				if ( max( abs( left ), abs( right ) ) > max( abs( top ), abs( bottom ) ) ) {
-					feedback.important = "horizontal";
-				} else {
-					feedback.important = "vertical";
-				}
-				options.using.call( this, props, feedback );
-			};
-		}
-
-		elem.offset( $.extend( position, { using: using } ) );
-	} );
-};
-
-$.ui.position = {
-	fit: {
-		left: function( position, data ) {
-			var within = data.within,
-				withinOffset = within.isWindow ? within.scrollLeft : within.offset.left,
-				outerWidth = within.width,
-				collisionPosLeft = position.left - data.collisionPosition.marginLeft,
-				overLeft = withinOffset - collisionPosLeft,
-				overRight = collisionPosLeft + data.collisionWidth - outerWidth - withinOffset,
-				newOverRight;
-
-			// Element is wider than within
-			if ( data.collisionWidth > outerWidth ) {
-
-				// Element is initially over the left side of within
-				if ( overLeft > 0 && overRight <= 0 ) {
-					newOverRight = position.left + overLeft + data.collisionWidth - outerWidth -
-						withinOffset;
-					position.left += overLeft - newOverRight;
-
-				// Element is initially over right side of within
-				} else if ( overRight > 0 && overLeft <= 0 ) {
-					position.left = withinOffset;
-
-				// Element is initially over both left and right sides of within
-				} else {
-					if ( overLeft > overRight ) {
-						position.left = withinOffset + outerWidth - data.collisionWidth;
-					} else {
-						position.left = withinOffset;
-					}
-				}
-
-			// Too far left -> align with left edge
-			} else if ( overLeft > 0 ) {
-				position.left += overLeft;
-
-			// Too far right -> align with right edge
-			} else if ( overRight > 0 ) {
-				position.left -= overRight;
-
-			// Adjust based on position and margin
-			} else {
-				position.left = max( position.left - collisionPosLeft, position.left );
-			}
-		},
-		top: function( position, data ) {
-			var within = data.within,
-				withinOffset = within.isWindow ? within.scrollTop : within.offset.top,
-				outerHeight = data.within.height,
-				collisionPosTop = position.top - data.collisionPosition.marginTop,
-				overTop = withinOffset - collisionPosTop,
-				overBottom = collisionPosTop + data.collisionHeight - outerHeight - withinOffset,
-				newOverBottom;
-
-			// Element is taller than within
-			if ( data.collisionHeight > outerHeight ) {
-
-				// Element is initially over the top of within
-				if ( overTop > 0 && overBottom <= 0 ) {
-					newOverBottom = position.top + overTop + data.collisionHeight - outerHeight -
-						withinOffset;
-					position.top += overTop - newOverBottom;
-
-				// Element is initially over bottom of within
-				} else if ( overBottom > 0 && overTop <= 0 ) {
-					position.top = withinOffset;
-
-				// Element is initially over both top and bottom of within
-				} else {
-					if ( overTop > overBottom ) {
-						position.top = withinOffset + outerHeight - data.collisionHeight;
-					} else {
-						position.top = withinOffset;
-					}
-				}
-
-			// Too far up -> align with top
-			} else if ( overTop > 0 ) {
-				position.top += overTop;
-
-			// Too far down -> align with bottom edge
-			} else if ( overBottom > 0 ) {
-				position.top -= overBottom;
-
-			// Adjust based on position and margin
-			} else {
-				position.top = max( position.top - collisionPosTop, position.top );
-			}
-		}
-	},
-	flip: {
-		left: function( position, data ) {
-			var within = data.within,
-				withinOffset = within.offset.left + within.scrollLeft,
-				outerWidth = within.width,
-				offsetLeft = within.isWindow ? within.scrollLeft : within.offset.left,
-				collisionPosLeft = position.left - data.collisionPosition.marginLeft,
-				overLeft = collisionPosLeft - offsetLeft,
-				overRight = collisionPosLeft + data.collisionWidth - outerWidth - offsetLeft,
-				myOffset = data.my[ 0 ] === "left" ?
-					-data.elemWidth :
-					data.my[ 0 ] === "right" ?
-						data.elemWidth :
-						0,
-				atOffset = data.at[ 0 ] === "left" ?
-					data.targetWidth :
-					data.at[ 0 ] === "right" ?
-						-data.targetWidth :
-						0,
-				offset = -2 * data.offset[ 0 ],
-				newOverRight,
-				newOverLeft;
-
-			if ( overLeft < 0 ) {
-				newOverRight = position.left + myOffset + atOffset + offset + data.collisionWidth -
-					outerWidth - withinOffset;
-				if ( newOverRight < 0 || newOverRight < abs( overLeft ) ) {
-					position.left += myOffset + atOffset + offset;
-				}
-			} else if ( overRight > 0 ) {
-				newOverLeft = position.left - data.collisionPosition.marginLeft + myOffset +
-					atOffset + offset - offsetLeft;
-				if ( newOverLeft > 0 || abs( newOverLeft ) < overRight ) {
-					position.left += myOffset + atOffset + offset;
-				}
-			}
-		},
-		top: function( position, data ) {
-			var within = data.within,
-				withinOffset = within.offset.top + within.scrollTop,
-				outerHeight = within.height,
-				offsetTop = within.isWindow ? within.scrollTop : within.offset.top,
-				collisionPosTop = position.top - data.collisionPosition.marginTop,
-				overTop = collisionPosTop - offsetTop,
-				overBottom = collisionPosTop + data.collisionHeight - outerHeight - offsetTop,
-				top = data.my[ 1 ] === "top",
-				myOffset = top ?
-					-data.elemHeight :
-					data.my[ 1 ] === "bottom" ?
-						data.elemHeight :
-						0,
-				atOffset = data.at[ 1 ] === "top" ?
-					data.targetHeight :
-					data.at[ 1 ] === "bottom" ?
-						-data.targetHeight :
-						0,
-				offset = -2 * data.offset[ 1 ],
-				newOverTop,
-				newOverBottom;
-			if ( overTop < 0 ) {
-				newOverBottom = position.top + myOffset + atOffset + offset + data.collisionHeight -
-					outerHeight - withinOffset;
-				if ( newOverBottom < 0 || newOverBottom < abs( overTop ) ) {
-					position.top += myOffset + atOffset + offset;
-				}
-			} else if ( overBottom > 0 ) {
-				newOverTop = position.top - data.collisionPosition.marginTop + myOffset + atOffset +
-					offset - offsetTop;
-				if ( newOverTop > 0 || abs( newOverTop ) < overBottom ) {
-					position.top += myOffset + atOffset + offset;
-				}
-			}
-		}
-	},
-	flipfit: {
-		left: function() {
-			$.ui.position.flip.left.apply( this, arguments );
-			$.ui.position.fit.left.apply( this, arguments );
-		},
-		top: function() {
-			$.ui.position.flip.top.apply( this, arguments );
-			$.ui.position.fit.top.apply( this, arguments );
-		}
-	}
-};
-
-} )();
-
-return $.ui.position;
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/safe-active-element.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/jquery-ui/ui/safe-active-element.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! ./version */ "./node_modules/jquery-ui/ui/version.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-} ( function( $ ) {
-return $.ui.safeActiveElement = function( document ) {
-	var activeElement;
-
-	// Support: IE 9 only
-	// IE9 throws an "Unspecified error" accessing document.activeElement from an <iframe>
-	try {
-		activeElement = document.activeElement;
-	} catch ( error ) {
-		activeElement = document.body;
-	}
-
-	// Support: IE 9 - 11 only
-	// IE may return null instead of an element
-	// Interestingly, this only seems to occur when NOT in an iframe
-	if ( !activeElement ) {
-		activeElement = document.body;
-	}
-
-	// Support: IE 11 only
-	// IE11 returns a seemingly empty object in some cases when accessing
-	// document.activeElement from an <iframe>
-	if ( !activeElement.nodeName ) {
-		activeElement = document.body;
-	}
-
-	return activeElement;
-};
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/unique-id.js":
-/*!************************************************!*\
-  !*** ./node_modules/jquery-ui/ui/unique-id.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Unique ID 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-
-//>>label: uniqueId
-//>>group: Core
-//>>description: Functions to generate and remove uniqueId's
-//>>docs: http://api.jqueryui.com/uniqueId/
-
-( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! ./version */ "./node_modules/jquery-ui/ui/version.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-} ( function( $ ) {
-
-return $.fn.extend( {
-	uniqueId: ( function() {
-		var uuid = 0;
-
-		return function() {
-			return this.each( function() {
-				if ( !this.id ) {
-					this.id = "ui-id-" + ( ++uuid );
-				}
-			} );
-		};
-	} )(),
-
-	removeUniqueId: function() {
-		return this.each( function() {
-			if ( /^ui-id-\d+$/.test( this.id ) ) {
-				$( this ).removeAttr( "id" );
-			}
-		} );
-	}
-} );
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/version.js":
-/*!**********************************************!*\
-  !*** ./node_modules/jquery-ui/ui/version.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-} ( function( $ ) {
-
-$.ui = $.ui || {};
-
-return $.ui.version = "1.12.1";
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/widget.js":
-/*!*********************************************!*\
-  !*** ./node_modules/jquery-ui/ui/widget.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Widget 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-
-//>>label: Widget
-//>>group: Core
-//>>description: Provides a factory for creating stateful widgets with a common API.
-//>>docs: http://api.jqueryui.com/jQuery.widget/
-//>>demos: http://jqueryui.com/widget/
-
-( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! ./version */ "./node_modules/jquery-ui/ui/version.js") ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}( function( $ ) {
-
-var widgetUuid = 0;
-var widgetSlice = Array.prototype.slice;
-
-$.cleanData = ( function( orig ) {
-	return function( elems ) {
-		var events, elem, i;
-		for ( i = 0; ( elem = elems[ i ] ) != null; i++ ) {
-			try {
-
-				// Only trigger remove when necessary to save time
-				events = $._data( elem, "events" );
-				if ( events && events.remove ) {
-					$( elem ).triggerHandler( "remove" );
-				}
-
-			// Http://bugs.jquery.com/ticket/8235
-			} catch ( e ) {}
-		}
-		orig( elems );
-	};
-} )( $.cleanData );
-
-$.widget = function( name, base, prototype ) {
-	var existingConstructor, constructor, basePrototype;
-
-	// ProxiedPrototype allows the provided prototype to remain unmodified
-	// so that it can be used as a mixin for multiple widgets (#8876)
-	var proxiedPrototype = {};
-
-	var namespace = name.split( "." )[ 0 ];
-	name = name.split( "." )[ 1 ];
-	var fullName = namespace + "-" + name;
-
-	if ( !prototype ) {
-		prototype = base;
-		base = $.Widget;
-	}
-
-	if ( $.isArray( prototype ) ) {
-		prototype = $.extend.apply( null, [ {} ].concat( prototype ) );
-	}
-
-	// Create selector for plugin
-	$.expr[ ":" ][ fullName.toLowerCase() ] = function( elem ) {
-		return !!$.data( elem, fullName );
-	};
-
-	$[ namespace ] = $[ namespace ] || {};
-	existingConstructor = $[ namespace ][ name ];
-	constructor = $[ namespace ][ name ] = function( options, element ) {
-
-		// Allow instantiation without "new" keyword
-		if ( !this._createWidget ) {
-			return new constructor( options, element );
-		}
-
-		// Allow instantiation without initializing for simple inheritance
-		// must use "new" keyword (the code above always passes args)
-		if ( arguments.length ) {
-			this._createWidget( options, element );
-		}
-	};
-
-	// Extend with the existing constructor to carry over any static properties
-	$.extend( constructor, existingConstructor, {
-		version: prototype.version,
-
-		// Copy the object used to create the prototype in case we need to
-		// redefine the widget later
-		_proto: $.extend( {}, prototype ),
-
-		// Track widgets that inherit from this widget in case this widget is
-		// redefined after a widget inherits from it
-		_childConstructors: []
-	} );
-
-	basePrototype = new base();
-
-	// We need to make the options hash a property directly on the new instance
-	// otherwise we'll modify the options hash on the prototype that we're
-	// inheriting from
-	basePrototype.options = $.widget.extend( {}, basePrototype.options );
-	$.each( prototype, function( prop, value ) {
-		if ( !$.isFunction( value ) ) {
-			proxiedPrototype[ prop ] = value;
-			return;
-		}
-		proxiedPrototype[ prop ] = ( function() {
-			function _super() {
-				return base.prototype[ prop ].apply( this, arguments );
-			}
-
-			function _superApply( args ) {
-				return base.prototype[ prop ].apply( this, args );
-			}
-
-			return function() {
-				var __super = this._super;
-				var __superApply = this._superApply;
-				var returnValue;
-
-				this._super = _super;
-				this._superApply = _superApply;
-
-				returnValue = value.apply( this, arguments );
-
-				this._super = __super;
-				this._superApply = __superApply;
-
-				return returnValue;
-			};
-		} )();
-	} );
-	constructor.prototype = $.widget.extend( basePrototype, {
-
-		// TODO: remove support for widgetEventPrefix
-		// always use the name + a colon as the prefix, e.g., draggable:start
-		// don't prefix for widgets that aren't DOM-based
-		widgetEventPrefix: existingConstructor ? ( basePrototype.widgetEventPrefix || name ) : name
-	}, proxiedPrototype, {
-		constructor: constructor,
-		namespace: namespace,
-		widgetName: name,
-		widgetFullName: fullName
-	} );
-
-	// If this widget is being redefined then we need to find all widgets that
-	// are inheriting from it and redefine all of them so that they inherit from
-	// the new version of this widget. We're essentially trying to replace one
-	// level in the prototype chain.
-	if ( existingConstructor ) {
-		$.each( existingConstructor._childConstructors, function( i, child ) {
-			var childPrototype = child.prototype;
-
-			// Redefine the child widget using the same prototype that was
-			// originally used, but inherit from the new version of the base
-			$.widget( childPrototype.namespace + "." + childPrototype.widgetName, constructor,
-				child._proto );
-		} );
-
-		// Remove the list of existing child constructors from the old constructor
-		// so the old child constructors can be garbage collected
-		delete existingConstructor._childConstructors;
-	} else {
-		base._childConstructors.push( constructor );
-	}
-
-	$.widget.bridge( name, constructor );
-
-	return constructor;
-};
-
-$.widget.extend = function( target ) {
-	var input = widgetSlice.call( arguments, 1 );
-	var inputIndex = 0;
-	var inputLength = input.length;
-	var key;
-	var value;
-
-	for ( ; inputIndex < inputLength; inputIndex++ ) {
-		for ( key in input[ inputIndex ] ) {
-			value = input[ inputIndex ][ key ];
-			if ( input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
-
-				// Clone objects
-				if ( $.isPlainObject( value ) ) {
-					target[ key ] = $.isPlainObject( target[ key ] ) ?
-						$.widget.extend( {}, target[ key ], value ) :
-
-						// Don't extend strings, arrays, etc. with objects
-						$.widget.extend( {}, value );
-
-				// Copy everything else by reference
-				} else {
-					target[ key ] = value;
-				}
-			}
-		}
-	}
-	return target;
-};
-
-$.widget.bridge = function( name, object ) {
-	var fullName = object.prototype.widgetFullName || name;
-	$.fn[ name ] = function( options ) {
-		var isMethodCall = typeof options === "string";
-		var args = widgetSlice.call( arguments, 1 );
-		var returnValue = this;
-
-		if ( isMethodCall ) {
-
-			// If this is an empty collection, we need to have the instance method
-			// return undefined instead of the jQuery instance
-			if ( !this.length && options === "instance" ) {
-				returnValue = undefined;
-			} else {
-				this.each( function() {
-					var methodValue;
-					var instance = $.data( this, fullName );
-
-					if ( options === "instance" ) {
-						returnValue = instance;
-						return false;
-					}
-
-					if ( !instance ) {
-						return $.error( "cannot call methods on " + name +
-							" prior to initialization; " +
-							"attempted to call method '" + options + "'" );
-					}
-
-					if ( !$.isFunction( instance[ options ] ) || options.charAt( 0 ) === "_" ) {
-						return $.error( "no such method '" + options + "' for " + name +
-							" widget instance" );
-					}
-
-					methodValue = instance[ options ].apply( instance, args );
-
-					if ( methodValue !== instance && methodValue !== undefined ) {
-						returnValue = methodValue && methodValue.jquery ?
-							returnValue.pushStack( methodValue.get() ) :
-							methodValue;
-						return false;
-					}
-				} );
-			}
-		} else {
-
-			// Allow multiple hashes to be passed on init
-			if ( args.length ) {
-				options = $.widget.extend.apply( null, [ options ].concat( args ) );
-			}
-
-			this.each( function() {
-				var instance = $.data( this, fullName );
-				if ( instance ) {
-					instance.option( options || {} );
-					if ( instance._init ) {
-						instance._init();
-					}
-				} else {
-					$.data( this, fullName, new object( options, this ) );
-				}
-			} );
-		}
-
-		return returnValue;
-	};
-};
-
-$.Widget = function( /* options, element */ ) {};
-$.Widget._childConstructors = [];
-
-$.Widget.prototype = {
-	widgetName: "widget",
-	widgetEventPrefix: "",
-	defaultElement: "<div>",
-
-	options: {
-		classes: {},
-		disabled: false,
-
-		// Callbacks
-		create: null
-	},
-
-	_createWidget: function( options, element ) {
-		element = $( element || this.defaultElement || this )[ 0 ];
-		this.element = $( element );
-		this.uuid = widgetUuid++;
-		this.eventNamespace = "." + this.widgetName + this.uuid;
-
-		this.bindings = $();
-		this.hoverable = $();
-		this.focusable = $();
-		this.classesElementLookup = {};
-
-		if ( element !== this ) {
-			$.data( element, this.widgetFullName, this );
-			this._on( true, this.element, {
-				remove: function( event ) {
-					if ( event.target === element ) {
-						this.destroy();
-					}
-				}
-			} );
-			this.document = $( element.style ?
-
-				// Element within the document
-				element.ownerDocument :
-
-				// Element is window or document
-				element.document || element );
-			this.window = $( this.document[ 0 ].defaultView || this.document[ 0 ].parentWindow );
-		}
-
-		this.options = $.widget.extend( {},
-			this.options,
-			this._getCreateOptions(),
-			options );
-
-		this._create();
-
-		if ( this.options.disabled ) {
-			this._setOptionDisabled( this.options.disabled );
-		}
-
-		this._trigger( "create", null, this._getCreateEventData() );
-		this._init();
-	},
-
-	_getCreateOptions: function() {
-		return {};
-	},
-
-	_getCreateEventData: $.noop,
-
-	_create: $.noop,
-
-	_init: $.noop,
-
-	destroy: function() {
-		var that = this;
-
-		this._destroy();
-		$.each( this.classesElementLookup, function( key, value ) {
-			that._removeClass( value, key );
-		} );
-
-		// We can probably remove the unbind calls in 2.0
-		// all event bindings should go through this._on()
-		this.element
-			.off( this.eventNamespace )
-			.removeData( this.widgetFullName );
-		this.widget()
-			.off( this.eventNamespace )
-			.removeAttr( "aria-disabled" );
-
-		// Clean up events and states
-		this.bindings.off( this.eventNamespace );
-	},
-
-	_destroy: $.noop,
-
-	widget: function() {
-		return this.element;
-	},
-
-	option: function( key, value ) {
-		var options = key;
-		var parts;
-		var curOption;
-		var i;
-
-		if ( arguments.length === 0 ) {
-
-			// Don't return a reference to the internal hash
-			return $.widget.extend( {}, this.options );
-		}
-
-		if ( typeof key === "string" ) {
-
-			// Handle nested keys, e.g., "foo.bar" => { foo: { bar: ___ } }
-			options = {};
-			parts = key.split( "." );
-			key = parts.shift();
-			if ( parts.length ) {
-				curOption = options[ key ] = $.widget.extend( {}, this.options[ key ] );
-				for ( i = 0; i < parts.length - 1; i++ ) {
-					curOption[ parts[ i ] ] = curOption[ parts[ i ] ] || {};
-					curOption = curOption[ parts[ i ] ];
-				}
-				key = parts.pop();
-				if ( arguments.length === 1 ) {
-					return curOption[ key ] === undefined ? null : curOption[ key ];
-				}
-				curOption[ key ] = value;
-			} else {
-				if ( arguments.length === 1 ) {
-					return this.options[ key ] === undefined ? null : this.options[ key ];
-				}
-				options[ key ] = value;
-			}
-		}
-
-		this._setOptions( options );
-
-		return this;
-	},
-
-	_setOptions: function( options ) {
-		var key;
-
-		for ( key in options ) {
-			this._setOption( key, options[ key ] );
-		}
-
-		return this;
-	},
-
-	_setOption: function( key, value ) {
-		if ( key === "classes" ) {
-			this._setOptionClasses( value );
-		}
-
-		this.options[ key ] = value;
-
-		if ( key === "disabled" ) {
-			this._setOptionDisabled( value );
-		}
-
-		return this;
-	},
-
-	_setOptionClasses: function( value ) {
-		var classKey, elements, currentElements;
-
-		for ( classKey in value ) {
-			currentElements = this.classesElementLookup[ classKey ];
-			if ( value[ classKey ] === this.options.classes[ classKey ] ||
-					!currentElements ||
-					!currentElements.length ) {
-				continue;
-			}
-
-			// We are doing this to create a new jQuery object because the _removeClass() call
-			// on the next line is going to destroy the reference to the current elements being
-			// tracked. We need to save a copy of this collection so that we can add the new classes
-			// below.
-			elements = $( currentElements.get() );
-			this._removeClass( currentElements, classKey );
-
-			// We don't use _addClass() here, because that uses this.options.classes
-			// for generating the string of classes. We want to use the value passed in from
-			// _setOption(), this is the new value of the classes option which was passed to
-			// _setOption(). We pass this value directly to _classes().
-			elements.addClass( this._classes( {
-				element: elements,
-				keys: classKey,
-				classes: value,
-				add: true
-			} ) );
-		}
-	},
-
-	_setOptionDisabled: function( value ) {
-		this._toggleClass( this.widget(), this.widgetFullName + "-disabled", null, !!value );
-
-		// If the widget is becoming disabled, then nothing is interactive
-		if ( value ) {
-			this._removeClass( this.hoverable, null, "ui-state-hover" );
-			this._removeClass( this.focusable, null, "ui-state-focus" );
-		}
-	},
-
-	enable: function() {
-		return this._setOptions( { disabled: false } );
-	},
-
-	disable: function() {
-		return this._setOptions( { disabled: true } );
-	},
-
-	_classes: function( options ) {
-		var full = [];
-		var that = this;
-
-		options = $.extend( {
-			element: this.element,
-			classes: this.options.classes || {}
-		}, options );
-
-		function processClassString( classes, checkOption ) {
-			var current, i;
-			for ( i = 0; i < classes.length; i++ ) {
-				current = that.classesElementLookup[ classes[ i ] ] || $();
-				if ( options.add ) {
-					current = $( $.unique( current.get().concat( options.element.get() ) ) );
-				} else {
-					current = $( current.not( options.element ).get() );
-				}
-				that.classesElementLookup[ classes[ i ] ] = current;
-				full.push( classes[ i ] );
-				if ( checkOption && options.classes[ classes[ i ] ] ) {
-					full.push( options.classes[ classes[ i ] ] );
-				}
-			}
-		}
-
-		this._on( options.element, {
-			"remove": "_untrackClassesElement"
-		} );
-
-		if ( options.keys ) {
-			processClassString( options.keys.match( /\S+/g ) || [], true );
-		}
-		if ( options.extra ) {
-			processClassString( options.extra.match( /\S+/g ) || [] );
-		}
-
-		return full.join( " " );
-	},
-
-	_untrackClassesElement: function( event ) {
-		var that = this;
-		$.each( that.classesElementLookup, function( key, value ) {
-			if ( $.inArray( event.target, value ) !== -1 ) {
-				that.classesElementLookup[ key ] = $( value.not( event.target ).get() );
-			}
-		} );
-	},
-
-	_removeClass: function( element, keys, extra ) {
-		return this._toggleClass( element, keys, extra, false );
-	},
-
-	_addClass: function( element, keys, extra ) {
-		return this._toggleClass( element, keys, extra, true );
-	},
-
-	_toggleClass: function( element, keys, extra, add ) {
-		add = ( typeof add === "boolean" ) ? add : extra;
-		var shift = ( typeof element === "string" || element === null ),
-			options = {
-				extra: shift ? keys : extra,
-				keys: shift ? element : keys,
-				element: shift ? this.element : element,
-				add: add
-			};
-		options.element.toggleClass( this._classes( options ), add );
-		return this;
-	},
-
-	_on: function( suppressDisabledCheck, element, handlers ) {
-		var delegateElement;
-		var instance = this;
-
-		// No suppressDisabledCheck flag, shuffle arguments
-		if ( typeof suppressDisabledCheck !== "boolean" ) {
-			handlers = element;
-			element = suppressDisabledCheck;
-			suppressDisabledCheck = false;
-		}
-
-		// No element argument, shuffle and use this.element
-		if ( !handlers ) {
-			handlers = element;
-			element = this.element;
-			delegateElement = this.widget();
-		} else {
-			element = delegateElement = $( element );
-			this.bindings = this.bindings.add( element );
-		}
-
-		$.each( handlers, function( event, handler ) {
-			function handlerProxy() {
-
-				// Allow widgets to customize the disabled handling
-				// - disabled as an array instead of boolean
-				// - disabled class as method for disabling individual parts
-				if ( !suppressDisabledCheck &&
-						( instance.options.disabled === true ||
-						$( this ).hasClass( "ui-state-disabled" ) ) ) {
-					return;
-				}
-				return ( typeof handler === "string" ? instance[ handler ] : handler )
-					.apply( instance, arguments );
-			}
-
-			// Copy the guid so direct unbinding works
-			if ( typeof handler !== "string" ) {
-				handlerProxy.guid = handler.guid =
-					handler.guid || handlerProxy.guid || $.guid++;
-			}
-
-			var match = event.match( /^([\w:-]*)\s*(.*)$/ );
-			var eventName = match[ 1 ] + instance.eventNamespace;
-			var selector = match[ 2 ];
-
-			if ( selector ) {
-				delegateElement.on( eventName, selector, handlerProxy );
-			} else {
-				element.on( eventName, handlerProxy );
-			}
-		} );
-	},
-
-	_off: function( element, eventName ) {
-		eventName = ( eventName || "" ).split( " " ).join( this.eventNamespace + " " ) +
-			this.eventNamespace;
-		element.off( eventName ).off( eventName );
-
-		// Clear the stack to avoid memory leaks (#10056)
-		this.bindings = $( this.bindings.not( element ).get() );
-		this.focusable = $( this.focusable.not( element ).get() );
-		this.hoverable = $( this.hoverable.not( element ).get() );
-	},
-
-	_delay: function( handler, delay ) {
-		function handlerProxy() {
-			return ( typeof handler === "string" ? instance[ handler ] : handler )
-				.apply( instance, arguments );
-		}
-		var instance = this;
-		return setTimeout( handlerProxy, delay || 0 );
-	},
-
-	_hoverable: function( element ) {
-		this.hoverable = this.hoverable.add( element );
-		this._on( element, {
-			mouseenter: function( event ) {
-				this._addClass( $( event.currentTarget ), null, "ui-state-hover" );
+var EasyAutocomplete = (function(scope){
+
+	scope.Configuration = function Configuration(options) {
+		var defaults = {
+			data: "list-required",
+			url: "list-required",
+			dataType: "json",
+
+			listLocation: function(data) {
+				return data;
 			},
-			mouseleave: function( event ) {
-				this._removeClass( $( event.currentTarget ), null, "ui-state-hover" );
-			}
-		} );
-	},
 
-	_focusable: function( element ) {
-		this.focusable = this.focusable.add( element );
-		this._on( element, {
-			focusin: function( event ) {
-				this._addClass( $( event.currentTarget ), null, "ui-state-focus" );
+			xmlElementName: "",
+
+			getValue: function(element) {
+				return element;
 			},
-			focusout: function( event ) {
-				this._removeClass( $( event.currentTarget ), null, "ui-state-focus" );
-			}
-		} );
-	},
 
-	_trigger: function( type, event, data ) {
-		var prop, orig;
-		var callback = this.options[ type ];
+			autocompleteOff: true,
 
-		data = data || {};
-		event = $.Event( event );
-		event.type = ( type === this.widgetEventPrefix ?
-			type :
-			this.widgetEventPrefix + type ).toLowerCase();
+			placeholder: false,
 
-		// The original event may come from any element
-		// so we need to reset the target on the new event
-		event.target = this.element[ 0 ];
+			ajaxCallback: function() {},
 
-		// Copy original event properties over to the new event
-		orig = event.originalEvent;
-		if ( orig ) {
-			for ( prop in orig ) {
-				if ( !( prop in event ) ) {
-					event[ prop ] = orig[ prop ];
-				}
-			}
-		}
+			matchResponseProperty: false,
 
-		this.element.trigger( event, data );
-		return !( $.isFunction( callback ) &&
-			callback.apply( this.element[ 0 ], [ event ].concat( data ) ) === false ||
-			event.isDefaultPrevented() );
-	}
-};
-
-$.each( { show: "fadeIn", hide: "fadeOut" }, function( method, defaultEffect ) {
-	$.Widget.prototype[ "_" + method ] = function( element, options, callback ) {
-		if ( typeof options === "string" ) {
-			options = { effect: options };
-		}
-
-		var hasOptions;
-		var effectName = !options ?
-			method :
-			options === true || typeof options === "number" ?
-				defaultEffect :
-				options.effect || defaultEffect;
-
-		options = options || {};
-		if ( typeof options === "number" ) {
-			options = { duration: options };
-		}
-
-		hasOptions = !$.isEmptyObject( options );
-		options.complete = callback;
-
-		if ( options.delay ) {
-			element.delay( options.delay );
-		}
-
-		if ( hasOptions && $.effects && $.effects.effect[ effectName ] ) {
-			element[ method ]( options );
-		} else if ( effectName !== method && element[ effectName ] ) {
-			element[ effectName ]( options.duration, options.easing, callback );
-		} else {
-			element.queue( function( next ) {
-				$( this )[ method ]();
-				if ( callback ) {
-					callback.call( element[ 0 ] );
-				}
-				next();
-			} );
-		}
-	};
-} );
-
-return $.widget;
-
-} ) );
-
-
-/***/ }),
-
-/***/ "./node_modules/jquery-ui/ui/widgets/autocomplete.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/jquery-ui/ui/widgets/autocomplete.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Autocomplete 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-
-//>>label: Autocomplete
-//>>group: Widgets
-//>>description: Lists suggested words as the user is typing.
-//>>docs: http://api.jqueryui.com/autocomplete/
-//>>demos: http://jqueryui.com/autocomplete/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/autocomplete.css
-//>>css.theme: ../../themes/base/theme.css
-
-( function( factory ) {
-	if ( true ) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-			__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
-			__webpack_require__(/*! ./menu */ "./node_modules/jquery-ui/ui/widgets/menu.js"),
-			__webpack_require__(/*! ../keycode */ "./node_modules/jquery-ui/ui/keycode.js"),
-			__webpack_require__(/*! ../position */ "./node_modules/jquery-ui/ui/position.js"),
-			__webpack_require__(/*! ../safe-active-element */ "./node_modules/jquery-ui/ui/safe-active-element.js"),
-			__webpack_require__(/*! ../version */ "./node_modules/jquery-ui/ui/version.js"),
-			__webpack_require__(/*! ../widget */ "./node_modules/jquery-ui/ui/widget.js")
-		], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}( function( $ ) {
-
-$.widget( "ui.autocomplete", {
-	version: "1.12.1",
-	defaultElement: "<input>",
-	options: {
-		appendTo: null,
-		autoFocus: false,
-		delay: 300,
-		minLength: 1,
-		position: {
-			my: "left top",
-			at: "left bottom",
-			collision: "none"
-		},
-		source: null,
-
-		// Callbacks
-		change: null,
-		close: null,
-		focus: null,
-		open: null,
-		response: null,
-		search: null,
-		select: null
-	},
-
-	requestIndex: 0,
-	pending: 0,
-
-	_create: function() {
-
-		// Some browsers only repeat keydown events, not keypress events,
-		// so we use the suppressKeyPress flag to determine if we've already
-		// handled the keydown event. #7269
-		// Unfortunately the code for & in keypress is the same as the up arrow,
-		// so we use the suppressKeyPressRepeat flag to avoid handling keypress
-		// events when we know the keydown event was used to modify the
-		// search term. #7799
-		var suppressKeyPress, suppressKeyPressRepeat, suppressInput,
-			nodeName = this.element[ 0 ].nodeName.toLowerCase(),
-			isTextarea = nodeName === "textarea",
-			isInput = nodeName === "input";
-
-		// Textareas are always multi-line
-		// Inputs are always single-line, even if inside a contentEditable element
-		// IE also treats inputs as contentEditable
-		// All other element types are determined by whether or not they're contentEditable
-		this.isMultiLine = isTextarea || !isInput && this._isContentEditable( this.element );
-
-		this.valueMethod = this.element[ isTextarea || isInput ? "val" : "text" ];
-		this.isNewMenu = true;
-
-		this._addClass( "ui-autocomplete-input" );
-		this.element.attr( "autocomplete", "off" );
-
-		this._on( this.element, {
-			keydown: function( event ) {
-				if ( this.element.prop( "readOnly" ) ) {
-					suppressKeyPress = true;
-					suppressInput = true;
-					suppressKeyPressRepeat = true;
-					return;
-				}
-
-				suppressKeyPress = false;
-				suppressInput = false;
-				suppressKeyPressRepeat = false;
-				var keyCode = $.ui.keyCode;
-				switch ( event.keyCode ) {
-				case keyCode.PAGE_UP:
-					suppressKeyPress = true;
-					this._move( "previousPage", event );
-					break;
-				case keyCode.PAGE_DOWN:
-					suppressKeyPress = true;
-					this._move( "nextPage", event );
-					break;
-				case keyCode.UP:
-					suppressKeyPress = true;
-					this._keyEvent( "previous", event );
-					break;
-				case keyCode.DOWN:
-					suppressKeyPress = true;
-					this._keyEvent( "next", event );
-					break;
-				case keyCode.ENTER:
-
-					// when menu is open and has focus
-					if ( this.menu.active ) {
-
-						// #6055 - Opera still allows the keypress to occur
-						// which causes forms to submit
-						suppressKeyPress = true;
-						event.preventDefault();
-						this.menu.select( event );
-					}
-					break;
-				case keyCode.TAB:
-					if ( this.menu.active ) {
-						this.menu.select( event );
-					}
-					break;
-				case keyCode.ESCAPE:
-					if ( this.menu.element.is( ":visible" ) ) {
-						if ( !this.isMultiLine ) {
-							this._value( this.term );
+			list: {
+				sort: {
+					enabled: false,
+					method: function(a, b) {
+						a = defaults.getValue(a);
+						b = defaults.getValue(b);
+						if (a < b) {
+							return -1;
 						}
-						this.close( event );
-
-						// Different browsers have different default behavior for escape
-						// Single press can mean undo or clear
-						// Double press in IE means clear the whole form
-						event.preventDefault();
+						if (a > b) {
+							return 1;
+						}
+						return 0;
 					}
-					break;
-				default:
-					suppressKeyPressRepeat = true;
+				},
 
-					// search timeout should be triggered before the input value is changed
-					this._searchTimeout( event );
-					break;
-				}
-			},
-			keypress: function( event ) {
-				if ( suppressKeyPress ) {
-					suppressKeyPress = false;
-					if ( !this.isMultiLine || this.menu.element.is( ":visible" ) ) {
-						event.preventDefault();
+				maxNumberOfElements: 6,
+
+				hideOnEmptyPhrase: true,
+
+				match: {
+					enabled: false,
+					caseSensitive: false,
+					method: function(element, phrase) {
+
+						if (element.search(phrase) > -1) {
+							return true;
+						} else {
+							return false;
+						}
 					}
-					return;
-				}
-				if ( suppressKeyPressRepeat ) {
-					return;
-				}
+				},
 
-				// Replicate some key handlers to allow them to repeat in Firefox and Opera
-				var keyCode = $.ui.keyCode;
-				switch ( event.keyCode ) {
-				case keyCode.PAGE_UP:
-					this._move( "previousPage", event );
-					break;
-				case keyCode.PAGE_DOWN:
-					this._move( "nextPage", event );
-					break;
-				case keyCode.UP:
-					this._keyEvent( "previous", event );
-					break;
-				case keyCode.DOWN:
-					this._keyEvent( "next", event );
-					break;
-				}
-			},
-			input: function( event ) {
-				if ( suppressInput ) {
-					suppressInput = false;
-					event.preventDefault();
-					return;
-				}
-				this._searchTimeout( event );
-			},
-			focus: function() {
-				this.selectedItem = null;
-				this.previous = this._value();
-			},
-			blur: function( event ) {
-				if ( this.cancelBlur ) {
-					delete this.cancelBlur;
-					return;
-				}
+				showAnimation: {
+					type: "normal", //normal|slide|fade
+					time: 400,
+					callback: function() {}
+				},
 
-				clearTimeout( this.searching );
-				this.close( event );
-				this._change( event );
+				hideAnimation: {
+					type: "normal",
+					time: 400,
+					callback: function() {}
+				},
+
+				/* Events */
+				onClickEvent: function() {},
+				onSelectItemEvent: function() {},
+				onLoadEvent: function() {},
+				onChooseEvent: function() {},
+				onKeyEnterEvent: function() {},
+				onMouseOverEvent: function() {},
+				onMouseOutEvent: function() {},	
+				onShowListEvent: function() {},
+				onHideListEvent: function() {}
+			},
+
+			highlightPhrase: true,
+
+			theme: "",
+
+			cssClasses: "",
+
+			minCharNumber: 0,
+
+			requestDelay: 0,
+
+			adjustWidth: true,
+
+			ajaxSettings: {},
+
+			preparePostData: function(data, inputPhrase) {return data;},
+
+			loggerEnabled: true,
+
+			template: "",
+
+			categoriesAssigned: false,
+
+			categories: [{
+				maxNumberOfElements: 4
+			}]
+
+		};
+		
+		var externalObjects = ["ajaxSettings", "template"];
+
+		this.get = function(propertyName) {
+			return defaults[propertyName];
+		};
+
+		this.equals = function(name, value) {
+			if (isAssigned(name)) {
+				if (defaults[name] === value) {
+					return true;
+				}
+			} 
+			
+			return false;
+		};
+
+		this.checkDataUrlProperties = function() {
+			if (defaults.url === "list-required" && defaults.data === "list-required") {
+				return false;
 			}
-		} );
+			return true;
+		};
+		this.checkRequiredProperties = function() {
+			for (var propertyName in defaults) {
+				if (defaults[propertyName] === "required") {
+					logger.error("Option " + propertyName + " must be defined");
+					return false;
+				}
+			}
+			return true;
+		};
 
-		this._initSource();
-		this.menu = $( "<ul>" )
-			.appendTo( this._appendTo() )
-			.menu( {
+		this.printPropertiesThatDoesntExist = function(consol, optionsToCheck) {
+			printPropertiesThatDoesntExist(consol, optionsToCheck);
+		};
 
-				// disable ARIA support, the live region takes care of that
-				role: null
-			} )
-			.hide()
-			.menu( "instance" );
 
-		this._addClass( this.menu.element, "ui-autocomplete", "ui-front" );
-		this._on( this.menu.element, {
-			mousedown: function( event ) {
+		prepareDefaults();
 
-				// prevent moving focus out of the text field
-				event.preventDefault();
+		mergeOptions();
 
-				// IE doesn't prevent moving focus even with event.preventDefault()
-				// so we set a flag to know when we should ignore the blur event
-				this.cancelBlur = true;
-				this._delay( function() {
-					delete this.cancelBlur;
+		if (defaults.loggerEnabled === true) {
+			printPropertiesThatDoesntExist(console, options);	
+		}
 
-					// Support: IE 8 only
-					// Right clicking a menu item or selecting text from the menu items will
-					// result in focus moving out of the input. However, we've already received
-					// and ignored the blur event because of the cancelBlur flag set above. So
-					// we restore focus to ensure that the menu closes properly based on the user's
-					// next actions.
-					if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {
-						this.element.trigger( "focus" );
+		addAjaxSettings();
+
+		processAfterMerge();
+		function prepareDefaults() {
+
+			if (options.dataType === "xml") {
+				
+				if (!options.getValue) {
+
+					options.getValue = function(element) {
+						return $(element).text();
+					};
+				}
+
+				
+				if (!options.list) {
+
+					options.list = {};
+				} 
+
+				if (!options.list.sort) {
+					options.list.sort = {};
+				}
+
+
+				options.list.sort.method = function(a, b) {
+					a = options.getValue(a);
+					b = options.getValue(b);
+					if (a < b) {
+						return -1;
 					}
-				} );
-			},
-			menufocus: function( event, ui ) {
-				var label, item;
+					if (a > b) {
+						return 1;
+					}
+					return 0;
+				};
 
-				// support: Firefox
-				// Prevent accidental activation of menu items in Firefox (#7024 #9118)
-				if ( this.isNewMenu ) {
-					this.isNewMenu = false;
-					if ( event.originalEvent && /^mouse/.test( event.originalEvent.type ) ) {
-						this.menu.blur();
+				if (!options.list.match) {
+					options.list.match = {};
+				}
 
-						this.document.one( "mousemove", function() {
-							$( event.target ).trigger( event.originalEvent );
-						} );
+				options.list.match.method = function(element, phrase) {
 
-						return;
+					if (element.search(phrase) > -1) {
+						return true;
+					} else {
+						return false;
+					}
+				};
+
+			}
+			if (options.categories !== undefined && options.categories instanceof Array) {
+
+				var categories = [];
+
+				for (var i = 0, length = options.categories.length; i < length; i += 1) { 
+
+					var category = options.categories[i];
+
+					for (var property in defaults.categories[0]) {
+
+						if (category[property] === undefined) {
+							category[property] = defaults.categories[0][property];
+						}
+					}
+
+					categories.push(category);
+				}
+
+				options.categories = categories;
+			}
+		}
+
+		function mergeOptions() {
+
+			defaults = mergeObjects(defaults, options);
+
+			function mergeObjects(source, target) {
+				var mergedObject = source || {};
+
+				for (var propertyName in source) {
+					if (target[propertyName] !== undefined && target[propertyName] !== null) {
+
+						if (typeof target[propertyName] !== "object" || 
+								target[propertyName] instanceof Array) {
+							mergedObject[propertyName] = target[propertyName];
+						} else {
+							mergeObjects(source[propertyName], target[propertyName]);
+						}
 					}
 				}
-
-				item = ui.item.data( "ui-autocomplete-item" );
-				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
-
-					// use value to match what will end up in the input, if it was a key event
-					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
-						this._value( item.value );
-					}
+			
+				/* If data is an object */
+				if (target.data !== undefined && target.data !== null && typeof target.data === "object") {
+					mergedObject.data = target.data;
 				}
 
-				// Announce the value in the liveRegion
-				label = ui.item.attr( "aria-label" ) || item.value;
-				if ( label && $.trim( label ).length ) {
-					this.liveRegion.children().hide();
-					$( "<div>" ).text( label ).appendTo( this.liveRegion );
-				}
-			},
-			menuselect: function( event, ui ) {
-				var item = ui.item.data( "ui-autocomplete-item" ),
-					previous = this.previous;
-
-				// Only trigger when focus was lost (click on menu)
-				if ( this.element[ 0 ] !== $.ui.safeActiveElement( this.document[ 0 ] ) ) {
-					this.element.trigger( "focus" );
-					this.previous = previous;
-
-					// #6109 - IE triggers two focus events and the second
-					// is asynchronous, so we need to reset the previous
-					// term synchronously and asynchronously :-(
-					this._delay( function() {
-						this.previous = previous;
-						this.selectedItem = item;
-					} );
-				}
-
-				if ( false !== this._trigger( "select", event, { item: item } ) ) {
-					this._value( item.value );
-				}
-
-				// reset the term after the select event
-				// this allows custom select handling to work properly
-				this.term = this._value();
-
-				this.close( event );
-				this.selectedItem = item;
+				return mergedObject;
 			}
-		} );
+		}	
 
-		this.liveRegion = $( "<div>", {
-			role: "status",
-			"aria-live": "assertive",
-			"aria-relevant": "additions"
-		} )
-			.appendTo( this.document[ 0 ].body );
 
-		this._addClass( this.liveRegion, null, "ui-helper-hidden-accessible" );
-
-		// Turning off autocomplete prevents the browser from remembering the
-		// value when navigating through history, so we re-enable autocomplete
-		// if the page is unloaded before the widget is destroyed. #7790
-		this._on( this.window, {
-			beforeunload: function() {
-				this.element.removeAttr( "autocomplete" );
-			}
-		} );
-	},
-
-	_destroy: function() {
-		clearTimeout( this.searching );
-		this.element.removeAttr( "autocomplete" );
-		this.menu.element.remove();
-		this.liveRegion.remove();
-	},
-
-	_setOption: function( key, value ) {
-		this._super( key, value );
-		if ( key === "source" ) {
-			this._initSource();
-		}
-		if ( key === "appendTo" ) {
-			this.menu.element.appendTo( this._appendTo() );
-		}
-		if ( key === "disabled" && value && this.xhr ) {
-			this.xhr.abort();
-		}
-	},
-
-	_isEventTargetInWidget: function( event ) {
-		var menuElement = this.menu.element[ 0 ];
-
-		return event.target === this.element[ 0 ] ||
-			event.target === menuElement ||
-			$.contains( menuElement, event.target );
-	},
-
-	_closeOnClickOutside: function( event ) {
-		if ( !this._isEventTargetInWidget( event ) ) {
-			this.close();
-		}
-	},
-
-	_appendTo: function() {
-		var element = this.options.appendTo;
-
-		if ( element ) {
-			element = element.jquery || element.nodeType ?
-				$( element ) :
-				this.document.find( element ).eq( 0 );
-		}
-
-		if ( !element || !element[ 0 ] ) {
-			element = this.element.closest( ".ui-front, dialog" );
-		}
-
-		if ( !element.length ) {
-			element = this.document[ 0 ].body;
-		}
-
-		return element;
-	},
-
-	_initSource: function() {
-		var array, url,
-			that = this;
-		if ( $.isArray( this.options.source ) ) {
-			array = this.options.source;
-			this.source = function( request, response ) {
-				response( $.ui.autocomplete.filter( array, request.term ) );
-			};
-		} else if ( typeof this.options.source === "string" ) {
-			url = this.options.source;
-			this.source = function( request, response ) {
-				if ( that.xhr ) {
-					that.xhr.abort();
-				}
-				that.xhr = $.ajax( {
-					url: url,
-					data: request,
-					dataType: "json",
-					success: function( data ) {
-						response( data );
-					},
-					error: function() {
-						response( [] );
-					}
-				} );
-			};
-		} else {
-			this.source = this.options.source;
-		}
-	},
-
-	_searchTimeout: function( event ) {
-		clearTimeout( this.searching );
-		this.searching = this._delay( function() {
-
-			// Search if the value has changed, or if the user retypes the same value (see #7434)
-			var equalValues = this.term === this._value(),
-				menuVisible = this.menu.element.is( ":visible" ),
-				modifierKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
-
-			if ( !equalValues || ( equalValues && !menuVisible && !modifierKey ) ) {
-				this.selectedItem = null;
-				this.search( null, event );
-			}
-		}, this.options.delay );
-	},
-
-	search: function( value, event ) {
-		value = value != null ? value : this._value();
-
-		// Always save the actual value, not the one passed as an argument
-		this.term = this._value();
-
-		if ( value.length < this.options.minLength ) {
-			return this.close( event );
-		}
-
-		if ( this._trigger( "search", event ) === false ) {
-			return;
-		}
-
-		return this._search( value );
-	},
-
-	_search: function( value ) {
-		this.pending++;
-		this._addClass( "ui-autocomplete-loading" );
-		this.cancelSearch = false;
-
-		this.source( { term: value }, this._response() );
-	},
-
-	_response: function() {
-		var index = ++this.requestIndex;
-
-		return $.proxy( function( content ) {
-			if ( index === this.requestIndex ) {
-				this.__response( content );
-			}
-
-			this.pending--;
-			if ( !this.pending ) {
-				this._removeClass( "ui-autocomplete-loading" );
-			}
-		}, this );
-	},
-
-	__response: function( content ) {
-		if ( content ) {
-			content = this._normalize( content );
-		}
-		this._trigger( "response", null, { content: content } );
-		if ( !this.options.disabled && content && content.length && !this.cancelSearch ) {
-			this._suggest( content );
-			this._trigger( "open" );
-		} else {
-
-			// use ._close() instead of .close() so we don't cancel future searches
-			this._close();
-		}
-	},
-
-	close: function( event ) {
-		this.cancelSearch = true;
-		this._close( event );
-	},
-
-	_close: function( event ) {
-
-		// Remove the handler that closes the menu on outside clicks
-		this._off( this.document, "mousedown" );
-
-		if ( this.menu.element.is( ":visible" ) ) {
-			this.menu.element.hide();
-			this.menu.blur();
-			this.isNewMenu = true;
-			this._trigger( "close", event );
-		}
-	},
-
-	_change: function( event ) {
-		if ( this.previous !== this._value() ) {
-			this._trigger( "change", event, { item: this.selectedItem } );
-		}
-	},
-
-	_normalize: function( items ) {
-
-		// assume all items have the right format when the first item is complete
-		if ( items.length && items[ 0 ].label && items[ 0 ].value ) {
-			return items;
-		}
-		return $.map( items, function( item ) {
-			if ( typeof item === "string" ) {
-				return {
-					label: item,
-					value: item
+		function processAfterMerge() {
+			
+			if (defaults.url !== "list-required" && typeof defaults.url !== "function") {
+				var defaultUrl = defaults.url;
+				defaults.url = function() {
+					return defaultUrl;
 				};
 			}
-			return $.extend( {}, item, {
-				label: item.label || item.value,
-				value: item.value || item.label
-			} );
-		} );
-	},
 
-	_suggest: function( items ) {
-		var ul = this.menu.element.empty();
-		this._renderMenu( ul, items );
-		this.isNewMenu = true;
-		this.menu.refresh();
-
-		// Size and position menu
-		ul.show();
-		this._resizeMenu();
-		ul.position( $.extend( {
-			of: this.element
-		}, this.options.position ) );
-
-		if ( this.options.autoFocus ) {
-			this.menu.next();
-		}
-
-		// Listen for interactions outside of the widget (#6642)
-		this._on( this.document, {
-			mousedown: "_closeOnClickOutside"
-		} );
-	},
-
-	_resizeMenu: function() {
-		var ul = this.menu.element;
-		ul.outerWidth( Math.max(
-
-			// Firefox wraps long text (possibly a rounding bug)
-			// so we add 1px to avoid the wrapping (#7513)
-			ul.width( "" ).outerWidth() + 1,
-			this.element.outerWidth()
-		) );
-	},
-
-	_renderMenu: function( ul, items ) {
-		var that = this;
-		$.each( items, function( index, item ) {
-			that._renderItemData( ul, item );
-		} );
-	},
-
-	_renderItemData: function( ul, item ) {
-		return this._renderItem( ul, item ).data( "ui-autocomplete-item", item );
-	},
-
-	_renderItem: function( ul, item ) {
-		return $( "<li>" )
-			.append( $( "<div>" ).text( item.label ) )
-			.appendTo( ul );
-	},
-
-	_move: function( direction, event ) {
-		if ( !this.menu.element.is( ":visible" ) ) {
-			this.search( null, event );
-			return;
-		}
-		if ( this.menu.isFirstItem() && /^previous/.test( direction ) ||
-				this.menu.isLastItem() && /^next/.test( direction ) ) {
-
-			if ( !this.isMultiLine ) {
-				this._value( this.term );
+			if (defaults.ajaxSettings.url !== undefined && typeof defaults.ajaxSettings.url !== "function") {
+				var defaultUrl = defaults.ajaxSettings.url;
+				defaults.ajaxSettings.url = function() {
+					return defaultUrl;
+				};
 			}
 
-			this.menu.blur();
-			return;
+			if (typeof defaults.listLocation === "string") {
+				var defaultlistLocation = defaults.listLocation;
+
+				if (defaults.dataType.toUpperCase() === "XML") {
+					defaults.listLocation = function(data) {
+						return $(data).find(defaultlistLocation);
+					};
+				} else {
+					defaults.listLocation = function(data) {
+						return data[defaultlistLocation];
+					};	
+				}
+			}
+
+			if (typeof defaults.getValue === "string") {
+				var defaultsGetValue = defaults.getValue;
+				defaults.getValue = function(element) {
+					return element[defaultsGetValue];
+				};
+			}
+
+			if (options.categories !== undefined) {
+				defaults.categoriesAssigned = true;
+			}
+
 		}
-		this.menu[ direction ]( event );
-	},
 
-	widget: function() {
-		return this.menu.element;
-	},
+		function addAjaxSettings() {
 
-	_value: function() {
-		return this.valueMethod.apply( this.element, arguments );
-	},
-
-	_keyEvent: function( keyEvent, event ) {
-		if ( !this.isMultiLine || this.menu.element.is( ":visible" ) ) {
-			this._move( keyEvent, event );
-
-			// Prevents moving cursor to beginning/end of the text field in some browsers
-			event.preventDefault();
+			if (options.ajaxSettings !== undefined && typeof options.ajaxSettings === "object") {
+				defaults.ajaxSettings = options.ajaxSettings;
+			} else {
+				defaults.ajaxSettings = {};	
+			}
+			
 		}
-	},
 
-	// Support: Chrome <=50
-	// We should be able to just use this.element.prop( "isContentEditable" )
-	// but hidden elements always report false in Chrome.
-	// https://code.google.com/p/chromium/issues/detail?id=313082
-	_isContentEditable: function( element ) {
-		if ( !element.length ) {
+		function isAssigned(name) {
+			if (defaults[name] !== undefined && defaults[name] !== null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		function printPropertiesThatDoesntExist(consol, optionsToCheck) {
+			
+			checkPropertiesIfExist(defaults, optionsToCheck);
+
+			function checkPropertiesIfExist(source, target) {
+				for(var property in target) {
+					if (source[property] === undefined) {
+						consol.log("Property '" + property + "' does not exist in EasyAutocomplete options API.");		
+					}
+
+					if (typeof source[property] === "object" && $.inArray(property, externalObjects) === -1) {
+						checkPropertiesIfExist(source[property], target[property]);
+					}
+				}	
+			}
+		}
+	};
+
+	return scope;
+
+})(EasyAutocomplete || {});
+
+
+/*
+ * EasyAutocomplete - Logger 
+ */
+var EasyAutocomplete = (function(scope){
+	
+	scope.Logger = function Logger() {
+
+		this.error = function(message) {
+			console.log("ERROR: " + message);
+		};
+
+		this.warning = function(message) {
+			console.log("WARNING: " + message);
+		};
+	};
+
+	return scope;
+
+})(EasyAutocomplete || {});
+	
+
+/*
+ * EasyAutocomplete - Constans
+ */
+var EasyAutocomplete = (function(scope){	
+	
+	scope.Constans = function Constans() {
+		var constants = {
+			CONTAINER_CLASS: "easy-autocomplete-container",
+			CONTAINER_ID: "eac-container-",
+
+			WRAPPER_CSS_CLASS: "easy-autocomplete"
+		};
+
+		this.getValue = function(propertyName) {
+			return constants[propertyName];
+		};
+
+	};
+
+	return scope;
+
+})(EasyAutocomplete || {});
+
+/*
+ * EasyAutocomplete - ListBuilderService 
+ *
+ * @author Łukasz Pawełczak 
+ *
+ */
+var EasyAutocomplete = (function(scope) {
+
+	scope.ListBuilderService = function ListBuilderService(configuration, proccessResponseData) {
+
+
+		this.init = function(data) {
+			var listBuilder = [],
+				builder = {};
+
+			builder.data = configuration.get("listLocation")(data);
+			builder.getValue = configuration.get("getValue");
+			builder.maxListSize = configuration.get("list").maxNumberOfElements;
+
+				
+			listBuilder.push(builder);
+
+			return listBuilder;
+		};
+
+		this.updateCategories = function(listBuilder, data) {
+			
+			if (configuration.get("categoriesAssigned")) {
+
+				listBuilder = [];
+
+				for(var i = 0; i < configuration.get("categories").length; i += 1) {
+
+					var builder = convertToListBuilder(configuration.get("categories")[i], data);
+
+					listBuilder.push(builder);
+				}
+
+			} 
+
+			return listBuilder;
+		};
+
+		this.convertXml = function(listBuilder) {
+			if(configuration.get("dataType").toUpperCase() === "XML") {
+
+				for(var i = 0; i < listBuilder.length; i += 1) {
+					listBuilder[i].data = convertXmlToList(listBuilder[i]);
+				}
+			}
+
+			return listBuilder;
+		};
+
+		this.processData = function(listBuilder, inputPhrase) {
+
+			for(var i = 0, length = listBuilder.length; i < length; i+=1) {
+				listBuilder[i].data = proccessResponseData(configuration, listBuilder[i], inputPhrase);
+			}
+
+			return listBuilder;
+		};
+
+		this.checkIfDataExists = function(listBuilders) {
+
+			for(var i = 0, length = listBuilders.length; i < length; i += 1) {
+
+				if (listBuilders[i].data !== undefined && listBuilders[i].data instanceof Array) {
+					if (listBuilders[i].data.length > 0) {
+						return true;
+					}
+				} 
+			}
+
+			return false;
+		};
+
+
+		function convertToListBuilder(category, data) {
+
+			var builder = {};
+
+			if(configuration.get("dataType").toUpperCase() === "XML") {
+
+				builder = convertXmlToListBuilder();
+			} else {
+
+				builder = convertDataToListBuilder();
+			}
+			
+
+			if (category.header !== undefined) {
+				builder.header = category.header;
+			}
+
+			if (category.maxNumberOfElements !== undefined) {
+				builder.maxNumberOfElements = category.maxNumberOfElements;
+			}
+
+			if (configuration.get("list").maxNumberOfElements !== undefined) {
+
+				builder.maxListSize = configuration.get("list").maxNumberOfElements;
+			}
+
+			if (category.getValue !== undefined) {
+
+				if (typeof category.getValue === "string") {
+					var defaultsGetValue = category.getValue;
+					builder.getValue = function(element) {
+						return element[defaultsGetValue];
+					};
+				} else if (typeof category.getValue === "function") {
+					builder.getValue = category.getValue;
+				}
+
+			} else {
+				builder.getValue = configuration.get("getValue");	
+			}
+			
+
+			return builder;
+
+
+			function convertXmlToListBuilder() {
+
+				var builder = {},
+					listLocation;
+
+				if (category.xmlElementName !== undefined) {
+					builder.xmlElementName = category.xmlElementName;
+				}
+
+				if (category.listLocation !== undefined) {
+
+					listLocation = category.listLocation;
+				} else if (configuration.get("listLocation") !== undefined) {
+
+					listLocation = configuration.get("listLocation");
+				}
+
+				if (listLocation !== undefined) {
+					if (typeof listLocation === "string") {
+						builder.data = $(data).find(listLocation);
+					} else if (typeof listLocation === "function") {
+
+						builder.data = listLocation(data);
+					}
+				} else {
+
+					builder.data = data;
+				}
+
+				return builder;
+			}
+
+
+			function convertDataToListBuilder() {
+
+				var builder = {};
+
+				if (category.listLocation !== undefined) {
+
+					if (typeof category.listLocation === "string") {
+						builder.data = data[category.listLocation];
+					} else if (typeof category.listLocation === "function") {
+						builder.data = category.listLocation(data);
+					}
+				} else {
+					builder.data = data;
+				}
+
+				return builder;
+			}
+		}
+
+		function convertXmlToList(builder) {
+			var simpleList = [];
+
+			if (builder.xmlElementName === undefined) {
+				builder.xmlElementName = configuration.get("xmlElementName");
+			}
+
+
+			$(builder.data).find(builder.xmlElementName).each(function() {
+				simpleList.push(this);
+			});
+
+			return simpleList;
+		}
+
+	};
+
+	return scope;
+
+})(EasyAutocomplete || {});
+
+
+/*
+ * EasyAutocomplete - Data proccess module
+ *
+ * Process list to display:
+ * - sort 
+ * - decrease number to specific number
+ * - show only matching list
+ *
+ */
+var EasyAutocomplete = (function(scope) {
+
+	scope.proccess = function proccessData(config, listBuilder, phrase) {
+
+		scope.proccess.match = match;
+
+		var list = listBuilder.data,
+			inputPhrase = phrase;//TODO REFACTOR
+
+		list = findMatch(list, inputPhrase);
+		list = reduceElementsInList(list);
+		list = sort(list);
+
+		return list;
+
+
+		function findMatch(list, phrase) {
+			var preparedList = [],
+				value = "";
+
+			if (config.get("list").match.enabled) {
+
+				for(var i = 0, length = list.length; i < length; i += 1) {
+
+					value = config.get("getValue")(list[i]);
+					
+					if (match(value, phrase)) {
+						preparedList.push(list[i]);	
+					}
+					
+				}
+
+			} else {
+				preparedList = list;
+			}
+
+			return preparedList;
+		}
+
+		function match(value, phrase) {
+
+			if (!config.get("list").match.caseSensitive) {
+
+				if (typeof value === "string") {
+					value = value.toLowerCase();	
+				}
+				
+				phrase = phrase.toLowerCase();
+			}
+			if (config.get("list").match.method(value, phrase)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function reduceElementsInList(list) {
+			if (listBuilder.maxNumberOfElements !== undefined && list.length > listBuilder.maxNumberOfElements) {
+				list = list.slice(0, listBuilder.maxNumberOfElements);
+			}
+
+			return list;
+		}
+
+		function sort(list) {
+			if (config.get("list").sort.enabled) {
+				list.sort(config.get("list").sort.method);
+			}
+
+			return list;
+		}
+		
+	};
+
+
+	return scope;
+
+
+})(EasyAutocomplete || {});
+
+
+/*
+ * EasyAutocomplete - Template 
+ *
+ * 
+ *
+ */
+var EasyAutocomplete = (function(scope){
+
+	scope.Template = function Template(options) {
+
+
+		var genericTemplates = {
+			basic: {
+				type: "basic",
+				method: function(element) { return element; },
+				cssClass: ""
+			},
+			description: {
+				type: "description",
+				fields: {
+					description: "description"
+				},
+				method: function(element) {	return element + " - description"; },
+				cssClass: "eac-description"
+			},
+			iconLeft: {
+				type: "iconLeft",
+				fields: {
+					icon: ""
+				},
+				method: function(element) {
+					return element;
+				},
+				cssClass: "eac-icon-left"
+			},
+			iconRight: {
+				type: "iconRight",
+				fields: {
+					iconSrc: ""
+				},
+				method: function(element) {
+					return element;
+				},
+				cssClass: "eac-icon-right"
+			},
+			links: {
+				type: "links",
+				fields: {
+					link: ""
+				},
+				method: function(element) {
+					return element;
+				},
+				cssClass: ""
+			},
+			custom: {
+				type: "custom",
+				method: function() {},
+				cssClass: ""
+			}
+		},
+
+
+
+		/*
+		 * Converts method with {{text}} to function
+		 */
+		convertTemplateToMethod = function(template) {
+
+
+			var _fields = template.fields,
+				buildMethod;
+
+			if (template.type === "description") {
+
+				buildMethod = genericTemplates.description.method; 
+
+				if (typeof _fields.description === "string") {
+					buildMethod = function(elementValue, element) {
+						return elementValue + " - <span>" + element[_fields.description] + "</span>";
+					};					
+				} else if (typeof _fields.description === "function") {
+					buildMethod = function(elementValue, element) {
+						return elementValue + " - <span>" + _fields.description(element) + "</span>";
+					};	
+				}
+
+				return buildMethod;
+			}
+
+			if (template.type === "iconRight") {
+
+				if (typeof _fields.iconSrc === "string") {
+					buildMethod = function(elementValue, element) {
+						return elementValue + "<img class='eac-icon' src='" + element[_fields.iconSrc] + "' />" ;
+					};					
+				} else if (typeof _fields.iconSrc === "function") {
+					buildMethod = function(elementValue, element) {
+						return elementValue + "<img class='eac-icon' src='" + _fields.iconSrc(element) + "' />" ;
+					};
+				}
+
+				return buildMethod;
+			}
+
+
+			if (template.type === "iconLeft") {
+
+				if (typeof _fields.iconSrc === "string") {
+					buildMethod = function(elementValue, element) {
+						return "<img class='eac-icon' src='" + element[_fields.iconSrc] + "' />" + elementValue;
+					};					
+				} else if (typeof _fields.iconSrc === "function") {
+					buildMethod = function(elementValue, element) {
+						return "<img class='eac-icon' src='" + _fields.iconSrc(element) + "' />" + elementValue;
+					};
+				}
+
+				return buildMethod;
+			}
+
+			if(template.type === "links") {
+
+				if (typeof _fields.link === "string") {
+					buildMethod = function(elementValue, element) {
+						return "<a href='" + element[_fields.link] + "' >" + elementValue + "</a>";
+					};					
+				} else if (typeof _fields.link === "function") {
+					buildMethod = function(elementValue, element) {
+						return "<a href='" + _fields.link(element) + "' >" + elementValue + "</a>";
+					};
+				}
+
+				return buildMethod;
+			}
+
+
+			if (template.type === "custom") {
+
+				return template.method;
+			}
+
+			return genericTemplates.basic.method;
+
+		},
+
+
+		prepareBuildMethod = function(options) {
+			if (!options || !options.type) {
+
+				return genericTemplates.basic.method;
+			}
+
+			if (options.type && genericTemplates[options.type]) {
+
+				return convertTemplateToMethod(options);
+			} else {
+
+				return genericTemplates.basic.method;
+			}
+
+		},
+
+		templateClass = function(options) {
+			var emptyStringFunction = function() {return "";};
+
+			if (!options || !options.type) {
+
+				return emptyStringFunction;
+			}
+
+			if (options.type && genericTemplates[options.type]) {
+				return (function () { 
+					var _cssClass = genericTemplates[options.type].cssClass;
+					return function() { return _cssClass;};
+				})();
+			} else {
+				return emptyStringFunction;
+			}
+		};
+
+
+		this.getTemplateClass = templateClass(options);
+
+		this.build = prepareBuildMethod(options);
+
+
+	};
+
+	return scope;
+
+})(EasyAutocomplete || {});
+
+
+/*
+ * EasyAutocomplete - jQuery plugin for autocompletion
+ *
+ */
+var EasyAutocomplete = (function(scope) {
+
+	
+	scope.main = function Core($input, options) {
+				
+		var module = {
+				name: "EasyAutocomplete",
+				shortcut: "eac"
+			};
+
+		var consts = new scope.Constans(),
+			config = new scope.Configuration(options),
+			logger = new scope.Logger(),
+			template = new scope.Template(options.template),
+			listBuilderService = new scope.ListBuilderService(config, scope.proccess),
+			checkParam = config.equals,
+
+			$field = $input, 
+			$container = "",
+			elementsList = [],
+			selectedElement = -1,
+			requestDelayTimeoutId;
+
+		scope.consts = consts;
+
+		this.getConstants = function() {
+			return consts;
+		};
+
+		this.getConfiguration = function() {
+			return config;
+		};
+
+		this.getContainer = function() {
+			return $container;
+		};
+
+		this.getSelectedItemIndex = function() {
+			return selectedElement;
+		};
+
+		this.getItems = function () {
+			return elementsList;
+		};
+
+		this.getItemData = function(index) {
+
+			if (elementsList.length < index || elementsList[index] === undefined) {
+				return -1;
+			} else {
+				return elementsList[index];
+			}
+		};
+
+		this.getSelectedItemData = function() {
+			return this.getItemData(selectedElement);
+		};
+
+		this.build = function() {
+			prepareField();
+		};
+
+		this.init = function() {
+			init();
+		};
+		function init() {
+
+			if ($field.length === 0) {
+				logger.error("Input field doesn't exist.");
+				return;
+			}
+
+			if (!config.checkDataUrlProperties()) {
+				logger.error("One of options variables 'data' or 'url' must be defined.");
+				return;
+			}
+
+			if (!config.checkRequiredProperties()) {
+				logger.error("Will not work without mentioned properties.");
+				return;
+			}
+
+
+			prepareField();
+			bindEvents();	
+
+		}
+		function prepareField() {
+
+				
+			if ($field.parent().hasClass(consts.getValue("WRAPPER_CSS_CLASS"))) {
+				removeContainer();
+				removeWrapper();
+			} 
+			
+			createWrapper();
+			createContainer();	
+
+			$container = $("#" + getContainerId());
+			if (config.get("placeholder")) {
+				$field.attr("placeholder", config.get("placeholder"));
+			}
+
+
+			function createWrapper() {
+				var $wrapper = $("<div>"),
+					classes = consts.getValue("WRAPPER_CSS_CLASS");
+
+			
+				if (config.get("theme") && config.get("theme") !== "") {
+					classes += " eac-" + config.get("theme");
+				}
+
+				if (config.get("cssClasses") && config.get("cssClasses") !== "") {
+					classes += " " + config.get("cssClasses");
+				}
+
+				if (template.getTemplateClass() !== "") {
+					classes += " " + template.getTemplateClass();
+				}
+				
+
+				$wrapper
+					.addClass(classes);
+				$field.wrap($wrapper);
+
+
+				if (config.get("adjustWidth") === true) {
+					adjustWrapperWidth();	
+				}
+				
+
+			}
+
+			function adjustWrapperWidth() {
+				var fieldWidth = $field.outerWidth();
+
+				$field.parent().css("width", fieldWidth);				
+			}
+
+			function removeWrapper() {
+				$field.unwrap();
+			}
+
+			function createContainer() {
+				var $elements_container = $("<div>").addClass(consts.getValue("CONTAINER_CLASS"));
+
+				$elements_container
+						.attr("id", getContainerId())
+						.prepend($("<ul>"));
+
+
+				(function() {
+
+					$elements_container
+						/* List show animation */
+						.on("show.eac", function() {
+
+							switch(config.get("list").showAnimation.type) {
+
+								case "slide":
+									var animationTime = config.get("list").showAnimation.time,
+										callback = config.get("list").showAnimation.callback;
+
+									$elements_container.find("ul").slideDown(animationTime, callback);
+								break;
+
+								case "fade":
+									var animationTime = config.get("list").showAnimation.time,
+										callback = config.get("list").showAnimation.callback;
+
+									$elements_container.find("ul").fadeIn(animationTime), callback;
+								break;
+
+								default:
+									$elements_container.find("ul").show();
+								break;
+							}
+
+							config.get("list").onShowListEvent();
+							
+						})
+						/* List hide animation */
+						.on("hide.eac", function() {
+
+							switch(config.get("list").hideAnimation.type) {
+
+								case "slide":
+									var animationTime = config.get("list").hideAnimation.time,
+										callback = config.get("list").hideAnimation.callback;
+
+									$elements_container.find("ul").slideUp(animationTime, callback);
+								break;
+
+								case "fade":
+									var animationTime = config.get("list").hideAnimation.time,
+										callback = config.get("list").hideAnimation.callback;
+
+									$elements_container.find("ul").fadeOut(animationTime, callback);
+								break;
+
+								default:
+									$elements_container.find("ul").hide();
+								break;
+							}
+
+							config.get("list").onHideListEvent();
+
+						})
+						.on("selectElement.eac", function() {
+							$elements_container.find("ul li").removeClass("selected");
+							$elements_container.find("ul li").eq(selectedElement).addClass("selected");
+
+							config.get("list").onSelectItemEvent();
+						})
+						.on("loadElements.eac", function(event, listBuilders, phrase) {
+			
+
+							var $item = "",
+								$listContainer = $elements_container.find("ul");
+
+							$listContainer
+								.empty()
+								.detach();
+
+							elementsList = [];
+							var counter = 0;
+							for(var builderIndex = 0, listBuildersLength = listBuilders.length; builderIndex < listBuildersLength; builderIndex += 1) {
+
+								var listData = listBuilders[builderIndex].data;
+
+								if (listData.length === 0) {
+									continue;
+								}
+
+								if (listBuilders[builderIndex].header !== undefined && listBuilders[builderIndex].header.length > 0) {
+									$listContainer.append("<div class='eac-category' >" + listBuilders[builderIndex].header + "</div>");
+								}
+
+								for(var i = 0, listDataLength = listData.length; i < listDataLength && counter < listBuilders[builderIndex].maxListSize; i += 1) {
+									$item = $("<li><div class='eac-item'></div></li>");
+									
+
+									(function() {
+										var j = i,
+											itemCounter = counter,
+											elementsValue = listBuilders[builderIndex].getValue(listData[j]);
+
+										$item.find(" > div")
+											.on("click", function() {
+
+												$field.val(elementsValue).trigger("change");
+
+												selectedElement = itemCounter;
+												selectElement(itemCounter);
+
+												config.get("list").onClickEvent();
+												config.get("list").onChooseEvent();
+											})
+											.mouseover(function() {
+
+												selectedElement = itemCounter;
+												selectElement(itemCounter);	
+
+												config.get("list").onMouseOverEvent();
+											})
+											.mouseout(function() {
+												config.get("list").onMouseOutEvent();
+											})
+											.html(template.build(highlight(elementsValue, phrase), listData[j]));
+									})();
+
+									$listContainer.append($item);
+									elementsList.push(listData[i]);
+									counter += 1;
+								}
+							}
+
+							$elements_container.append($listContainer);
+
+							config.get("list").onLoadEvent();
+						});
+
+				})();
+
+				$field.after($elements_container);
+			}
+
+			function removeContainer() {
+				$field.next("." + consts.getValue("CONTAINER_CLASS")).remove();
+			}
+
+			function highlight(string, phrase) {
+
+				if(config.get("highlightPhrase") && phrase !== "") {
+					return highlightPhrase(string, phrase);	
+				} else {
+					return string;
+				}
+					
+			}
+
+			function escapeRegExp(str) {
+				return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+ 			}
+
+			function highlightPhrase(string, phrase) {
+				var escapedPhrase = escapeRegExp(phrase);
+				return (string + "").replace(new RegExp("(" + escapedPhrase + ")", "gi") , "<b>$1</b>");
+			}
+
+
+
+		}
+		function getContainerId() {
+			
+			var elementId = $field.attr("id");
+
+			elementId = consts.getValue("CONTAINER_ID") + elementId;
+
+			return elementId;
+		}
+		function bindEvents() {
+
+			bindAllEvents();
+			
+
+			function bindAllEvents() {
+				if (checkParam("autocompleteOff", true)) {
+					removeAutocomplete();
+				}
+
+				bindFocusOut();
+				bindKeyup();
+				bindKeydown();
+				bindKeypress();
+				bindFocus();
+				bindBlur();
+			}
+
+			function bindFocusOut() {
+				$field.focusout(function () {
+
+					var fieldValue = $field.val(),
+						phrase;
+
+					if (!config.get("list").match.caseSensitive) {
+						fieldValue = fieldValue.toLowerCase();
+					}
+
+					for (var i = 0, length = elementsList.length; i < length; i += 1) {
+
+						phrase = config.get("getValue")(elementsList[i]);
+						if (!config.get("list").match.caseSensitive) {
+							phrase = phrase.toLowerCase();
+						}
+
+						if (phrase === fieldValue) {
+							selectedElement = i;
+							selectElement(selectedElement);
+							return;
+						}
+					}
+				});
+			}
+
+			function bindKeyup() {
+				$field
+				.off("keyup")
+				.keyup(function(event) {
+
+					switch(event.keyCode) {
+
+						case 27:
+
+							hideContainer();
+							loseFieldFocus();
+						break;
+
+						case 38:
+
+							event.preventDefault();
+
+							if(elementsList.length > 0 && selectedElement > 0) {
+
+								selectedElement -= 1;
+
+								$field.val(config.get("getValue")(elementsList[selectedElement]));
+
+								selectElement(selectedElement);
+
+							}						
+						break;
+
+						case 40:
+
+							event.preventDefault();
+
+							if(elementsList.length > 0 && selectedElement < elementsList.length - 1) {
+
+								selectedElement += 1;
+
+								$field.val(config.get("getValue")(elementsList[selectedElement]));
+
+								selectElement(selectedElement);
+								
+							}
+
+						break;
+
+						default:
+
+							if (event.keyCode > 40 || event.keyCode === 8) {
+
+								var inputPhrase = $field.val();
+
+								if (!(config.get("list").hideOnEmptyPhrase === true && event.keyCode === 8 && inputPhrase === "")) {
+
+									if (config.get("requestDelay") > 0) {
+										if (requestDelayTimeoutId !== undefined) {
+											clearTimeout(requestDelayTimeoutId);
+										}
+
+										requestDelayTimeoutId = setTimeout(function () { loadData(inputPhrase);}, config.get("requestDelay"));
+									} else {
+										loadData(inputPhrase);
+									}
+
+								} else {
+									hideContainer();
+								}
+								
+							}
+
+
+						break;
+					}
+				
+
+					function loadData(inputPhrase) {
+
+
+						if (inputPhrase.length < config.get("minCharNumber")) {
+							return;
+						}
+
+
+						if (config.get("data") !== "list-required") {
+
+							var data = config.get("data");
+
+							var listBuilders = listBuilderService.init(data);
+
+							listBuilders = listBuilderService.updateCategories(listBuilders, data);
+							
+							listBuilders = listBuilderService.processData(listBuilders, inputPhrase);
+
+							loadElements(listBuilders, inputPhrase);
+
+							if ($field.parent().find("li").length > 0) {
+								showContainer();	
+							} else {
+								hideContainer();
+							}
+
+						}
+
+						var settings = createAjaxSettings();
+
+						if (settings.url === undefined || settings.url === "") {
+							settings.url = config.get("url");
+						}
+
+						if (settings.dataType === undefined || settings.dataType === "") {
+							settings.dataType = config.get("dataType");
+						}
+
+
+						if (settings.url !== undefined && settings.url !== "list-required") {
+
+							settings.url = settings.url(inputPhrase);
+
+							settings.data = config.get("preparePostData")(settings.data, inputPhrase);
+
+							$.ajax(settings) 
+								.done(function(data) {
+
+									var listBuilders = listBuilderService.init(data);
+
+									listBuilders = listBuilderService.updateCategories(listBuilders, data);
+									
+									listBuilders = listBuilderService.convertXml(listBuilders);
+									if (checkInputPhraseMatchResponse(inputPhrase, data)) {
+
+										listBuilders = listBuilderService.processData(listBuilders, inputPhrase);
+
+										loadElements(listBuilders, inputPhrase);	
+																				
+									}
+
+									if (listBuilderService.checkIfDataExists(listBuilders) && $field.parent().find("li").length > 0) {
+										showContainer();	
+									} else {
+										hideContainer();
+									}
+
+									config.get("ajaxCallback")();
+
+								})
+								.fail(function() {
+									logger.warning("Fail to load response data");
+								})
+								.always(function() {
+
+								});
+						}
+
+						
+
+						function createAjaxSettings() {
+
+							var settings = {},
+								ajaxSettings = config.get("ajaxSettings") || {};
+
+							for (var set in ajaxSettings) {
+								settings[set] = ajaxSettings[set];
+							}
+
+							return settings;
+						}
+
+						function checkInputPhraseMatchResponse(inputPhrase, data) {
+
+							if (config.get("matchResponseProperty") !== false) {
+								if (typeof config.get("matchResponseProperty") === "string") {
+									return (data[config.get("matchResponseProperty")] === inputPhrase);
+								}
+
+								if (typeof config.get("matchResponseProperty") === "function") {
+									return (config.get("matchResponseProperty")(data) === inputPhrase);
+								}
+
+								return true;
+							} else {
+								return true;
+							}
+
+						}
+
+					}
+
+
+				});
+			}
+
+			function bindKeydown() {
+				$field
+					.on("keydown", function(evt) {
+	        		    evt = evt || window.event;
+	        		    var keyCode = evt.keyCode;
+	        		    if (keyCode === 38) {
+	        		        suppressKeypress = true; 
+	        		        return false;
+	        		    }
+		        	})
+					.keydown(function(event) {
+
+						if (event.keyCode === 13 && selectedElement > -1) {
+
+							$field.val(config.get("getValue")(elementsList[selectedElement]));
+
+							config.get("list").onKeyEnterEvent();
+							config.get("list").onChooseEvent();
+
+							selectedElement = -1;
+							hideContainer();
+
+							event.preventDefault();
+						}
+					});
+			}
+
+			function bindKeypress() {
+				$field
+				.off("keypress");
+			}
+
+			function bindFocus() {
+				$field.focus(function() {
+
+					if ($field.val() !== "" && elementsList.length > 0) {
+						
+						selectedElement = -1;
+						showContainer();	
+					}
+									
+				});
+			}
+
+			function bindBlur() {
+				$field.blur(function() {
+					setTimeout(function() { 
+						
+						selectedElement = -1;
+						hideContainer();
+					}, 250);
+				});
+			}
+
+			function removeAutocomplete() {
+				$field.attr("autocomplete","off");
+			}
+
+		}
+
+		function showContainer() {
+			$container.trigger("show.eac");
+		}
+
+		function hideContainer() {
+			$container.trigger("hide.eac");
+		}
+
+		function selectElement(index) {
+			
+			$container.trigger("selectElement.eac", index);
+		}
+
+		function loadElements(list, phrase) {
+			$container.trigger("loadElements.eac", [list, phrase]);
+		}
+
+		function loseFieldFocus() {
+			$field.trigger("blur");
+		}
+
+
+	};
+	scope.eacHandles = [];
+
+	scope.getHandle = function(id) {
+		return scope.eacHandles[id];
+	};
+
+	scope.inputHasId = function(input) {
+
+		if($(input).attr("id") !== undefined && $(input).attr("id").length > 0) {
+			return true;
+		} else {
 			return false;
 		}
 
-		var editable = element.prop( "contentEditable" );
+	};
 
-		if ( editable === "inherit" ) {
-		  return this._isContentEditable( element.parent() );
-		}
+	scope.assignRandomId = function(input) {
 
-		return editable === "true";
-	}
-} );
+		var fieldId = "";
 
-$.extend( $.ui.autocomplete, {
-	escapeRegex: function( value ) {
-		return value.replace( /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" );
-	},
-	filter: function( array, term ) {
-		var matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), "i" );
-		return $.grep( array, function( value ) {
-			return matcher.test( value.label || value.value || value );
-		} );
-	}
-} );
+		do {
+			fieldId = "eac-" + Math.floor(Math.random() * 10000);		
+		} while ($("#" + fieldId).length !== 0);
+		
+		elementId = scope.consts.getValue("CONTAINER_ID") + fieldId;
 
-// Live region extension, adding a `messages` option
-// NOTE: This is an experimental API. We are still investigating
-// a full solution for string manipulation and internationalization.
-$.widget( "ui.autocomplete", $.ui.autocomplete, {
-	options: {
-		messages: {
-			noResults: "No search results.",
-			results: function( amount ) {
-				return amount + ( amount > 1 ? " results are" : " result is" ) +
-					" available, use up and down arrow keys to navigate.";
-			}
-		}
-	},
+		$(input).attr("id", fieldId);
+ 
+	};
 
-	__response: function( content ) {
-		var message;
-		this._superApply( arguments );
-		if ( this.options.disabled || this.cancelSearch ) {
-			return;
-		}
-		if ( content && content.length ) {
-			message = this.options.messages.results( content.length );
-		} else {
-			message = this.options.messages.noResults;
-		}
-		this.liveRegion.children().hide();
-		$( "<div>" ).text( message ).appendTo( this.liveRegion );
-	}
-} );
-
-return $.ui.autocomplete;
-
-} ) );
+	scope.setHandle = function(handle, id) {
+		scope.eacHandles[id] = handle;
+	};
 
 
-/***/ }),
+	return scope;
 
-/***/ "./node_modules/jquery-ui/ui/widgets/menu.js":
-/*!***************************************************!*\
-  !*** ./node_modules/jquery-ui/ui/widgets/menu.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+})(EasyAutocomplete || {});
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery UI Menu 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
+(function($) {
 
-//>>label: Menu
-//>>group: Widgets
-//>>description: Creates nestable menus.
-//>>docs: http://api.jqueryui.com/menu/
-//>>demos: http://jqueryui.com/menu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/menu.css
-//>>css.theme: ../../themes/base/theme.css
+	$.fn.easyAutocomplete = function(options) {
 
-( function( factory ) {
-	if ( true ) {
+		return this.each(function() {
+			var $this = $(this),
+				eacHandle = new EasyAutocomplete.main($this, options);
 
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-			__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
-			__webpack_require__(/*! ../keycode */ "./node_modules/jquery-ui/ui/keycode.js"),
-			__webpack_require__(/*! ../position */ "./node_modules/jquery-ui/ui/position.js"),
-			__webpack_require__(/*! ../safe-active-element */ "./node_modules/jquery-ui/ui/safe-active-element.js"),
-			__webpack_require__(/*! ../unique-id */ "./node_modules/jquery-ui/ui/unique-id.js"),
-			__webpack_require__(/*! ../version */ "./node_modules/jquery-ui/ui/version.js"),
-			__webpack_require__(/*! ../widget */ "./node_modules/jquery-ui/ui/widget.js")
-		], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}( function( $ ) {
-
-return $.widget( "ui.menu", {
-	version: "1.12.1",
-	defaultElement: "<ul>",
-	delay: 300,
-	options: {
-		icons: {
-			submenu: "ui-icon-caret-1-e"
-		},
-		items: "> *",
-		menus: "ul",
-		position: {
-			my: "left top",
-			at: "right top"
-		},
-		role: "menu",
-
-		// Callbacks
-		blur: null,
-		focus: null,
-		select: null
-	},
-
-	_create: function() {
-		this.activeMenu = this.element;
-
-		// Flag used to prevent firing of the click handler
-		// as the event bubbles up through nested menus
-		this.mouseHandled = false;
-		this.element
-			.uniqueId()
-			.attr( {
-				role: this.options.role,
-				tabIndex: 0
-			} );
-
-		this._addClass( "ui-menu", "ui-widget ui-widget-content" );
-		this._on( {
-
-			// Prevent focus from sticking to links inside menu after clicking
-			// them (focus should always stay on UL during navigation).
-			"mousedown .ui-menu-item": function( event ) {
-				event.preventDefault();
-			},
-			"click .ui-menu-item": function( event ) {
-				var target = $( event.target );
-				var active = $( $.ui.safeActiveElement( this.document[ 0 ] ) );
-				if ( !this.mouseHandled && target.not( ".ui-state-disabled" ).length ) {
-					this.select( event );
-
-					// Only set the mouseHandled flag if the event will bubble, see #9469.
-					if ( !event.isPropagationStopped() ) {
-						this.mouseHandled = true;
-					}
-
-					// Open submenu on click
-					if ( target.has( ".ui-menu" ).length ) {
-						this.expand( event );
-					} else if ( !this.element.is( ":focus" ) &&
-							active.closest( ".ui-menu" ).length ) {
-
-						// Redirect focus to the menu
-						this.element.trigger( "focus", [ true ] );
-
-						// If the active item is on the top level, let it stay active.
-						// Otherwise, blur the active item since it is no longer visible.
-						if ( this.active && this.active.parents( ".ui-menu" ).length === 1 ) {
-							clearTimeout( this.timer );
-						}
-					}
-				}
-			},
-			"mouseenter .ui-menu-item": function( event ) {
-
-				// Ignore mouse events while typeahead is active, see #10458.
-				// Prevents focusing the wrong item when typeahead causes a scroll while the mouse
-				// is over an item in the menu
-				if ( this.previousFilter ) {
-					return;
-				}
-
-				var actualTarget = $( event.target ).closest( ".ui-menu-item" ),
-					target = $( event.currentTarget );
-
-				// Ignore bubbled events on parent items, see #11641
-				if ( actualTarget[ 0 ] !== target[ 0 ] ) {
-					return;
-				}
-
-				// Remove ui-state-active class from siblings of the newly focused menu item
-				// to avoid a jump caused by adjacent elements both having a class with a border
-				this._removeClass( target.siblings().children( ".ui-state-active" ),
-					null, "ui-state-active" );
-				this.focus( event, target );
-			},
-			mouseleave: "collapseAll",
-			"mouseleave .ui-menu": "collapseAll",
-			focus: function( event, keepActiveItem ) {
-
-				// If there's already an active item, keep it active
-				// If not, activate the first item
-				var item = this.active || this.element.find( this.options.items ).eq( 0 );
-
-				if ( !keepActiveItem ) {
-					this.focus( event, item );
-				}
-			},
-			blur: function( event ) {
-				this._delay( function() {
-					var notContained = !$.contains(
-						this.element[ 0 ],
-						$.ui.safeActiveElement( this.document[ 0 ] )
-					);
-					if ( notContained ) {
-						this.collapseAll( event );
-					}
-				} );
-			},
-			keydown: "_keydown"
-		} );
-
-		this.refresh();
-
-		// Clicks outside of a menu collapse any open menus
-		this._on( this.document, {
-			click: function( event ) {
-				if ( this._closeOnDocumentClick( event ) ) {
-					this.collapseAll( event );
-				}
-
-				// Reset the mouseHandled flag
-				this.mouseHandled = false;
-			}
-		} );
-	},
-
-	_destroy: function() {
-		var items = this.element.find( ".ui-menu-item" )
-				.removeAttr( "role aria-disabled" ),
-			submenus = items.children( ".ui-menu-item-wrapper" )
-				.removeUniqueId()
-				.removeAttr( "tabIndex role aria-haspopup" );
-
-		// Destroy (sub)menus
-		this.element
-			.removeAttr( "aria-activedescendant" )
-			.find( ".ui-menu" ).addBack()
-				.removeAttr( "role aria-labelledby aria-expanded aria-hidden aria-disabled " +
-					"tabIndex" )
-				.removeUniqueId()
-				.show();
-
-		submenus.children().each( function() {
-			var elem = $( this );
-			if ( elem.data( "ui-menu-submenu-caret" ) ) {
-				elem.remove();
-			}
-		} );
-	},
-
-	_keydown: function( event ) {
-		var match, prev, character, skip,
-			preventDefault = true;
-
-		switch ( event.keyCode ) {
-		case $.ui.keyCode.PAGE_UP:
-			this.previousPage( event );
-			break;
-		case $.ui.keyCode.PAGE_DOWN:
-			this.nextPage( event );
-			break;
-		case $.ui.keyCode.HOME:
-			this._move( "first", "first", event );
-			break;
-		case $.ui.keyCode.END:
-			this._move( "last", "last", event );
-			break;
-		case $.ui.keyCode.UP:
-			this.previous( event );
-			break;
-		case $.ui.keyCode.DOWN:
-			this.next( event );
-			break;
-		case $.ui.keyCode.LEFT:
-			this.collapse( event );
-			break;
-		case $.ui.keyCode.RIGHT:
-			if ( this.active && !this.active.is( ".ui-state-disabled" ) ) {
-				this.expand( event );
-			}
-			break;
-		case $.ui.keyCode.ENTER:
-		case $.ui.keyCode.SPACE:
-			this._activate( event );
-			break;
-		case $.ui.keyCode.ESCAPE:
-			this.collapse( event );
-			break;
-		default:
-			preventDefault = false;
-			prev = this.previousFilter || "";
-			skip = false;
-
-			// Support number pad values
-			character = event.keyCode >= 96 && event.keyCode <= 105 ?
-				( event.keyCode - 96 ).toString() : String.fromCharCode( event.keyCode );
-
-			clearTimeout( this.filterTimer );
-
-			if ( character === prev ) {
-				skip = true;
-			} else {
-				character = prev + character;
+			if (!EasyAutocomplete.inputHasId($this)) {
+				EasyAutocomplete.assignRandomId($this);
 			}
 
-			match = this._filterMenuItems( character );
-			match = skip && match.index( this.active.next() ) !== -1 ?
-				this.active.nextAll( ".ui-menu-item" ) :
-				match;
+			eacHandle.init();
 
-			// If no matches on the current filter, reset to the last character pressed
-			// to move down the menu to the first item that starts with that character
-			if ( !match.length ) {
-				character = String.fromCharCode( event.keyCode );
-				match = this._filterMenuItems( character );
-			}
+			EasyAutocomplete.setHandle(eacHandle, $this.attr("id"));
 
-			if ( match.length ) {
-				this.focus( event, match );
-				this.previousFilter = character;
-				this.filterTimer = this._delay( function() {
-					delete this.previousFilter;
-				}, 1000 );
-			} else {
-				delete this.previousFilter;
-			}
+		});
+	};
+
+	$.fn.getSelectedItemIndex = function() {
+
+		var inputId = $(this).attr("id");
+
+		if (inputId !== undefined) {
+			return EasyAutocomplete.getHandle(inputId).getSelectedItemIndex();
 		}
 
-		if ( preventDefault ) {
-			event.preventDefault();
-		}
-	},
+		return -1;
+	};
 
-	_activate: function( event ) {
-		if ( this.active && !this.active.is( ".ui-state-disabled" ) ) {
-			if ( this.active.children( "[aria-haspopup='true']" ).length ) {
-				this.expand( event );
-			} else {
-				this.select( event );
-			}
-		}
-	},
+	$.fn.getItems = function () {
 
-	refresh: function() {
-		var menus, items, newSubmenus, newItems, newWrappers,
-			that = this,
-			icon = this.options.icons.submenu,
-			submenus = this.element.find( this.options.menus );
+		var inputId = $(this).attr("id");
 
-		this._toggleClass( "ui-menu-icons", null, !!this.element.find( ".ui-icon" ).length );
-
-		// Initialize nested menus
-		newSubmenus = submenus.filter( ":not(.ui-menu)" )
-			.hide()
-			.attr( {
-				role: this.options.role,
-				"aria-hidden": "true",
-				"aria-expanded": "false"
-			} )
-			.each( function() {
-				var menu = $( this ),
-					item = menu.prev(),
-					submenuCaret = $( "<span>" ).data( "ui-menu-submenu-caret", true );
-
-				that._addClass( submenuCaret, "ui-menu-icon", "ui-icon " + icon );
-				item
-					.attr( "aria-haspopup", "true" )
-					.prepend( submenuCaret );
-				menu.attr( "aria-labelledby", item.attr( "id" ) );
-			} );
-
-		this._addClass( newSubmenus, "ui-menu", "ui-widget ui-widget-content ui-front" );
-
-		menus = submenus.add( this.element );
-		items = menus.find( this.options.items );
-
-		// Initialize menu-items containing spaces and/or dashes only as dividers
-		items.not( ".ui-menu-item" ).each( function() {
-			var item = $( this );
-			if ( that._isDivider( item ) ) {
-				that._addClass( item, "ui-menu-divider", "ui-widget-content" );
-			}
-		} );
-
-		// Don't refresh list items that are already adapted
-		newItems = items.not( ".ui-menu-item, .ui-menu-divider" );
-		newWrappers = newItems.children()
-			.not( ".ui-menu" )
-				.uniqueId()
-				.attr( {
-					tabIndex: -1,
-					role: this._itemRole()
-				} );
-		this._addClass( newItems, "ui-menu-item" )
-			._addClass( newWrappers, "ui-menu-item-wrapper" );
-
-		// Add aria-disabled attribute to any disabled menu item
-		items.filter( ".ui-state-disabled" ).attr( "aria-disabled", "true" );
-
-		// If the active item has been removed, blur the menu
-		if ( this.active && !$.contains( this.element[ 0 ], this.active[ 0 ] ) ) {
-			this.blur();
-		}
-	},
-
-	_itemRole: function() {
-		return {
-			menu: "menuitem",
-			listbox: "option"
-		}[ this.options.role ];
-	},
-
-	_setOption: function( key, value ) {
-		if ( key === "icons" ) {
-			var icons = this.element.find( ".ui-menu-icon" );
-			this._removeClass( icons, null, this.options.icons.submenu )
-				._addClass( icons, null, value.submenu );
-		}
-		this._super( key, value );
-	},
-
-	_setOptionDisabled: function( value ) {
-		this._super( value );
-
-		this.element.attr( "aria-disabled", String( value ) );
-		this._toggleClass( null, "ui-state-disabled", !!value );
-	},
-
-	focus: function( event, item ) {
-		var nested, focused, activeParent;
-		this.blur( event, event && event.type === "focus" );
-
-		this._scrollIntoView( item );
-
-		this.active = item.first();
-
-		focused = this.active.children( ".ui-menu-item-wrapper" );
-		this._addClass( focused, null, "ui-state-active" );
-
-		// Only update aria-activedescendant if there's a role
-		// otherwise we assume focus is managed elsewhere
-		if ( this.options.role ) {
-			this.element.attr( "aria-activedescendant", focused.attr( "id" ) );
+		if (inputId !== undefined) {
+			return EasyAutocomplete.getHandle(inputId).getItems();
 		}
 
-		// Highlight active parent menu item, if any
-		activeParent = this.active
-			.parent()
-				.closest( ".ui-menu-item" )
-					.children( ".ui-menu-item-wrapper" );
-		this._addClass( activeParent, null, "ui-state-active" );
+		return -1;
+	};
 
-		if ( event && event.type === "keydown" ) {
-			this._close();
-		} else {
-			this.timer = this._delay( function() {
-				this._close();
-			}, this.delay );
+	$.fn.getItemData = function(index) {
+
+		var inputId = $(this).attr("id");
+
+		if (inputId !== undefined && index > -1) {
+			return EasyAutocomplete.getHandle(inputId).getItemData(index);
 		}
 
-		nested = item.children( ".ui-menu" );
-		if ( nested.length && event && ( /^mouse/.test( event.type ) ) ) {
-			this._startOpening( nested );
-		}
-		this.activeMenu = item.parent();
+		return -1;
+	};
 
-		this._trigger( "focus", event, { item: item } );
-	},
+	$.fn.getSelectedItemData = function() {
 
-	_scrollIntoView: function( item ) {
-		var borderTop, paddingTop, offset, scroll, elementHeight, itemHeight;
-		if ( this._hasScroll() ) {
-			borderTop = parseFloat( $.css( this.activeMenu[ 0 ], "borderTopWidth" ) ) || 0;
-			paddingTop = parseFloat( $.css( this.activeMenu[ 0 ], "paddingTop" ) ) || 0;
-			offset = item.offset().top - this.activeMenu.offset().top - borderTop - paddingTop;
-			scroll = this.activeMenu.scrollTop();
-			elementHeight = this.activeMenu.height();
-			itemHeight = item.outerHeight();
+		var inputId = $(this).attr("id");
 
-			if ( offset < 0 ) {
-				this.activeMenu.scrollTop( scroll + offset );
-			} else if ( offset + itemHeight > elementHeight ) {
-				this.activeMenu.scrollTop( scroll + offset - elementHeight + itemHeight );
-			}
-		}
-	},
-
-	blur: function( event, fromFocus ) {
-		if ( !fromFocus ) {
-			clearTimeout( this.timer );
+		if (inputId !== undefined) {
+			return EasyAutocomplete.getHandle(inputId).getSelectedItemData();
 		}
 
-		if ( !this.active ) {
-			return;
-		}
+		return -1;
+	};
 
-		this._removeClass( this.active.children( ".ui-menu-item-wrapper" ),
-			null, "ui-state-active" );
-
-		this._trigger( "blur", event, { item: this.active } );
-		this.active = null;
-	},
-
-	_startOpening: function( submenu ) {
-		clearTimeout( this.timer );
-
-		// Don't open if already open fixes a Firefox bug that caused a .5 pixel
-		// shift in the submenu position when mousing over the caret icon
-		if ( submenu.attr( "aria-hidden" ) !== "true" ) {
-			return;
-		}
-
-		this.timer = this._delay( function() {
-			this._close();
-			this._open( submenu );
-		}, this.delay );
-	},
-
-	_open: function( submenu ) {
-		var position = $.extend( {
-			of: this.active
-		}, this.options.position );
-
-		clearTimeout( this.timer );
-		this.element.find( ".ui-menu" ).not( submenu.parents( ".ui-menu" ) )
-			.hide()
-			.attr( "aria-hidden", "true" );
-
-		submenu
-			.show()
-			.removeAttr( "aria-hidden" )
-			.attr( "aria-expanded", "true" )
-			.position( position );
-	},
-
-	collapseAll: function( event, all ) {
-		clearTimeout( this.timer );
-		this.timer = this._delay( function() {
-
-			// If we were passed an event, look for the submenu that contains the event
-			var currentMenu = all ? this.element :
-				$( event && event.target ).closest( this.element.find( ".ui-menu" ) );
-
-			// If we found no valid submenu ancestor, use the main menu to close all
-			// sub menus anyway
-			if ( !currentMenu.length ) {
-				currentMenu = this.element;
-			}
-
-			this._close( currentMenu );
-
-			this.blur( event );
-
-			// Work around active item staying active after menu is blurred
-			this._removeClass( currentMenu.find( ".ui-state-active" ), null, "ui-state-active" );
-
-			this.activeMenu = currentMenu;
-		}, this.delay );
-	},
-
-	// With no arguments, closes the currently active menu - if nothing is active
-	// it closes all menus.  If passed an argument, it will search for menus BELOW
-	_close: function( startMenu ) {
-		if ( !startMenu ) {
-			startMenu = this.active ? this.active.parent() : this.element;
-		}
-
-		startMenu.find( ".ui-menu" )
-			.hide()
-			.attr( "aria-hidden", "true" )
-			.attr( "aria-expanded", "false" );
-	},
-
-	_closeOnDocumentClick: function( event ) {
-		return !$( event.target ).closest( ".ui-menu" ).length;
-	},
-
-	_isDivider: function( item ) {
-
-		// Match hyphen, em dash, en dash
-		return !/[^\-\u2014\u2013\s]/.test( item.text() );
-	},
-
-	collapse: function( event ) {
-		var newItem = this.active &&
-			this.active.parent().closest( ".ui-menu-item", this.element );
-		if ( newItem && newItem.length ) {
-			this._close();
-			this.focus( event, newItem );
-		}
-	},
-
-	expand: function( event ) {
-		var newItem = this.active &&
-			this.active
-				.children( ".ui-menu " )
-					.find( this.options.items )
-						.first();
-
-		if ( newItem && newItem.length ) {
-			this._open( newItem.parent() );
-
-			// Delay so Firefox will not hide activedescendant change in expanding submenu from AT
-			this._delay( function() {
-				this.focus( event, newItem );
-			} );
-		}
-	},
-
-	next: function( event ) {
-		this._move( "next", "first", event );
-	},
-
-	previous: function( event ) {
-		this._move( "prev", "last", event );
-	},
-
-	isFirstItem: function() {
-		return this.active && !this.active.prevAll( ".ui-menu-item" ).length;
-	},
-
-	isLastItem: function() {
-		return this.active && !this.active.nextAll( ".ui-menu-item" ).length;
-	},
-
-	_move: function( direction, filter, event ) {
-		var next;
-		if ( this.active ) {
-			if ( direction === "first" || direction === "last" ) {
-				next = this.active
-					[ direction === "first" ? "prevAll" : "nextAll" ]( ".ui-menu-item" )
-					.eq( -1 );
-			} else {
-				next = this.active
-					[ direction + "All" ]( ".ui-menu-item" )
-					.eq( 0 );
-			}
-		}
-		if ( !next || !next.length || !this.active ) {
-			next = this.activeMenu.find( this.options.items )[ filter ]();
-		}
-
-		this.focus( event, next );
-	},
-
-	nextPage: function( event ) {
-		var item, base, height;
-
-		if ( !this.active ) {
-			this.next( event );
-			return;
-		}
-		if ( this.isLastItem() ) {
-			return;
-		}
-		if ( this._hasScroll() ) {
-			base = this.active.offset().top;
-			height = this.element.height();
-			this.active.nextAll( ".ui-menu-item" ).each( function() {
-				item = $( this );
-				return item.offset().top - base - height < 0;
-			} );
-
-			this.focus( event, item );
-		} else {
-			this.focus( event, this.activeMenu.find( this.options.items )
-				[ !this.active ? "first" : "last" ]() );
-		}
-	},
-
-	previousPage: function( event ) {
-		var item, base, height;
-		if ( !this.active ) {
-			this.next( event );
-			return;
-		}
-		if ( this.isFirstItem() ) {
-			return;
-		}
-		if ( this._hasScroll() ) {
-			base = this.active.offset().top;
-			height = this.element.height();
-			this.active.prevAll( ".ui-menu-item" ).each( function() {
-				item = $( this );
-				return item.offset().top - base + height > 0;
-			} );
-
-			this.focus( event, item );
-		} else {
-			this.focus( event, this.activeMenu.find( this.options.items ).first() );
-		}
-	},
-
-	_hasScroll: function() {
-		return this.element.outerHeight() < this.element.prop( "scrollHeight" );
-	},
-
-	select: function( event ) {
-
-		// TODO: It should never be possible to not have an active item at this
-		// point, but the tests don't trigger mouseenter before click.
-		this.active = this.active || $( event.target ).closest( ".ui-menu-item" );
-		var ui = { item: this.active };
-		if ( !this.active.has( ".ui-menu" ).length ) {
-			this.collapseAll( event, true );
-		}
-		this._trigger( "select", event, ui );
-	},
-
-	_filterMenuItems: function( character ) {
-		var escapedCharacter = character.replace( /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" ),
-			regex = new RegExp( "^" + escapedCharacter, "i" );
-
-		return this.activeMenu
-			.find( this.options.items )
-
-				// Only match on items, not dividers or other content (#10571)
-				.filter( ".ui-menu-item" )
-					.filter( function() {
-						return regex.test(
-							$.trim( $( this ).children( ".ui-menu-item-wrapper" ).text() ) );
-					} );
-	}
-} );
-
-} ) );
+})(jQuery);
 
 
 /***/ }),
@@ -53430,20 +52104,17 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var jquery_ui_ui_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-ui/ui/widgets/autocomplete */ "./node_modules/jquery-ui/ui/widgets/autocomplete.js");
-/* harmony import */ var jquery_ui_ui_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_autocomplete__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jquery_ui_themes_base_core_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery-ui/themes/base/core.css */ "./node_modules/jquery-ui/themes/base/core.css");
-/* harmony import */ var jquery_ui_themes_base_core_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_themes_base_core_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var jquery_ui_themes_base_autocomplete_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery-ui/themes/base/autocomplete.css */ "./node_modules/jquery-ui/themes/base/autocomplete.css");
-/* harmony import */ var jquery_ui_themes_base_autocomplete_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_themes_base_autocomplete_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var jquery_ui_themes_base_theme_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery-ui/themes/base/theme.css */ "./node_modules/jquery-ui/themes/base/theme.css");
-/* harmony import */ var jquery_ui_themes_base_theme_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_themes_base_theme_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var easy_autocomplete_dist_jquery_easy_autocomplete__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! easy-autocomplete/dist/jquery.easy-autocomplete */ "./node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js");
+/* harmony import */ var easy_autocomplete_dist_jquery_easy_autocomplete__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(easy_autocomplete_dist_jquery_easy_autocomplete__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var easy_autocomplete_dist_easy_autocomplete_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! easy-autocomplete/dist/easy-autocomplete.css */ "./node_modules/easy-autocomplete/dist/easy-autocomplete.css");
+/* harmony import */ var easy_autocomplete_dist_easy_autocomplete_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(easy_autocomplete_dist_easy_autocomplete_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var easy_autocomplete_dist_easy_autocomplete_themes_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! easy-autocomplete/dist/easy-autocomplete.themes.css */ "./node_modules/easy-autocomplete/dist/easy-autocomplete.themes.css");
+/* harmony import */ var easy_autocomplete_dist_easy_autocomplete_themes_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(easy_autocomplete_dist_easy_autocomplete_themes_css__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 
 
 

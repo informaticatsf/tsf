@@ -5,10 +5,10 @@
  */
 
 import './bootstrap';
-import 'jquery-ui/ui/widgets/autocomplete';
-import 'jquery-ui/themes/base/core.css';
-import 'jquery-ui/themes/base/autocomplete.css';
-import 'jquery-ui/themes/base/theme.css';
+import 'easy-autocomplete/dist/jquery.easy-autocomplete';
+import 'easy-autocomplete/dist/easy-autocomplete.css';
+import 'easy-autocomplete/dist/easy-autocomplete.themes.css';
+
 	
 
 

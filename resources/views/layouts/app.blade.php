@@ -9,6 +9,24 @@
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <!-- JS file -->
+    <script src="{{ asset('js/jquery.easy-autocomplete.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easy-autocomplete.js') }}"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('js/easy-autocomplete.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/easy-autocomplete.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/easy-autocomplete.themes.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/easy-autocomplete.themes.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('js/maps/easy-autocomplete.css.map') }}">
+    <link rel="stylesheet" href="{{ asset('js/maps/easy-autocomplete.min.css.map') }}">
+    <link rel="stylesheet" href="{{ asset('js/maps/easy-autocomplete.themes.css.map') }}">
+    <link rel="stylesheet" href="{{ asset('js/maps/easy-autocomplete.themes.min.css.map') }}">
+
+
+
 
     <link rel="shortcut icon" href="{{ asset('images/ico.png') }} ">
     
@@ -362,7 +380,7 @@
 
     <!--   Core JS Files   -->
 
-    <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
+
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 
