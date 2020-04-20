@@ -146,10 +146,11 @@
                                     <input require="required" type="number" class="form-control" id="compraipt" name="compraipt" value="{{$respuesta[0]->xSalida}}" hidden="hidden">
                                     <input require="required" type="number" step=".01" class="form-control" placeholder="Cantidad" id="cantipt" name="cantipt">
                                     <input require="required" type="text" class="form-control" placeholder="Producto" id="productoipt" name="productoipt">
+                                    <input require="required" type="text" class="form-control" placeholder="Producto2" id="productoipt2" name="productoipt2">
                                     <input require="required" type="number" step=".01" class="form-control" placeholder="Subtotal" id="subtotipt" name="subtotipt">
                                     <input require="required" type="number" step=".01" class="form-control" placeholder="P/U" id="punitipt" value="" name="punitipt" readonly>                                        
                                         <span class="input-group-btn">
-                                            <button id="btnadd" type="button" name="btnadd" class="btn btn-primary showmodal" data-toggle="modal" data-target="#ModalRealizarPago">Agregar</button>
+                                            <button id="btnadd" type="button" name="btnadd" class="btn btn-primary showmodal" data-toggle="modal" data-target="#ModalRealizarPago" onclick="hacer_click()">Agregar</button>
                                         </span>
                                 </div>
                             </div>
@@ -212,7 +213,14 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript" language="javascript" class="init">
 
+function hacer_click(){
+    var fin = $("#productoipt").val();
+    $('#productoipt2').val(fin);
+    $("#productoipt").val(fin);  
+    }
+
     $(document).ready( function() {
+        $("#cantipt").focus();
       $("#tipodocm option[value="+ {{$respuesta[0]->xtipodoc}} +"]").attr("selected",true);
       $("#proveedore option[value="+ {{$respuesta[0]->xproveedor}} +"]").attr("selected",true);
     $("#tipodocm").change(function(){
@@ -227,13 +235,13 @@ $(document).ready(function(){
         } );
 
 
-document.getElementById('nodocipt').addEventListener('keyup', inputCharacters);
-document.getElementById('serdocipt').addEventListener('keyup', inputCharacters2);
+document.getElementById('cantipt').addEventListener('keyup', inputCharacters);
+document.getElementById('productoipt').addEventListener('keyup', inputCharacters2);
 document.getElementById('totdocipt').addEventListener('keyup', inputCharacters3);
 
 function inputCharacters(event) {
   if (event.keyCode == 13) {
-    document.getElementById('serdocipt').focus();
+    document.getElementById('productoipt').focus();
   }
 }
 
@@ -271,53 +279,34 @@ function inputCharacters3(event) {
 //   document.getElementById('btnadd').click();
  }
    }
+
     });
 </script>
-
 <script>
 $(document).ready(function(){
+    $('#productoipt').keyup(function(){
 
- $('#serdocipt').keyup(function(){
-     
-        var proveed = '{{$provee}}';
-        var tipodo = '{{$tipod}}';
-        var query = $(this).val();
-        var urle = "{{ route('autocomplete.fetch',[':id', ':ij', ':ik']) }}";
-        urle = urle.replace(':id', proveed);
-        urle = urle.replace(':ij', query);
-        urle = urle.replace(':ik', tipodo);
+var query = $('#productoipt').val();
+    if(query!=''){
         
+        var urle = "{{ route('autocomplete.productocomprinv',':id') }}";
+        urle = urle.replace(':id', query);
+            var options = {
+                url:urle,
+                getValue: "nombre",
+                theme: "plate-dark"
+            };
+            $("#productoipt").easyAutocomplete(options);
+    }
 
-        if(query != '')
-        {
-            
-         var _token = $('input[name="_token"]').val();
-         
-         $.ajax({
-          url:urle,
-          type:"GET",
-          data:{query:query, _token:_token},
-          success:function(data){
+$(this).focus();
 
-           $('#serdocipt').fadeIn();  
-           $('#countryList').html(data);
-          },
-          error:function(data){
-              alert('Debe seleccionar Proveedor y Tipo Documento');
-          }
-         });
-        }
-    });
-
-    $(document).on('click', 'li', function(){  
-        $('#serdocipt').val($(this).text());  
-        $('#countryList').fadeOut();  
-    });
-    
-    
 });
-    
+$("#productoipt").change(function(){
+var fin = $("#productoipt").val();
+$('#productoipt2').val(fin);
+$("#productoipt").val(fin);     
+});
+});
 </script>
-
-
 @endsection

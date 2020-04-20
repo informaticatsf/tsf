@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\InventarioFiscal;
 use App\Models\Contribuyente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InventarioFiscalController extends Controller
 {
@@ -110,5 +111,12 @@ class InventarioFiscalController extends Controller
 
     public function CrearDetFactura($iddoc, $movbanco, $seriedoc, $proveedor, $fecha, $totdoc, $numdoc, $pneto, $crefis, $tipodoc,  $afecta){
         return InventarioFiscal::creaDetFac($iddoc, $movbanco, $seriedoc, $proveedor, $fecha, $totdoc, $numdoc, $pneto, $crefis, $tipodoc,  $afecta);
+    }
+
+    public function BuscaProducto($producto){
+        
+        $posts = DB::select('call ListProdComprInv(?)',
+        array($producto));
+        return \response()->json($posts);
     }
 }

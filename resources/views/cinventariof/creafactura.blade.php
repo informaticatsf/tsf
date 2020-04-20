@@ -23,7 +23,7 @@
                                                 <label hidden="hidden" class="control-label col-lg-0 col-md-0 col-sm-11" for="fechas">
                                                 {{$f=session()->get('fechacif')[0][1]}}
                                                 </label>
-                                                <input type="date" class="form-control col-lg-0 col-md-0 col-sm-13"  id="fecha" name="fecha">
+                                                <input required="required" type="date" class="form-control col-lg-0 col-md-0 col-sm-13"  id="fecha" name="fecha">
                                             </div>
                                         </td>
                                         <td>
@@ -79,12 +79,9 @@
                                         <td>
                                             <div class="form-group row">
                                                 <div class="col-lg-0 col-md-0 col-sm-12">
-                                                    <input placeholder="Serie Doc." type="text" id="serdocipt" name="serdocipt" required="required" autocomplete="on"
+                                                    <input placeholder="Serie Doc" type="text" id="serdocipt" name="serdocipt" required
                                                     class="form-control">
-                                                        <div id="countryList">
-                                                        </div>
-                                                        {{ csrf_field() }}
-                                                        <input placeholder="Serie Doc2." type="text" id="name" name="name" required="required"
+                                                    <input hidden type="text" id="serdocipt2" name="serdocipt2" required
                                                     class="form-control">
                                                 </div>
                                             </div>
@@ -128,18 +125,18 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button type="submit"  class="btn btn-sm btn-success showmodal" id="btndetalle" name="btndetalle">
+                                        <button type="submit"  class="btn btn-sm btn-success" id="btndetalle" name="btndetalle" onclick="hacer_click()">
                                                 <span class="icon text-white-100">
                                                     <i class="fas fa-money-bill fa-sm"></i>
                                                 </span>
-                                                <span class="text">Registrar detalle</span>
+                                                <span class="text">Registrar detalles</span>
                                             </button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </form>
-                            </table>
-                        </div>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,6 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script type="text/javascript" language="javascript" class="init">
+function hacer_click(){
+    var fin = $("#serdocipt").val();
+        $('#serdocipt2').val(fin);
+        $("#serdocipt").val(fin); 
+    }
 
     $(document).on('change','#proveedore',function(){
         //var proveedore = document.getElementsByName("proveedore")[0].value;
@@ -224,13 +226,13 @@ document.getElementById('serdocipt').addEventListener('keyup', inputCharacters2)
 document.getElementById('totdocipt').addEventListener('keyup', inputCharacters3);
 
 function inputCharacters(event) {
-  if (event.keyCode == 13) {
+  if (event.keyCode == 13||event.keyCode == 9) {
     document.getElementById('serdocipt').focus();
   }
 }
 
 function inputCharacters2(event) {
-  if (event.keyCode == 13) {
+  if (event.keyCode == 13||event.keyCode == 9) {
     document.getElementById('totdocipt').focus();
   }
 }
@@ -265,78 +267,40 @@ function inputCharacters3(event) {
    }
     });
 </script>
-
 <script>
 $(document).ready(function(){
+    $('#serdocipt').keyup(function(){
 
- $('#serdocipt').keyup(function(){
-     
         var proveed = '{{$provee}}';
         var tipodo = '{{$tipod}}';
-        var query = $(this).val();
-        var urle = "{{ route('autocomplete.fetch',[':id', ':ij', ':ik']) }}";
-        urle = urle.replace(':id', proveed);
-        urle = urle.replace(':ij', query);
-        urle = urle.replace(':ik', tipodo);
-        
-
-        if(query != '')
-        {
-            
-         var _token = $('input[name="_token"]').val();
-         
-         $.ajax({
-          url:urle,
-          type:"GET",
-          data:{query:query, _token:_token},
-          success:function(data){
-
-           $('#serdocipt').fadeIn();  
-           $('#countryList').html(data);
-          },
-          error:function(data){
-              alert('Debe seleccionar Proveedor y Tipo Documento');
-          }
-         });
+        var query = $('#serdocipt').val();
+        if(proveed==''||tipodo==''){
+            alert('Seleccione proveedor y tipo documento');
+        }else{
+            if(query!=''){
+                
+                var urle = "{{ route('autocomplete.searche',[':id', ':ij', ':ik']) }}";
+                urle = urle.replace(':id', proveed);
+                urle = urle.replace(':ij', query);
+                urle = urle.replace(':ik', tipodo);
+                    var options = {
+                        url:urle,
+                        getValue: "nombre",
+                        theme: "plate-dark"
+                    };
+                    $("#serdocipt").easyAutocomplete(options);
+            }
         }
+        
+        $(this).focus();
+      
     });
-
-    $(document).on('click', 'li', function(){  
-        $('#serdocipt').val($(this).text());  
-        $('#countryList').fadeOut();  
+    $("#serdocipt").change(function(){
+        var fin = $("#serdocipt").val();
+        $('#serdocipt2').val(fin);
+        $("#serdocipt").val(fin);     
     });
 });
-    
 </script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#name').keyup(function(){
 
-
-
-    
-        var proveed = '{{$provee}}';
-        var tipodo = '{{$tipod}}';
-        var query = $('#name').val();
-        var urle = "{{ route('autocomplete.searche',[':id', ':ij', ':ik']) }}";
-        urle = urle.replace(':id', proveed);
-        urle = urle.replace(':ij', query);
-        urle = urle.replace(':ik', tipodo);
-
-        var options = {
-	data: ["blue", "green", "pink", "red", "yellow"]
-};
-
-$("#name").easyAutocomplete(options);
-        
- 
-
- 
-    
-    });
-    });
-
-</script>
 @endsection
-
-

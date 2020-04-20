@@ -84,13 +84,13 @@ class InventarioFiscal extends Model
         $proveedores = DB::table('VerProveedoresCompra')->get();
         $tiposdoc = DB::table('VerTipoDocCompra')->get();
         return view('cinventariof.creafactura', compact('proveedores', 'tiposdoc'));     
-     }
+     } 
 
     public static function CreaHeadFac($request){ 
         
-        //dd($request->all());
+        
         $rules = [ 
-            'serdocipt'     => 'required',
+            'serdocipt2'     => 'required',
             'tipodocm'      => 'required',
             'proveedore' => 'required',
             'inventarioipt' => 'required',
@@ -128,7 +128,7 @@ class InventarioFiscal extends Model
                 Auth::user()->id,                                  // pUser
                 null,                                              // pMovBanco
                 $request->get("tipodocm"),                         // pTipoDoc
-                $request->get("serdocipt"),                        // pSerieDoc
+                $request->get("serdocipt2"),                       // pSerieDoc
                 $request->get("proveedore"),                       // pProveedor
                 $request->get("inventarioipt"),                    // pInventario
                 date('Y-m-d', strtotime($request->get("fecha"))),  // pFecha
@@ -184,4 +184,6 @@ class InventarioFiscal extends Model
         $tiposdoc = DB::table('VerTipoDocCompra')->get();
         return view('cinventariof.creadetfactura', compact('proveedores', 'tiposdoc', 'respuesta', 'detalles'));
      }
+
+     
 }

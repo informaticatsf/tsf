@@ -94,6 +94,7 @@ Route::get('inventariofiscalfe/{fecha}','InventarioFiscalController@setThisFecha
 Route::get('inventariofiscal/creafactura','InventarioFiscalController@CrearFactura')->name('nuevafactura.create');
 Route::get('inventariofiscalchf/creafactura','InventarioFiscalController@CrearHeadFactura')->name('nuevafactura.store');
 Route::get('inventariofiscalcdf/creadetfactura/{iddoc}/{movbanco}/{seriedoc}/{proveedor}/{fecha}/{totdoc}/{numdoc}/{pneto}/{crefis}/{tipodoc}/{afecta}','InventarioFiscalController@CrearDetFactura')->name('nuevadetfactura.store');
+Route::get('/autocompleteprocomprinv/busca/{producto}', 'InventarioFiscalController@BuscaProducto')->name('autocomplete.productocomprinv');
 
 // +++++++++++++++++++++++ Periodo +++++++++++++++++++++++++++++++++++++
 Route::get('periodo/{busca}','PeriodoController@show')->name('periodo.show');
@@ -128,9 +129,8 @@ Route::get('tipoentradaes/{tipo}','TipoentradaController@setThisTipo')->name('th
 // +++++++++++++++++++++++ Serie de documentos +++++++++++++++++++++++++++++++
 Route::get('seriedocbs/{sucursal}/seriedoc/{seriedoc}', 'SeriedocController@show')->name('seriedoc.show');
 Route::get('seriedocset/{sucursal}','seriedocController@SetSerieDoc')->name('theserie.es');
-Route::get('/autocomplete/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetch')->name('autocomplete.fetch');
-Route::get('/autocompletei/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@fetchi')->name('autocomplete.fetchi');
 Route::get('/autocompleteii/fetch/{proveedor}/{serie}/{ipo}', 'AutocompleteSerieProveedor@searche')->name('autocomplete.searche');
+
 
 // +++++++++++++++++++++++ Sucursal +++++++++++++++++++++++++++++++++++
 Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show')->name('sucursal.show');
@@ -138,6 +138,7 @@ Route::get('sucursale/{empresa}/sucursal/{sucursal?}', 'SucursalController@show'
 // +++++++++++++++++++++++ Venta ++++++++++++++++++++++++++++++++++++++
 Route::get('venta/create/{sucursal}', 'VentaController@create')->name('venta.create');
 Route::get('venta/tablaagregar','VentaController@setMoreVenta')->name('tablaventa.agregar');
+
 });
 
 Route::group(['middleware'=>['rolx:desarrollador', 'rolx:supervisor-contable']], function(){
